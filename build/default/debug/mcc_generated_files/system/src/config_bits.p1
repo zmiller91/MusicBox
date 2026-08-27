@@ -1,0 +1,49 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"36 mcc_generated_files/system/src/config_bits.c
+[p x FEXTOSC  =  ECH     ]
+"37
+[p x RSTOSC  =  HFINTOSC_32MHz     ]
+"38
+[p x CLKOUTEN  =  OFF     ]
+"39
+[p x VDDAR  =  HI     ]
+"42
+[p x MCLRE  =  EXTMCLR     ]
+"43
+[p x PWRTS  =  PWRT_OFF     ]
+"44
+[p x WDTE  =  OFF     ]
+"45
+[p x BOREN  =  ON     ]
+"46
+[p x DACAUTOEN  =  OFF     ]
+"47
+[p x BORV  =  LO     ]
+"48
+[p x ZCD  =  OFF     ]
+"49
+[p x PPS1WAY  =  ON     ]
+"50
+[p x STVREN  =  ON     ]
+"53
+[p x BBSIZE  =  BB512     ]
+"54
+[p x BBEN  =  OFF     ]
+"55
+[p x SAFEN  =  OFF     ]
+"56
+[p x WRTAPP  =  OFF     ]
+"57
+[p x WRTB  =  OFF     ]
+"58
+[p x WRTC  =  OFF     ]
+"59
+[p x WRTD  =  OFF     ]
+"60
+[p x WRTSAF  =  OFF     ]
+"61
+[p x LVP  =  ON     ]
+"64
+[p x CP  =  OFF     ]
+"65
+[p x CPD  =  OFF     ]

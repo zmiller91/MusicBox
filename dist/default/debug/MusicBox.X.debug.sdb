@@ -1,0 +1,1391 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18076 ]
+[d frameptr 6 ]
+"79 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
+[e E8063 . `uc
+I2C_ERROR_NONE 0
+I2C_ERROR_ADDR_NACK 1
+I2C_ERROR_DATA_NACK 2
+I2C_ERROR_BUS_COLLISION 3
+]
+"96
+[e E8072 . `uc
+I2C_STATE_IDLE 0
+I2C_STATE_SEND_RD_ADDR 1
+I2C_STATE_SEND_WR_ADDR 2
+I2C_STATE_TX 3
+I2C_STATE_RX 4
+I2C_STATE_NACK 5
+I2C_STATE_ERROR 6
+I2C_STATE_STOP 7
+I2C_STATE_RESET 8
+]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcmp.c
+[v _memcmp memcmp `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.5v  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strchr.c
+[v _strchr strchr `(*.5uc  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strstr.c
+[v _strstr strstr `(*.5uc  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"62 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
+[v _pn532_send_and_capture pn532_send_and_capture `(uc  1 s 1 pn532_send_and_capture ]
+"138
+[v _pn532_transact pn532_transact `(a  1 s 1 pn532_transact ]
+"364
+[v _PN532_Init PN532_Init `(uc  1 e 1 0 ]
+"401
+[v _PN532_ReadPassiveTarget PN532_ReadPassiveTarget `(a  1 e 1 0 ]
+"433
+[v _ntag_read4pages ntag_read4pages `(a  1 s 1 ntag_read4pages ]
+"453
+[v _parse_ndef_text_record parse_ndef_text_record `(a  1 s 1 parse_ndef_text_record ]
+"534
+[v _PN532_ReadNdefText PN532_ReadNdefText `(a  1 e 1 0 ]
+"42 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+[v _uart_write uart_write `(v  1 e 1 0 ]
+"52
+[v _dfplayer_send dfplayer_send `(v  1 e 1 0 ]
+"76
+[v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
+"114
+[v _main main `(i  1 e 2 0 ]
+"114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+"131
+[v _I2C1_Deinitialize I2C1_Deinitialize `(v  1 e 1 0 ]
+"142
+[v _I2C1_Write I2C1_Write `(a  1 e 1 0 ]
+"161
+[v _I2C1_Read I2C1_Read `(a  1 e 1 0 ]
+"180
+[v _I2C1_WriteRead I2C1_WriteRead `(a  1 e 1 0 ]
+"199
+[v _I2C1_ErrorGet I2C1_ErrorGet `(E8063  1 e 1 0 ]
+"206
+[v _I2C1_IsBusy I2C1_IsBusy `(a  1 e 1 0 ]
+"211
+[v _I2C1_CallbackRegister I2C1_CallbackRegister `(v  1 e 1 0 ]
+"219
+[v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
+"224
+[v _I2C1_ERROR_ISR I2C1_ERROR_ISR `(v  1 e 1 0 ]
+"232
+[v _I2C1_ReadStart I2C1_ReadStart `(v  1 s 1 I2C1_ReadStart ]
+"238
+[v _I2C1_WriteStart I2C1_WriteStart `(v  1 s 1 I2C1_WriteStart ]
+"244
+[v _I2C1_Close I2C1_Close `(v  1 s 1 I2C1_Close ]
+"256
+[v _I2C1_EventHandler I2C1_EventHandler `(v  1 s 1 I2C1_EventHandler ]
+"272
+[v _I2C1_ErrorEventHandler I2C1_ErrorEventHandler `(v  1 s 1 I2C1_ErrorEventHandler ]
+"281
+[v _I2C1_DefaultCallback I2C1_DefaultCallback `(v  1 s 1 I2C1_DefaultCallback ]
+"287
+[v _I2C1_EVENT_IDLE I2C1_EVENT_IDLE `(E8072  1 s 1 I2C1_EVENT_IDLE ]
+"293
+[v _I2C1_EVENT_SEND_RD_ADDR I2C1_EVENT_SEND_RD_ADDR `(E8072  1 s 1 I2C1_EVENT_SEND_RD_ADDR ]
+"299
+[v _I2C1_EVENT_SEND_WR_ADDR I2C1_EVENT_SEND_WR_ADDR `(E8072  1 s 1 I2C1_EVENT_SEND_WR_ADDR ]
+"305
+[v _I2C1_EVENT_TX I2C1_EVENT_TX `(E8072  1 s 1 I2C1_EVENT_TX ]
+"331
+[v _I2C1_EVENT_RX I2C1_EVENT_RX `(E8072  1 s 1 I2C1_EVENT_RX ]
+"363
+[v _I2C1_EVENT_NACK I2C1_EVENT_NACK `(E8072  1 s 1 I2C1_EVENT_NACK ]
+"370
+[v _I2C1_EVENT_ERROR I2C1_EVENT_ERROR `(E8072  1 s 1 I2C1_EVENT_ERROR ]
+"377
+[v _I2C1_EVENT_STOP I2C1_EVENT_STOP `(E8072  1 s 1 I2C1_EVENT_STOP ]
+"384
+[v _I2C1_EVENT_RESET I2C1_EVENT_RESET `(E8072  1 s 1 I2C1_EVENT_RESET ]
+"394
+[v _I2C1_DataReceive I2C1_DataReceive `(uc  1 s 1 I2C1_DataReceive ]
+"399
+[v _I2C1_DataTransmit I2C1_DataTransmit `(v  1 s 1 I2C1_DataTransmit ]
+"404
+[v _I2C1_BusReset I2C1_BusReset `T(v  1 s 1 I2C1_BusReset ]
+"410
+[v _I2C1_ReceiveEnable I2C1_ReceiveEnable `T(v  1 s 1 I2C1_ReceiveEnable ]
+"415
+[v _I2C1_RestartEnable I2C1_RestartEnable `T(v  1 s 1 I2C1_RestartEnable ]
+"420
+[v _I2C1_RestartDisable I2C1_RestartDisable `T(v  1 s 1 I2C1_RestartDisable ]
+"425
+[v _I2C1_StartSend I2C1_StartSend `T(v  1 s 1 I2C1_StartSend ]
+"430
+[v _I2C1_StopSend I2C1_StopSend `T(v  1 s 1 I2C1_StopSend ]
+"435
+[v _I2C1_AckSend I2C1_AckSend `T(v  1 s 1 I2C1_AckSend ]
+"441
+[v _I2C1_NackSend I2C1_NackSend `T(v  1 s 1 I2C1_NackSend ]
+"447
+[v _I2C1_IsNack I2C1_IsNack `(a  1 s 1 I2C1_IsNack ]
+"452
+[v _I2C1_IsData I2C1_IsData `(a  1 s 1 I2C1_IsData ]
+"457
+[v _I2C1_IsAddr I2C1_IsAddr `(a  1 s 1 I2C1_IsAddr ]
+"462
+[v _I2C1_IsRxBufFull I2C1_IsRxBufFull `(a  1 s 1 I2C1_IsRxBufFull ]
+"467
+[v _I2C1_InterruptsEnable I2C1_InterruptsEnable `T(v  1 s 1 I2C1_InterruptsEnable ]
+"473
+[v _I2C1_InterruptsDisable I2C1_InterruptsDisable `T(v  1 s 1 I2C1_InterruptsDisable ]
+"479
+[v _I2C1_InterruptClear I2C1_InterruptClear `T(v  1 s 1 I2C1_InterruptClear ]
+"484
+[v _I2C1_ErrorInterruptClear I2C1_ErrorInterruptClear `T(v  1 s 1 I2C1_ErrorInterruptClear ]
+"489
+[v _I2C1_StatusFlagsClear I2C1_StatusFlagsClear `T(v  1 s 1 I2C1_StatusFlagsClear ]
+"37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+"40 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"59
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"96
+[v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
+"105
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+"109
+[v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
+"38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"138
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"115
+[v _EUSART1_Deinitialize EUSART1_Deinitialize `(v  1 e 1 0 ]
+"136
+[v _EUSART1_TransmitEnable EUSART1_TransmitEnable `T(v  1 e 1 0 ]
+"141
+[v _EUSART1_TransmitDisable EUSART1_TransmitDisable `T(v  1 e 1 0 ]
+"166
+[v _EUSART1_AutoBaudSet EUSART1_AutoBaudSet `T(v  1 e 1 0 ]
+"178
+[v _EUSART1_AutoBaudQuery EUSART1_AutoBaudQuery `T(a  1 e 1 0 ]
+"193
+[v _EUSART1_IsRxReady EUSART1_IsRxReady `(a  1 e 1 0 ]
+"198
+[v _EUSART1_IsTxReady EUSART1_IsTxReady `(a  1 e 1 0 ]
+"203
+[v _EUSART1_IsTxDone EUSART1_IsTxDone `(a  1 e 1 0 ]
+"208
+[v _EUSART1_ErrorGet EUSART1_ErrorGet `(ui  1 e 2 0 ]
+"213
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"235
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"240
+[v _EUSART1_DefaultFramingErrorCallback EUSART1_DefaultFramingErrorCallback `(v  1 s 1 EUSART1_DefaultFramingErrorCallback ]
+"245
+[v _EUSART1_DefaultOverrunErrorCallback EUSART1_DefaultOverrunErrorCallback `(v  1 s 1 EUSART1_DefaultOverrunErrorCallback ]
+"252
+[v _EUSART1_FramingErrorCallbackRegister EUSART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+"260
+[v _EUSART1_OverrunErrorCallbackRegister EUSART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
+"115
+[v _EUSART2_Deinitialize EUSART2_Deinitialize `(v  1 e 1 0 ]
+"136
+[v _EUSART2_TransmitEnable EUSART2_TransmitEnable `T(v  1 e 1 0 ]
+"141
+[v _EUSART2_TransmitDisable EUSART2_TransmitDisable `T(v  1 e 1 0 ]
+"166
+[v _EUSART2_AutoBaudSet EUSART2_AutoBaudSet `T(v  1 e 1 0 ]
+"178
+[v _EUSART2_AutoBaudQuery EUSART2_AutoBaudQuery `T(a  1 e 1 0 ]
+"193
+[v _EUSART2_IsRxReady EUSART2_IsRxReady `(a  1 e 1 0 ]
+"198
+[v _EUSART2_IsTxReady EUSART2_IsTxReady `(a  1 e 1 0 ]
+"203
+[v _EUSART2_IsTxDone EUSART2_IsTxDone `(a  1 e 1 0 ]
+"208
+[v _EUSART2_ErrorGet EUSART2_ErrorGet `(ui  1 e 2 0 ]
+"213
+[v _EUSART2_Read EUSART2_Read `(uc  1 e 1 0 ]
+"235
+[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
+"240
+[v _EUSART2_DefaultFramingErrorCallback EUSART2_DefaultFramingErrorCallback `(v  1 s 1 EUSART2_DefaultFramingErrorCallback ]
+"245
+[v _EUSART2_DefaultOverrunErrorCallback EUSART2_DefaultOverrunErrorCallback `(v  1 s 1 EUSART2_DefaultOverrunErrorCallback ]
+"252
+[v _EUSART2_FramingErrorCallbackRegister EUSART2_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+"260
+[v _EUSART2_OverrunErrorCallbackRegister EUSART2_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+[s S1027 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"426 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[u S1032 . 1 `S1027 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1032  1 e 1 @11 ]
+"732
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+[s S1951 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"749
+[u S1960 . 1 `S1951 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES1960  1 e 1 @18 ]
+"794
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"856
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"918
+[v _TRISD TRISD `VEuc  1 e 1 @21 ]
+"980
+[v _TRISE TRISE `VEuc  1 e 1 @22 ]
+"1018
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+[s S1972 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"1035
+[u S1981 . 1 `S1972 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1981  1 e 1 @24 ]
+"1080
+[v _LATB LATB `VEuc  1 e 1 @25 ]
+"1142
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+"1204
+[v _LATD LATD `VEuc  1 e 1 @27 ]
+"1266
+[v _LATE LATE `VEuc  1 e 1 @28 ]
+[s S1014 . 1 `uc 1 INTF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"1317
+[u S1019 . 1 `S1014 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES1019  1 e 1 @140 ]
+[s S809 . 1 `uc 1 CLC3IF 1 0 :1:0 
+`uc 1 CLC4IF 1 0 :1:1 
+`uc 1 TX1IF 1 0 :1:2 
+`uc 1 RC1IF 1 0 :1:3 
+`uc 1 TX2IF 1 0 :1:4 
+`uc 1 RC2IF 1 0 :1:5 
+`uc 1 SSP1IF 1 0 :1:6 
+`uc 1 BCL1IF 1 0 :1:7 
+]
+"1473
+[u S818 . 1 `S809 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES818  1 e 1 @143 ]
+[s S1050 . 1 `uc 1 INTE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"1581
+[u S1055 . 1 `S1050 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES1055  1 e 1 @150 ]
+[s S788 . 1 `uc 1 CLC3IE 1 0 :1:0 
+`uc 1 CLC4IE 1 0 :1:1 
+`uc 1 TX1IE 1 0 :1:2 
+`uc 1 RC1IE 1 0 :1:3 
+`uc 1 TX2IE 1 0 :1:4 
+`uc 1 RC2IE 1 0 :1:5 
+`uc 1 SSP1IE 1 0 :1:6 
+`uc 1 BCL1IE 1 0 :1:7 
+]
+"1737
+[u S797 . 1 `S788 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES797  1 e 1 @153 ]
+"2656
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @526 ]
+"2698
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @527 ]
+"2719
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @528 ]
+"2770
+[v _OSCEN OSCEN `VEuc  1 e 1 @529 ]
+"2815
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @530 ]
+"2873
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @531 ]
+"2913
+[v _ACTCON ACTCON `VEuc  1 e 1 @532 ]
+"10029
+[v _RC1REG RC1REG `VEuc  1 e 1 @1548 ]
+"10049
+[v _TX1REG TX1REG `VEuc  1 e 1 @1549 ]
+"10076
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @1550 ]
+"10096
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @1551 ]
+"10116
+[v _RC1STA RC1STA `VEuc  1 e 1 @1552 ]
+[s S35 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"10133
+[u S44 . 1 `S35 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES44  1 e 1 @1552 ]
+"10178
+[v _TX1STA TX1STA `VEuc  1 e 1 @1553 ]
+[s S1407 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"10195
+[u S1416 . 1 `S1407 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1416  1 e 1 @1553 ]
+"10240
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @1554 ]
+[s S1428 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"10257
+[u S1437 . 1 `S1428 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES1437  1 e 1 @1554 ]
+"10292
+[v _RC2REG RC2REG `VEuc  1 e 1 @1558 ]
+"10312
+[v _TX2REG TX2REG `VEuc  1 e 1 @1559 ]
+"10339
+[v _SP2BRGL SP2BRGL `VEuc  1 e 1 @1560 ]
+"10359
+[v _SP2BRGH SP2BRGH `VEuc  1 e 1 @1561 ]
+"10379
+[v _RC2STA RC2STA `VEuc  1 e 1 @1562 ]
+"10396
+[v _RC2STAbits RC2STAbits `VES44  1 e 1 @1562 ]
+"10441
+[v _TX2STA TX2STA `VEuc  1 e 1 @1563 ]
+"10458
+[v _TX2STAbits TX2STAbits `VES1416  1 e 1 @1563 ]
+"10503
+[v _BAUD2CON BAUD2CON `VEuc  1 e 1 @1564 ]
+"10520
+[v _BAUD2CONbits BAUD2CONbits `VES1437  1 e 1 @1564 ]
+"10555
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @1676 ]
+"10575
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @1677 ]
+"10765
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @1679 ]
+[s S428 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"10874
+[s S437 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S442 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S447 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S452 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S457 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S463 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S472 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S478 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S484 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S490 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S495 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S500 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S505 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S510 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S515 . 1 `S428 1 . 1 0 `S437 1 . 1 0 `S442 1 . 1 0 `S447 1 . 1 0 `S452 1 . 1 0 `S457 1 . 1 0 `S463 1 . 1 0 `S472 1 . 1 0 `S478 1 . 1 0 `S484 1 . 1 0 `S490 1 . 1 0 `S495 1 . 1 0 `S500 1 . 1 0 `S505 1 . 1 0 `S510 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES515  1 e 1 @1679 ]
+"11129
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @1680 ]
+[s S370 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"11159
+[s S376 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S381 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S390 . 1 `S370 1 . 1 0 `S376 1 . 1 0 `S381 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES390  1 e 1 @1680 ]
+"11249
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @1681 ]
+[s S711 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"11296
+[s S720 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S723 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S730 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S739 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S746 . 1 `S711 1 . 1 0 `S720 1 . 1 0 `S723 1 . 1 0 `S730 1 . 1 0 `S739 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES746  1 e 1 @1681 ]
+"11436
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @1682 ]
+"17717
+[v _RB3PPS RB3PPS `VEuc  1 e 1 @7575 ]
+"17737
+[v _RB4PPS RB4PPS `VEuc  1 e 1 @7576 ]
+"17877
+[v _RC3PPS RC3PPS `VEuc  1 e 1 @7583 ]
+"17897
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @7584 ]
+"17997
+[v _RD1PPS RD1PPS `VEuc  1 e 1 @7589 ]
+"18993
+[v _RX1PPS RX1PPS `VEuc  1 e 1 @7745 ]
+"19069
+[v _RX2PPS RX2PPS `VEuc  1 e 1 @7747 ]
+"19145
+[v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @7751 ]
+"19203
+[v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @7752 ]
+"19399
+[v _ANSELA ANSELA `VEuc  1 e 1 @7820 ]
+"19511
+[v _WPUA WPUA `VEuc  1 e 1 @7821 ]
+"19573
+[v _ODCONA ODCONA `VEuc  1 e 1 @7822 ]
+"19635
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7823 ]
+"19697
+[v _INLVLA INLVLA `VEuc  1 e 1 @7824 ]
+"19759
+[v _IOCAP IOCAP `VEuc  1 e 1 @7825 ]
+"19821
+[v _IOCAN IOCAN `VEuc  1 e 1 @7826 ]
+"19883
+[v _IOCAF IOCAF `VEuc  1 e 1 @7827 ]
+"19945
+[v _ANSELB ANSELB `VEuc  1 e 1 @7830 ]
+"20057
+[v _WPUB WPUB `VEuc  1 e 1 @7831 ]
+"20119
+[v _ODCONB ODCONB `VEuc  1 e 1 @7832 ]
+"20181
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @7833 ]
+"20243
+[v _INLVLB INLVLB `VEuc  1 e 1 @7834 ]
+"20305
+[v _IOCBP IOCBP `VEuc  1 e 1 @7835 ]
+"20367
+[v _IOCBN IOCBN `VEuc  1 e 1 @7836 ]
+"20429
+[v _IOCBF IOCBF `VEuc  1 e 1 @7837 ]
+"20491
+[v _ANSELC ANSELC `VEuc  1 e 1 @7840 ]
+"20603
+[v _WPUC WPUC `VEuc  1 e 1 @7841 ]
+"20665
+[v _ODCONC ODCONC `VEuc  1 e 1 @7842 ]
+"20727
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @7843 ]
+"20789
+[v _INLVLC INLVLC `VEuc  1 e 1 @7844 ]
+"20851
+[v _IOCCP IOCCP `VEuc  1 e 1 @7845 ]
+"20913
+[v _IOCCN IOCCN `VEuc  1 e 1 @7846 ]
+"20975
+[v _IOCCF IOCCF `VEuc  1 e 1 @7847 ]
+"21037
+[v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
+"21149
+[v _WPUD WPUD `VEuc  1 e 1 @7851 ]
+"21211
+[v _ODCOND ODCOND `VEuc  1 e 1 @7852 ]
+"21273
+[v _SLRCOND SLRCOND `VEuc  1 e 1 @7853 ]
+"21335
+[v _INLVLD INLVLD `VEuc  1 e 1 @7854 ]
+"21397
+[v _ANSELE ANSELE `VEuc  1 e 1 @7860 ]
+"21449
+[v _WPUE WPUE `VEuc  1 e 1 @7861 ]
+"21487
+[v _ODCONE ODCONE `VEuc  1 e 1 @7862 ]
+"21519
+[v _SLRCONE SLRCONE `VEuc  1 e 1 @7863 ]
+"21551
+[v _INLVLE INLVLE `VEuc  1 e 1 @7864 ]
+"21589
+[v _IOCEP IOCEP `VEuc  1 e 1 @7865 ]
+"21610
+[v _IOCEN IOCEN `VEuc  1 e 1 @7866 ]
+"21631
+[v _IOCEF IOCEF `VEuc  1 e 1 @7867 ]
+"95 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
+[v _I2C1_Callback I2C1_Callback `*.37(v  1 s 2 I2C1_Callback ]
+[s S309 . 14 `a 1 busy 1 0 `us 1 address 2 1 `*.39uc 1 writePtr 2 3 `ui 1 writeLength 2 5 `*.39uc 1 readPtr 2 7 `ui 1 readLength 2 9 `a 1 switchToRead 1 11 `E8063 1 errorState 1 12 `E8072 1 state 1 13 ]
+"96
+[v _i2c1Status i2c1Status `VES309  1 e 14 0 ]
+"99
+[v _i2c1_eventTable i2c1_eventTable `DC[9]*.37(E8072  1 e 18 0 ]
+"38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
+[v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S1363 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"77 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[u S1368 . 2 `S1363 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES1368  1 e 2 0 ]
+"83
+[v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"84
+[v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"77 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _eusart2RxLastError eusart2RxLastError `VES1368  1 e 2 0 ]
+"83
+[v _EUSART2_FramingErrorHandler EUSART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"84
+[v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"168
+[v main@track track `us  1 a 2 52 ]
+"165
+[v main@text text `[32]uc  1 a 32 2 ]
+"138
+[v main@i i `uc  1 a 1 49 ]
+"162
+[v main@isNewTag isNewTag `a  1 a 1 48 ]
+"155
+[v main@uid uid `[7]uc  1 a 7 41 ]
+"156
+[v main@uidLen uidLen `uc  1 a 1 55 ]
+"150
+[v main@lastUid lastUid `[7]uc  1 a 7 34 ]
+"130
+[v main@initResult initResult `uc  1 a 1 54 ]
+"151
+[v main@lastUidLen lastUidLen `uc  1 a 1 51 ]
+"187
+} 0
+"76
+[v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
+{
+[v parse_track_number@text text `*.5DCuc  1 a 1 wreg ]
+"78
+[v parse_track_number@sep sep `*.5DCuc  1 a 1 19 ]
+"76
+[v parse_track_number@text text `*.5DCuc  1 a 1 wreg ]
+"78
+[v parse_track_number@text text `*.5DCuc  1 a 1 18 ]
+"84
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strstr.c
+[v _strstr strstr `(*.5uc  1 e 2 0 ]
+{
+[v strstr@h h `*.5DCuc  1 a 1 wreg ]
+"7
+[v strstr@nl nl `ui  1 a 2 13 ]
+"4
+[v strstr@h h `*.5DCuc  1 a 1 wreg ]
+[v strstr@n n `*.25DCuc  1 p 2 9 ]
+"6
+[v strstr@h h `*.5DCuc  1 a 1 15 ]
+"15
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+{
+[v strncmp@_l _l `*.5DCuc  1 a 1 wreg ]
+"5
+[v strncmp@r r `*.25DCuc  1 a 2 6 ]
+[v strncmp@l l `*.5DCuc  1 a 1 8 ]
+"3
+[v strncmp@_l _l `*.5DCuc  1 a 1 wreg ]
+[v strncmp@_r _r `*.25DCuc  1 p 2 0 ]
+[v strncmp@n n `ui  1 p 2 2 ]
+"5
+[v strncmp@_l _l `*.5DCuc  1 a 1 5 ]
+"9
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.25DCuc  1 a 2 3 ]
+"5
+[v strlen@s s `*.25DCuc  1 p 2 0 ]
+"12
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strchr.c
+[v _strchr strchr `(*.5uc  1 e 2 0 ]
+{
+[v strchr@s s `*.5DCuc  1 a 1 wreg ]
+[v strchr@s s `*.5DCuc  1 a 1 wreg ]
+[v strchr@c c `i  1 p 2 0 ]
+[v strchr@s s `*.5DCuc  1 a 1 2 ]
+"11
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+{
+[v atoi@s s `*.5DCuc  1 a 1 wreg ]
+"6
+[v atoi@n n `i  1 a 2 12 ]
+[v atoi@neg neg `i  1 a 2 10 ]
+"4
+[v atoi@s s `*.5DCuc  1 a 1 wreg ]
+"6
+[v atoi@s s `*.5DCuc  1 a 1 14 ]
+"16
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+{
+[v isspace@c c `i  1 p 2 0 ]
+"8
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+{
+[v isdigit@c c `i  1 p 2 0 ]
+"8
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"52 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+[v _dfplayer_send dfplayer_send `(v  1 e 1 0 ]
+{
+[v dfplayer_send@command command `uc  1 a 1 wreg ]
+"57
+[v dfplayer_send@checksum checksum `us  1 a 2 11 ]
+"55
+[v dfplayer_send@low low `uc  1 a 1 14 ]
+"54
+[v dfplayer_send@high high `uc  1 a 1 13 ]
+"52
+[v dfplayer_send@command command `uc  1 a 1 wreg ]
+[v dfplayer_send@parameter parameter `us  1 p 2 2 ]
+"54
+[v dfplayer_send@command command `uc  1 a 1 10 ]
+"70
+} 0
+"42
+[v _uart_write uart_write `(v  1 e 1 0 ]
+{
+[v uart_write@data data `uc  1 a 1 wreg ]
+[v uart_write@data data `uc  1 a 1 wreg ]
+[v uart_write@data data `uc  1 a 1 1 ]
+"50
+} 0
+"235 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 p 1 0 ]
+"238
+} 0
+"198
+[v _EUSART1_IsTxReady EUSART1_IsTxReady `(a  1 e 1 0 ]
+{
+"201
+} 0
+"37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"45
+} 0
+"38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"136
+} 0
+"40 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"50
+} 0
+"105
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"107
+} 0
+"114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+{
+"129
+} 0
+"467
+[v _I2C1_InterruptsEnable I2C1_InterruptsEnable `T(v  1 s 1 I2C1_InterruptsEnable ]
+{
+"471
+} 0
+"211
+[v _I2C1_CallbackRegister I2C1_CallbackRegister `(v  1 e 1 0 ]
+{
+[v I2C1_CallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"217
+} 0
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
+{
+"113
+} 0
+"260
+[v _EUSART2_OverrunErrorCallbackRegister EUSART2_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART2_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"266
+} 0
+"252
+[v _EUSART2_FramingErrorCallbackRegister EUSART2_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART2_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"258
+} 0
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"113
+} 0
+"260
+[v _EUSART1_OverrunErrorCallbackRegister EUSART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART1_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"266
+} 0
+"252
+[v _EUSART1_FramingErrorCallbackRegister EUSART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART1_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"258
+} 0
+"37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+{
+"54
+} 0
+"401 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
+[v _PN532_ReadPassiveTarget PN532_ReadPassiveTarget `(a  1 e 1 0 ]
+{
+[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 wreg ]
+"423
+[v PN532_ReadPassiveTarget@i i `uc  1 a 1 55 ]
+"404
+[v PN532_ReadPassiveTarget@rsp rsp `[24]uc  1 a 24 27 ]
+"403
+[v PN532_ReadPassiveTarget@params params `[2]uc  1 a 2 51 ]
+"417
+[v PN532_ReadPassiveTarget@nfcidLen nfcidLen `uc  1 a 1 56 ]
+"405
+[v PN532_ReadPassiveTarget@rlen rlen `uc  1 a 1 54 ]
+"401
+[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 wreg ]
+[v PN532_ReadPassiveTarget@uidLen uidLen `*.5uc  1 p 1 25 ]
+"402
+[v PN532_ReadPassiveTarget@F8585 F8585 `[2]uc  1 s 2 F8585 ]
+[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 53 ]
+"429
+} 0
+"534
+[v _PN532_ReadNdefText PN532_ReadNdefText `(a  1 e 1 0 ]
+{
+[v PN532_ReadNdefText@out out `*.5uc  1 a 1 wreg ]
+"574
+[v PN532_ReadNdefText@len len `uc  1 a 1 60 ]
+"579
+[v PN532_ReadNdefText@valueStart valueStart `uc  1 a 1 58 ]
+"558
+[v PN532_ReadNdefText@type type `uc  1 a 1 57 ]
+"537
+[v PN532_ReadNdefText@have have `uc  1 a 1 62 ]
+"539
+[v PN532_ReadNdefText@pos pos `uc  1 a 1 61 ]
+"538
+[v PN532_ReadNdefText@page page `uc  1 a 1 59 ]
+"534
+[v PN532_ReadNdefText@out out `*.5uc  1 a 1 wreg ]
+[v PN532_ReadNdefText@outSize outSize `uc  1 p 1 51 ]
+"536
+[v PN532_ReadNdefText@buf buf `[64]uc  1 s 64 buf ]
+[v PN532_ReadNdefText@out out `*.5uc  1 a 1 56 ]
+"596
+} 0
+"453
+[v _parse_ndef_text_record parse_ndef_text_record `(a  1 s 1 parse_ndef_text_record ]
+{
+[v parse_ndef_text_record@rec rec `*.5DCuc  1 a 1 wreg ]
+"523
+[v parse_ndef_text_record@textLen textLen `us  1 a 2 33 ]
+"468
+[v parse_ndef_text_record@payloadLen payloadLen `us  1 a 2 31 ]
+"465
+[v parse_ndef_text_record@idx idx `uc  1 a 1 36 ]
+"517
+[v parse_ndef_text_record@langLen langLen `uc  1 a 1 30 ]
+"466
+[v parse_ndef_text_record@typeLen typeLen `uc  1 a 1 29 ]
+"460
+[v parse_ndef_text_record@header header `uc  1 a 1 28 ]
+"515
+[v parse_ndef_text_record@payload payload `*.5DCuc  1 a 1 27 ]
+"489
+[v parse_ndef_text_record@idLen idLen `uc  1 a 1 25 ]
+"516
+[v parse_ndef_text_record@status status `uc  1 a 1 24 ]
+"503
+[v parse_ndef_text_record@isText isText `a  1 a 1 23 ]
+"463
+[v parse_ndef_text_record@hasId hasId `a  1 a 1 22 ]
+"462
+[v parse_ndef_text_record@shortRecord shortRecord `a  1 a 1 21 ]
+"461
+[v parse_ndef_text_record@tnf tnf `uc  1 a 1 20 ]
+"453
+[v parse_ndef_text_record@rec rec `*.5DCuc  1 a 1 wreg ]
+[v parse_ndef_text_record@recLen recLen `uc  1 p 1 10 ]
+[v parse_ndef_text_record@out out `*.5uc  1 p 1 11 ]
+[v parse_ndef_text_record@outSize outSize `uc  1 p 1 12 ]
+"455
+[v parse_ndef_text_record@rec rec `*.5DCuc  1 a 1 35 ]
+"532
+} 0
+"433
+[v _ntag_read4pages ntag_read4pages `(a  1 s 1 ntag_read4pages ]
+{
+[v ntag_read4pages@page page `uc  1 a 1 wreg ]
+"436
+[v ntag_read4pages@rsp rsp `[20]uc  1 a 20 26 ]
+"435
+[v ntag_read4pages@params params `[3]uc  1 a 3 47 ]
+"437
+[v ntag_read4pages@rlen rlen `uc  1 a 1 50 ]
+"433
+[v ntag_read4pages@page page `uc  1 a 1 wreg ]
+[v ntag_read4pages@out16 out16 `*.5uc  1 p 1 25 ]
+"435
+[v ntag_read4pages@page page `uc  1 a 1 46 ]
+"450
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.5v  1 e 2 0 ]
+{
+[v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
+"8
+[v memcpy@s s `*.39DCuc  1 a 2 6 ]
+"7
+[v memcpy@d d `*.5uc  1 a 1 8 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 5 ]
+"4
+[v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
+[v memcpy@s1 s1 `*.39DCv  1 p 2 0 ]
+[v memcpy@n n `ui  1 p 2 2 ]
+"11
+[v memcpy@d1 d1 `*.5v  1 a 1 9 ]
+"18
+} 0
+"364 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
+[v _PN532_Init PN532_Init `(uc  1 e 1 0 ]
+{
+"369
+[v PN532_Init@rsp rsp `[16]uc  1 a 16 26 ]
+"384
+[v PN532_Init@rfcfg rfcfg `[4]uc  1 a 4 42 ]
+"375
+[v PN532_Init@samcfg samcfg `[3]uc  1 a 3 46 ]
+"370
+[v PN532_Init@rlen rlen `uc  1 a 1 49 ]
+[v PN532_Init@F8578 F8578 `[3]uc  1 s 3 F8578 ]
+"379
+[v PN532_Init@F8580 F8580 `[4]uc  1 s 4 F8580 ]
+"399
+} 0
+"138
+[v _pn532_transact pn532_transact `(a  1 s 1 pn532_transact ]
+{
+"139
+[v pn532_transact@cmd cmd `uc  1 a 1 wreg ]
+"350
+[v pn532_transact@i_135 i `uc  1 a 1 64 ]
+"312
+[v pn532_transact@i_131 i `uc  1 a 1 60 ]
+"184
+[v pn532_transact@i i `uc  1 a 1 62 ]
+"197
+[v pn532_transact@buffer buffer `[32]uc  1 a 32 0 ]
+"156
+[v pn532_transact@packet packet `[21]uc  1 a 21 32 ]
+"283
+[v pn532_transact@frameSize frameSize `us  1 a 2 53 ]
+"157
+[v pn532_transact@packetLen packetLen `uc  1 a 1 70 ]
+"231
+[v pn532_transact@start start `uc  1 a 1 69 ]
+"259
+[v pn532_transact@len len `uc  1 a 1 68 ]
+"290
+[v pn532_transact@dataStart dataStart `uc  1 a 1 67 ]
+"199
+[v pn532_transact@count count `uc  1 a 1 66 ]
+"177
+[v pn532_transact@sum sum `uc  1 a 1 65 ]
+"342
+[v pn532_transact@paramOutLen paramOutLen `uc  1 a 1 63 ]
+"310
+[v pn532_transact@responseSum responseSum `uc  1 a 1 59 ]
+"318
+[v pn532_transact@dcsIndex dcsIndex `uc  1 a 1 58 ]
+"159
+[v pn532_transact@dataLen dataLen `uc  1 a 1 57 ]
+"330
+[v pn532_transact@postambleIndex postambleIndex `uc  1 a 1 56 ]
+"260
+[v pn532_transact@lcs lcs `uc  1 a 1 55 ]
+"139
+[v pn532_transact@cmd cmd `uc  1 a 1 wreg ]
+"140
+[v pn532_transact@params params `*.4DCuc  1 p 1 15 ]
+"141
+[v pn532_transact@paramLen paramLen `uc  1 p 1 16 ]
+"142
+[v pn532_transact@withWakeup withWakeup `a  1 p 1 17 ]
+"143
+[v pn532_transact@out out `*.4uc  1 p 1 18 ]
+"144
+[v pn532_transact@outMax outMax `uc  1 p 1 19 ]
+"145
+[v pn532_transact@outLen outLen `*.4uc  1 p 1 20 ]
+"211
+[v pn532_transact@expectedAck expectedAck `DC[6]uc  1 s 6 expectedAck ]
+"147
+[v pn532_transact@cmd cmd `uc  1 a 1 61 ]
+"358
+} 0
+"62
+[v _pn532_send_and_capture pn532_send_and_capture `(uc  1 s 1 pn532_send_and_capture ]
+{
+"63
+[v pn532_send_and_capture@packet packet `*.4DCuc  1 a 1 wreg ]
+"88
+[v pn532_send_and_capture@i i `uc  1 a 1 13 ]
+"70
+[v pn532_send_and_capture@idleCounter idleCounter `us  1 a 2 11 ]
+"71
+[v pn532_send_and_capture@firstByteCounter firstByteCounter `us  1 a 2 8 ]
+"69
+[v pn532_send_and_capture@count count `uc  1 a 1 14 ]
+"72
+[v pn532_send_and_capture@receivedAnything receivedAnything `a  1 a 1 10 ]
+"63
+[v pn532_send_and_capture@packet packet `*.4DCuc  1 a 1 wreg ]
+"64
+[v pn532_send_and_capture@packetLen packetLen `uc  1 p 1 1 ]
+"65
+[v pn532_send_and_capture@buffer buffer `*.4uc  1 p 1 2 ]
+"66
+[v pn532_send_and_capture@bufferSize bufferSize `uc  1 p 1 3 ]
+"67
+[v pn532_send_and_capture@firstByteTimeoutMs firstByteTimeoutMs `us  1 p 2 4 ]
+"69
+[v pn532_send_and_capture@packet packet `*.4DCuc  1 a 1 7 ]
+"136
+} 0
+"235 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
+{
+[v EUSART2_Write@txData txData `uc  1 p 1 0 ]
+"238
+} 0
+"213
+[v _EUSART2_Read EUSART2_Read `(uc  1 e 1 0 ]
+{
+"233
+} 0
+"245 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_DefaultOverrunErrorCallback EUSART1_DefaultOverrunErrorCallback `(v  1 s 1 EUSART1_DefaultOverrunErrorCallback ]
+{
+"250
+} 0
+"245 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _EUSART2_DefaultOverrunErrorCallback EUSART2_DefaultOverrunErrorCallback `(v  1 s 1 EUSART2_DefaultOverrunErrorCallback ]
+{
+"250
+} 0
+"240 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_DefaultFramingErrorCallback EUSART1_DefaultFramingErrorCallback `(v  1 s 1 EUSART1_DefaultFramingErrorCallback ]
+{
+"243
+} 0
+"240 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart2.c
+[v _EUSART2_DefaultFramingErrorCallback EUSART2_DefaultFramingErrorCallback `(v  1 s 1 EUSART2_DefaultFramingErrorCallback ]
+{
+"243
+} 0
+"198
+[v _EUSART2_IsTxReady EUSART2_IsTxReady `(a  1 e 1 0 ]
+{
+"201
+} 0
+"203
+[v _EUSART2_IsTxDone EUSART2_IsTxDone `(a  1 e 1 0 ]
+{
+"206
+} 0
+"193
+[v _EUSART2_IsRxReady EUSART2_IsRxReady `(a  1 e 1 0 ]
+{
+"196
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcmp.c
+[v _memcmp memcmp `(i  1 e 2 0 ]
+{
+"5
+[v memcmp@r r `*.26DCuc  1 a 2 9 ]
+[v memcmp@l l `*.39DCuc  1 a 2 7 ]
+"3
+[v memcmp@vl vl `*.39DCv  1 p 2 0 ]
+[v memcmp@vr vr `*.26DCv  1 p 2 2 ]
+[v memcmp@n n `ui  1 p 2 4 ]
+"8
+} 0
+"59 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"85
+} 0
+"138 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"140
+} 0
+"219 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
+[v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
+{
+"222
+} 0
+"256
+[v _I2C1_EventHandler I2C1_EventHandler `(v  1 s 1 I2C1_EventHandler ]
+{
+"270
+} 0
+"447
+[v _I2C1_IsNack I2C1_IsNack `(a  1 s 1 I2C1_IsNack ]
+{
+"450
+} 0
+"452
+[v _I2C1_IsData I2C1_IsData `(a  1 s 1 I2C1_IsData ]
+{
+"455
+} 0
+"457
+[v _I2C1_IsAddr I2C1_IsAddr `(a  1 s 1 I2C1_IsAddr ]
+{
+"460
+} 0
+"224
+[v _I2C1_ERROR_ISR I2C1_ERROR_ISR `(v  1 e 1 0 ]
+{
+"227
+} 0
+"272
+[v _I2C1_ErrorEventHandler I2C1_ErrorEventHandler `(v  1 s 1 I2C1_ErrorEventHandler ]
+{
+"279
+} 0
+"384
+[v _I2C1_EVENT_RESET I2C1_EVENT_RESET `(E8072  1 s 1 I2C1_EVENT_RESET ]
+{
+"389
+} 0
+"377
+[v _I2C1_EVENT_STOP I2C1_EVENT_STOP `(E8072  1 s 1 I2C1_EVENT_STOP ]
+{
+"382
+} 0
+"370
+[v _I2C1_EVENT_ERROR I2C1_EVENT_ERROR `(E8072  1 s 1 I2C1_EVENT_ERROR ]
+{
+"372
+[v I2C1_EVENT_ERROR@retEventState retEventState `E8072  1 a 1 0 ]
+"375
+} 0
+"363
+[v _I2C1_EVENT_NACK I2C1_EVENT_NACK `(E8072  1 s 1 I2C1_EVENT_NACK ]
+{
+"365
+[v I2C1_EVENT_NACK@retEventState retEventState `E8072  1 a 1 0 ]
+"368
+} 0
+"331
+[v _I2C1_EVENT_RX I2C1_EVENT_RX `(E8072  1 s 1 I2C1_EVENT_RX ]
+{
+"333
+[v I2C1_EVENT_RX@retEventState retEventState `E8072  1 a 1 1 ]
+"361
+} 0
+"299
+[v _I2C1_EVENT_SEND_WR_ADDR I2C1_EVENT_SEND_WR_ADDR `(E8072  1 s 1 I2C1_EVENT_SEND_WR_ADDR ]
+{
+"303
+} 0
+"293
+[v _I2C1_EVENT_SEND_RD_ADDR I2C1_EVENT_SEND_RD_ADDR `(E8072  1 s 1 I2C1_EVENT_SEND_RD_ADDR ]
+{
+"297
+} 0
+"287
+[v _I2C1_EVENT_IDLE I2C1_EVENT_IDLE `(E8072  1 s 1 I2C1_EVENT_IDLE ]
+{
+"291
+} 0
+"305
+[v _I2C1_EVENT_TX I2C1_EVENT_TX `(E8072  1 s 1 I2C1_EVENT_TX ]
+{
+"307
+[v I2C1_EVENT_TX@retEventState retEventState `E8072  1 a 1 3 ]
+"329
+} 0
+"415
+[v _I2C1_RestartEnable I2C1_RestartEnable `T(v  1 s 1 I2C1_RestartEnable ]
+{
+"418
+} 0
+"399
+[v _I2C1_DataTransmit I2C1_DataTransmit `(v  1 s 1 I2C1_DataTransmit ]
+{
+[v I2C1_DataTransmit@data data `uc  1 a 1 wreg ]
+[v I2C1_DataTransmit@data data `uc  1 a 1 wreg ]
+"401
+[v I2C1_DataTransmit@data data `uc  1 a 1 0 ]
+"402
+} 0
+"420
+[v _I2C1_RestartDisable I2C1_RestartDisable `T(v  1 s 1 I2C1_RestartDisable ]
+{
+"423
+} 0
+"410
+[v _I2C1_ReceiveEnable I2C1_ReceiveEnable `T(v  1 s 1 I2C1_ReceiveEnable ]
+{
+"413
+} 0
+"441
+[v _I2C1_NackSend I2C1_NackSend `T(v  1 s 1 I2C1_NackSend ]
+{
+"445
+} 0
+"462
+[v _I2C1_IsRxBufFull I2C1_IsRxBufFull `(a  1 s 1 I2C1_IsRxBufFull ]
+{
+"465
+} 0
+"394
+[v _I2C1_DataReceive I2C1_DataReceive `(uc  1 s 1 I2C1_DataReceive ]
+{
+"397
+} 0
+"435
+[v _I2C1_AckSend I2C1_AckSend `T(v  1 s 1 I2C1_AckSend ]
+{
+"439
+} 0
+"430
+[v _I2C1_StopSend I2C1_StopSend `T(v  1 s 1 I2C1_StopSend ]
+{
+"433
+} 0
+"244
+[v _I2C1_Close I2C1_Close `(v  1 s 1 I2C1_Close ]
+{
+"254
+} 0
+"489
+[v _I2C1_StatusFlagsClear I2C1_StatusFlagsClear `T(v  1 s 1 I2C1_StatusFlagsClear ]
+{
+"493
+} 0
+"479
+[v _I2C1_InterruptClear I2C1_InterruptClear `T(v  1 s 1 I2C1_InterruptClear ]
+{
+"482
+} 0
+"484
+[v _I2C1_ErrorInterruptClear I2C1_ErrorInterruptClear `T(v  1 s 1 I2C1_ErrorInterruptClear ]
+{
+"487
+} 0
+"404
+[v _I2C1_BusReset I2C1_BusReset `T(v  1 s 1 I2C1_BusReset ]
+{
+"408
+} 0
+"281
+[v _I2C1_DefaultCallback I2C1_DefaultCallback `(v  1 s 1 I2C1_DefaultCallback ]
+{
+"284
+} 0
