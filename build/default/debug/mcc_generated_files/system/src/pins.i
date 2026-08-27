@@ -13309,7 +13309,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 210 "mcc_generated_files/system/src/../pins.h"
+# 232 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13319,9 +13319,54 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void POWER_ISR(void);
+# 258 "mcc_generated_files/system/src/../pins.h"
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+# 269 "mcc_generated_files/system/src/../pins.h"
+extern void (*POWER_InterruptHandler)(void);
+# 280 "mcc_generated_files/system/src/../pins.h"
+void POWER_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_A_ISR(void);
+# 298 "mcc_generated_files/system/src/../pins.h"
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+# 309 "mcc_generated_files/system/src/../pins.h"
+extern void (*VOL_A_InterruptHandler)(void);
+# 320 "mcc_generated_files/system/src/../pins.h"
+void VOL_A_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_B_ISR(void);
+# 338 "mcc_generated_files/system/src/../pins.h"
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "mcc_generated_files/system/src/../pins.h"
+extern void (*VOL_B_InterruptHandler)(void);
+# 360 "mcc_generated_files/system/src/../pins.h"
+void VOL_B_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
 
 
+void (*POWER_InterruptHandler)(void);
+void (*VOL_A_InterruptHandler)(void);
+void (*VOL_B_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -13330,7 +13375,7 @@ void PIN_MANAGER_Initialize(void)
 
     LATA = 0x0;
     LATB = 0x0;
-    LATC = 0x18;
+    LATC = 0x0;
     LATD = 0x0;
     LATE = 0x0;
 
@@ -13346,7 +13391,7 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELA = 0xFD;
+    ANSELA = 0xF5;
     ANSELB = 0xCF;
     ANSELC = 0xE7;
     ANSELD = 0xFB;
@@ -13395,27 +13440,133 @@ void PIN_MANAGER_Initialize(void)
     RB3PPS = 0x11;
     RD1PPS = 0x11;
     RB4PPS = 0x0E;
-    SSP1CLKPPS = 0x13;
-    RC3PPS = 0x15;
-    SSP1DATPPS = 0x14;
-    RC4PPS = 0x16;
-# 122 "mcc_generated_files/system/src/pins.c"
+# 121 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
-    IOCAN = 0x0;
+    IOCAN = 0x8;
     IOCAF = 0x0;
     IOCBP = 0x0;
     IOCBN = 0x0;
     IOCBF = 0x0;
-    IOCCP = 0x0;
-    IOCCN = 0x0;
+    IOCCP = 0x18;
+    IOCCN = 0x18;
     IOCCF = 0x0;
     IOCEP = 0x0;
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    POWER_SetInterruptHandler(POWER_DefaultInterruptHandler);
+    VOL_A_SetInterruptHandler(VOL_A_DefaultInterruptHandler);
+    VOL_B_SetInterruptHandler(VOL_B_DefaultInterruptHandler);
 
+
+    PIE0bits.IOCIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)
 {
+
+    if(IOCAFbits.IOCAF3 == 1)
+    {
+        POWER_ISR();
+    }
+
+    if(IOCCFbits.IOCCF3 == 1)
+    {
+        VOL_A_ISR();
+    }
+
+    if(IOCCFbits.IOCCF4 == 1)
+    {
+        VOL_B_ISR();
+    }
+}
+
+
+
+
+void POWER_ISR(void) {
+
+
+
+
+    if(POWER_InterruptHandler)
+    {
+        POWER_InterruptHandler();
+    }
+    IOCAFbits.IOCAF3 = 0;
+}
+
+
+
+
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void)){
+    POWER_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void POWER_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void VOL_A_ISR(void) {
+
+
+
+
+    if(VOL_A_InterruptHandler)
+    {
+        VOL_A_InterruptHandler();
+    }
+    IOCCFbits.IOCCF3 = 0;
+}
+
+
+
+
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void)){
+    VOL_A_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void VOL_A_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void VOL_B_ISR(void) {
+
+
+
+
+    if(VOL_B_InterruptHandler)
+    {
+        VOL_B_InterruptHandler();
+    }
+    IOCCFbits.IOCCF4 = 0;
+}
+
+
+
+
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void)){
+    VOL_B_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void VOL_B_DefaultInterruptHandler(void){
+
+
 }

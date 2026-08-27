@@ -1,6 +1,7 @@
-build/default/production/drivers/pn532.p1:  \
-drivers/pn532.c  \
-drivers/pn532.h  \
+build/default/production/drivers/rotary_encoder.p1:  \
+drivers/rotary_encoder.c  \
+drivers/rotary_encoder.h  \
+drivers/dfplayer.h  \
 drivers/../mcc_generated_files/system/system.h  \
 drivers/../mcc_generated_files/system/config_bits.h  \
 drivers/../mcc_generated_files/system/../system/clock.h  \

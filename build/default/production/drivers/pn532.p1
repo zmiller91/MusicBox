@@ -1197,26 +1197,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1095  ]
-[e :U 1092 ]
+[e $U 1092  ]
+[e :U 1089 ]
 "34
 [; ;drivers/pn532.c: 34:     {
 {
 "35
 [; ;drivers/pn532.c: 35:         while (!EUSART2_IsTxReady())
-[e $U 1096  ]
-[e :U 1097 ]
+[e $U 1093  ]
+[e :U 1094 ]
 "36
 [; ;drivers/pn532.c: 36:         {
 {
 "37
 [; ;drivers/pn532.c: 37:         }
 }
-[e :U 1096 ]
+[e :U 1093 ]
 "35
 [; ;drivers/pn532.c: 35:         while (!EUSART2_IsTxReady())
-[e $ ! != -> ( _EUSART2_IsTxReady ..  `i -> 0 `i 1097  ]
-[e :U 1098 ]
+[e $ ! != -> ( _EUSART2_IsTxReady ..  `i -> 0 `i 1094  ]
+[e :U 1095 ]
 "38
 [; ;drivers/pn532.c: 38:         EUSART2_Write(data[i]);
 [e ( _EUSART2_Write (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
@@ -1224,28 +1224,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 39:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1095 ]
-[e $ < -> _i `i -> _len `i 1092  ]
-[e :U 1093 ]
+[e :U 1092 ]
+[e $ < -> _i `i -> _len `i 1089  ]
+[e :U 1090 ]
 }
 "40
 [; ;drivers/pn532.c: 40:     while (!EUSART2_IsTxDone())
-[e $U 1099  ]
-[e :U 1100 ]
+[e $U 1096  ]
+[e :U 1097 ]
 "41
 [; ;drivers/pn532.c: 41:     {
 {
 "42
 [; ;drivers/pn532.c: 42:     }
 }
-[e :U 1099 ]
+[e :U 1096 ]
 "40
 [; ;drivers/pn532.c: 40:     while (!EUSART2_IsTxDone())
-[e $ ! != -> ( _EUSART2_IsTxDone ..  `i -> 0 `i 1100  ]
-[e :U 1101 ]
+[e $ ! != -> ( _EUSART2_IsTxDone ..  `i -> 0 `i 1097  ]
+[e :U 1098 ]
 "43
 [; ;drivers/pn532.c: 43: }
-[e :UE 1091 ]
+[e :UE 1088 ]
 }
 "51
 [; ;drivers/pn532.c: 51: static void pn532_uart_clear_overrun(void)
@@ -1257,7 +1257,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "53
 [; ;drivers/pn532.c: 53:     if (RC2STAbits.OERR)
-[e $ ! != -> . . _RC2STAbits 0 1 `i -> 0 `i 1103  ]
+[e $ ! != -> . . _RC2STAbits 0 1 `i -> 0 `i 1100  ]
 "54
 [; ;drivers/pn532.c: 54:     {
 {
@@ -1270,10 +1270,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;drivers/pn532.c: 57:     }
 }
-[e :U 1103 ]
+[e :U 1100 ]
 "58
 [; ;drivers/pn532.c: 58: }
-[e :UE 1102 ]
+[e :UE 1099 ]
 }
 "62
 [; ;drivers/pn532.c: 62: static uint8_t pn532_send_and_capture(
@@ -1318,7 +1318,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _receivedAnything -> -> 0 `i `a ]
 "75
 [; ;drivers/pn532.c: 75:     if (RC2STAbits.OERR)
-[e $ ! != -> . . _RC2STAbits 0 1 `i -> 0 `i 1105  ]
+[e $ ! != -> . . _RC2STAbits 0 1 `i -> 0 `i 1102  ]
 "76
 [; ;drivers/pn532.c: 76:     {
 {
@@ -1331,11 +1331,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;drivers/pn532.c: 79:     }
 }
-[e :U 1105 ]
+[e :U 1102 ]
 "82
 [; ;drivers/pn532.c: 82:     while (EUSART2_IsRxReady())
-[e $U 1106  ]
-[e :U 1107 ]
+[e $U 1103  ]
+[e :U 1104 ]
 "83
 [; ;drivers/pn532.c: 83:     {
 {
@@ -1345,36 +1345,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "85
 [; ;drivers/pn532.c: 85:     }
 }
-[e :U 1106 ]
+[e :U 1103 ]
 "82
 [; ;drivers/pn532.c: 82:     while (EUSART2_IsRxReady())
-[e $ != -> ( _EUSART2_IsRxReady ..  `i -> 0 `i 1107  ]
-[e :U 1108 ]
+[e $ != -> ( _EUSART2_IsRxReady ..  `i -> 0 `i 1104  ]
+[e :U 1105 ]
 "88
 [; ;drivers/pn532.c: 88:     for (uint8_t i = 0; i < packetLen; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1112  ]
-[e :U 1109 ]
+[e $U 1109  ]
+[e :U 1106 ]
 "89
 [; ;drivers/pn532.c: 89:     {
 {
 "90
 [; ;drivers/pn532.c: 90:         while (!EUSART2_IsTxReady())
-[e $U 1113  ]
-[e :U 1114 ]
+[e $U 1110  ]
+[e :U 1111 ]
 "91
 [; ;drivers/pn532.c: 91:         {
 {
 "92
 [; ;drivers/pn532.c: 92:         }
 }
-[e :U 1113 ]
+[e :U 1110 ]
 "90
 [; ;drivers/pn532.c: 90:         while (!EUSART2_IsTxReady())
-[e $ ! != -> ( _EUSART2_IsTxReady ..  `i -> 0 `i 1114  ]
-[e :U 1115 ]
+[e $ ! != -> ( _EUSART2_IsTxReady ..  `i -> 0 `i 1111  ]
+[e :U 1112 ]
 "94
 [; ;drivers/pn532.c: 94:         EUSART2_Write(packet[i]);
 [e ( _EUSART2_Write (1 *U + _packet * -> _i `ux -> -> # *U _packet `ui `ux ]
@@ -1382,35 +1382,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 95:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1112 ]
-[e $ < -> _i `i -> _packetLen `i 1109  ]
-[e :U 1110 ]
+[e :U 1109 ]
+[e $ < -> _i `i -> _packetLen `i 1106  ]
+[e :U 1107 ]
 }
 "97
 [; ;drivers/pn532.c: 97:     while (!EUSART2_IsTxDone())
-[e $U 1116  ]
-[e :U 1117 ]
+[e $U 1113  ]
+[e :U 1114 ]
 "98
 [; ;drivers/pn532.c: 98:     {
 {
 "99
 [; ;drivers/pn532.c: 99:     }
 }
-[e :U 1116 ]
+[e :U 1113 ]
 "97
 [; ;drivers/pn532.c: 97:     while (!EUSART2_IsTxDone())
-[e $ ! != -> ( _EUSART2_IsTxDone ..  `i -> 0 `i 1117  ]
-[e :U 1118 ]
+[e $ ! != -> ( _EUSART2_IsTxDone ..  `i -> 0 `i 1114  ]
+[e :U 1115 ]
 "102
 [; ;drivers/pn532.c: 102:     while (count < bufferSize)
-[e $U 1119  ]
-[e :U 1120 ]
+[e $U 1116  ]
+[e :U 1117 ]
 "103
 [; ;drivers/pn532.c: 103:     {
 {
 "104
 [; ;drivers/pn532.c: 104:         if (EUSART2_IsRxReady())
-[e $ ! != -> ( _EUSART2_IsRxReady ..  `i -> 0 `i 1122  ]
+[e $ ! != -> ( _EUSART2_IsRxReady ..  `i -> 0 `i 1119  ]
 "105
 [; ;drivers/pn532.c: 105:         {
 {
@@ -1426,10 +1426,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "109
 [; ;drivers/pn532.c: 109:         }
 }
-[e $U 1123  ]
+[e $U 1120  ]
 "110
 [; ;drivers/pn532.c: 110:         else
-[e :U 1122 ]
+[e :U 1119 ]
 "111
 [; ;drivers/pn532.c: 111:         {
 {
@@ -1438,7 +1438,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "114
 [; ;drivers/pn532.c: 114:             if (!receivedAnything)
-[e $ ! ! != -> _receivedAnything `i -> 0 `i 1124  ]
+[e $ ! ! != -> _receivedAnything `i -> 0 `i 1121  ]
 "115
 [; ;drivers/pn532.c: 115:             {
 {
@@ -1447,24 +1447,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _firstByteCounter -> -> 1 `i `us ]
 "118
 [; ;drivers/pn532.c: 118:                 if (firstByteCounter >= 10000)
-[e $ ! >= -> _firstByteCounter `ui -> -> 10000 `i `ui 1125  ]
+[e $ ! >= -> _firstByteCounter `ui -> -> 10000 `i `ui 1122  ]
 "119
 [; ;drivers/pn532.c: 119:                 {
 {
 "120
 [; ;drivers/pn532.c: 120:                     break;
-[e $U 1121  ]
+[e $U 1118  ]
 "121
 [; ;drivers/pn532.c: 121:                 }
 }
-[e :U 1125 ]
+[e :U 1122 ]
 "122
 [; ;drivers/pn532.c: 122:             }
 }
-[e $U 1126  ]
+[e $U 1123  ]
 "123
 [; ;drivers/pn532.c: 123:             else
-[e :U 1124 ]
+[e :U 1121 ]
 "124
 [; ;drivers/pn532.c: 124:             {
 {
@@ -1473,40 +1473,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _idleCounter -> -> 1 `i `us ]
 "127
 [; ;drivers/pn532.c: 127:                 if (idleCounter >= 10000)
-[e $ ! >= -> _idleCounter `ui -> -> 10000 `i `ui 1127  ]
+[e $ ! >= -> _idleCounter `ui -> -> 10000 `i `ui 1124  ]
 "128
 [; ;drivers/pn532.c: 128:                 {
 {
 "129
 [; ;drivers/pn532.c: 129:                     break;
-[e $U 1121  ]
+[e $U 1118  ]
 "130
 [; ;drivers/pn532.c: 130:                 }
 }
-[e :U 1127 ]
+[e :U 1124 ]
 "131
 [; ;drivers/pn532.c: 131:             }
 }
-[e :U 1126 ]
+[e :U 1123 ]
 "132
 [; ;drivers/pn532.c: 132:         }
 }
-[e :U 1123 ]
+[e :U 1120 ]
 "133
 [; ;drivers/pn532.c: 133:     }
 }
-[e :U 1119 ]
+[e :U 1116 ]
 "102
 [; ;drivers/pn532.c: 102:     while (count < bufferSize)
-[e $ < -> _count `i -> _bufferSize `i 1120  ]
-[e :U 1121 ]
+[e $ < -> _count `i -> _bufferSize `i 1117  ]
+[e :U 1118 ]
 "135
 [; ;drivers/pn532.c: 135:     return count;
 [e ) _count ]
-[e $UE 1104  ]
+[e $UE 1101  ]
 "136
 [; ;drivers/pn532.c: 136: }
-[e :UE 1104 ]
+[e :UE 1101 ]
 }
 "138
 [; ;drivers/pn532.c: 138: static _Bool pn532_transact(
@@ -1541,18 +1541,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "147
 [; ;drivers/pn532.c: 147:     if (paramLen > 7)
-[e $ ! > -> _paramLen `i -> 7 `i 1129  ]
+[e $ ! > -> _paramLen `i -> 7 `i 1126  ]
 "148
 [; ;drivers/pn532.c: 148:     {
 {
 "149
 [; ;drivers/pn532.c: 149:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "150
 [; ;drivers/pn532.c: 150:     }
 }
-[e :U 1129 ]
+[e :U 1126 ]
 "156
 [; ;drivers/pn532.c: 156:     uint8_t packet[21];
 [v _packet `uc ~T0 @X0 -> 21 `i a ]
@@ -1566,7 +1566,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _dataLen -> + -> _paramLen `i -> 2 `i `uc ]
 "161
 [; ;drivers/pn532.c: 161:     if (withWakeup)
-[e $ ! != -> _withWakeup `i -> 0 `i 1130  ]
+[e $ ! != -> _withWakeup `i -> 0 `i 1127  ]
 "162
 [; ;drivers/pn532.c: 162:     {
 {
@@ -1588,7 +1588,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "168
 [; ;drivers/pn532.c: 168:     }
 }
-[e :U 1130 ]
+[e :U 1127 ]
 "170
 [; ;drivers/pn532.c: 170:     packet[packetLen++] = 0x00;
 [e = *U + &U _packet * -> ++ _packetLen -> -> 1 `i `uc `ux -> -> # *U &U _packet `ui `ux -> -> 0 `i `uc ]
@@ -1622,8 +1622,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1134  ]
-[e :U 1131 ]
+[e $U 1131  ]
+[e :U 1128 ]
 "185
 [; ;drivers/pn532.c: 185:     {
 {
@@ -1637,9 +1637,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 188:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1134 ]
-[e $ < -> _i `i -> _paramLen `i 1131  ]
-[e :U 1132 ]
+[e :U 1131 ]
+[e $ < -> _i `i -> _paramLen `i 1128  ]
+[e :U 1129 ]
 }
 "190
 [; ;drivers/pn532.c: 190:     packet[packetLen++] = (uint8_t)(0 - sum);
@@ -1656,8 +1656,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _count ( _pn532_send_and_capture (4 , , , , -> &U _packet `*Cuc _packetLen &U _buffer -> -> # _buffer `ui `uc -> -> 1000 `i `us ]
 "211
 [; ;drivers/pn532.c: 211:     static const uint8_t expectedAck[6] =
-[v F8563 `Cuc ~T0 @X0 -> 6 `i s expectedAck ]
-[i F8563
+[v F8494 `Cuc ~T0 @X0 -> 6 `i s expectedAck ]
+[i F8494
 :U ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -1669,95 +1669,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "217
 [; ;drivers/pn532.c: 217:     if (count < 6)
-[e $ ! < -> _count `i -> 6 `i 1135  ]
+[e $ ! < -> _count `i -> 6 `i 1132  ]
 "218
 [; ;drivers/pn532.c: 218:     {
 {
 "219
 [; ;drivers/pn532.c: 219:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "220
 [; ;drivers/pn532.c: 220:     }
 }
-[e :U 1135 ]
+[e :U 1132 ]
 "222
 [; ;drivers/pn532.c: 222:     if (memcmp(buffer, expectedAck, 6) != 0)
-[e $ ! != ( _memcmp (3 , , -> &U _buffer `*Cv -> &U F8563 `*Cv -> -> 6 `i `ui -> 0 `i 1136  ]
+[e $ ! != ( _memcmp (3 , , -> &U _buffer `*Cv -> &U F8494 `*Cv -> -> 6 `i `ui -> 0 `i 1133  ]
 "223
 [; ;drivers/pn532.c: 223:     {
 {
 "224
 [; ;drivers/pn532.c: 224:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "225
 [; ;drivers/pn532.c: 225:     }
 }
-[e :U 1136 ]
+[e :U 1133 ]
 "231
 [; ;drivers/pn532.c: 231:     uint8_t start = 6;
 [v _start `uc ~T0 @X0 1 a ]
 [e = _start -> -> 6 `i `uc ]
 "233
 [; ;drivers/pn532.c: 233:     while ((uint8_t)(start + 2) < count)
-[e $U 1137  ]
-[e :U 1138 ]
+[e $U 1134  ]
+[e :U 1135 ]
 "234
 [; ;drivers/pn532.c: 234:     {
 {
 "235
 [; ;drivers/pn532.c: 235:         if (buffer[start] == 0x00 &&
-[e $ ! && && == -> *U + &U _buffer * -> _start `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i == -> *U + &U _buffer * -> -> + -> _start `i -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i == -> *U + &U _buffer * -> -> + -> _start `i -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 255 `i 1140  ]
+[e $ ! && && == -> *U + &U _buffer * -> _start `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i == -> *U + &U _buffer * -> -> + -> _start `i -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i == -> *U + &U _buffer * -> -> + -> _start `i -> 2 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> 255 `i 1137  ]
 "238
 [; ;drivers/pn532.c: 238:         {
 {
 "239
 [; ;drivers/pn532.c: 239:             break;
-[e $U 1139  ]
+[e $U 1136  ]
 "240
 [; ;drivers/pn532.c: 240:         }
 }
-[e :U 1140 ]
+[e :U 1137 ]
 "242
 [; ;drivers/pn532.c: 242:         start++;
 [e ++ _start -> -> 1 `i `uc ]
 "243
 [; ;drivers/pn532.c: 243:     }
 }
-[e :U 1137 ]
+[e :U 1134 ]
 "233
 [; ;drivers/pn532.c: 233:     while ((uint8_t)(start + 2) < count)
-[e $ < -> -> + -> _start `i -> 2 `i `uc `i -> _count `i 1138  ]
-[e :U 1139 ]
+[e $ < -> -> + -> _start `i -> 2 `i `uc `i -> _count `i 1135  ]
+[e :U 1136 ]
 "245
 [; ;drivers/pn532.c: 245:     if ((uint8_t)(start + 2) >= count)
-[e $ ! >= -> -> + -> _start `i -> 2 `i `uc `i -> _count `i 1141  ]
+[e $ ! >= -> -> + -> _start `i -> 2 `i `uc `i -> _count `i 1138  ]
 "246
 [; ;drivers/pn532.c: 246:     {
 {
 "247
 [; ;drivers/pn532.c: 247:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "248
 [; ;drivers/pn532.c: 248:     }
 }
-[e :U 1141 ]
+[e :U 1138 ]
 "254
 [; ;drivers/pn532.c: 254:     if ((uint8_t)(start + 5) > count)
-[e $ ! > -> -> + -> _start `i -> 5 `i `uc `i -> _count `i 1142  ]
+[e $ ! > -> -> + -> _start `i -> 5 `i `uc `i -> _count `i 1139  ]
 "255
 [; ;drivers/pn532.c: 255:     {
 {
 "256
 [; ;drivers/pn532.c: 256:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "257
 [; ;drivers/pn532.c: 257:     }
 }
-[e :U 1142 ]
+[e :U 1139 ]
 "259
 [; ;drivers/pn532.c: 259:     uint8_t len = buffer[start + 3];
 [v _len `uc ~T0 @X0 1 a ]
@@ -1768,82 +1768,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lcs *U + &U _buffer * -> -> + -> _start `i -> 4 `i `ui `ux -> -> # *U &U _buffer `ui `ux ]
 "262
 [; ;drivers/pn532.c: 262:     if ((uint8_t)(len + lcs) != 0)
-[e $ ! != -> -> + -> _len `i -> _lcs `i `uc `i -> 0 `i 1143  ]
+[e $ ! != -> -> + -> _len `i -> _lcs `i `uc `i -> 0 `i 1140  ]
 "263
 [; ;drivers/pn532.c: 263:     {
 {
 "264
 [; ;drivers/pn532.c: 264:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "265
 [; ;drivers/pn532.c: 265:     }
 }
-[e :U 1143 ]
+[e :U 1140 ]
 "267
 [; ;drivers/pn532.c: 267:     if (len < 2)
-[e $ ! < -> _len `i -> 2 `i 1144  ]
+[e $ ! < -> _len `i -> 2 `i 1141  ]
 "268
 [; ;drivers/pn532.c: 268:     {
 {
 "269
 [; ;drivers/pn532.c: 269:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "270
 [; ;drivers/pn532.c: 270:     }
 }
-[e :U 1144 ]
+[e :U 1141 ]
 "283
 [; ;drivers/pn532.c: 283:     uint16_t frameSize = (uint16_t)len + 7;
 [v _frameSize `us ~T0 @X0 1 a ]
 [e = _frameSize -> + -> -> _len `us `ui -> -> 7 `i `ui `us ]
 "285
 [; ;drivers/pn532.c: 285:     if ((uint16_t)start + frameSize > count)
-[e $ ! > + -> -> _start `us `ui -> _frameSize `ui -> _count `ui 1145  ]
+[e $ ! > + -> -> _start `us `ui -> _frameSize `ui -> _count `ui 1142  ]
 "286
 [; ;drivers/pn532.c: 286:     {
 {
 "287
 [; ;drivers/pn532.c: 287:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "288
 [; ;drivers/pn532.c: 288:     }
 }
-[e :U 1145 ]
+[e :U 1142 ]
 "290
 [; ;drivers/pn532.c: 290:     uint8_t dataStart = (uint8_t)(start + 5);
 [v _dataStart `uc ~T0 @X0 1 a ]
 [e = _dataStart -> + -> _start `i -> 5 `i `uc ]
 "296
 [; ;drivers/pn532.c: 296:     if (buffer[dataStart] != 0xD5)
-[e $ ! != -> *U + &U _buffer * -> _dataStart `ux -> -> # *U &U _buffer `ui `ux `i -> 213 `i 1146  ]
+[e $ ! != -> *U + &U _buffer * -> _dataStart `ux -> -> # *U &U _buffer `ui `ux `i -> 213 `i 1143  ]
 "297
 [; ;drivers/pn532.c: 297:     {
 {
 "298
 [; ;drivers/pn532.c: 298:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "299
 [; ;drivers/pn532.c: 299:     }
 }
-[e :U 1146 ]
+[e :U 1143 ]
 "301
 [; ;drivers/pn532.c: 301:     if (buffer[dataStart + 1] != (uint8_t)(cmd + 1))
-[e $ ! != -> *U + &U _buffer * -> -> + -> _dataStart `i -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> -> + -> _cmd `i -> 1 `i `uc `i 1147  ]
+[e $ ! != -> *U + &U _buffer * -> -> + -> _dataStart `i -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> -> + -> _cmd `i -> 1 `i `uc `i 1144  ]
 "302
 [; ;drivers/pn532.c: 302:     {
 {
 "303
 [; ;drivers/pn532.c: 303:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "304
 [; ;drivers/pn532.c: 304:     }
 }
-[e :U 1147 ]
+[e :U 1144 ]
 "310
 [; ;drivers/pn532.c: 310:     uint8_t responseSum = 0;
 [v _responseSum `uc ~T0 @X0 1 a ]
@@ -1853,8 +1853,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1151  ]
-[e :U 1148 ]
+[e $U 1148  ]
+[e :U 1145 ]
 "313
 [; ;drivers/pn532.c: 313:     {
 {
@@ -1865,9 +1865,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 316:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1151 ]
-[e $ < -> _i `i -> _len `i 1148  ]
-[e :U 1149 ]
+[e :U 1148 ]
+[e $ < -> _i `i -> _len `i 1145  ]
+[e :U 1146 ]
 }
 "318
 [; ;drivers/pn532.c: 318:     uint8_t dcsIndex =
@@ -1875,43 +1875,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _dcsIndex -> + -> _dataStart `i -> _len `i `uc ]
 "321
 [; ;drivers/pn532.c: 321:     if ((uint8_t)(responseSum + buffer[dcsIndex]) != 0)
-[e $ ! != -> -> + -> _responseSum `i -> *U + &U _buffer * -> _dcsIndex `ux -> -> # *U &U _buffer `ui `ux `i `uc `i -> 0 `i 1152  ]
+[e $ ! != -> -> + -> _responseSum `i -> *U + &U _buffer * -> _dcsIndex `ux -> -> # *U &U _buffer `ui `ux `i `uc `i -> 0 `i 1149  ]
 "322
 [; ;drivers/pn532.c: 322:     {
 {
 "323
 [; ;drivers/pn532.c: 323:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "324
 [; ;drivers/pn532.c: 324:     }
 }
-[e :U 1152 ]
+[e :U 1149 ]
 "330
 [; ;drivers/pn532.c: 330:     uint8_t postambleIndex =
 [v _postambleIndex `uc ~T0 @X0 1 a ]
 [e = _postambleIndex -> + -> _dcsIndex `i -> 1 `i `uc ]
 "333
 [; ;drivers/pn532.c: 333:     if (buffer[postambleIndex] != 0x00)
-[e $ ! != -> *U + &U _buffer * -> _postambleIndex `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i 1153  ]
+[e $ ! != -> *U + &U _buffer * -> _postambleIndex `ux -> -> # *U &U _buffer `ui `ux `i -> 0 `i 1150  ]
 "334
 [; ;drivers/pn532.c: 334:     {
 {
 "335
 [; ;drivers/pn532.c: 335:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "336
 [; ;drivers/pn532.c: 336:     }
 }
-[e :U 1153 ]
+[e :U 1150 ]
 "342
 [; ;drivers/pn532.c: 342:     uint8_t paramOutLen =
 [v _paramOutLen `uc ~T0 @X0 1 a ]
 [e = _paramOutLen -> - -> _len `i -> 2 `i `uc ]
 "345
 [; ;drivers/pn532.c: 345:     if (paramOutLen > outMax)
-[e $ ! > -> _paramOutLen `i -> _outMax `i 1154  ]
+[e $ ! > -> _paramOutLen `i -> _outMax `i 1151  ]
 "346
 [; ;drivers/pn532.c: 346:     {
 {
@@ -1921,14 +1921,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "348
 [; ;drivers/pn532.c: 348:     }
 }
-[e :U 1154 ]
+[e :U 1151 ]
 "350
 [; ;drivers/pn532.c: 350:     for (uint8_t i = 0; i < paramOutLen; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1158  ]
-[e :U 1155 ]
+[e $U 1155  ]
+[e :U 1152 ]
 "351
 [; ;drivers/pn532.c: 351:     {
 {
@@ -1939,9 +1939,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 353:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1158 ]
-[e $ < -> _i `i -> _paramOutLen `i 1155  ]
-[e :U 1156 ]
+[e :U 1155 ]
+[e $ < -> _i `i -> _paramOutLen `i 1152  ]
+[e :U 1153 ]
 }
 "355
 [; ;drivers/pn532.c: 355:     *outLen = paramOutLen;
@@ -1949,10 +1949,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "357
 [; ;drivers/pn532.c: 357:     return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1128  ]
+[e $UE 1125  ]
 "358
 [; ;drivers/pn532.c: 358: }
-[e :UE 1128 ]
+[e :UE 1125 ]
 }
 "364
 [; ;drivers/pn532.c: 364: uint8_t PN532_Init(void)
@@ -1971,8 +1971,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;drivers/pn532.c: 370:     uint8_t rlen;
 [v _rlen `uc ~T0 @X0 1 a ]
-[v F8578 `uc ~T0 @X0 -> 3 `i s ]
-[i F8578
+[v F8509 `uc ~T0 @X0 -> 3 `i s ]
+[i F8509
 :U ..
 "375
 [; ;drivers/pn532.c: 375:     uint8_t samcfg[3] = {0x01, 0x14, 0x00};
@@ -1982,23 +1982,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _samcfg `uc ~T0 @X0 -> 3 `i a ]
-[e = _samcfg F8578 ]
+[e = _samcfg F8509 ]
 "376
 [; ;drivers/pn532.c: 376:     if (!pn532_transact(0x14, samcfg, sizeof(samcfg), 1, rsp, sizeof(rsp), &rlen))
-[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 20 `i `uc -> &U _samcfg `*Cuc -> -> # _samcfg `ui `uc -> -> 1 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1160  ]
+[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 20 `i `uc -> &U _samcfg `*Cuc -> -> # _samcfg `ui `uc -> -> 1 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1157  ]
 "377
 [; ;drivers/pn532.c: 377:     {
 {
 "378
 [; ;drivers/pn532.c: 378:         return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 1159  ]
+[e $UE 1156  ]
 "379
 [; ;drivers/pn532.c: 379:     }
 }
-[e :U 1160 ]
-[v F8580 `uc ~T0 @X0 -> 4 `i s ]
-[i F8580
+[e :U 1157 ]
+[v F8511 `uc ~T0 @X0 -> 4 `i s ]
+[i F8511
 :U ..
 "384
 [; ;drivers/pn532.c: 384:     uint8_t rfcfg[4] = {0x05, 0xFF, 0x01, 0x02};
@@ -2009,42 +2009,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _rfcfg `uc ~T0 @X0 -> 4 `i a ]
-[e = _rfcfg F8580 ]
+[e = _rfcfg F8511 ]
 "385
 [; ;drivers/pn532.c: 385:     if (!pn532_transact(0x32, rfcfg, sizeof(rfcfg), 0, rsp, sizeof(rsp), &rlen))
-[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 50 `i `uc -> &U _rfcfg `*Cuc -> -> # _rfcfg `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1161  ]
+[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 50 `i `uc -> &U _rfcfg `*Cuc -> -> # _rfcfg `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1158  ]
 "386
 [; ;drivers/pn532.c: 386:     {
 {
 "387
 [; ;drivers/pn532.c: 387:         return 2;
 [e ) -> -> 2 `i `uc ]
-[e $UE 1159  ]
+[e $UE 1156  ]
 "388
 [; ;drivers/pn532.c: 388:     }
 }
-[e :U 1161 ]
+[e :U 1158 ]
 "392
 [; ;drivers/pn532.c: 392:     if (!pn532_transact(0x02, ((void*)0), 0, 0, rsp, sizeof(rsp), &rlen) ||
-[e $ ! || || ! != -> ( _pn532_transact (4 , , , , , , -> -> 2 `i `uc -> -> -> 0 `i `*v `*Cuc -> -> 0 `i `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i < -> _rlen `i -> 1 `i != -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 50 `i 1162  ]
+[e $ ! || || ! != -> ( _pn532_transact (4 , , , , , , -> -> 2 `i `uc -> -> -> 0 `i `*v `*Cuc -> -> 0 `i `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i < -> _rlen `i -> 1 `i != -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 50 `i 1159  ]
 "394
 [; ;drivers/pn532.c: 394:     {
 {
 "395
 [; ;drivers/pn532.c: 395:         return 3;
 [e ) -> -> 3 `i `uc ]
-[e $UE 1159  ]
+[e $UE 1156  ]
 "396
 [; ;drivers/pn532.c: 396:     }
 }
-[e :U 1162 ]
+[e :U 1159 ]
 "398
 [; ;drivers/pn532.c: 398:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 1159  ]
+[e $UE 1156  ]
 "399
 [; ;drivers/pn532.c: 399: }
-[e :UE 1159 ]
+[e :UE 1156 ]
 }
 "401
 [; ;drivers/pn532.c: 401: _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen)
@@ -2060,8 +2060,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "402
 [; ;drivers/pn532.c: 402: {
 [f ]
-[v F8585 `uc ~T0 @X0 -> 2 `i s ]
-[i F8585
+[v F8516 `uc ~T0 @X0 -> 2 `i s ]
+[i F8516
 :U ..
 "403
 [; ;drivers/pn532.c: 403:     uint8_t params[2] = {0x01, 0x00};
@@ -2070,7 +2070,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _params `uc ~T0 @X0 -> 2 `i a ]
-[e = _params F8585 ]
+[e = _params F8516 ]
 "404
 [; ;drivers/pn532.c: 404:     uint8_t rsp[24];
 [v _rsp `uc ~T0 @X0 -> 24 `i a ]
@@ -2079,57 +2079,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _rlen `uc ~T0 @X0 1 a ]
 "407
 [; ;drivers/pn532.c: 407:     if (!pn532_transact(0x4A, params, sizeof(params), 0, rsp, sizeof(rsp), &rlen))
-[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 74 `i `uc -> &U _params `*Cuc -> -> # _params `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1164  ]
+[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 74 `i `uc -> &U _params `*Cuc -> -> # _params `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1161  ]
 "408
 [; ;drivers/pn532.c: 408:     {
 {
 "409
 [; ;drivers/pn532.c: 409:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1163  ]
+[e $UE 1160  ]
 "410
 [; ;drivers/pn532.c: 410:     }
 }
-[e :U 1164 ]
+[e :U 1161 ]
 "411
 [; ;drivers/pn532.c: 411:     if (rlen < 1 || rsp[0] == 0)
-[e $ ! || < -> _rlen `i -> 1 `i == -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 0 `i 1165  ]
+[e $ ! || < -> _rlen `i -> 1 `i == -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 0 `i 1162  ]
 "412
 [; ;drivers/pn532.c: 412:     {
 {
 "413
 [; ;drivers/pn532.c: 413:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1163  ]
+[e $UE 1160  ]
 "414
 [; ;drivers/pn532.c: 414:     }
 }
-[e :U 1165 ]
+[e :U 1162 ]
 "417
 [; ;drivers/pn532.c: 417:     uint8_t nfcidLen = rsp[5];
 [v _nfcidLen `uc ~T0 @X0 1 a ]
 [e = _nfcidLen *U + &U _rsp * -> -> -> 5 `i `ui `ux -> -> # *U &U _rsp `ui `ux ]
 "418
 [; ;drivers/pn532.c: 418:     if (nfcidLen == 0 || nfcidLen > 7 || (uint8_t)(6 + nfcidLen) > rlen)
-[e $ ! || || == -> _nfcidLen `i -> 0 `i > -> _nfcidLen `i -> 7 `i > -> -> + -> 6 `i -> _nfcidLen `i `uc `i -> _rlen `i 1166  ]
+[e $ ! || || == -> _nfcidLen `i -> 0 `i > -> _nfcidLen `i -> 7 `i > -> -> + -> 6 `i -> _nfcidLen `i `uc `i -> _rlen `i 1163  ]
 "419
 [; ;drivers/pn532.c: 419:     {
 {
 "420
 [; ;drivers/pn532.c: 420:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1163  ]
+[e $UE 1160  ]
 "421
 [; ;drivers/pn532.c: 421:     }
 }
-[e :U 1166 ]
+[e :U 1163 ]
 "423
 [; ;drivers/pn532.c: 423:     for (uint8_t i = 0; i < nfcidLen; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1170  ]
-[e :U 1167 ]
+[e $U 1167  ]
+[e :U 1164 ]
 "424
 [; ;drivers/pn532.c: 424:     {
 {
@@ -2140,9 +2140,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 426:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1170 ]
-[e $ < -> _i `i -> _nfcidLen `i 1167  ]
-[e :U 1168 ]
+[e :U 1167 ]
+[e $ < -> _i `i -> _nfcidLen `i 1164  ]
+[e :U 1165 ]
 }
 "427
 [; ;drivers/pn532.c: 427:     *uidLen = nfcidLen;
@@ -2150,10 +2150,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "428
 [; ;drivers/pn532.c: 428:     return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1163  ]
+[e $UE 1160  ]
 "429
 [; ;drivers/pn532.c: 429: }
-[e :UE 1163 ]
+[e :UE 1160 ]
 }
 "433
 [; ;drivers/pn532.c: 433: static _Bool ntag_read4pages(uint8_t page, uint8_t *out16)
@@ -2169,8 +2169,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "434
 [; ;drivers/pn532.c: 434: {
 [f ]
-[v F8594 `uc ~T0 @X0 -> 3 `i s ]
-[i F8594
+[v F8525 `uc ~T0 @X0 -> 3 `i s ]
+[i F8525
 :U ..
 "435
 [; ;drivers/pn532.c: 435:     uint8_t params[3] = {0x01, 0x30, page};
@@ -2180,7 +2180,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _params `uc ~T0 @X0 -> 3 `i a ]
-[e = _params F8594 ]
+[e = _params F8525 ]
 [e ; = *U + &U _params * -> -> -> 0 `i `ui `ux -> -> # *U &U _params `ui `ux -> -> 1 `i `uc ; = *U + &U _params * -> -> -> 1 `i `ui `ux -> -> # *U &U _params `ui `ux -> -> 48 `i `uc = *U + &U _params * -> -> -> 2 `i `ui `ux -> -> # *U &U _params `ui `ux _page ]
 "436
 [; ;drivers/pn532.c: 436:     uint8_t rsp[20];
@@ -2190,42 +2190,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _rlen `uc ~T0 @X0 1 a ]
 "439
 [; ;drivers/pn532.c: 439:     if (!pn532_transact(0x40, params, sizeof(params), 0, rsp, sizeof(rsp), &rlen))
-[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 64 `i `uc -> &U _params `*Cuc -> -> # _params `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1172  ]
+[e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 64 `i `uc -> &U _params `*Cuc -> -> # _params `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1169  ]
 "440
 [; ;drivers/pn532.c: 440:     {
 {
 "441
 [; ;drivers/pn532.c: 441:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1171  ]
+[e $UE 1168  ]
 "442
 [; ;drivers/pn532.c: 442:     }
 }
-[e :U 1172 ]
+[e :U 1169 ]
 "443
 [; ;drivers/pn532.c: 443:     if (rlen < 17 || rsp[0] != 0x00)
-[e $ ! || < -> _rlen `i -> 17 `i != -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 0 `i 1173  ]
+[e $ ! || < -> _rlen `i -> 17 `i != -> *U + &U _rsp * -> -> -> 0 `i `ui `ux -> -> # *U &U _rsp `ui `ux `i -> 0 `i 1170  ]
 "444
 [; ;drivers/pn532.c: 444:     {
 {
 "445
 [; ;drivers/pn532.c: 445:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1171  ]
+[e $UE 1168  ]
 "446
 [; ;drivers/pn532.c: 446:     }
 }
-[e :U 1173 ]
+[e :U 1170 ]
 "448
 [; ;drivers/pn532.c: 448:     memcpy(out16, &rsp[1], 16);
 [e ( _memcpy (3 , , -> _out16 `*v -> &U *U + &U _rsp * -> -> -> 1 `i `ui `ux -> -> # *U &U _rsp `ui `ux `*Cv -> -> 16 `i `ui ]
 "449
 [; ;drivers/pn532.c: 449:     return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1171  ]
+[e $UE 1168  ]
 "450
 [; ;drivers/pn532.c: 450: }
-[e :UE 1171 ]
+[e :UE 1168 ]
 }
 "453
 [; ;drivers/pn532.c: 453: static _Bool parse_ndef_text_record(const uint8_t *rec, uint8_t recLen, char *out, uint8_t outSize)
@@ -2245,18 +2245,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "455
 [; ;drivers/pn532.c: 455:     if (recLen < 3)
-[e $ ! < -> _recLen `i -> 3 `i 1175  ]
+[e $ ! < -> _recLen `i -> 3 `i 1172  ]
 "456
 [; ;drivers/pn532.c: 456:     {
 {
 "457
 [; ;drivers/pn532.c: 457:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "458
 [; ;drivers/pn532.c: 458:     }
 }
-[e :U 1175 ]
+[e :U 1172 ]
 "460
 [; ;drivers/pn532.c: 460:     uint8_t header = rec[0];
 [v _header `uc ~T0 @X0 1 a ]
@@ -2286,35 +2286,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _payloadLen `us ~T0 @X0 1 a ]
 "469
 [; ;drivers/pn532.c: 469:     if (shortRecord)
-[e $ ! != -> _shortRecord `i -> 0 `i 1176  ]
+[e $ ! != -> _shortRecord `i -> 0 `i 1173  ]
 "470
 [; ;drivers/pn532.c: 470:     {
 {
 "471
 [; ;drivers/pn532.c: 471:         if (idx >= recLen)
-[e $ ! >= -> _idx `i -> _recLen `i 1177  ]
+[e $ ! >= -> _idx `i -> _recLen `i 1174  ]
 "472
 [; ;drivers/pn532.c: 472:         {
 {
 "473
 [; ;drivers/pn532.c: 473:             return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "474
 [; ;drivers/pn532.c: 474:         }
 }
-[e :U 1177 ]
+[e :U 1174 ]
 "475
 [; ;drivers/pn532.c: 475:         payloadLen = rec[idx++];
 [e = _payloadLen -> *U + _rec * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U _rec `ui `ux `us ]
 "476
 [; ;drivers/pn532.c: 476:     }
 }
-[e $U 1178  ]
+[e $U 1175  ]
 "477
 [; ;drivers/pn532.c: 477:     else if ((uint16_t)(idx + 4) <= recLen)
-[e :U 1176 ]
-[e $ ! <= -> -> + -> _idx `i -> 4 `i `us `ui -> _recLen `ui 1179  ]
+[e :U 1173 ]
+[e $ ! <= -> -> + -> _idx `i -> 4 `i `us `ui -> _recLen `ui 1176  ]
 "478
 [; ;drivers/pn532.c: 478:     {
 {
@@ -2327,67 +2327,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "483
 [; ;drivers/pn532.c: 483:     }
 }
-[e $U 1180  ]
+[e $U 1177  ]
 "484
 [; ;drivers/pn532.c: 484:     else
-[e :U 1179 ]
+[e :U 1176 ]
 "485
 [; ;drivers/pn532.c: 485:     {
 {
 "486
 [; ;drivers/pn532.c: 486:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "487
 [; ;drivers/pn532.c: 487:     }
 }
-[e :U 1180 ]
-[e :U 1178 ]
+[e :U 1177 ]
+[e :U 1175 ]
 "489
 [; ;drivers/pn532.c: 489:     uint8_t idLen = 0;
 [v _idLen `uc ~T0 @X0 1 a ]
 [e = _idLen -> -> 0 `i `uc ]
 "490
 [; ;drivers/pn532.c: 490:     if (hasId)
-[e $ ! != -> _hasId `i -> 0 `i 1181  ]
+[e $ ! != -> _hasId `i -> 0 `i 1178  ]
 "491
 [; ;drivers/pn532.c: 491:     {
 {
 "492
 [; ;drivers/pn532.c: 492:         if (idx >= recLen)
-[e $ ! >= -> _idx `i -> _recLen `i 1182  ]
+[e $ ! >= -> _idx `i -> _recLen `i 1179  ]
 "493
 [; ;drivers/pn532.c: 493:         {
 {
 "494
 [; ;drivers/pn532.c: 494:             return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "495
 [; ;drivers/pn532.c: 495:         }
 }
-[e :U 1182 ]
+[e :U 1179 ]
 "496
 [; ;drivers/pn532.c: 496:         idLen = rec[idx++];
 [e = _idLen *U + _rec * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U _rec `ui `ux ]
 "497
 [; ;drivers/pn532.c: 497:     }
 }
-[e :U 1181 ]
+[e :U 1178 ]
 "499
 [; ;drivers/pn532.c: 499:     if ((uint16_t)(idx + typeLen) > recLen)
-[e $ ! > -> -> + -> _idx `i -> _typeLen `i `us `ui -> _recLen `ui 1183  ]
+[e $ ! > -> -> + -> _idx `i -> _typeLen `i `us `ui -> _recLen `ui 1180  ]
 "500
 [; ;drivers/pn532.c: 500:     {
 {
 "501
 [; ;drivers/pn532.c: 501:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "502
 [; ;drivers/pn532.c: 502:     }
 }
-[e :U 1183 ]
+[e :U 1180 ]
 "503
 [; ;drivers/pn532.c: 503:     _Bool isText = (tnf == 0x01) && (typeLen == 1) && (rec[idx] == 'T');
 [v _isText `a ~T0 @X0 1 a ]
@@ -2397,32 +2397,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _idx -> + + -> _idx `i -> _typeLen `i -> _idLen `i `uc ]
 "506
 [; ;drivers/pn532.c: 506:     if (!isText)
-[e $ ! ! != -> _isText `i -> 0 `i 1184  ]
+[e $ ! ! != -> _isText `i -> 0 `i 1181  ]
 "507
 [; ;drivers/pn532.c: 507:     {
 {
 "508
 [; ;drivers/pn532.c: 508:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "509
 [; ;drivers/pn532.c: 509:     }
 }
-[e :U 1184 ]
+[e :U 1181 ]
 "510
 [; ;drivers/pn532.c: 510:     if ((uint16_t)idx + payloadLen > recLen)
-[e $ ! > + -> -> _idx `us `ui -> _payloadLen `ui -> _recLen `ui 1185  ]
+[e $ ! > + -> -> _idx `us `ui -> _payloadLen `ui -> _recLen `ui 1182  ]
 "511
 [; ;drivers/pn532.c: 511:     {
 {
 "512
 [; ;drivers/pn532.c: 512:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "513
 [; ;drivers/pn532.c: 513:     }
 }
-[e :U 1185 ]
+[e :U 1182 ]
 "515
 [; ;drivers/pn532.c: 515:     const uint8_t *payload = &rec[idx];
 [v _payload `*Cuc ~T0 @X0 1 a ]
@@ -2437,25 +2437,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _langLen -> & -> _status `i -> 63 `i `uc ]
 "518
 [; ;drivers/pn532.c: 518:     if ((uint16_t)(1 + langLen) > payloadLen)
-[e $ ! > -> -> + -> 1 `i -> _langLen `i `us `ui -> _payloadLen `ui 1186  ]
+[e $ ! > -> -> + -> 1 `i -> _langLen `i `us `ui -> _payloadLen `ui 1183  ]
 "519
 [; ;drivers/pn532.c: 519:     {
 {
 "520
 [; ;drivers/pn532.c: 520:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "521
 [; ;drivers/pn532.c: 521:     }
 }
-[e :U 1186 ]
+[e :U 1183 ]
 "523
 [; ;drivers/pn532.c: 523:     uint16_t textLen = (uint16_t)(payloadLen - 1 - langLen);
 [v _textLen `us ~T0 @X0 1 a ]
 [e = _textLen -> - - -> _payloadLen `ui -> -> 1 `i `ui -> _langLen `ui `us ]
 "524
 [; ;drivers/pn532.c: 524:     if (textLen > (uint16_t)(outSize - 1))
-[e $ ! > -> _textLen `ui -> -> - -> _outSize `i -> 1 `i `us `ui 1187  ]
+[e $ ! > -> _textLen `ui -> -> - -> _outSize `i -> 1 `i `us `ui 1184  ]
 "525
 [; ;drivers/pn532.c: 525:     {
 {
@@ -2465,7 +2465,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "527
 [; ;drivers/pn532.c: 527:     }
 }
-[e :U 1187 ]
+[e :U 1184 ]
 "529
 [; ;drivers/pn532.c: 529:     memcpy(out, &payload[1 + langLen], textLen);
 [e ( _memcpy (3 , , -> _out `*v -> &U *U + _payload * -> + -> 1 `i -> _langLen `i `x -> -> # *U _payload `i `x `*Cv -> _textLen `ui ]
@@ -2475,10 +2475,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "531
 [; ;drivers/pn532.c: 531:     return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1174  ]
+[e $UE 1171  ]
 "532
 [; ;drivers/pn532.c: 532: }
-[e :UE 1174 ]
+[e :UE 1171 ]
 }
 "534
 [; ;drivers/pn532.c: 534: _Bool PN532_ReadNdefText(char *out, uint8_t outSize)
@@ -2496,7 +2496,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "536
 [; ;drivers/pn532.c: 536:     static uint8_t buf[64];
-[v F8619 `uc ~T0 @X0 -> 64 `i s buf ]
+[v F8550 `uc ~T0 @X0 -> 64 `i s buf ]
 "537
 [; ;drivers/pn532.c: 537:     uint8_t have = 0;
 [v _have `uc ~T0 @X0 1 a ]
@@ -2511,25 +2511,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _pos -> -> 0 `i `uc ]
 "542
 [; ;drivers/pn532.c: 542:     while (page <= 40 && (uint16_t)(have + 16) <= sizeof(buf))
-[e $U 1189  ]
-[e :U 1190 ]
+[e $U 1186  ]
+[e :U 1187 ]
 "543
 [; ;drivers/pn532.c: 543:     {
 {
 "544
 [; ;drivers/pn532.c: 544:         if (!ntag_read4pages(page, &buf[have]))
-[e $ ! ! != -> ( _ntag_read4pages (2 , _page &U *U + &U F8619 * -> _have `ux -> -> # *U &U F8619 `ui `ux `i -> 0 `i 1192  ]
+[e $ ! ! != -> ( _ntag_read4pages (2 , _page &U *U + &U F8550 * -> _have `ux -> -> # *U &U F8550 `ui `ux `i -> 0 `i 1189  ]
 "545
 [; ;drivers/pn532.c: 545:         {
 {
 "546
 [; ;drivers/pn532.c: 546:             return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1188  ]
+[e $UE 1185  ]
 "547
 [; ;drivers/pn532.c: 547:         }
 }
-[e :U 1192 ]
+[e :U 1189 ]
 "548
 [; ;drivers/pn532.c: 548:         have = (uint8_t)(have + 16);
 [e = _have -> + -> _have `i -> 16 `i `uc ]
@@ -2538,18 +2538,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _page -> + -> _page `i -> 4 `i `uc ]
 "556
 [; ;drivers/pn532.c: 556:         while (pos < have)
-[e $U 1193  ]
-[e :U 1194 ]
+[e $U 1190  ]
+[e :U 1191 ]
 "557
 [; ;drivers/pn532.c: 557:         {
 {
 "558
 [; ;drivers/pn532.c: 558:             uint8_t type = buf[pos];
 [v _type `uc ~T0 @X0 1 a ]
-[e = _type *U + &U F8619 * -> _pos `ux -> -> # *U &U F8619 `ui `ux ]
+[e = _type *U + &U F8550 * -> _pos `ux -> -> # *U &U F8550 `ui `ux ]
 "560
 [; ;drivers/pn532.c: 560:             if (type == 0x00)
-[e $ ! == -> _type `i -> 0 `i 1196  ]
+[e $ ! == -> _type `i -> 0 `i 1193  ]
 "561
 [; ;drivers/pn532.c: 561:             {
 {
@@ -2558,114 +2558,114 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _pos -> -> 1 `i `uc ]
 "563
 [; ;drivers/pn532.c: 563:                 continue;
-[e $U 1193  ]
+[e $U 1190  ]
 "564
 [; ;drivers/pn532.c: 564:             }
 }
-[e :U 1196 ]
+[e :U 1193 ]
 "565
 [; ;drivers/pn532.c: 565:             if (type == 0xFE)
-[e $ ! == -> _type `i -> 254 `i 1197  ]
+[e $ ! == -> _type `i -> 254 `i 1194  ]
 "566
 [; ;drivers/pn532.c: 566:             {
 {
 "567
 [; ;drivers/pn532.c: 567:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1188  ]
+[e $UE 1185  ]
 "568
 [; ;drivers/pn532.c: 568:             }
 }
-[e :U 1197 ]
+[e :U 1194 ]
 "570
 [; ;drivers/pn532.c: 570:             if ((uint8_t)(pos + 1) >= have)
-[e $ ! >= -> -> + -> _pos `i -> 1 `i `uc `i -> _have `i 1198  ]
+[e $ ! >= -> -> + -> _pos `i -> 1 `i `uc `i -> _have `i 1195  ]
 "571
 [; ;drivers/pn532.c: 571:             {
 {
 "572
 [; ;drivers/pn532.c: 572:                 goto need_more;
-[e $U 1199  ]
+[e $U 1196  ]
 "573
 [; ;drivers/pn532.c: 573:             }
 }
-[e :U 1198 ]
+[e :U 1195 ]
 "574
 [; ;drivers/pn532.c: 574:             uint8_t len = buf[pos + 1];
 [v _len `uc ~T0 @X0 1 a ]
-[e = _len *U + &U F8619 * -> -> + -> _pos `i -> 1 `i `ui `ux -> -> # *U &U F8619 `ui `ux ]
+[e = _len *U + &U F8550 * -> -> + -> _pos `i -> 1 `i `ui `ux -> -> # *U &U F8550 `ui `ux ]
 "575
 [; ;drivers/pn532.c: 575:             if (len == 0xFF)
-[e $ ! == -> _len `i -> 255 `i 1200  ]
+[e $ ! == -> _len `i -> 255 `i 1197  ]
 "576
 [; ;drivers/pn532.c: 576:             {
 {
 "577
 [; ;drivers/pn532.c: 577:                 return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1188  ]
+[e $UE 1185  ]
 "578
 [; ;drivers/pn532.c: 578:             }
 }
-[e :U 1200 ]
+[e :U 1197 ]
 "579
 [; ;drivers/pn532.c: 579:             uint8_t valueStart = (uint8_t)(pos + 2);
 [v _valueStart `uc ~T0 @X0 1 a ]
 [e = _valueStart -> + -> _pos `i -> 2 `i `uc ]
 "580
 [; ;drivers/pn532.c: 580:             if ((uint16_t)valueStart + len > have)
-[e $ ! > + -> -> _valueStart `us `ui -> _len `ui -> _have `ui 1201  ]
+[e $ ! > + -> -> _valueStart `us `ui -> _len `ui -> _have `ui 1198  ]
 "581
 [; ;drivers/pn532.c: 581:             {
 {
 "582
 [; ;drivers/pn532.c: 582:                 goto need_more;
-[e $U 1199  ]
+[e $U 1196  ]
 "583
 [; ;drivers/pn532.c: 583:             }
 }
-[e :U 1201 ]
+[e :U 1198 ]
 "585
 [; ;drivers/pn532.c: 585:             if (type == 0x03)
-[e $ ! == -> _type `i -> 3 `i 1202  ]
+[e $ ! == -> _type `i -> 3 `i 1199  ]
 "586
 [; ;drivers/pn532.c: 586:             {
 {
 "587
 [; ;drivers/pn532.c: 587:                 return parse_ndef_text_record(&buf[valueStart], len, out, outSize);
-[e ) ( _parse_ndef_text_record (4 , , , -> &U *U + &U F8619 * -> _valueStart `ux -> -> # *U &U F8619 `ui `ux `*Cuc _len _out _outSize ]
-[e $UE 1188  ]
+[e ) ( _parse_ndef_text_record (4 , , , -> &U *U + &U F8550 * -> _valueStart `ux -> -> # *U &U F8550 `ui `ux `*Cuc _len _out _outSize ]
+[e $UE 1185  ]
 "588
 [; ;drivers/pn532.c: 588:             }
 }
-[e :U 1202 ]
+[e :U 1199 ]
 "590
 [; ;drivers/pn532.c: 590:             pos = (uint8_t)(valueStart + len);
 [e = _pos -> + -> _valueStart `i -> _len `i `uc ]
 "591
 [; ;drivers/pn532.c: 591:         }
 }
-[e :U 1193 ]
+[e :U 1190 ]
 "556
 [; ;drivers/pn532.c: 556:         while (pos < have)
-[e $ < -> _pos `i -> _have `i 1194  ]
-[e :U 1195 ]
+[e $ < -> _pos `i -> _have `i 1191  ]
+[e :U 1192 ]
 "592
 [; ;drivers/pn532.c: 592:     need_more:;
-[e :U 1199 ]
+[e :U 1196 ]
 "593
 [; ;drivers/pn532.c: 593:     }
 }
-[e :U 1189 ]
+[e :U 1186 ]
 "542
 [; ;drivers/pn532.c: 542:     while (page <= 40 && (uint16_t)(have + 16) <= sizeof(buf))
-[e $ && <= -> _page `i -> 40 `i <= -> -> + -> _have `i -> 16 `i `us `ui -> # F8619 `ui 1190  ]
-[e :U 1191 ]
+[e $ && <= -> _page `i -> 40 `i <= -> -> + -> _have `i -> 16 `i `us `ui -> # F8550 `ui 1187  ]
+[e :U 1188 ]
 "595
 [; ;drivers/pn532.c: 595:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1188  ]
+[e $UE 1185  ]
 "596
 [; ;drivers/pn532.c: 596: }
-[e :UE 1188 ]
+[e :UE 1185 ]
 }

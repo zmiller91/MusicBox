@@ -13351,7 +13351,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
-# 210 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 232 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13361,6 +13361,48 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void POWER_ISR(void);
+# 258 "drivers/../mcc_generated_files/system/../system/pins.h"
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+# 269 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*POWER_InterruptHandler)(void);
+# 280 "drivers/../mcc_generated_files/system/../system/pins.h"
+void POWER_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_A_ISR(void);
+# 298 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+# 309 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_A_InterruptHandler)(void);
+# 320 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_A_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_B_ISR(void);
+# 338 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_B_InterruptHandler)(void);
+# 360 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_B_DefaultInterruptHandler(void);
 # 42 "drivers/../mcc_generated_files/system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 1
@@ -13830,121 +13872,6 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 44 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 1
-# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
-# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
-# 42 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h"
-typedef enum
-{
-    I2C_ERROR_NONE,
-    I2C_ERROR_ADDR_NACK,
-    I2C_ERROR_DATA_NACK,
-    I2C_ERROR_BUS_COLLISION,
-} i2c_host_error_t;
-
-
-
-
-
-
-typedef struct
-{
-  uint32_t clkSpeed;
-} i2c_host_transfer_setup_t;
-# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
-
-
-
-
-
-
-
-typedef enum
-{
-    I2C_STATE_IDLE = 0,
-    I2C_STATE_SEND_RD_ADDR,
-    I2C_STATE_SEND_WR_ADDR,
-    I2C_STATE_TX,
-    I2C_STATE_RX,
-    I2C_STATE_NACK,
-    I2C_STATE_ERROR,
-    I2C_STATE_STOP,
-    I2C_STATE_RESET
-} i2c_host_event_states_t;
-
-
-
-
-
-
-typedef struct
-{
-    _Bool busy;
-    uint16_t address;
-    uint8_t *writePtr;
-    size_t writeLength;
-    uint8_t *readPtr;
-    size_t readLength;
-    _Bool switchToRead;
-    i2c_host_error_t errorState;
-    i2c_host_event_states_t state;
-} i2c_host_event_status_t;
-# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
-
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
-# 50 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
-typedef struct
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Write)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*Read)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*WriteRead)(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-    _Bool (*TransferSetup)(i2c_host_transfer_setup_t* setup, uint32_t srcClkFreq);
-    i2c_host_error_t (*ErrorGet)(void);
-    _Bool (*IsBusy)(void);
-    void (*CallbackRegister)(void (*callback)(void));
-    void (*Tasks)(void);
-} i2c_host_interface_t;
-# 45 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
-# 67 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-extern const i2c_host_interface_t I2C1_Host;
-# 76 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Initialize(void);
-# 85 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Deinitialize(void);
-# 116 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Write(uint16_t address, uint8_t *data, size_t dataLength);
-# 147 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Read(uint16_t address, uint8_t *data, size_t dataLength);
-# 182 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-# 193 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-i2c_host_error_t I2C1_ErrorGet(void);
-# 204 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_IsBusy(void);
-# 231 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_CallbackRegister(void (*callbackHandler)(void));
-
-
-
-
-
-
-
-void I2C1_ISR(void);
-
-
-
-
-
-
-
-void I2C1_ERROR_ISR(void);
-# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
-
 # 1 "drivers/../mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13958,7 +13885,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 

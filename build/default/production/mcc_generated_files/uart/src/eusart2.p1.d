@@ -9,8 +9,4 @@ mcc_generated_files/uart/src/../../system/../uart/eusart1.h  \
 mcc_generated_files/uart/src/../uart_drv_interface.h  \
 mcc_generated_files/uart/src/../uart_types.h  \
 mcc_generated_files/uart/src/../../system/../uart/eusart2.h  \
-mcc_generated_files/uart/src/../../system/../i2c_host/mssp1.h  \
-mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_event_types.h  \
-mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_types.h  \
-mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_interface.h  \
 mcc_generated_files/uart/src/../../system/../system/interrupt.h 

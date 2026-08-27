@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 48: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
-"210 mcc_generated_files/system/src/../../system/pins.h
-[; ;mcc_generated_files/system/src/../../system/pins.h: 210: void PIN_MANAGER_Initialize (void);
+"232 mcc_generated_files/system/src/../../system/pins.h
+[; ;mcc_generated_files/system/src/../../system/pins.h: 232: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "120 mcc_generated_files/system/src/../../uart/eusart1.h
 [; ;mcc_generated_files/system/src/../../uart/eusart1.h: 120: void EUSART1_Initialize(void);
@@ -11,9 +11,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "120 mcc_generated_files/system/src/../../uart/eusart2.h
 [; ;mcc_generated_files/system/src/../../uart/eusart2.h: 120: void EUSART2_Initialize(void);
 [v _EUSART2_Initialize `(v ~T0 @X0 0 ef ]
-"76 mcc_generated_files/system/src/../../i2c_host/mssp1.h
-[; ;mcc_generated_files/system/src/../../i2c_host/mssp1.h: 76: void I2C1_Initialize(void);
-[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/system/src/../../system/interrupt.h
 [; ;mcc_generated_files/system/src/../../system/interrupt.h: 85: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -1181,12 +1178,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/system.c: 42:     EUSART2_Initialize();
 [e ( _EUSART2_Initialize ..  ]
 "43
-[; ;mcc_generated_files/system/src/system.c: 43:     I2C1_Initialize();
-[e ( _I2C1_Initialize ..  ]
-"44
-[; ;mcc_generated_files/system/src/system.c: 44:     INTERRUPT_Initialize();
+[; ;mcc_generated_files/system/src/system.c: 43:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]
-"45
-[; ;mcc_generated_files/system/src/system.c: 45: }
-[e :UE 1090 ]
+"44
+[; ;mcc_generated_files/system/src/system.c: 44: }
+[e :UE 1087 ]
 }

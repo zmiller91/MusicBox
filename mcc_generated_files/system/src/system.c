@@ -40,7 +40,6 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     EUSART1_Initialize();
     EUSART2_Initialize();
-    I2C1_Initialize();
     INTERRUPT_Initialize();
 }
 

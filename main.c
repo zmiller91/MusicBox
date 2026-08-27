@@ -33,6 +33,7 @@
 #include "mcc_generated_files/system/system.h"
 #include "drivers/pn532.h"
 #include "drivers/dfplayer.h"
+#include "drivers/rotary_encoder.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -54,9 +55,34 @@ static uint16_t parse_track_number(const char *text)
     return (uint16_t)atoi(sep + 2);
 }
 
+// Last tag seen, so the main loop only plays a track when a *new* tag
+// shows up rather than replaying on every poll while one sits on the
+// reader. lastUidLen == 0 means "no tag" / "forget the last one".
+static uint8_t lastUid[PN532_UID_MAX_LEN];
+static uint8_t lastUidLen = 0;
+static bool isOn = true;
+
+// Placeholder - wire up whatever "power" should actually do (sleep, mute,
+// a MOSFET on the speaker rail, etc.). Runs from RotaryEncoder_Tasks() in
+// the main loop, not from the IOC ISR, so it's safe to do real work here.
+static void on_power_button_pressed(void)
+{
+    DFPlayer_Stop();
+
+    // Forget the last tag, so if it's still sitting on the reader, the
+    // main loop treats it as newly-arrived and plays it again instead of
+    // requiring it to be physically removed and re-tapped.
+    memset(lastUid, 0, sizeof(lastUid));
+    lastUidLen = 0;
+    isOn = !isOn;
+}
+
 int main(void)
 {
     SYSTEM_Initialize();
+
+    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     LED_SetDigitalOutput();
     LED_SetHigh();
@@ -83,16 +109,16 @@ int main(void)
     LED_SetLow();
 
     DFPlayer_Init();
-
-    uint8_t lastUid[PN532_UID_MAX_LEN];
-    uint8_t lastUidLen = 0;
+    RotaryEncoder_Init(on_power_button_pressed);
 
     while (1)
     {
+        RotaryEncoder_Tasks();
+
         uint8_t uid[PN532_UID_MAX_LEN];
         uint8_t uidLen;
 
-        if (PN532_ReadPassiveTarget(uid, &uidLen))
+        if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
         {
             LED_SetHigh();
 
@@ -114,7 +140,13 @@ int main(void)
         }
         else
         {
-            DFPlayer_Stop();
+            if (lastUidLen != 0)
+            {
+                // Tag was just pulled away (not a power-off, which already
+                // stopped things abruptly in on_power_button_pressed()) -
+                // fade out once, not on every poll while it's gone.
+                DFPlayer_FadeOutAndStop();
+            }
             // Let the same tag retrigger next time it's tapped.
             lastUidLen = 0;
             LED_SetLow();

@@ -13324,7 +13324,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 210 "./mcc_generated_files/system/../system/pins.h"
+# 232 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13334,6 +13334,48 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void POWER_ISR(void);
+# 258 "./mcc_generated_files/system/../system/pins.h"
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+# 269 "./mcc_generated_files/system/../system/pins.h"
+extern void (*POWER_InterruptHandler)(void);
+# 280 "./mcc_generated_files/system/../system/pins.h"
+void POWER_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_A_ISR(void);
+# 298 "./mcc_generated_files/system/../system/pins.h"
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+# 309 "./mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_A_InterruptHandler)(void);
+# 320 "./mcc_generated_files/system/../system/pins.h"
+void VOL_A_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_B_ISR(void);
+# 338 "./mcc_generated_files/system/../system/pins.h"
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "./mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_B_InterruptHandler)(void);
+# 360 "./mcc_generated_files/system/../system/pins.h"
+void VOL_B_DefaultInterruptHandler(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../uart/eusart1.h" 1
@@ -13803,121 +13845,6 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../i2c_host/mssp1.h" 1
-# 44 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
-# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
-# 42 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h"
-typedef enum
-{
-    I2C_ERROR_NONE,
-    I2C_ERROR_ADDR_NACK,
-    I2C_ERROR_DATA_NACK,
-    I2C_ERROR_BUS_COLLISION,
-} i2c_host_error_t;
-
-
-
-
-
-
-typedef struct
-{
-  uint32_t clkSpeed;
-} i2c_host_transfer_setup_t;
-# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
-
-
-
-
-
-
-
-typedef enum
-{
-    I2C_STATE_IDLE = 0,
-    I2C_STATE_SEND_RD_ADDR,
-    I2C_STATE_SEND_WR_ADDR,
-    I2C_STATE_TX,
-    I2C_STATE_RX,
-    I2C_STATE_NACK,
-    I2C_STATE_ERROR,
-    I2C_STATE_STOP,
-    I2C_STATE_RESET
-} i2c_host_event_states_t;
-
-
-
-
-
-
-typedef struct
-{
-    _Bool busy;
-    uint16_t address;
-    uint8_t *writePtr;
-    size_t writeLength;
-    uint8_t *readPtr;
-    size_t readLength;
-    _Bool switchToRead;
-    i2c_host_error_t errorState;
-    i2c_host_event_states_t state;
-} i2c_host_event_status_t;
-# 44 "./mcc_generated_files/system/../i2c_host/mssp1.h" 2
-
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
-# 50 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
-typedef struct
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Write)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*Read)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*WriteRead)(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-    _Bool (*TransferSetup)(i2c_host_transfer_setup_t* setup, uint32_t srcClkFreq);
-    i2c_host_error_t (*ErrorGet)(void);
-    _Bool (*IsBusy)(void);
-    void (*CallbackRegister)(void (*callback)(void));
-    void (*Tasks)(void);
-} i2c_host_interface_t;
-# 45 "./mcc_generated_files/system/../i2c_host/mssp1.h" 2
-# 67 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-extern const i2c_host_interface_t I2C1_Host;
-# 76 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Initialize(void);
-# 85 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Deinitialize(void);
-# 116 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Write(uint16_t address, uint8_t *data, size_t dataLength);
-# 147 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Read(uint16_t address, uint8_t *data, size_t dataLength);
-# 182 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-# 193 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-i2c_host_error_t I2C1_ErrorGet(void);
-# 204 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_IsBusy(void);
-# 231 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_CallbackRegister(void (*callbackHandler)(void));
-
-
-
-
-
-
-
-void I2C1_ISR(void);
-
-
-
-
-
-
-
-void I2C1_ERROR_ISR(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
-
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13931,7 +13858,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13961,22 +13888,59 @@ _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
 # 35 "main.c" 2
 # 1 "./drivers/dfplayer.h" 1
-# 21 "./drivers/dfplayer.h"
-void DFPlayer_SendCommand(uint8_t command, uint16_t parameter);
+# 41 "./drivers/dfplayer.h"
+_Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck);
 
 
 
 void DFPlayer_Init(void);
 
 
-void DFPlayer_SetVolume(uint8_t volume);
+
+
+
+void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck);
+
+
+
+
+
+void DFPlayer_AdjustVolume(int8_t delta);
+
+
+
+uint8_t DFPlayer_GetVolume(void);
 
 
 void DFPlayer_PlayTrack(uint16_t track);
 
 
 void DFPlayer_Stop(void);
+
+
+
+
+
+
+void DFPlayer_FadeOutAndStop(void);
 # 36 "main.c" 2
+# 1 "./drivers/rotary_encoder.h" 1
+# 19 "./drivers/rotary_encoder.h"
+typedef void (*RotaryEncoder_PowerButtonCallback)(void);
+
+
+
+
+
+
+void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
+
+
+
+
+
+void RotaryEncoder_Tasks(void);
+# 37 "main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -14034,8 +13998,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 37 "main.c" 2
-# 47 "main.c"
+# 38 "main.c" 2
+# 48 "main.c"
 static uint16_t parse_track_number(const char *text)
 {
     const char *sep = strstr(text, "::");
@@ -14046,9 +14010,34 @@ static uint16_t parse_track_number(const char *text)
     return (uint16_t)atoi(sep + 2);
 }
 
+
+
+
+static uint8_t lastUid[7];
+static uint8_t lastUidLen = 0;
+static _Bool isOn = 1;
+
+
+
+
+static void on_power_button_pressed(void)
+{
+    DFPlayer_Stop();
+
+
+
+
+    memset(lastUid, 0, sizeof(lastUid));
+    lastUidLen = 0;
+    isOn = !isOn;
+}
+
 int main(void)
 {
     SYSTEM_Initialize();
+
+    (INTCONbits.GIE = 1);
+    (INTCONbits.PEIE = 1);
 
     do { TRISAbits.TRISA1 = 0; } while(0);
     do { LATAbits.LATA1 = 1; } while(0);
@@ -14075,16 +14064,16 @@ int main(void)
     do { LATAbits.LATA1 = 0; } while(0);
 
     DFPlayer_Init();
-
-    uint8_t lastUid[7];
-    uint8_t lastUidLen = 0;
+    RotaryEncoder_Init(on_power_button_pressed);
 
     while (1)
     {
+        RotaryEncoder_Tasks();
+
         uint8_t uid[7];
         uint8_t uidLen;
 
-        if (PN532_ReadPassiveTarget(uid, &uidLen))
+        if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
         {
             do { LATAbits.LATA1 = 1; } while(0);
 
@@ -14106,7 +14095,13 @@ int main(void)
         }
         else
         {
-            DFPlayer_Stop();
+            if (lastUidLen != 0)
+            {
+
+
+
+                DFPlayer_FadeOutAndStop();
+            }
 
             lastUidLen = 0;
             do { LATAbits.LATA1 = 0; } while(0);

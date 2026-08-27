@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "drivers/dfplayer.c" 2
 # 1 "drivers/dfplayer.h" 1
-# 11 "drivers/dfplayer.h"
+# 17 "drivers/dfplayer.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -114,22 +114,44 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 12 "drivers/dfplayer.h" 2
-# 21 "drivers/dfplayer.h"
-void DFPlayer_SendCommand(uint8_t command, uint16_t parameter);
+# 18 "drivers/dfplayer.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
+# 19 "drivers/dfplayer.h" 2
+# 41 "drivers/dfplayer.h"
+_Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck);
 
 
 
 void DFPlayer_Init(void);
 
 
-void DFPlayer_SetVolume(uint8_t volume);
+
+
+
+void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck);
+
+
+
+
+
+void DFPlayer_AdjustVolume(int8_t delta);
+
+
+
+uint8_t DFPlayer_GetVolume(void);
 
 
 void DFPlayer_PlayTrack(uint16_t track);
 
 
 void DFPlayer_Stop(void);
+
+
+
+
+
+
+void DFPlayer_FadeOutAndStop(void);
 # 2 "drivers/dfplayer.c" 2
 # 1 "drivers/../mcc_generated_files/system/system.h" 1
 # 37 "drivers/../mcc_generated_files/system/system.h"
@@ -13337,8 +13359,6 @@ extern __bank0 __bit __timeout;
 # 37 "drivers/../mcc_generated_files/system/system.h" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 39 "drivers/../mcc_generated_files/system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/config_bits.h" 1
 # 37 "drivers/../mcc_generated_files/system/config_bits.h"
@@ -13350,7 +13370,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
-# 210 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 232 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13360,6 +13380,48 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void POWER_ISR(void);
+# 258 "drivers/../mcc_generated_files/system/../system/pins.h"
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+# 269 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*POWER_InterruptHandler)(void);
+# 280 "drivers/../mcc_generated_files/system/../system/pins.h"
+void POWER_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_A_ISR(void);
+# 298 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+# 309 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_A_InterruptHandler)(void);
+# 320 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_A_DefaultInterruptHandler(void);
+
+
+
+
+
+
+
+void VOL_B_ISR(void);
+# 338 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "drivers/../mcc_generated_files/system/../system/pins.h"
+extern void (*VOL_B_InterruptHandler)(void);
+# 360 "drivers/../mcc_generated_files/system/../system/pins.h"
+void VOL_B_DefaultInterruptHandler(void);
 # 42 "drivers/../mcc_generated_files/system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 1
@@ -13829,121 +13891,6 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 44 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 1
-# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
-# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
-# 42 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h"
-typedef enum
-{
-    I2C_ERROR_NONE,
-    I2C_ERROR_ADDR_NACK,
-    I2C_ERROR_DATA_NACK,
-    I2C_ERROR_BUS_COLLISION,
-} i2c_host_error_t;
-
-
-
-
-
-
-typedef struct
-{
-  uint32_t clkSpeed;
-} i2c_host_transfer_setup_t;
-# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
-
-
-
-
-
-
-
-typedef enum
-{
-    I2C_STATE_IDLE = 0,
-    I2C_STATE_SEND_RD_ADDR,
-    I2C_STATE_SEND_WR_ADDR,
-    I2C_STATE_TX,
-    I2C_STATE_RX,
-    I2C_STATE_NACK,
-    I2C_STATE_ERROR,
-    I2C_STATE_STOP,
-    I2C_STATE_RESET
-} i2c_host_event_states_t;
-
-
-
-
-
-
-typedef struct
-{
-    _Bool busy;
-    uint16_t address;
-    uint8_t *writePtr;
-    size_t writeLength;
-    uint8_t *readPtr;
-    size_t readLength;
-    _Bool switchToRead;
-    i2c_host_error_t errorState;
-    i2c_host_event_states_t state;
-} i2c_host_event_status_t;
-# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
-
-# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
-# 50 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
-typedef struct
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Write)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*Read)(uint16_t address, uint8_t *data, size_t dataLength);
-    _Bool (*WriteRead)(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-    _Bool (*TransferSetup)(i2c_host_transfer_setup_t* setup, uint32_t srcClkFreq);
-    i2c_host_error_t (*ErrorGet)(void);
-    _Bool (*IsBusy)(void);
-    void (*CallbackRegister)(void (*callback)(void));
-    void (*Tasks)(void);
-} i2c_host_interface_t;
-# 45 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
-# 67 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-extern const i2c_host_interface_t I2C1_Host;
-# 76 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Initialize(void);
-# 85 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_Deinitialize(void);
-# 116 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Write(uint16_t address, uint8_t *data, size_t dataLength);
-# 147 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_Read(uint16_t address, uint8_t *data, size_t dataLength);
-# 182 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-# 193 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-i2c_host_error_t I2C1_ErrorGet(void);
-# 204 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-_Bool I2C1_IsBusy(void);
-# 231 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
-void I2C1_CallbackRegister(void (*callbackHandler)(void));
-
-
-
-
-
-
-
-void I2C1_ISR(void);
-
-
-
-
-
-
-
-void I2C1_ERROR_ISR(void);
-# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
-
 # 1 "drivers/../mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13957,7 +13904,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13979,42 +13926,153 @@ static void dfplayer_uart_write(uint8_t data)
     EUSART1_Write(data);
 }
 
-void DFPlayer_SendCommand(uint8_t command, uint16_t parameter)
+
+
+
+
+
+static void dfplayer_uart_clear_overrun(void)
+{
+    if (RC1STAbits.OERR)
+    {
+        RC1STAbits.CREN = 0;
+        RC1STAbits.CREN = 1;
+    }
+}
+# 43 "drivers/dfplayer.c"
+static _Bool dfplayer_wait_for_ack(uint32_t timeout_us)
+{
+    dfplayer_uart_clear_overrun();
+
+    uint8_t frame[10];
+    uint8_t count = 0;
+    while (count < sizeof(frame) && timeout_us)
+    {
+        if (EUSART1_IsRxReady())
+        {
+            frame[count++] = EUSART1_Read();
+        }
+        else
+        {
+            _delay((unsigned long)((20)*(32000000/4000000.0)));
+            timeout_us = (timeout_us > 20) ? (timeout_us - 20) : 0;
+        }
+    }
+
+    if (count < sizeof(frame))
+    {
+        return 0;
+    }
+    return frame[0] == 0x7E && frame[3] == 0x41 && frame[9] == 0xEF;
+}
+
+_Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck)
 {
     uint8_t high = parameter >> 8;
     uint8_t low = parameter & 0xFF;
+    uint8_t feedback = 0x01;
 
     uint16_t checksum =
-        0 - (0xFF + 0x06 + command + 0x00 + high + low);
+        0 - (0xFF + 0x06 + command + feedback + high + low);
+
+
+
+
+    while (EUSART1_IsRxReady())
+    {
+        (void)EUSART1_Read();
+    }
 
     dfplayer_uart_write(0x7E);
     dfplayer_uart_write(0xFF);
     dfplayer_uart_write(0x06);
     dfplayer_uart_write(command);
-    dfplayer_uart_write(0x00);
+    dfplayer_uart_write(feedback);
     dfplayer_uart_write(high);
     dfplayer_uart_write(low);
     dfplayer_uart_write(checksum >> 8);
     dfplayer_uart_write(checksum & 0xFF);
     dfplayer_uart_write(0xEF);
+
+
+
+
+
+    while (!EUSART1_IsTxDone())
+    {
+    }
+
+    if (!waitForAck)
+    {
+        return 1;
+    }
+    return dfplayer_wait_for_ack(50000);
 }
+
+static uint8_t currentVolume = 8;
 
 void DFPlayer_Init(void)
 {
-    DFPlayer_SetVolume(15);
+    DFPlayer_SetVolume(8, 1);
 }
 
-void DFPlayer_SetVolume(uint8_t volume)
+void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck)
 {
-    DFPlayer_SendCommand(0x06, volume);
+    if (volume > 25)
+    {
+        volume = 25;
+    }
+    currentVolume = volume;
+    DFPlayer_SendCommand(0x06, volume, waitForAck);
+}
+
+void DFPlayer_AdjustVolume(int8_t delta)
+{
+    int16_t volume = (int16_t)currentVolume + delta;
+    if (volume < 0)
+    {
+        volume = 0;
+    }
+    if (volume > 25)
+    {
+        volume = 25;
+    }
+
+
+    DFPlayer_SetVolume((uint8_t)volume, 0);
+}
+
+uint8_t DFPlayer_GetVolume(void)
+{
+    return currentVolume;
 }
 
 void DFPlayer_PlayTrack(uint16_t track)
 {
-    DFPlayer_SendCommand(0x12, track);
+    DFPlayer_SendCommand(0x12, track, 1);
 }
 
 void DFPlayer_Stop(void)
 {
-    DFPlayer_SendCommand(0x16, 0);
+    DFPlayer_SendCommand(0x16, 0, 1);
+}
+
+
+
+
+
+
+
+void DFPlayer_FadeOutAndStop(void)
+{
+    uint8_t startVolume = currentVolume;
+
+    while (currentVolume > 0)
+    {
+        DFPlayer_SetVolume((uint8_t)(currentVolume - 1), 0);
+        _delay((unsigned long)((80)*(32000000/4000.0)));
+    }
+
+    DFPlayer_Stop();
+    DFPlayer_SetVolume(startVolume, 1);
 }

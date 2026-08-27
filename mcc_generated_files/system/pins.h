@@ -68,6 +68,26 @@
 #define LED_SetOpenDrain()       do { ODCONAbits.ODCA1 = 1; } while(0)
 #define LED_SetAnalogMode()      do { ANSELAbits.ANSA1 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
+// get/set IO_RA3 aliases
+#define POWER_TRIS                 TRISAbits.TRISA3
+#define POWER_LAT                  LATAbits.LATA3
+#define POWER_PORT                 PORTAbits.RA3
+#define POWER_WPU                  WPUAbits.WPUA3
+#define POWER_OD                   ODCONAbits.ODCA3
+#define POWER_ANS                  ANSELAbits.ANSA3
+#define POWER_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
+#define POWER_SetLow()             do { LATAbits.LATA3 = 0; } while(0)
+#define POWER_Toggle()             do { LATAbits.LATA3 = ~LATAbits.LATA3; } while(0)
+#define POWER_GetValue()           PORTAbits.RA3
+#define POWER_SetDigitalInput()    do { TRISAbits.TRISA3 = 1; } while(0)
+#define POWER_SetDigitalOutput()   do { TRISAbits.TRISA3 = 0; } while(0)
+#define POWER_SetPullup()          do { WPUAbits.WPUA3 = 1; } while(0)
+#define POWER_ResetPullup()        do { WPUAbits.WPUA3 = 0; } while(0)
+#define POWER_SetPushPull()        do { ODCONAbits.ODCA3 = 0; } while(0)
+#define POWER_SetOpenDrain()       do { ODCONAbits.ODCA3 = 1; } while(0)
+#define POWER_SetAnalogMode()      do { ANSELAbits.ANSA3 = 1; } while(0)
+#define POWER_SetDigitalMode()     do { ANSELAbits.ANSA3 = 0; } while(0)
+#define RA3_SetInterruptHandler  POWER_SetInterruptHandler
 // get/set IO_RB3 aliases
 #define IO_RB3_TRIS                 TRISBbits.TRISB3
 #define IO_RB3_LAT                  LATBbits.LATB3
@@ -126,43 +146,45 @@
 #define IO_RB5_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
 #define IO_RB5_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
 // get/set IO_RC3 aliases
-#define IO_RC3_TRIS                 TRISCbits.TRISC3
-#define IO_RC3_LAT                  LATCbits.LATC3
-#define IO_RC3_PORT                 PORTCbits.RC3
-#define IO_RC3_WPU                  WPUCbits.WPUC3
-#define IO_RC3_OD                   ODCONCbits.ODCC3
-#define IO_RC3_ANS                  ANSELCbits.ANSC3
-#define IO_RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
-#define IO_RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
-#define IO_RC3_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
-#define IO_RC3_GetValue()           PORTCbits.RC3
-#define IO_RC3_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
-#define IO_RC3_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
-#define IO_RC3_SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
-#define IO_RC3_ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
-#define IO_RC3_SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
-#define IO_RC3_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
-#define IO_RC3_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
-#define IO_RC3_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
+#define VOL_A_TRIS                 TRISCbits.TRISC3
+#define VOL_A_LAT                  LATCbits.LATC3
+#define VOL_A_PORT                 PORTCbits.RC3
+#define VOL_A_WPU                  WPUCbits.WPUC3
+#define VOL_A_OD                   ODCONCbits.ODCC3
+#define VOL_A_ANS                  ANSELCbits.ANSC3
+#define VOL_A_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define VOL_A_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define VOL_A_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define VOL_A_GetValue()           PORTCbits.RC3
+#define VOL_A_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define VOL_A_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define VOL_A_SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
+#define VOL_A_ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
+#define VOL_A_SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
+#define VOL_A_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
+#define VOL_A_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
+#define VOL_A_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
+#define RC3_SetInterruptHandler  VOL_A_SetInterruptHandler
 // get/set IO_RC4 aliases
-#define IO_RC4_TRIS                 TRISCbits.TRISC4
-#define IO_RC4_LAT                  LATCbits.LATC4
-#define IO_RC4_PORT                 PORTCbits.RC4
-#define IO_RC4_WPU                  WPUCbits.WPUC4
-#define IO_RC4_OD                   ODCONCbits.ODCC4
-#define IO_RC4_ANS                  ANSELCbits.ANSC4
-#define IO_RC4_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
-#define IO_RC4_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
-#define IO_RC4_Toggle()             do { LATCbits.LATC4 = ~LATCbits.LATC4; } while(0)
-#define IO_RC4_GetValue()           PORTCbits.RC4
-#define IO_RC4_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
-#define IO_RC4_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
-#define IO_RC4_SetPullup()          do { WPUCbits.WPUC4 = 1; } while(0)
-#define IO_RC4_ResetPullup()        do { WPUCbits.WPUC4 = 0; } while(0)
-#define IO_RC4_SetPushPull()        do { ODCONCbits.ODCC4 = 0; } while(0)
-#define IO_RC4_SetOpenDrain()       do { ODCONCbits.ODCC4 = 1; } while(0)
-#define IO_RC4_SetAnalogMode()      do { ANSELCbits.ANSC4 = 1; } while(0)
-#define IO_RC4_SetDigitalMode()     do { ANSELCbits.ANSC4 = 0; } while(0)
+#define VOL_B_TRIS                 TRISCbits.TRISC4
+#define VOL_B_LAT                  LATCbits.LATC4
+#define VOL_B_PORT                 PORTCbits.RC4
+#define VOL_B_WPU                  WPUCbits.WPUC4
+#define VOL_B_OD                   ODCONCbits.ODCC4
+#define VOL_B_ANS                  ANSELCbits.ANSC4
+#define VOL_B_SetHigh()            do { LATCbits.LATC4 = 1; } while(0)
+#define VOL_B_SetLow()             do { LATCbits.LATC4 = 0; } while(0)
+#define VOL_B_Toggle()             do { LATCbits.LATC4 = ~LATCbits.LATC4; } while(0)
+#define VOL_B_GetValue()           PORTCbits.RC4
+#define VOL_B_SetDigitalInput()    do { TRISCbits.TRISC4 = 1; } while(0)
+#define VOL_B_SetDigitalOutput()   do { TRISCbits.TRISC4 = 0; } while(0)
+#define VOL_B_SetPullup()          do { WPUCbits.WPUC4 = 1; } while(0)
+#define VOL_B_ResetPullup()        do { WPUCbits.WPUC4 = 0; } while(0)
+#define VOL_B_SetPushPull()        do { ODCONCbits.ODCC4 = 0; } while(0)
+#define VOL_B_SetOpenDrain()       do { ODCONCbits.ODCC4 = 1; } while(0)
+#define VOL_B_SetAnalogMode()      do { ANSELCbits.ANSC4 = 1; } while(0)
+#define VOL_B_SetDigitalMode()     do { ANSELCbits.ANSC4 = 0; } while(0)
+#define RC4_SetInterruptHandler  VOL_B_SetInterruptHandler
 // get/set IO_RD1 aliases
 #define IO_RD1_TRIS                 TRISDbits.TRISD1
 #define IO_RD1_LAT                  LATDbits.LATD1
@@ -216,6 +238,126 @@ void PIN_MANAGER_Initialize (void);
  * @return none
  */
 void PIN_MANAGER_IOC(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt on Change Handler for the POWER pin functionality
+ * @param none
+ * @return none
+ */
+void POWER_ISR(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt Handler Setter for POWER pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for POWER at application runtime.
+ * @pre Pins intializer called
+ * @param InterruptHandler function pointer.
+ * @return none
+ */
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Dynamic Interrupt Handler for POWER pin.
+ *        This is a dynamic interrupt handler to be used together with the POWER_SetInterruptHandler() method.
+ *        This handler is called every time the POWER ISR is executed and allows any function to be registered at runtime.
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+extern void (*POWER_InterruptHandler)(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Default Interrupt Handler for POWER pin. 
+ *        This is a predefined interrupt handler to be used together with the POWER_SetInterruptHandler() method.
+ *        This handler is called every time the POWER ISR is executed. 
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+void POWER_DefaultInterruptHandler(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt on Change Handler for the VOL_A pin functionality
+ * @param none
+ * @return none
+ */
+void VOL_A_ISR(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt Handler Setter for VOL_A pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for VOL_A at application runtime.
+ * @pre Pins intializer called
+ * @param InterruptHandler function pointer.
+ * @return none
+ */
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Dynamic Interrupt Handler for VOL_A pin.
+ *        This is a dynamic interrupt handler to be used together with the VOL_A_SetInterruptHandler() method.
+ *        This handler is called every time the VOL_A ISR is executed and allows any function to be registered at runtime.
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+extern void (*VOL_A_InterruptHandler)(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Default Interrupt Handler for VOL_A pin. 
+ *        This is a predefined interrupt handler to be used together with the VOL_A_SetInterruptHandler() method.
+ *        This handler is called every time the VOL_A ISR is executed. 
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+void VOL_A_DefaultInterruptHandler(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt on Change Handler for the VOL_B pin functionality
+ * @param none
+ * @return none
+ */
+void VOL_B_ISR(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt Handler Setter for VOL_B pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for VOL_B at application runtime.
+ * @pre Pins intializer called
+ * @param InterruptHandler function pointer.
+ * @return none
+ */
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Dynamic Interrupt Handler for VOL_B pin.
+ *        This is a dynamic interrupt handler to be used together with the VOL_B_SetInterruptHandler() method.
+ *        This handler is called every time the VOL_B ISR is executed and allows any function to be registered at runtime.
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+extern void (*VOL_B_InterruptHandler)(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Default Interrupt Handler for VOL_B pin. 
+ *        This is a predefined interrupt handler to be used together with the VOL_B_SetInterruptHandler() method.
+ *        This handler is called every time the VOL_B ISR is executed. 
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+void VOL_B_DefaultInterruptHandler(void);
 
 
 #endif // PINS_H

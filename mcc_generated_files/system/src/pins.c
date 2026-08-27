@@ -34,6 +34,9 @@
 
 #include "../pins.h"
 
+void (*POWER_InterruptHandler)(void);
+void (*VOL_A_InterruptHandler)(void);
+void (*VOL_B_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -42,7 +45,7 @@ void PIN_MANAGER_Initialize(void)
     */
     LATA = 0x0;
     LATB = 0x0;
-    LATC = 0x18;
+    LATC = 0x0;
     LATD = 0x0;
     LATE = 0x0;
 
@@ -58,7 +61,7 @@ void PIN_MANAGER_Initialize(void)
     /**
     ANSELx registers
     */
-    ANSELA = 0xFD;
+    ANSELA = 0xF5;
     ANSELB = 0xCF;
     ANSELC = 0xE7;
     ANSELD = 0xFB;
@@ -107,10 +110,6 @@ void PIN_MANAGER_Initialize(void)
     RB3PPS = 0x11;  //RB3->EUSART2:TX2;
     RD1PPS = 0x11;  //RD1->EUSART2:TX2;
     RB4PPS = 0x0E;  //RB4->EUSART1:TX1;
-    SSP1CLKPPS = 0x13;  //RC3->MSSP1:SCL1;
-    RC3PPS = 0x15;  //RC3->MSSP1:SCL1;
-    SSP1DATPPS = 0x14;  //RC4->MSSP1:SDA1;
-    RC4PPS = 0x16;  //RC4->MSSP1:SDA1;
 
     /**
     APFCON registers
@@ -120,23 +119,133 @@ void PIN_MANAGER_Initialize(void)
     IOCx registers 
     */
     IOCAP = 0x0;
-    IOCAN = 0x0;
+    IOCAN = 0x8;
     IOCAF = 0x0;
     IOCBP = 0x0;
     IOCBN = 0x0;
     IOCBF = 0x0;
-    IOCCP = 0x0;
-    IOCCN = 0x0;
+    IOCCP = 0x18;
+    IOCCN = 0x18;
     IOCCF = 0x0;
     IOCEP = 0x0;
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    POWER_SetInterruptHandler(POWER_DefaultInterruptHandler);
+    VOL_A_SetInterruptHandler(VOL_A_DefaultInterruptHandler);
+    VOL_B_SetInterruptHandler(VOL_B_DefaultInterruptHandler);
 
+    // Enable PIE0bits.IOCIE interrupt 
+    PIE0bits.IOCIE = 1; 
 }
   
 void PIN_MANAGER_IOC(void)
 {
+    // interrupt on change for pin POWER}
+    if(IOCAFbits.IOCAF3 == 1)
+    {
+        POWER_ISR();  
+    }
+    // interrupt on change for pin VOL_A}
+    if(IOCCFbits.IOCCF3 == 1)
+    {
+        VOL_A_ISR();  
+    }
+    // interrupt on change for pin VOL_B}
+    if(IOCCFbits.IOCCF4 == 1)
+    {
+        VOL_B_ISR();  
+    }
+}
+   
+/**
+   POWER Interrupt Service Routine
+*/
+void POWER_ISR(void) {
+
+    // Add custom IOCAF3 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(POWER_InterruptHandler)
+    {
+        POWER_InterruptHandler();
+    }
+    IOCAFbits.IOCAF3 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCAF3 at application runtime
+*/
+void POWER_SetInterruptHandler(void (* InterruptHandler)(void)){
+    POWER_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCAF3
+*/
+void POWER_DefaultInterruptHandler(void){
+    // add your POWER interrupt custom code
+    // or set custom function using POWER_SetInterruptHandler()
+}
+   
+/**
+   VOL_A Interrupt Service Routine
+*/
+void VOL_A_ISR(void) {
+
+    // Add custom IOCCF3 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(VOL_A_InterruptHandler)
+    {
+        VOL_A_InterruptHandler();
+    }
+    IOCCFbits.IOCCF3 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCCF3 at application runtime
+*/
+void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void)){
+    VOL_A_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCCF3
+*/
+void VOL_A_DefaultInterruptHandler(void){
+    // add your VOL_A interrupt custom code
+    // or set custom function using VOL_A_SetInterruptHandler()
+}
+   
+/**
+   VOL_B Interrupt Service Routine
+*/
+void VOL_B_ISR(void) {
+
+    // Add custom IOCCF4 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(VOL_B_InterruptHandler)
+    {
+        VOL_B_InterruptHandler();
+    }
+    IOCCFbits.IOCCF4 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCCF4 at application runtime
+*/
+void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void)){
+    VOL_B_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCCF4
+*/
+void VOL_B_DefaultInterruptHandler(void){
+    // add your VOL_B interrupt custom code
+    // or set custom function using VOL_B_SetInterruptHandler()
 }
 /**
  End of File
