@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "drivers/dfplayer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,133 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 33 "main.c"
-# 1 "./mcc_generated_files/system/system.h" 1
-# 37 "./mcc_generated_files/system/system.h"
+# 1 "drivers/dfplayer.c" 2
+# 1 "drivers/dfplayer.h" 1
+# 11 "drivers/dfplayer.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 12 "drivers/dfplayer.h" 2
+# 21 "drivers/dfplayer.h"
+void DFPlayer_SendCommand(uint8_t command, uint16_t parameter);
+
+
+
+void DFPlayer_Init(void);
+
+
+void DFPlayer_SetVolume(uint8_t volume);
+
+
+void DFPlayer_PlayTrack(uint16_t track);
+
+
+void DFPlayer_Stop(void);
+# 2 "drivers/dfplayer.c" 2
+# 1 "drivers/../mcc_generated_files/system/system.h" 1
+# 37 "drivers/../mcc_generated_files/system/system.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,16 +146,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -41,10 +155,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -117,91 +227,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -13308,23 +13334,23 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
-# 37 "./mcc_generated_files/system/system.h" 2
+# 37 "drivers/../mcc_generated_files/system/system.h" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 39 "./mcc_generated_files/system/system.h" 2
+# 39 "drivers/../mcc_generated_files/system/system.h" 2
 
-# 1 "./mcc_generated_files/system/config_bits.h" 1
-# 37 "./mcc_generated_files/system/config_bits.h"
-# 1 "./mcc_generated_files/system/../system/clock.h" 1
-# 48 "./mcc_generated_files/system/../system/clock.h"
+# 1 "drivers/../mcc_generated_files/system/config_bits.h" 1
+# 37 "drivers/../mcc_generated_files/system/config_bits.h"
+# 1 "drivers/../mcc_generated_files/system/../system/clock.h" 1
+# 48 "drivers/../mcc_generated_files/system/../system/clock.h"
 void CLOCK_Initialize(void);
-# 37 "./mcc_generated_files/system/config_bits.h" 2
-# 40 "./mcc_generated_files/system/system.h" 2
+# 37 "drivers/../mcc_generated_files/system/config_bits.h" 2
+# 40 "drivers/../mcc_generated_files/system/system.h" 2
 
 
-# 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 210 "./mcc_generated_files/system/../system/pins.h"
+# 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
+# 210 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13334,10 +13360,10 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
-# 42 "./mcc_generated_files/system/system.h" 2
+# 42 "drivers/../mcc_generated_files/system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../uart/eusart1.h" 1
-# 42 "./mcc_generated_files/system/../uart/eusart1.h"
+# 1 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 1
+# 42 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -13484,15 +13510,15 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 42 "./mcc_generated_files/system/../uart/eusart1.h" 2
+# 42 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 2
 
-# 1 "./mcc_generated_files/system/../uart/../system/system.h" 1
-# 43 "./mcc_generated_files/system/../uart/eusart1.h" 2
+# 1 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 1
+# 43 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 2
 
-# 1 "./mcc_generated_files/system/../uart/uart_drv_interface.h" 1
-# 41 "./mcc_generated_files/system/../uart/uart_drv_interface.h"
-# 1 "./mcc_generated_files/system/../uart/uart_types.h" 1
-# 57 "./mcc_generated_files/system/../uart/uart_types.h"
+# 1 "drivers/../mcc_generated_files/system/../uart/uart_drv_interface.h" 1
+# 41 "drivers/../mcc_generated_files/system/../uart/uart_drv_interface.h"
+# 1 "drivers/../mcc_generated_files/system/../uart/uart_types.h" 1
+# 57 "drivers/../mcc_generated_files/system/../uart/uart_types.h"
 enum UART_STANDARD_BAUDS{
 UART_110 = 0,
 UART_300 = 1,
@@ -13510,8 +13536,8 @@ UART_230400 = 12,
 UART_460800 = 13,
 UART_921600 = 14,
 };
-# 41 "./mcc_generated_files/system/../uart/uart_drv_interface.h" 2
-# 57 "./mcc_generated_files/system/../uart/uart_drv_interface.h"
+# 41 "drivers/../mcc_generated_files/system/../uart/uart_drv_interface.h" 2
+# 57 "drivers/../mcc_generated_files/system/../uart/uart_drv_interface.h"
 typedef struct {
 void (*Initialize)(void);
 void (*Deinitialize)(void);
@@ -13538,8 +13564,8 @@ void (*OverrunErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*ParityErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*EventCallbackRegister)(void (*CallbackHandler) (void));
 }uart_drv_interface_t;
-# 44 "./mcc_generated_files/system/../uart/eusart1.h" 2
-# 89 "./mcc_generated_files/system/../uart/eusart1.h"
+# 44 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 2
+# 89 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 typedef union {
     struct {
         uint8_t perr : 1;
@@ -13549,11 +13575,11 @@ typedef union {
     };
     size_t status;
 }eusart1_status_t;
-# 109 "./mcc_generated_files/system/../uart/eusart1.h"
+# 109 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 extern const uart_drv_interface_t UART1;
-# 120 "./mcc_generated_files/system/../uart/eusart1.h"
+# 120 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 void EUSART1_Initialize(void);
-# 129 "./mcc_generated_files/system/../uart/eusart1.h"
+# 129 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 void EUSART1_Deinitialize(void);
 
 
@@ -13571,7 +13597,7 @@ __attribute__((inline)) void EUSART1_Enable(void);
 
 
 __attribute__((inline)) void EUSART1_Disable(void);
-# 154 "./mcc_generated_files/system/../uart/eusart1.h"
+# 154 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 __attribute__((inline)) void EUSART1_TransmitEnable(void);
 
 
@@ -13581,7 +13607,7 @@ __attribute__((inline)) void EUSART1_TransmitEnable(void);
 
 
 __attribute__((inline)) void EUSART1_TransmitDisable(void);
-# 171 "./mcc_generated_files/system/../uart/eusart1.h"
+# 171 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 __attribute__((inline)) void EUSART1_ReceiveEnable(void);
 
 
@@ -13591,7 +13617,7 @@ __attribute__((inline)) void EUSART1_ReceiveEnable(void);
 
 
 __attribute__((inline)) void EUSART1_ReceiveDisable(void);
-# 188 "./mcc_generated_files/system/../uart/eusart1.h"
+# 188 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 __attribute__((inline)) void EUSART1_SendBreakControlEnable(void);
 
 
@@ -13633,11 +13659,11 @@ __attribute__((inline)) _Bool EUSART1_IsAutoBaudDetectOverflow(void);
 
 
 __attribute__((inline)) void EUSART1_AutoBaudDetectOverflowReset(void);
-# 237 "./mcc_generated_files/system/../uart/eusart1.h"
+# 237 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 _Bool EUSART1_IsRxReady(void);
-# 246 "./mcc_generated_files/system/../uart/eusart1.h"
+# 246 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 _Bool EUSART1_IsTxReady(void);
-# 255 "./mcc_generated_files/system/../uart/eusart1.h"
+# 255 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 _Bool EUSART1_IsTxDone(void);
 
 
@@ -13647,9 +13673,9 @@ _Bool EUSART1_IsTxDone(void);
 
 
 size_t EUSART1_ErrorGet(void);
-# 273 "./mcc_generated_files/system/../uart/eusart1.h"
+# 273 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 283 "./mcc_generated_files/system/../uart/eusart1.h"
+# 283 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
 void EUSART1_Write(uint8_t txData);
 
 
@@ -13667,13 +13693,13 @@ void EUSART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
-# 43 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 43 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../uart/eusart2.h" 1
-# 43 "./mcc_generated_files/system/../uart/eusart2.h"
-# 1 "./mcc_generated_files/system/../uart/../system/system.h" 1
-# 43 "./mcc_generated_files/system/../uart/eusart2.h" 2
-# 89 "./mcc_generated_files/system/../uart/eusart2.h"
+# 1 "drivers/../mcc_generated_files/system/../uart/eusart2.h" 1
+# 43 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
+# 1 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 1
+# 43 "drivers/../mcc_generated_files/system/../uart/eusart2.h" 2
+# 89 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 typedef union {
     struct {
         uint8_t perr : 1;
@@ -13683,11 +13709,11 @@ typedef union {
     };
     size_t status;
 }eusart2_status_t;
-# 109 "./mcc_generated_files/system/../uart/eusart2.h"
+# 109 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 extern const uart_drv_interface_t UART2;
-# 120 "./mcc_generated_files/system/../uart/eusart2.h"
+# 120 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 void EUSART2_Initialize(void);
-# 129 "./mcc_generated_files/system/../uart/eusart2.h"
+# 129 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 void EUSART2_Deinitialize(void);
 
 
@@ -13705,7 +13731,7 @@ __attribute__((inline)) void EUSART2_Enable(void);
 
 
 __attribute__((inline)) void EUSART2_Disable(void);
-# 154 "./mcc_generated_files/system/../uart/eusart2.h"
+# 154 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 __attribute__((inline)) void EUSART2_TransmitEnable(void);
 
 
@@ -13715,7 +13741,7 @@ __attribute__((inline)) void EUSART2_TransmitEnable(void);
 
 
 __attribute__((inline)) void EUSART2_TransmitDisable(void);
-# 171 "./mcc_generated_files/system/../uart/eusart2.h"
+# 171 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 __attribute__((inline)) void EUSART2_ReceiveEnable(void);
 
 
@@ -13725,7 +13751,7 @@ __attribute__((inline)) void EUSART2_ReceiveEnable(void);
 
 
 __attribute__((inline)) void EUSART2_ReceiveDisable(void);
-# 188 "./mcc_generated_files/system/../uart/eusart2.h"
+# 188 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 __attribute__((inline)) void EUSART2_SendBreakControlEnable(void);
 
 
@@ -13767,11 +13793,11 @@ __attribute__((inline)) _Bool EUSART2_IsAutoBaudDetectOverflow(void);
 
 
 __attribute__((inline)) void EUSART2_AutoBaudDetectOverflowReset(void);
-# 237 "./mcc_generated_files/system/../uart/eusart2.h"
+# 237 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 _Bool EUSART2_IsRxReady(void);
-# 246 "./mcc_generated_files/system/../uart/eusart2.h"
+# 246 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 _Bool EUSART2_IsTxReady(void);
-# 255 "./mcc_generated_files/system/../uart/eusart2.h"
+# 255 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 _Bool EUSART2_IsTxDone(void);
 
 
@@ -13781,9 +13807,9 @@ _Bool EUSART2_IsTxDone(void);
 
 
 size_t EUSART2_ErrorGet(void);
-# 273 "./mcc_generated_files/system/../uart/eusart2.h"
+# 273 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 uint8_t EUSART2_Read(void);
-# 283 "./mcc_generated_files/system/../uart/eusart2.h"
+# 283 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
 void EUSART2_Write(uint8_t txData);
 
 
@@ -13801,14 +13827,14 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
-# 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 44 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../i2c_host/mssp1.h" 1
-# 44 "./mcc_generated_files/system/../i2c_host/mssp1.h"
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
-# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
-# 42 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h"
+# 1 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 1
+# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
+# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
+# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
+# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
+# 42 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_types.h"
 typedef enum
 {
     I2C_ERROR_NONE,
@@ -13826,7 +13852,7 @@ typedef struct
 {
   uint32_t clkSpeed;
 } i2c_host_transfer_setup_t;
-# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
+# 37 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
 
 
 
@@ -13864,10 +13890,10 @@ typedef struct
     i2c_host_error_t errorState;
     i2c_host_event_states_t state;
 } i2c_host_event_status_t;
-# 44 "./mcc_generated_files/system/../i2c_host/mssp1.h" 2
+# 44 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
 
-# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
-# 50 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
+# 1 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
+# 50 "drivers/../mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
 typedef struct
 {
     void (*Initialize)(void);
@@ -13881,24 +13907,24 @@ typedef struct
     void (*CallbackRegister)(void (*callback)(void));
     void (*Tasks)(void);
 } i2c_host_interface_t;
-# 45 "./mcc_generated_files/system/../i2c_host/mssp1.h" 2
-# 67 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 45 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h" 2
+# 67 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 extern const i2c_host_interface_t I2C1_Host;
-# 76 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 76 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 void I2C1_Initialize(void);
-# 85 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 85 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 void I2C1_Deinitialize(void);
-# 116 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 116 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 _Bool I2C1_Write(uint16_t address, uint8_t *data, size_t dataLength);
-# 147 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 147 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 _Bool I2C1_Read(uint16_t address, uint8_t *data, size_t dataLength);
-# 182 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 182 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 _Bool I2C1_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-# 193 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 193 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 i2c_host_error_t I2C1_ErrorGet(void);
-# 204 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 204 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 _Bool I2C1_IsBusy(void);
-# 231 "./mcc_generated_files/system/../i2c_host/mssp1.h"
+# 231 "drivers/../mcc_generated_files/system/../i2c_host/mssp1.h"
 void I2C1_CallbackRegister(void (*callbackHandler)(void));
 
 
@@ -13916,22 +13942,22 @@ void I2C1_ISR(void);
 
 
 void I2C1_ERROR_ISR(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
-# 85 "./mcc_generated_files/system/../system/interrupt.h"
+# 1 "drivers/../mcc_generated_files/system/../system/interrupt.h" 1
+# 85 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
-# 139 "./mcc_generated_files/system/../system/interrupt.h"
+# 139 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_ISR(void);
-# 148 "./mcc_generated_files/system/../system/interrupt.h"
+# 148 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_CallBack(void);
-# 157 "./mcc_generated_files/system/../system/interrupt.h"
+# 157 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-# 166 "./mcc_generated_files/system/../system/interrupt.h"
+# 166 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 extern void (*INT_InterruptHandler)(void);
-# 175 "./mcc_generated_files/system/../system/interrupt.h"
+# 175 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13941,178 +13967,54 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 34 "main.c" 2
-# 1 "./drivers/pn532.h" 1
-# 45 "./drivers/pn532.h"
-uint8_t PN532_Init(void);
+# 3 "drivers/dfplayer.c" 2
 
-
-
-
-
-_Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
-
-
-
-
-
-
-
-_Bool PN532_ReadNdefText(char *out, uint8_t outSize);
-# 35 "main.c" 2
-# 1 "./drivers/dfplayer.h" 1
-# 21 "./drivers/dfplayer.h"
-void DFPlayer_SendCommand(uint8_t command, uint16_t parameter);
-
-
-
-void DFPlayer_Init(void);
-
-
-void DFPlayer_SetVolume(uint8_t volume);
-
-
-void DFPlayer_PlayTrack(uint16_t track);
-
-
-void DFPlayer_Stop(void);
-# 36 "main.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-
-
-
-
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 37 "main.c" 2
-# 47 "main.c"
-static uint16_t parse_track_number(const char *text)
+static void dfplayer_uart_write(uint8_t data)
 {
-    const char *sep = strstr(text, "::");
-    if (sep == ((void*)0))
+    while (!EUSART1_IsTxReady())
     {
-        return 0;
+
     }
-    return (uint16_t)atoi(sep + 2);
+
+    EUSART1_Write(data);
 }
 
-int main(void)
+void DFPlayer_SendCommand(uint8_t command, uint16_t parameter)
 {
-    SYSTEM_Initialize();
+    uint8_t high = parameter >> 8;
+    uint8_t low = parameter & 0xFF;
 
-    do { TRISAbits.TRISA1 = 0; } while(0);
-    do { LATAbits.LATA1 = 1; } while(0);
-    _delay((unsigned long)((1000)*(32000000/4000.0)));
+    uint16_t checksum =
+        0 - (0xFF + 0x06 + command + 0x00 + high + low);
 
-    uint8_t initResult = PN532_Init();
-    if (initResult != 0)
-    {
+    dfplayer_uart_write(0x7E);
+    dfplayer_uart_write(0xFF);
+    dfplayer_uart_write(0x06);
+    dfplayer_uart_write(command);
+    dfplayer_uart_write(0x00);
+    dfplayer_uart_write(high);
+    dfplayer_uart_write(low);
+    dfplayer_uart_write(checksum >> 8);
+    dfplayer_uart_write(checksum & 0xFF);
+    dfplayer_uart_write(0xEF);
+}
 
+void DFPlayer_Init(void)
+{
+    DFPlayer_SetVolume(15);
+}
 
+void DFPlayer_SetVolume(uint8_t volume)
+{
+    DFPlayer_SendCommand(0x06, volume);
+}
 
-        while (1)
-        {
-            for (uint8_t i = 0; i < initResult; i++)
-            {
-                do { LATAbits.LATA1 = 1; } while(0);
-                _delay((unsigned long)((200)*(32000000/4000.0)));
-                do { LATAbits.LATA1 = 0; } while(0);
-                _delay((unsigned long)((200)*(32000000/4000.0)));
-            }
-            _delay((unsigned long)((1000)*(32000000/4000.0)));
-        }
-    }
-    do { LATAbits.LATA1 = 0; } while(0);
+void DFPlayer_PlayTrack(uint16_t track)
+{
+    DFPlayer_SendCommand(0x12, track);
+}
 
-    DFPlayer_Init();
-
-    uint8_t lastUid[7];
-    uint8_t lastUidLen = 0;
-
-    while (1)
-    {
-        uint8_t uid[7];
-        uint8_t uidLen;
-
-        if (PN532_ReadPassiveTarget(uid, &uidLen))
-        {
-            do { LATAbits.LATA1 = 1; } while(0);
-
-            _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
-            if (isNewTag)
-            {
-                char text[32];
-                if (PN532_ReadNdefText(text, sizeof(text)))
-                {
-                    uint16_t track = parse_track_number(text);
-                    if (track > 0)
-                    {
-                        DFPlayer_PlayTrack(track);
-                    }
-                }
-                memcpy(lastUid, uid, uidLen);
-                lastUidLen = uidLen;
-            }
-        }
-        else
-        {
-
-            DFPlayer_Stop();
-
-            lastUidLen = 0;
-            do { LATAbits.LATA1 = 0; } while(0);
-        }
-
-        _delay((unsigned long)((150)*(32000000/4000.0)));
-    }
+void DFPlayer_Stop(void)
+{
+    DFPlayer_SendCommand(0x16, 0);
 }

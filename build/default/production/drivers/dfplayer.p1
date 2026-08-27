@@ -1,64 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"51 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
-[v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"23 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 23: int atoi (const char *);
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-[p mainexit ]
-"54 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 54: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"738 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 738:     struct {
-[s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S43 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"737
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 737: typedef union {
-[u S42 `S43 1 ]
-[n S42 . . ]
-"749
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 749: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
-[v _TRISAbits `VS42 ~T0 @X0 0 e@18 ]
-"1024
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1024:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"1023
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1023: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1035
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1035: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS52 ~T0 @X0 0 e@24 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"45 ./drivers/pn532.h
-[; ;./drivers/pn532.h: 45: uint8_t PN532_Init(void);
-[v _PN532_Init `(uc ~T0 @X0 0 ef ]
-"25 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 25: void DFPlayer_Init(void);
-[v _DFPlayer_Init `(v ~T0 @X0 0 ef ]
-"51 ./drivers/pn532.h
-[; ;./drivers/pn532.h: 51: _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
-[v _PN532_ReadPassiveTarget `(a ~T0 @X0 0 ef2`*uc`*uc ]
-"30 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 30: int memcmp (const void *, const void *, size_t);
-[v _memcmp `(i ~T0 @X0 0 ef3`*Cv`*Cv`ui ]
-"59 ./drivers/pn532.h
-[; ;./drivers/pn532.h: 59: _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
-[v _PN532_ReadNdefText `(a ~T0 @X0 0 ef2`*uc`uc ]
-"31 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 31: void DFPlayer_PlayTrack(uint16_t track);
-[v _DFPlayer_PlayTrack `(v ~T0 @X0 0 ef1`us ]
-"27 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
-[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"34 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 34: void DFPlayer_Stop(void);
-[v _DFPlayer_Stop `(v ~T0 @X0 0 ef ]
+"246 drivers/../mcc_generated_files/system/../uart/eusart1.h
+[; ;drivers/../mcc_generated_files/system/../uart/eusart1.h: 246: _Bool EUSART1_IsTxReady(void);
+[v _EUSART1_IsTxReady `(a ~T0 @X0 0 ef ]
+"283
+[; ;drivers/../mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"28 drivers/dfplayer.h
+[; ;drivers/dfplayer.h: 28: void DFPlayer_SetVolume(uint8_t volume);
+[v _DFPlayer_SetVolume `(v ~T0 @X0 0 ef1`uc ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1202,271 +1151,168 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"47 main.c
-[; ;main.c: 47: static uint16_t parse_track_number(const char *text)
-[v _parse_track_number `(us ~T0 @X0 1 sf1`*Cuc ]
-"48
-[; ;main.c: 48: {
+"4 drivers/dfplayer.c
+[; ;drivers/dfplayer.c: 4: static void dfplayer_uart_write(uint8_t data)
+[v _dfplayer_uart_write `(v ~T0 @X0 1 sf1`uc ]
+"5
+[; ;drivers/dfplayer.c: 5: {
 {
-[e :U _parse_track_number ]
-"47
-[; ;main.c: 47: static uint16_t parse_track_number(const char *text)
-[v _text `*Cuc ~T0 @X0 1 r1 ]
-"48
-[; ;main.c: 48: {
+[e :U _dfplayer_uart_write ]
+"4
+[; ;drivers/dfplayer.c: 4: static void dfplayer_uart_write(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"5
+[; ;drivers/dfplayer.c: 5: {
 [f ]
-"49
-[; ;main.c: 49:     const char *sep = strstr(text, "::");
-[v _sep `*Cuc ~T0 @X0 1 a ]
-[e = _sep -> ( _strstr (2 , _text :s 1C `*Cuc ]
-"50
-[; ;main.c: 50:     if (sep == ((void*)0))
-[e $ ! == _sep -> -> -> 0 `i `*v `*Cuc 1092  ]
-"51
-[; ;main.c: 51:     {
-{
-"52
-[; ;main.c: 52:         return 0;
-[e ) -> -> 0 `i `us ]
-[e $UE 1091  ]
-"53
-[; ;main.c: 53:     }
-}
+"6
+[; ;drivers/dfplayer.c: 6:     while (!EUSART1_IsTxReady())
+[e $U 1091  ]
 [e :U 1092 ]
-"54
-[; ;main.c: 54:     return (uint16_t)atoi(sep + 2);
-[e ) -> ( _atoi (1 + _sep * -> -> 2 `i `x -> -> # *U _sep `i `x `us ]
-[e $UE 1091  ]
-"55
-[; ;main.c: 55: }
-[e :UE 1091 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;main.c: 57: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
-"58
-[; ;main.c: 58: {
+"7
+[; ;drivers/dfplayer.c: 7:     {
 {
-[e :U _main ]
+"9
+[; ;drivers/dfplayer.c: 9:     }
+}
+[e :U 1091 ]
+"6
+[; ;drivers/dfplayer.c: 6:     while (!EUSART1_IsTxReady())
+[e $ ! != -> ( _EUSART1_IsTxReady ..  `i -> 0 `i 1092  ]
+[e :U 1093 ]
+"11
+[; ;drivers/dfplayer.c: 11:     EUSART1_Write(data);
+[e ( _EUSART1_Write (1 _data ]
+"12
+[; ;drivers/dfplayer.c: 12: }
+[e :UE 1090 ]
+}
+"14
+[; ;drivers/dfplayer.c: 14: void DFPlayer_SendCommand(uint8_t command, uint16_t parameter)
+[v _DFPlayer_SendCommand `(v ~T0 @X0 1 ef2`uc`us ]
+"15
+[; ;drivers/dfplayer.c: 15: {
+{
+[e :U _DFPlayer_SendCommand ]
+"14
+[; ;drivers/dfplayer.c: 14: void DFPlayer_SendCommand(uint8_t command, uint16_t parameter)
+[v _command `uc ~T0 @X0 1 r1 ]
+[v _parameter `us ~T0 @X0 1 r2 ]
+"15
+[; ;drivers/dfplayer.c: 15: {
 [f ]
-"59
-[; ;main.c: 59:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"61
-[; ;main.c: 61:     do { TRISAbits.TRISA1 = 0; } while(0);
-[e :U 1096 ]
+"16
+[; ;drivers/dfplayer.c: 16:     uint8_t high = parameter >> 8;
+[v _high `uc ~T0 @X0 1 a ]
+[e = _high -> >> -> _parameter `ui -> 8 `i `uc ]
+"17
+[; ;drivers/dfplayer.c: 17:     uint8_t low = parameter & 0xFF;
+[v _low `uc ~T0 @X0 1 a ]
+[e = _low -> & -> _parameter `ui -> -> 255 `i `ui `uc ]
+"19
+[; ;drivers/dfplayer.c: 19:     uint16_t checksum =
+[v _checksum `us ~T0 @X0 1 a ]
+[e = _checksum -> - -> 0 `i + + + + + -> 255 `i -> 6 `i -> _command `i -> 0 `i -> _high `i -> _low `i `us ]
+"22
+[; ;drivers/dfplayer.c: 22:     dfplayer_uart_write(0x7E);
+[e ( _dfplayer_uart_write (1 -> -> 126 `i `uc ]
+"23
+[; ;drivers/dfplayer.c: 23:     dfplayer_uart_write(0xFF);
+[e ( _dfplayer_uart_write (1 -> -> 255 `i `uc ]
+"24
+[; ;drivers/dfplayer.c: 24:     dfplayer_uart_write(0x06);
+[e ( _dfplayer_uart_write (1 -> -> 6 `i `uc ]
+"25
+[; ;drivers/dfplayer.c: 25:     dfplayer_uart_write(command);
+[e ( _dfplayer_uart_write (1 _command ]
+"26
+[; ;drivers/dfplayer.c: 26:     dfplayer_uart_write(0x00);
+[e ( _dfplayer_uart_write (1 -> -> 0 `i `uc ]
+"27
+[; ;drivers/dfplayer.c: 27:     dfplayer_uart_write(high);
+[e ( _dfplayer_uart_write (1 _high ]
+"28
+[; ;drivers/dfplayer.c: 28:     dfplayer_uart_write(low);
+[e ( _dfplayer_uart_write (1 _low ]
+"29
+[; ;drivers/dfplayer.c: 29:     dfplayer_uart_write(checksum >> 8);
+[e ( _dfplayer_uart_write (1 -> >> -> _checksum `ui -> 8 `i `uc ]
+"30
+[; ;drivers/dfplayer.c: 30:     dfplayer_uart_write(checksum & 0xFF);
+[e ( _dfplayer_uart_write (1 -> & -> _checksum `ui -> -> 255 `i `ui `uc ]
+"31
+[; ;drivers/dfplayer.c: 31:     dfplayer_uart_write(0xEF);
+[e ( _dfplayer_uart_write (1 -> -> 239 `i `uc ]
+"32
+[; ;drivers/dfplayer.c: 32: }
+[e :UE 1094 ]
+}
+"34
+[; ;drivers/dfplayer.c: 34: void DFPlayer_Init(void)
+[v _DFPlayer_Init `(v ~T0 @X0 1 ef ]
+"35
+[; ;drivers/dfplayer.c: 35: {
 {
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[e :U _DFPlayer_Init ]
+[f ]
+"36
+[; ;drivers/dfplayer.c: 36:     DFPlayer_SetVolume(15);
+[e ( _DFPlayer_SetVolume (1 -> -> 15 `i `uc ]
+"37
+[; ;drivers/dfplayer.c: 37: }
+[e :UE 1095 ]
 }
-[e :U 1095 ]
-"62
-[; ;main.c: 62:     do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1099 ]
+"39
+[; ;drivers/dfplayer.c: 39: void DFPlayer_SetVolume(uint8_t volume)
+[v _DFPlayer_SetVolume `(v ~T0 @X0 1 ef1`uc ]
+"40
+[; ;drivers/dfplayer.c: 40: {
 {
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[e :U _DFPlayer_SetVolume ]
+"39
+[; ;drivers/dfplayer.c: 39: void DFPlayer_SetVolume(uint8_t volume)
+[v _volume `uc ~T0 @X0 1 r1 ]
+"40
+[; ;drivers/dfplayer.c: 40: {
+[f ]
+"41
+[; ;drivers/dfplayer.c: 41:     DFPlayer_SendCommand(0x06, volume);
+[e ( _DFPlayer_SendCommand (2 , -> -> 6 `i `uc -> _volume `us ]
+"42
+[; ;drivers/dfplayer.c: 42: }
+[e :UE 1096 ]
 }
-[e :U 1098 ]
-"63
-[; ;main.c: 63:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"65
-[; ;main.c: 65:     uint8_t initResult = PN532_Init();
-[v _initResult `uc ~T0 @X0 1 a ]
-[e = _initResult ( _PN532_Init ..  ]
-"66
-[; ;main.c: 66:     if (initResult != 0)
-[e $ ! != -> _initResult `i -> 0 `i 1100  ]
-"67
-[; ;main.c: 67:     {
+"44
+[; ;drivers/dfplayer.c: 44: void DFPlayer_PlayTrack(uint16_t track)
+[v _DFPlayer_PlayTrack `(v ~T0 @X0 1 ef1`us ]
+"45
+[; ;drivers/dfplayer.c: 45: {
 {
-"71
-[; ;main.c: 71:         while (1)
-[e :U 1102 ]
-"72
-[; ;main.c: 72:         {
+[e :U _DFPlayer_PlayTrack ]
+"44
+[; ;drivers/dfplayer.c: 44: void DFPlayer_PlayTrack(uint16_t track)
+[v _track `us ~T0 @X0 1 r1 ]
+"45
+[; ;drivers/dfplayer.c: 45: {
+[f ]
+"46
+[; ;drivers/dfplayer.c: 46:     DFPlayer_SendCommand(0x12, track);
+[e ( _DFPlayer_SendCommand (2 , -> -> 18 `i `uc _track ]
+"47
+[; ;drivers/dfplayer.c: 47: }
+[e :UE 1097 ]
+}
+"49
+[; ;drivers/dfplayer.c: 49: void DFPlayer_Stop(void)
+[v _DFPlayer_Stop `(v ~T0 @X0 1 ef ]
+"50
+[; ;drivers/dfplayer.c: 50: {
 {
-"73
-[; ;main.c: 73:             for (uint8_t i = 0; i < initResult; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 1107  ]
-[e :U 1104 ]
-"74
-[; ;main.c: 74:             {
-{
-"75
-[; ;main.c: 75:                 do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1110 ]
-{
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[e :U _DFPlayer_Stop ]
+[f ]
+"51
+[; ;drivers/dfplayer.c: 51:     DFPlayer_SendCommand(0x16, 0);
+[e ( _DFPlayer_SendCommand (2 , -> -> 22 `i `uc -> -> 0 `i `us ]
+"52
+[; ;drivers/dfplayer.c: 52: }
+[e :UE 1098 ]
 }
-[e :U 1109 ]
-"76
-[; ;main.c: 76:                 _delay((unsigned long)((200)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"77
-[; ;main.c: 77:                 do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1113 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1112 ]
-"78
-[; ;main.c: 78:                 _delay((unsigned long)((200)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"79
-[; ;main.c: 79:             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1107 ]
-[e $ < -> _i `i -> _initResult `i 1104  ]
-[e :U 1105 ]
-}
-"80
-[; ;main.c: 80:             _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"81
-[; ;main.c: 81:         }
-}
-[e :U 1101 ]
-[e $U 1102  ]
-[e :U 1103 ]
-"82
-[; ;main.c: 82:     }
-}
-[e :U 1100 ]
-"83
-[; ;main.c: 83:     do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1116 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1115 ]
-"85
-[; ;main.c: 85:     DFPlayer_Init();
-[e ( _DFPlayer_Init ..  ]
-"87
-[; ;main.c: 87:     uint8_t lastUid[7];
-[v _lastUid `uc ~T0 @X0 -> 7 `i a ]
-"88
-[; ;main.c: 88:     uint8_t lastUidLen = 0;
-[v _lastUidLen `uc ~T0 @X0 1 a ]
-[e = _lastUidLen -> -> 0 `i `uc ]
-"90
-[; ;main.c: 90:     while (1)
-[e :U 1118 ]
-"91
-[; ;main.c: 91:     {
-{
-"92
-[; ;main.c: 92:         uint8_t uid[7];
-[v _uid `uc ~T0 @X0 -> 7 `i a ]
-"93
-[; ;main.c: 93:         uint8_t uidLen;
-[v _uidLen `uc ~T0 @X0 1 a ]
-"95
-[; ;main.c: 95:         if (PN532_ReadPassiveTarget(uid, &uidLen))
-[e $ ! != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1120  ]
-"96
-[; ;main.c: 96:         {
-{
-"97
-[; ;main.c: 97:             do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1123 ]
-{
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1122 ]
-"99
-[; ;main.c: 99:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
-[v _isNewTag `a ~T0 @X0 1 a ]
-[e = _isNewTag -> -> || != -> _uidLen `i -> _lastUidLen `i != ( _memcmp (3 , , -> &U _uid `*Cv -> &U _lastUid `*Cv -> _uidLen `ui -> 0 `i `i `a ]
-"100
-[; ;main.c: 100:             if (isNewTag)
-[e $ ! != -> _isNewTag `i -> 0 `i 1124  ]
-"101
-[; ;main.c: 101:             {
-{
-"102
-[; ;main.c: 102:                 char text[32];
-[v _text `uc ~T0 @X0 -> 32 `i a ]
-"103
-[; ;main.c: 103:                 if (PN532_ReadNdefText(text, sizeof(text)))
-[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1125  ]
-"104
-[; ;main.c: 104:                 {
-{
-"105
-[; ;main.c: 105:                     uint16_t track = parse_track_number(text);
-[v _track `us ~T0 @X0 1 a ]
-[e = _track ( _parse_track_number (1 -> &U _text `*Cuc ]
-"106
-[; ;main.c: 106:                     if (track > 0)
-[e $ ! > -> _track `ui -> -> 0 `i `ui 1126  ]
-"107
-[; ;main.c: 107:                     {
-{
-"108
-[; ;main.c: 108:                         DFPlayer_PlayTrack(track);
-[e ( _DFPlayer_PlayTrack (1 _track ]
-"109
-[; ;main.c: 109:                     }
-}
-[e :U 1126 ]
-"110
-[; ;main.c: 110:                 }
-}
-[e :U 1125 ]
-"111
-[; ;main.c: 111:                 memcpy(lastUid, uid, uidLen);
-[e ( _memcpy (3 , , -> &U _lastUid `*v -> &U _uid `*Cv -> _uidLen `ui ]
-"112
-[; ;main.c: 112:                 lastUidLen = uidLen;
-[e = _lastUidLen _uidLen ]
-"113
-[; ;main.c: 113:             }
-}
-[e :U 1124 ]
-"114
-[; ;main.c: 114:         }
-}
-[e $U 1127  ]
-"115
-[; ;main.c: 115:         else
-[e :U 1120 ]
-"116
-[; ;main.c: 116:         {
-{
-"117
-[; ;main.c: 117:             DFPlayer_Stop();
-[e ( _DFPlayer_Stop ..  ]
-"119
-[; ;main.c: 119:             lastUidLen = 0;
-[e = _lastUidLen -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:             do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1130 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1129 ]
-"121
-[; ;main.c: 121:         }
-}
-[e :U 1127 ]
-"123
-[; ;main.c: 123:         _delay((unsigned long)((150)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"124
-[; ;main.c: 124:     }
-}
-[e :U 1117 ]
-[e $U 1118  ]
-[e :U 1119 ]
-"125
-[; ;main.c: 125: }
-[e :UE 1093 ]
-}
-[a 1C 58 58 0 ]

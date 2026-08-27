@@ -50,6 +50,18 @@ I2C_STATE_RESET 8
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"4 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+[v _dfplayer_uart_write dfplayer_uart_write `(v  1 s 1 dfplayer_uart_write ]
+"14
+[v _DFPlayer_SendCommand DFPlayer_SendCommand `(v  1 e 1 0 ]
+"34
+[v _DFPlayer_Init DFPlayer_Init `(v  1 e 1 0 ]
+"39
+[v _DFPlayer_SetVolume DFPlayer_SetVolume `(v  1 e 1 0 ]
+"44
+[v _DFPlayer_PlayTrack DFPlayer_PlayTrack `(v  1 e 1 0 ]
+"49
+[v _DFPlayer_Stop DFPlayer_Stop `(v  1 e 1 0 ]
 "62 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
 [v _pn532_send_and_capture pn532_send_and_capture `(uc  1 s 1 pn532_send_and_capture ]
 "138
@@ -64,13 +76,9 @@ I2C_STATE_RESET 8
 [v _parse_ndef_text_record parse_ndef_text_record `(a  1 s 1 parse_ndef_text_record ]
 "534
 [v _PN532_ReadNdefText PN532_ReadNdefText `(a  1 e 1 0 ]
-"42 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
-[v _uart_write uart_write `(v  1 e 1 0 ]
-"52
-[v _dfplayer_send dfplayer_send `(v  1 e 1 0 ]
-"76
+"47 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
-"114
+"57
 [v _main main `(i  1 e 2 0 ]
 "114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/i2c_host/src/mssp1.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
@@ -252,7 +260,7 @@ I2C_STATE_RESET 8
 [v _INTCONbits INTCONbits `VES1032  1 e 1 @11 ]
 "732
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
-[s S1951 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S1946 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -262,8 +270,8 @@ I2C_STATE_RESET 8
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "749
-[u S1960 . 1 `S1951 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES1960  1 e 1 @18 ]
+[u S1955 . 1 `S1946 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES1955  1 e 1 @18 ]
 "794
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
 "856
@@ -274,7 +282,7 @@ I2C_STATE_RESET 8
 [v _TRISE TRISE `VEuc  1 e 1 @22 ]
 "1018
 [v _LATA LATA `VEuc  1 e 1 @24 ]
-[s S1972 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1967 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -284,8 +292,8 @@ I2C_STATE_RESET 8
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1035
-[u S1981 . 1 `S1972 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1981  1 e 1 @24 ]
+[u S1976 . 1 `S1967 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1976  1 e 1 @24 ]
 "1080
 [v _LATB LATB `VEuc  1 e 1 @25 ]
 "1142
@@ -700,40 +708,40 @@ I2C_STATE_RESET 8
 [v _EUSART2_FramingErrorHandler EUSART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "84
 [v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"57 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"168
+"105
 [v main@track track `us  1 a 2 52 ]
-"165
+"102
 [v main@text text `[32]uc  1 a 32 2 ]
-"138
+"73
 [v main@i i `uc  1 a 1 49 ]
-"162
+"99
 [v main@isNewTag isNewTag `a  1 a 1 48 ]
-"155
+"92
 [v main@uid uid `[7]uc  1 a 7 41 ]
-"156
+"93
 [v main@uidLen uidLen `uc  1 a 1 55 ]
-"150
+"87
 [v main@lastUid lastUid `[7]uc  1 a 7 34 ]
-"130
+"65
 [v main@initResult initResult `uc  1 a 1 54 ]
-"151
+"88
 [v main@lastUidLen lastUidLen `uc  1 a 1 51 ]
-"187
+"125
 } 0
-"76
+"47
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
 {
 [v parse_track_number@text text `*.5DCuc  1 a 1 wreg ]
-"78
+"49
 [v parse_track_number@sep sep `*.5DCuc  1 a 1 19 ]
-"76
+"47
 [v parse_track_number@text text `*.5DCuc  1 a 1 wreg ]
-"78
+"49
 [v parse_track_number@text text `*.5DCuc  1 a 1 18 ]
-"84
+"55
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strstr.c
 [v _strstr strstr `(*.5uc  1 e 2 0 ]
@@ -815,42 +823,6 @@ I2C_STATE_RESET 8
 [v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
-} 0
-"52 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
-[v _dfplayer_send dfplayer_send `(v  1 e 1 0 ]
-{
-[v dfplayer_send@command command `uc  1 a 1 wreg ]
-"57
-[v dfplayer_send@checksum checksum `us  1 a 2 11 ]
-"55
-[v dfplayer_send@low low `uc  1 a 1 14 ]
-"54
-[v dfplayer_send@high high `uc  1 a 1 13 ]
-"52
-[v dfplayer_send@command command `uc  1 a 1 wreg ]
-[v dfplayer_send@parameter parameter `us  1 p 2 2 ]
-"54
-[v dfplayer_send@command command `uc  1 a 1 10 ]
-"70
-} 0
-"42
-[v _uart_write uart_write `(v  1 e 1 0 ]
-{
-[v uart_write@data data `uc  1 a 1 wreg ]
-[v uart_write@data data `uc  1 a 1 wreg ]
-[v uart_write@data data `uc  1 a 1 1 ]
-"50
-} 0
-"235 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
-[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
-{
-[v EUSART1_Write@txData txData `uc  1 p 1 0 ]
-"238
-} 0
-"198
-[v _EUSART1_IsTxReady EUSART1_IsTxReady `(a  1 e 1 0 ]
-{
-"201
 } 0
 "37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1211,6 +1183,67 @@ I2C_STATE_RESET 8
 [v memcmp@vr vr `*.26DCv  1 p 2 2 ]
 [v memcmp@n n `ui  1 p 2 4 ]
 "8
+} 0
+"49 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+[v _DFPlayer_Stop DFPlayer_Stop `(v  1 e 1 0 ]
+{
+"52
+} 0
+"44
+[v _DFPlayer_PlayTrack DFPlayer_PlayTrack `(v  1 e 1 0 ]
+{
+[v DFPlayer_PlayTrack@track track `us  1 p 2 15 ]
+"47
+} 0
+"34
+[v _DFPlayer_Init DFPlayer_Init `(v  1 e 1 0 ]
+{
+"37
+} 0
+"39
+[v _DFPlayer_SetVolume DFPlayer_SetVolume `(v  1 e 1 0 ]
+{
+[v DFPlayer_SetVolume@volume volume `uc  1 a 1 wreg ]
+[v DFPlayer_SetVolume@volume volume `uc  1 a 1 wreg ]
+"41
+[v DFPlayer_SetVolume@volume volume `uc  1 a 1 17 ]
+"42
+} 0
+"14
+[v _DFPlayer_SendCommand DFPlayer_SendCommand `(v  1 e 1 0 ]
+{
+[v DFPlayer_SendCommand@command command `uc  1 a 1 wreg ]
+"19
+[v DFPlayer_SendCommand@checksum checksum `us  1 a 2 11 ]
+"17
+[v DFPlayer_SendCommand@low low `uc  1 a 1 14 ]
+"16
+[v DFPlayer_SendCommand@high high `uc  1 a 1 13 ]
+"14
+[v DFPlayer_SendCommand@command command `uc  1 a 1 wreg ]
+[v DFPlayer_SendCommand@parameter parameter `us  1 p 2 2 ]
+"16
+[v DFPlayer_SendCommand@command command `uc  1 a 1 10 ]
+"32
+} 0
+"4
+[v _dfplayer_uart_write dfplayer_uart_write `(v  1 s 1 dfplayer_uart_write ]
+{
+[v dfplayer_uart_write@data data `uc  1 a 1 wreg ]
+[v dfplayer_uart_write@data data `uc  1 a 1 wreg ]
+[v dfplayer_uart_write@data data `uc  1 a 1 1 ]
+"12
+} 0
+"235 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 p 1 0 ]
+"238
+} 0
+"198
+[v _EUSART1_IsTxReady EUSART1_IsTxReady `(a  1 e 1 0 ]
+{
+"201
 } 0
 "59 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

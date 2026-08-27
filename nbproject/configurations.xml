@@ -37,6 +37,8 @@
                    projectFiles="true">
       <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
         <itemPath>drivers/pn532.c</itemPath>
+        <itemPath>drivers/dfplayer.c</itemPath>
+        <itemPath>drivers/dfplayer.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -303,6 +305,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-3fff"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/zmiller/MPLABXProjects/MusicBox.X/debug/default/MusicBox_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

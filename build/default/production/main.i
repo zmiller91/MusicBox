@@ -13960,6 +13960,23 @@ _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 
 _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
 # 35 "main.c" 2
+# 1 "./drivers/dfplayer.h" 1
+# 21 "./drivers/dfplayer.h"
+void DFPlayer_SendCommand(uint8_t command, uint16_t parameter);
+
+
+
+void DFPlayer_Init(void);
+
+
+void DFPlayer_SetVolume(uint8_t volume);
+
+
+void DFPlayer_PlayTrack(uint16_t track);
+
+
+void DFPlayer_Stop(void);
+# 36 "main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -14017,47 +14034,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 36 "main.c" 2
-
-
-
-
-
-
-void uart_write(uint8_t data)
-{
-    while (!EUSART1_IsTxReady())
-    {
-
-    }
-
-    EUSART1_Write(data);
-}
-
-void dfplayer_send(uint8_t command, uint16_t parameter)
-{
-    uint8_t high = parameter >> 8;
-    uint8_t low = parameter & 0xFF;
-
-    uint16_t checksum =
-        0 - (0xFF + 0x06 + command + 0x00 + high + low);
-
-    uart_write(0x7E);
-    uart_write(0xFF);
-    uart_write(0x06);
-    uart_write(command);
-    uart_write(0x00);
-    uart_write(high);
-    uart_write(low);
-    uart_write(checksum >> 8);
-    uart_write(checksum & 0xFF);
-    uart_write(0xEF);
-}
-
-
-
-
-
+# 37 "main.c" 2
+# 47 "main.c"
 static uint16_t parse_track_number(const char *text)
 {
     const char *sep = strstr(text, "::");
@@ -14068,34 +14046,6 @@ static uint16_t parse_track_number(const char *text)
     return (uint16_t)atoi(sep + 2);
 }
 
-void PN532_Wakeup(void)
-{
-    static const uint8_t wakeup[] =
-    {
-        0x55, 0x55,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0xFF,
-        0x05, 0xFB,
-        0xD4, 0x14, 0x01, 0x14, 0x00,
-        0x03,
-        0x00
-    };
-
-    for (uint8_t i = 0; i < sizeof(wakeup); i++)
-    {
-        while (!EUSART2_IsTxReady())
-        {
-
-        }
-
-        EUSART2_Write(wakeup[i]);
-    }
-
-
-    while (!EUSART2_IsTxDone())
-    {
-    }
-}
-
 int main(void)
 {
     SYSTEM_Initialize();
@@ -14103,7 +14053,7 @@ int main(void)
     do { TRISAbits.TRISA1 = 0; } while(0);
     do { LATAbits.LATA1 = 1; } while(0);
     _delay((unsigned long)((1000)*(32000000/4000.0)));
-# 130 "main.c"
+
     uint8_t initResult = PN532_Init();
     if (initResult != 0)
     {
@@ -14123,6 +14073,8 @@ int main(void)
         }
     }
     do { LATAbits.LATA1 = 0; } while(0);
+
+    DFPlayer_Init();
 
     uint8_t lastUid[7];
     uint8_t lastUidLen = 0;
@@ -14145,7 +14097,7 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
-                        dfplayer_send(0x12, track);
+                        DFPlayer_PlayTrack(track);
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -14154,6 +14106,7 @@ int main(void)
         }
         else
         {
+            DFPlayer_Stop();
 
             lastUidLen = 0;
             do { LATAbits.LATA1 = 0; } while(0);

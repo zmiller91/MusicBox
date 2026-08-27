@@ -32,6 +32,7 @@
 */
 #include "mcc_generated_files/system/system.h"
 #include "drivers/pn532.h"
+#include "drivers/dfplayer.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -39,40 +40,10 @@
     Main application
 */
 
-void uart_write(uint8_t data)
-{
-    while (!EUSART1_IsTxReady())
-    {
-        // wait until TX1REG can accept another byte
-    }
-
-    EUSART1_Write(data);
-}
-
-void dfplayer_send(uint8_t command, uint16_t parameter)
-{
-    uint8_t high = parameter >> 8;
-    uint8_t low  = parameter & 0xFF;
-
-    uint16_t checksum =
-        0 - (0xFF + 0x06 + command + 0x00 + high + low);
-
-    uart_write(0x7E);
-    uart_write(0xFF);
-    uart_write(0x06);
-    uart_write(command);
-    uart_write(0x00);
-    uart_write(high);
-    uart_write(low);
-    uart_write(checksum >> 8);
-    uart_write(checksum & 0xFF);
-    uart_write(0xEF);
-}
-
 // Tags are written as "<name>::<track>", e.g. "FOREST::2". The name is just
 // a human-readable label for whoever wrote the tag - all we need is the
 // track number, which selects a file in the DFPlayer's /MP3 folder (see
-// dfplayer_send(0x12, ...) below).
+// DFPlayer_PlayTrack() below).
 static uint16_t parse_track_number(const char *text)
 {
     const char *sep = strstr(text, "::");
@@ -83,34 +54,6 @@ static uint16_t parse_track_number(const char *text)
     return (uint16_t)atoi(sep + 2);
 }
 
-void PN532_Wakeup(void)
-{
-    static const uint8_t wakeup[] =
-    {
-        0x55, 0x55,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0xFF,
-        0x05, 0xFB,
-        0xD4, 0x14, 0x01, 0x14, 0x00,
-        0x03,
-        0x00
-    };
-
-    for (uint8_t i = 0; i < sizeof(wakeup); i++)
-    {
-        while (!EUSART2_IsTxReady())
-        {
-            // Wait until TX register is ready
-        }
-
-        EUSART2_Write(wakeup[i]);
-    }
-
-    // Wait until the final byte has physically left the UART
-    while (!EUSART2_IsTxDone())
-    {
-    }
-}
-
 int main(void)
 {
     SYSTEM_Initialize();
@@ -119,14 +62,6 @@ int main(void)
     LED_SetHigh();
     __delay_ms(1000);
 
-    
-//    PN532_Wakeup();
-//    while(1){
-//        
-//    }
-    
-    
-    
     uint8_t initResult = PN532_Init();
     if (initResult != PN532_INIT_OK)
     {
@@ -146,6 +81,8 @@ int main(void)
         }
     }
     LED_SetLow();
+
+    DFPlayer_Init();
 
     uint8_t lastUid[PN532_UID_MAX_LEN];
     uint8_t lastUidLen = 0;
@@ -168,7 +105,7 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
-                        dfplayer_send(0x12, track);
+                        DFPlayer_PlayTrack(track);
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -177,7 +114,8 @@ int main(void)
         }
         else
         {
-            // Tag pulled away - let the same tag retrigger next time it's tapped.
+            DFPlayer_Stop();
+            // Let the same tag retrigger next time it's tapped.
             lastUidLen = 0;
             LED_SetLow();
         }

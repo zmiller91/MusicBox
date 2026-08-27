@@ -1,25 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"246 ./mcc_generated_files/system/../uart/eusart1.h
-[; ;./mcc_generated_files/system/../uart/eusart1.h: 246: _Bool EUSART1_IsTxReady(void);
-[v _EUSART1_IsTxReady `(a ~T0 @X0 0 ef ]
-"283
-[; ;./mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
-[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "51 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
 [v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "23 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 23: int atoi (const char *);
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"246 ./mcc_generated_files/system/../uart/eusart2.h
-[; ;./mcc_generated_files/system/../uart/eusart2.h: 246: _Bool EUSART2_IsTxReady(void);
-[v _EUSART2_IsTxReady `(a ~T0 @X0 0 ef ]
-"283
-[; ;./mcc_generated_files/system/../uart/eusart2.h: 283: void EUSART2_Write(uint8_t txData);
-[v _EUSART2_Write `(v ~T0 @X0 0 ef1`uc ]
-"255
-[; ;./mcc_generated_files/system/../uart/eusart2.h: 255: _Bool EUSART2_IsTxDone(void);
-[v _EUSART2_IsTxDone `(a ~T0 @X0 0 ef ]
 [p mainexit ]
 "54 ./mcc_generated_files/system/../uart/../system/system.h
 [; ;./mcc_generated_files/system/../uart/../system/system.h: 54: void SYSTEM_Initialize(void);
@@ -53,7 +38,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 45: uint8_t PN532_Init(void);
 [v _PN532_Init `(uc ~T0 @X0 0 ef ]
-"51
+"25 ./drivers/dfplayer.h
+[; ;./drivers/dfplayer.h: 25: void DFPlayer_Init(void);
+[v _DFPlayer_Init `(v ~T0 @X0 0 ef ]
+"51 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 51: _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 [v _PN532_ReadPassiveTarget `(a ~T0 @X0 0 ef2`*uc`*uc ]
 "30 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
@@ -62,9 +50,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 59: _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
 [v _PN532_ReadNdefText `(a ~T0 @X0 0 ef2`*uc`uc ]
+"31 ./drivers/dfplayer.h
+[; ;./drivers/dfplayer.h: 31: void DFPlayer_PlayTrack(uint16_t track);
+[v _DFPlayer_PlayTrack `(v ~T0 @X0 0 ef1`us ]
 "27 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"34 ./drivers/dfplayer.h
+[; ;./drivers/dfplayer.h: 34: void DFPlayer_Stop(void);
+[v _DFPlayer_Stop `(v ~T0 @X0 0 ef ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1208,447 +1202,271 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"42 main.c
-[; ;main.c: 42: void uart_write(uint8_t data)
-[v _uart_write `(v ~T0 @X0 1 ef1`uc ]
-"43
-[; ;main.c: 43: {
-{
-[e :U _uart_write ]
-"42
-[; ;main.c: 42: void uart_write(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
-"43
-[; ;main.c: 43: {
-[f ]
-"44
-[; ;main.c: 44:     while (!EUSART1_IsTxReady())
-[e $U 1092  ]
-[e :U 1093 ]
-"45
-[; ;main.c: 45:     {
-{
-"47
-[; ;main.c: 47:     }
-}
-[e :U 1092 ]
-"44
-[; ;main.c: 44:     while (!EUSART1_IsTxReady())
-[e $ ! != -> ( _EUSART1_IsTxReady ..  `i -> 0 `i 1093  ]
-[e :U 1094 ]
-"49
-[; ;main.c: 49:     EUSART1_Write(data);
-[e ( _EUSART1_Write (1 _data ]
-"50
-[; ;main.c: 50: }
-[e :UE 1091 ]
-}
-"52
-[; ;main.c: 52: void dfplayer_send(uint8_t command, uint16_t parameter)
-[v _dfplayer_send `(v ~T0 @X0 1 ef2`uc`us ]
-"53
-[; ;main.c: 53: {
-{
-[e :U _dfplayer_send ]
-"52
-[; ;main.c: 52: void dfplayer_send(uint8_t command, uint16_t parameter)
-[v _command `uc ~T0 @X0 1 r1 ]
-[v _parameter `us ~T0 @X0 1 r2 ]
-"53
-[; ;main.c: 53: {
-[f ]
-"54
-[; ;main.c: 54:     uint8_t high = parameter >> 8;
-[v _high `uc ~T0 @X0 1 a ]
-[e = _high -> >> -> _parameter `ui -> 8 `i `uc ]
-"55
-[; ;main.c: 55:     uint8_t low = parameter & 0xFF;
-[v _low `uc ~T0 @X0 1 a ]
-[e = _low -> & -> _parameter `ui -> -> 255 `i `ui `uc ]
-"57
-[; ;main.c: 57:     uint16_t checksum =
-[v _checksum `us ~T0 @X0 1 a ]
-[e = _checksum -> - -> 0 `i + + + + + -> 255 `i -> 6 `i -> _command `i -> 0 `i -> _high `i -> _low `i `us ]
-"60
-[; ;main.c: 60:     uart_write(0x7E);
-[e ( _uart_write (1 -> -> 126 `i `uc ]
-"61
-[; ;main.c: 61:     uart_write(0xFF);
-[e ( _uart_write (1 -> -> 255 `i `uc ]
-"62
-[; ;main.c: 62:     uart_write(0x06);
-[e ( _uart_write (1 -> -> 6 `i `uc ]
-"63
-[; ;main.c: 63:     uart_write(command);
-[e ( _uart_write (1 _command ]
-"64
-[; ;main.c: 64:     uart_write(0x00);
-[e ( _uart_write (1 -> -> 0 `i `uc ]
-"65
-[; ;main.c: 65:     uart_write(high);
-[e ( _uart_write (1 _high ]
-"66
-[; ;main.c: 66:     uart_write(low);
-[e ( _uart_write (1 _low ]
-"67
-[; ;main.c: 67:     uart_write(checksum >> 8);
-[e ( _uart_write (1 -> >> -> _checksum `ui -> 8 `i `uc ]
-"68
-[; ;main.c: 68:     uart_write(checksum & 0xFF);
-[e ( _uart_write (1 -> & -> _checksum `ui -> -> 255 `i `ui `uc ]
-"69
-[; ;main.c: 69:     uart_write(0xEF);
-[e ( _uart_write (1 -> -> 239 `i `uc ]
-"70
-[; ;main.c: 70: }
-[e :UE 1095 ]
-}
-"76
-[; ;main.c: 76: static uint16_t parse_track_number(const char *text)
+"47 main.c
+[; ;main.c: 47: static uint16_t parse_track_number(const char *text)
 [v _parse_track_number `(us ~T0 @X0 1 sf1`*Cuc ]
-"77
-[; ;main.c: 77: {
+"48
+[; ;main.c: 48: {
 {
 [e :U _parse_track_number ]
-"76
-[; ;main.c: 76: static uint16_t parse_track_number(const char *text)
+"47
+[; ;main.c: 47: static uint16_t parse_track_number(const char *text)
 [v _text `*Cuc ~T0 @X0 1 r1 ]
-"77
-[; ;main.c: 77: {
+"48
+[; ;main.c: 48: {
 [f ]
-"78
-[; ;main.c: 78:     const char *sep = strstr(text, "::");
+"49
+[; ;main.c: 49:     const char *sep = strstr(text, "::");
 [v _sep `*Cuc ~T0 @X0 1 a ]
 [e = _sep -> ( _strstr (2 , _text :s 1C `*Cuc ]
-"79
-[; ;main.c: 79:     if (sep == ((void*)0))
-[e $ ! == _sep -> -> -> 0 `i `*v `*Cuc 1097  ]
-"80
-[; ;main.c: 80:     {
+"50
+[; ;main.c: 50:     if (sep == ((void*)0))
+[e $ ! == _sep -> -> -> 0 `i `*v `*Cuc 1092  ]
+"51
+[; ;main.c: 51:     {
 {
-"81
-[; ;main.c: 81:         return 0;
+"52
+[; ;main.c: 52:         return 0;
 [e ) -> -> 0 `i `us ]
-[e $UE 1096  ]
-"82
-[; ;main.c: 82:     }
+[e $UE 1091  ]
+"53
+[; ;main.c: 53:     }
 }
-[e :U 1097 ]
-"83
-[; ;main.c: 83:     return (uint16_t)atoi(sep + 2);
+[e :U 1092 ]
+"54
+[; ;main.c: 54:     return (uint16_t)atoi(sep + 2);
 [e ) -> ( _atoi (1 + _sep * -> -> 2 `i `x -> -> # *U _sep `i `x `us ]
-[e $UE 1096  ]
-"84
-[; ;main.c: 84: }
-[e :UE 1096 ]
-}
-"86
-[; ;main.c: 86: void PN532_Wakeup(void)
-[v _PN532_Wakeup `(v ~T0 @X0 1 ef ]
-"87
-[; ;main.c: 87: {
-{
-[e :U _PN532_Wakeup ]
-[f ]
-"88
-[; ;main.c: 88:     static const uint8_t wakeup[] =
-[v F8544 `Cuc ~T0 @X0 -> 17 `i s wakeup ]
-[i F8544
-:U ..
--> -> 85 `i `uc
--> -> 85 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 255 `i `uc
--> -> 5 `i `uc
--> -> 251 `i `uc
--> -> 212 `i `uc
--> -> 20 `i `uc
--> -> 1 `i `uc
--> -> 20 `i `uc
--> -> 0 `i `uc
--> -> 3 `i `uc
--> -> 0 `i `uc
-..
-]
-"98
-[; ;main.c: 98:     for (uint8_t i = 0; i < sizeof(wakeup); i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `ui -> # F8544 `ui 1099  ]
-[e $U 1100  ]
-[e :U 1099 ]
-"99
-[; ;main.c: 99:     {
-{
-"100
-[; ;main.c: 100:         while (!EUSART2_IsTxReady())
-[e $U 1102  ]
-[e :U 1103 ]
-"101
-[; ;main.c: 101:         {
-{
-"103
-[; ;main.c: 103:         }
-}
-[e :U 1102 ]
-"100
-[; ;main.c: 100:         while (!EUSART2_IsTxReady())
-[e $ ! != -> ( _EUSART2_IsTxReady ..  `i -> 0 `i 1103  ]
-[e :U 1104 ]
-"105
-[; ;main.c: 105:         EUSART2_Write(wakeup[i]);
-[e ( _EUSART2_Write (1 *U + &U F8544 * -> _i `ux -> -> # *U &U F8544 `ui `ux ]
-"106
-[; ;main.c: 106:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `ui -> # F8544 `ui 1099  ]
-[e :U 1100 ]
-}
-"109
-[; ;main.c: 109:     while (!EUSART2_IsTxDone())
-[e $U 1105  ]
-[e :U 1106 ]
-"110
-[; ;main.c: 110:     {
-{
-"111
-[; ;main.c: 111:     }
-}
-[e :U 1105 ]
-"109
-[; ;main.c: 109:     while (!EUSART2_IsTxDone())
-[e $ ! != -> ( _EUSART2_IsTxDone ..  `i -> 0 `i 1106  ]
-[e :U 1107 ]
-"112
-[; ;main.c: 112: }
-[e :UE 1098 ]
+[e $UE 1091  ]
+"55
+[; ;main.c: 55: }
+[e :UE 1091 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"114
-[; ;main.c: 114: int main(void)
+"57
+[; ;main.c: 57: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"115
-[; ;main.c: 115: {
+"58
+[; ;main.c: 58: {
 {
 [e :U _main ]
 [f ]
-"116
-[; ;main.c: 116:     SYSTEM_Initialize();
+"59
+[; ;main.c: 59:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"118
-[; ;main.c: 118:     do { TRISAbits.TRISA1 = 0; } while(0);
-[e :U 1111 ]
+"61
+[; ;main.c: 61:     do { TRISAbits.TRISA1 = 0; } while(0);
+[e :U 1096 ]
 {
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1110 ]
-"119
-[; ;main.c: 119:     do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1114 ]
+[e :U 1095 ]
+"62
+[; ;main.c: 62:     do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1099 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1113 ]
-"120
-[; ;main.c: 120:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e :U 1098 ]
+"63
+[; ;main.c: 63:     _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"130
-[; ;main.c: 130:     uint8_t initResult = PN532_Init();
+"65
+[; ;main.c: 65:     uint8_t initResult = PN532_Init();
 [v _initResult `uc ~T0 @X0 1 a ]
 [e = _initResult ( _PN532_Init ..  ]
-"131
-[; ;main.c: 131:     if (initResult != 0)
-[e $ ! != -> _initResult `i -> 0 `i 1115  ]
-"132
-[; ;main.c: 132:     {
+"66
+[; ;main.c: 66:     if (initResult != 0)
+[e $ ! != -> _initResult `i -> 0 `i 1100  ]
+"67
+[; ;main.c: 67:     {
 {
-"136
-[; ;main.c: 136:         while (1)
-[e :U 1117 ]
-"137
-[; ;main.c: 137:         {
+"71
+[; ;main.c: 71:         while (1)
+[e :U 1102 ]
+"72
+[; ;main.c: 72:         {
 {
-"138
-[; ;main.c: 138:             for (uint8_t i = 0; i < initResult; i++)
+"73
+[; ;main.c: 73:             for (uint8_t i = 0; i < initResult; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1122  ]
-[e :U 1119 ]
-"139
-[; ;main.c: 139:             {
+[e $U 1107  ]
+[e :U 1104 ]
+"74
+[; ;main.c: 74:             {
 {
-"140
-[; ;main.c: 140:                 do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1125 ]
+"75
+[; ;main.c: 75:                 do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1110 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1124 ]
-"141
-[; ;main.c: 141:                 _delay((unsigned long)((200)*(32000000/4000.0)));
+[e :U 1109 ]
+"76
+[; ;main.c: 76:                 _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"142
-[; ;main.c: 142:                 do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1128 ]
+"77
+[; ;main.c: 77:                 do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1113 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1127 ]
-"143
-[; ;main.c: 143:                 _delay((unsigned long)((200)*(32000000/4000.0)));
+[e :U 1112 ]
+"78
+[; ;main.c: 78:                 _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:             }
+"79
+[; ;main.c: 79:             }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1122 ]
-[e $ < -> _i `i -> _initResult `i 1119  ]
-[e :U 1120 ]
+[e :U 1107 ]
+[e $ < -> _i `i -> _initResult `i 1104  ]
+[e :U 1105 ]
 }
-"145
-[; ;main.c: 145:             _delay((unsigned long)((1000)*(32000000/4000.0)));
+"80
+[; ;main.c: 80:             _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"146
-[; ;main.c: 146:         }
+"81
+[; ;main.c: 81:         }
 }
+[e :U 1101 ]
+[e $U 1102  ]
+[e :U 1103 ]
+"82
+[; ;main.c: 82:     }
+}
+[e :U 1100 ]
+"83
+[; ;main.c: 83:     do { LATAbits.LATA1 = 0; } while(0);
 [e :U 1116 ]
-[e $U 1117  ]
-[e :U 1118 ]
-"147
-[; ;main.c: 147:     }
-}
-[e :U 1115 ]
-"148
-[; ;main.c: 148:     do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1131 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1130 ]
-"150
-[; ;main.c: 150:     uint8_t lastUid[7];
+[e :U 1115 ]
+"85
+[; ;main.c: 85:     DFPlayer_Init();
+[e ( _DFPlayer_Init ..  ]
+"87
+[; ;main.c: 87:     uint8_t lastUid[7];
 [v _lastUid `uc ~T0 @X0 -> 7 `i a ]
-"151
-[; ;main.c: 151:     uint8_t lastUidLen = 0;
+"88
+[; ;main.c: 88:     uint8_t lastUidLen = 0;
 [v _lastUidLen `uc ~T0 @X0 1 a ]
 [e = _lastUidLen -> -> 0 `i `uc ]
-"153
-[; ;main.c: 153:     while (1)
-[e :U 1133 ]
-"154
-[; ;main.c: 154:     {
+"90
+[; ;main.c: 90:     while (1)
+[e :U 1118 ]
+"91
+[; ;main.c: 91:     {
 {
-"155
-[; ;main.c: 155:         uint8_t uid[7];
+"92
+[; ;main.c: 92:         uint8_t uid[7];
 [v _uid `uc ~T0 @X0 -> 7 `i a ]
-"156
-[; ;main.c: 156:         uint8_t uidLen;
+"93
+[; ;main.c: 93:         uint8_t uidLen;
 [v _uidLen `uc ~T0 @X0 1 a ]
-"158
-[; ;main.c: 158:         if (PN532_ReadPassiveTarget(uid, &uidLen))
-[e $ ! != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1135  ]
-"159
-[; ;main.c: 159:         {
+"95
+[; ;main.c: 95:         if (PN532_ReadPassiveTarget(uid, &uidLen))
+[e $ ! != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1120  ]
+"96
+[; ;main.c: 96:         {
 {
-"160
-[; ;main.c: 160:             do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1138 ]
+"97
+[; ;main.c: 97:             do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1123 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1137 ]
-"162
-[; ;main.c: 162:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
+[e :U 1122 ]
+"99
+[; ;main.c: 99:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
 [v _isNewTag `a ~T0 @X0 1 a ]
 [e = _isNewTag -> -> || != -> _uidLen `i -> _lastUidLen `i != ( _memcmp (3 , , -> &U _uid `*Cv -> &U _lastUid `*Cv -> _uidLen `ui -> 0 `i `i `a ]
-"163
-[; ;main.c: 163:             if (isNewTag)
-[e $ ! != -> _isNewTag `i -> 0 `i 1139  ]
-"164
-[; ;main.c: 164:             {
+"100
+[; ;main.c: 100:             if (isNewTag)
+[e $ ! != -> _isNewTag `i -> 0 `i 1124  ]
+"101
+[; ;main.c: 101:             {
 {
-"165
-[; ;main.c: 165:                 char text[32];
+"102
+[; ;main.c: 102:                 char text[32];
 [v _text `uc ~T0 @X0 -> 32 `i a ]
-"166
-[; ;main.c: 166:                 if (PN532_ReadNdefText(text, sizeof(text)))
-[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1140  ]
-"167
-[; ;main.c: 167:                 {
+"103
+[; ;main.c: 103:                 if (PN532_ReadNdefText(text, sizeof(text)))
+[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1125  ]
+"104
+[; ;main.c: 104:                 {
 {
-"168
-[; ;main.c: 168:                     uint16_t track = parse_track_number(text);
+"105
+[; ;main.c: 105:                     uint16_t track = parse_track_number(text);
 [v _track `us ~T0 @X0 1 a ]
 [e = _track ( _parse_track_number (1 -> &U _text `*Cuc ]
-"169
-[; ;main.c: 169:                     if (track > 0)
-[e $ ! > -> _track `ui -> -> 0 `i `ui 1141  ]
-"170
-[; ;main.c: 170:                     {
+"106
+[; ;main.c: 106:                     if (track > 0)
+[e $ ! > -> _track `ui -> -> 0 `i `ui 1126  ]
+"107
+[; ;main.c: 107:                     {
 {
-"171
-[; ;main.c: 171:                         dfplayer_send(0x12, track);
-[e ( _dfplayer_send (2 , -> -> 18 `i `uc _track ]
-"172
-[; ;main.c: 172:                     }
+"108
+[; ;main.c: 108:                         DFPlayer_PlayTrack(track);
+[e ( _DFPlayer_PlayTrack (1 _track ]
+"109
+[; ;main.c: 109:                     }
 }
-[e :U 1141 ]
-"173
-[; ;main.c: 173:                 }
+[e :U 1126 ]
+"110
+[; ;main.c: 110:                 }
 }
-[e :U 1140 ]
-"174
-[; ;main.c: 174:                 memcpy(lastUid, uid, uidLen);
+[e :U 1125 ]
+"111
+[; ;main.c: 111:                 memcpy(lastUid, uid, uidLen);
 [e ( _memcpy (3 , , -> &U _lastUid `*v -> &U _uid `*Cv -> _uidLen `ui ]
-"175
-[; ;main.c: 175:                 lastUidLen = uidLen;
+"112
+[; ;main.c: 112:                 lastUidLen = uidLen;
 [e = _lastUidLen _uidLen ]
-"176
-[; ;main.c: 176:             }
+"113
+[; ;main.c: 113:             }
 }
-[e :U 1139 ]
-"177
-[; ;main.c: 177:         }
+[e :U 1124 ]
+"114
+[; ;main.c: 114:         }
 }
-[e $U 1142  ]
-"178
-[; ;main.c: 178:         else
-[e :U 1135 ]
-"179
-[; ;main.c: 179:         {
+[e $U 1127  ]
+"115
+[; ;main.c: 115:         else
+[e :U 1120 ]
+"116
+[; ;main.c: 116:         {
 {
-"181
-[; ;main.c: 181:             lastUidLen = 0;
+"118
+[; ;main.c: 118:             DFPlayer_Stop();
+[e ( _DFPlayer_Stop ..  ]
+"120
+[; ;main.c: 120:             lastUidLen = 0;
 [e = _lastUidLen -> -> 0 `i `uc ]
-"182
-[; ;main.c: 182:             do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1145 ]
+"121
+[; ;main.c: 121:             do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1130 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1144 ]
-"183
-[; ;main.c: 183:         }
+[e :U 1129 ]
+"122
+[; ;main.c: 122:         }
 }
-[e :U 1142 ]
-"185
-[; ;main.c: 185:         _delay((unsigned long)((150)*(32000000/4000.0)));
+[e :U 1127 ]
+"124
+[; ;main.c: 124:         _delay((unsigned long)((150)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"186
-[; ;main.c: 186:     }
+"125
+[; ;main.c: 125:     }
 }
-[e :U 1132 ]
-[e $U 1133  ]
-[e :U 1134 ]
-"187
-[; ;main.c: 187: }
-[e :UE 1108 ]
+[e :U 1117 ]
+[e $U 1118  ]
+[e :U 1119 ]
+"126
+[; ;main.c: 126: }
+[e :UE 1093 ]
 }
 [a 1C 58 58 0 ]
