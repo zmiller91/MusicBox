@@ -34,6 +34,8 @@
 #include "drivers/pn532.h"
 #include "drivers/dfplayer.h"
 #include "drivers/rotary_encoder.h"
+#include "drivers/mood_lights.h"
+#include "drivers/scene.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -67,7 +69,7 @@ static bool isOn = true;
 // the main loop, not from the IOC ISR, so it's safe to do real work here.
 static void on_power_button_pressed(void)
 {
-    DFPlayer_Stop();
+    Scene_Stop();
 
     // Forget the last tag, so if it's still sitting on the reader, the
     // main loop treats it as newly-arrived and plays it again instead of
@@ -110,10 +112,12 @@ int main(void)
 
     DFPlayer_Init();
     RotaryEncoder_Init(on_power_button_pressed);
+    MoodLights_Init();
 
     while (1)
     {
         RotaryEncoder_Tasks();
+        MoodLights_Tasks();
 
         uint8_t uid[PN532_UID_MAX_LEN];
         uint8_t uidLen;
@@ -131,7 +135,7 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
-                        DFPlayer_PlayTrack(track);
+                        Scene_Start(track);
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -145,7 +149,7 @@ int main(void)
                 // Tag was just pulled away (not a power-off, which already
                 // stopped things abruptly in on_power_button_pressed()) -
                 // fade out once, not on every poll while it's gone.
-                DFPlayer_FadeOutAndStop();
+                Scene_Stop();
             }
             // Let the same tag retrigger next time it's tapped.
             lastUidLen = 0;

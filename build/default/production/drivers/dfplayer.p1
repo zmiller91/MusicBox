@@ -1190,25 +1190,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "6
 [; ;drivers/dfplayer.c: 6:     while (!EUSART1_IsTxReady())
-[e $U 1088  ]
-[e :U 1089 ]
+[e $U 1089  ]
+[e :U 1090 ]
 "7
 [; ;drivers/dfplayer.c: 7:     {
 {
 "9
 [; ;drivers/dfplayer.c: 9:     }
 }
-[e :U 1088 ]
+[e :U 1089 ]
 "6
 [; ;drivers/dfplayer.c: 6:     while (!EUSART1_IsTxReady())
-[e $ ! != -> ( _EUSART1_IsTxReady ..  `i -> 0 `i 1089  ]
-[e :U 1090 ]
+[e $ ! != -> ( _EUSART1_IsTxReady ..  `i -> 0 `i 1090  ]
+[e :U 1091 ]
 "11
 [; ;drivers/dfplayer.c: 11:     EUSART1_Write(data);
 [e ( _EUSART1_Write (1 _data ]
 "12
 [; ;drivers/dfplayer.c: 12: }
-[e :UE 1087 ]
+[e :UE 1088 ]
 }
 "19
 [; ;drivers/dfplayer.c: 19: static void dfplayer_uart_clear_overrun(void)
@@ -1220,7 +1220,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "21
 [; ;drivers/dfplayer.c: 21:     if (RC1STAbits.OERR)
-[e $ ! != -> . . _RC1STAbits 0 1 `i -> 0 `i 1092  ]
+[e $ ! != -> . . _RC1STAbits 0 1 `i -> 0 `i 1093  ]
 "22
 [; ;drivers/dfplayer.c: 22:     {
 {
@@ -1233,10 +1233,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;drivers/dfplayer.c: 25:     }
 }
-[e :U 1092 ]
+[e :U 1093 ]
 "26
 [; ;drivers/dfplayer.c: 26: }
-[e :UE 1091 ]
+[e :UE 1092 ]
 }
 "43
 [; ;drivers/dfplayer.c: 43: static _Bool dfplayer_wait_for_ack(uint32_t timeout_us)
@@ -1263,14 +1263,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _count -> -> 0 `i `uc ]
 "49
 [; ;drivers/dfplayer.c: 49:     while (count < sizeof(frame) && timeout_us)
-[e $U 1094  ]
-[e :U 1095 ]
+[e $U 1095  ]
+[e :U 1096 ]
 "50
 [; ;drivers/dfplayer.c: 50:     {
 {
 "51
 [; ;drivers/dfplayer.c: 51:         if (EUSART1_IsRxReady())
-[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1097  ]
+[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1098  ]
 "52
 [; ;drivers/dfplayer.c: 52:         {
 {
@@ -1280,10 +1280,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;drivers/dfplayer.c: 54:         }
 }
-[e $U 1098  ]
+[e $U 1099  ]
 "55
 [; ;drivers/dfplayer.c: 55:         else
-[e :U 1097 ]
+[e :U 1098 ]
 "56
 [; ;drivers/dfplayer.c: 56:         {
 {
@@ -1296,36 +1296,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;drivers/dfplayer.c: 59:         }
 }
-[e :U 1098 ]
+[e :U 1099 ]
 "60
 [; ;drivers/dfplayer.c: 60:     }
 }
-[e :U 1094 ]
+[e :U 1095 ]
 "49
 [; ;drivers/dfplayer.c: 49:     while (count < sizeof(frame) && timeout_us)
-[e $ && < -> _count `ui -> # _frame `ui != _timeout_us -> -> -> 0 `i `l `ul 1095  ]
-[e :U 1096 ]
+[e $ && < -> _count `ui -> # _frame `ui != _timeout_us -> -> -> 0 `i `l `ul 1096  ]
+[e :U 1097 ]
 "62
 [; ;drivers/dfplayer.c: 62:     if (count < sizeof(frame))
-[e $ ! < -> _count `ui -> # _frame `ui 1099  ]
+[e $ ! < -> _count `ui -> # _frame `ui 1100  ]
 "63
 [; ;drivers/dfplayer.c: 63:     {
 {
 "64
 [; ;drivers/dfplayer.c: 64:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 1093  ]
+[e $UE 1094  ]
 "65
 [; ;drivers/dfplayer.c: 65:     }
 }
-[e :U 1099 ]
+[e :U 1100 ]
 "66
 [; ;drivers/dfplayer.c: 66:     return frame[0] == 0x7E && frame[3] == 0x41 && frame[9] == 0xEF;
 [e ) -> -> && && == -> *U + &U _frame * -> -> -> 0 `i `ui `ux -> -> # *U &U _frame `ui `ux `i -> 126 `i == -> *U + &U _frame * -> -> -> 3 `i `ui `ux -> -> # *U &U _frame `ui `ux `i -> 65 `i == -> *U + &U _frame * -> -> -> 9 `i `ui `ux -> -> # *U &U _frame `ui `ux `i -> 239 `i `i `a ]
-[e $UE 1093  ]
+[e $UE 1094  ]
 "67
 [; ;drivers/dfplayer.c: 67: }
-[e :UE 1093 ]
+[e :UE 1094 ]
 }
 "69
 [; ;drivers/dfplayer.c: 69: _Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck)
@@ -1360,8 +1360,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _checksum -> - -> 0 `i + + + + + -> 255 `i -> 6 `i -> _command `i -> _feedback `i -> _high `i -> _low `i `us ]
 "81
 [; ;drivers/dfplayer.c: 81:     while (EUSART1_IsRxReady())
-[e $U 1101  ]
-[e :U 1102 ]
+[e $U 1102  ]
+[e :U 1103 ]
 "82
 [; ;drivers/dfplayer.c: 82:     {
 {
@@ -1371,11 +1371,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "84
 [; ;drivers/dfplayer.c: 84:     }
 }
-[e :U 1101 ]
+[e :U 1102 ]
 "81
 [; ;drivers/dfplayer.c: 81:     while (EUSART1_IsRxReady())
-[e $ != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1102  ]
-[e :U 1103 ]
+[e $ != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1103  ]
+[e :U 1104 ]
 "86
 [; ;drivers/dfplayer.c: 86:     dfplayer_uart_write(0x7E);
 [e ( _dfplayer_uart_write (1 -> -> 126 `i `uc ]
@@ -1408,46 +1408,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _dfplayer_uart_write (1 -> -> 239 `i `uc ]
 "101
 [; ;drivers/dfplayer.c: 101:     while (!EUSART1_IsTxDone())
-[e $U 1104  ]
-[e :U 1105 ]
+[e $U 1105  ]
+[e :U 1106 ]
 "102
 [; ;drivers/dfplayer.c: 102:     {
 {
 "103
 [; ;drivers/dfplayer.c: 103:     }
 }
-[e :U 1104 ]
+[e :U 1105 ]
 "101
 [; ;drivers/dfplayer.c: 101:     while (!EUSART1_IsTxDone())
-[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1105  ]
-[e :U 1106 ]
+[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1106  ]
+[e :U 1107 ]
 "105
 [; ;drivers/dfplayer.c: 105:     if (!waitForAck)
-[e $ ! ! != -> _waitForAck `i -> 0 `i 1107  ]
+[e $ ! ! != -> _waitForAck `i -> 0 `i 1108  ]
 "106
 [; ;drivers/dfplayer.c: 106:     {
 {
 "107
 [; ;drivers/dfplayer.c: 107:         return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 1100  ]
+[e $UE 1101  ]
 "108
 [; ;drivers/dfplayer.c: 108:     }
 }
-[e :U 1107 ]
+[e :U 1108 ]
 "109
 [; ;drivers/dfplayer.c: 109:     return dfplayer_wait_for_ack(50000);
 [e ) ( _dfplayer_wait_for_ack (1 -> -> 50000 `l `ul ]
-[e $UE 1100  ]
+[e $UE 1101  ]
 "110
 [; ;drivers/dfplayer.c: 110: }
-[e :UE 1100 ]
+[e :UE 1101 ]
 }
 "112
-[; ;drivers/dfplayer.c: 112: static uint8_t currentVolume = 8;
+[; ;drivers/dfplayer.c: 112: static uint8_t currentVolume = 18;
 [v _currentVolume `uc ~T0 @X0 1 s ]
 [i _currentVolume
--> -> 8 `i `uc
+-> -> 18 `i `uc
 ]
 "114
 [; ;drivers/dfplayer.c: 114: void DFPlayer_Init(void)
@@ -1458,11 +1458,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _DFPlayer_Init ]
 [f ]
 "116
-[; ;drivers/dfplayer.c: 116:     DFPlayer_SetVolume(8, 1);
-[e ( _DFPlayer_SetVolume (2 , -> -> 8 `i `uc -> -> 1 `i `a ]
+[; ;drivers/dfplayer.c: 116:     DFPlayer_SetVolume(18, 1);
+[e ( _DFPlayer_SetVolume (2 , -> -> 18 `i `uc -> -> 1 `i `a ]
 "117
 [; ;drivers/dfplayer.c: 117: }
-[e :UE 1108 ]
+[e :UE 1109 ]
 }
 "119
 [; ;drivers/dfplayer.c: 119: void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck)
@@ -1480,7 +1480,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "121
 [; ;drivers/dfplayer.c: 121:     if (volume > 25)
-[e $ ! > -> _volume `i -> 25 `i 1110  ]
+[e $ ! > -> _volume `i -> 25 `i 1111  ]
 "122
 [; ;drivers/dfplayer.c: 122:     {
 {
@@ -1490,7 +1490,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "124
 [; ;drivers/dfplayer.c: 124:     }
 }
-[e :U 1110 ]
+[e :U 1111 ]
 "125
 [; ;drivers/dfplayer.c: 125:     currentVolume = volume;
 [e = _currentVolume _volume ]
@@ -1499,7 +1499,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _DFPlayer_SendCommand (3 , , -> -> 6 `i `uc -> _volume `us _waitForAck ]
 "127
 [; ;drivers/dfplayer.c: 127: }
-[e :UE 1109 ]
+[e :UE 1110 ]
 }
 "129
 [; ;drivers/dfplayer.c: 129: void DFPlayer_AdjustVolume(int8_t delta)
@@ -1520,7 +1520,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _volume -> + -> -> _currentVolume `s `i -> _delta `i `s ]
 "132
 [; ;drivers/dfplayer.c: 132:     if (volume < 0)
-[e $ ! < -> _volume `i -> 0 `i 1112  ]
+[e $ ! < -> _volume `i -> 0 `i 1113  ]
 "133
 [; ;drivers/dfplayer.c: 133:     {
 {
@@ -1530,10 +1530,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "135
 [; ;drivers/dfplayer.c: 135:     }
 }
-[e :U 1112 ]
+[e :U 1113 ]
 "136
 [; ;drivers/dfplayer.c: 136:     if (volume > 25)
-[e $ ! > -> _volume `i -> 25 `i 1113  ]
+[e $ ! > -> _volume `i -> 25 `i 1114  ]
 "137
 [; ;drivers/dfplayer.c: 137:     {
 {
@@ -1543,13 +1543,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "139
 [; ;drivers/dfplayer.c: 139:     }
 }
-[e :U 1113 ]
+[e :U 1114 ]
 "142
 [; ;drivers/dfplayer.c: 142:     DFPlayer_SetVolume((uint8_t)volume, 0);
 [e ( _DFPlayer_SetVolume (2 , -> _volume `uc -> -> 0 `i `a ]
 "143
 [; ;drivers/dfplayer.c: 143: }
-[e :UE 1111 ]
+[e :UE 1112 ]
 }
 "145
 [; ;drivers/dfplayer.c: 145: uint8_t DFPlayer_GetVolume(void)
@@ -1562,10 +1562,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "147
 [; ;drivers/dfplayer.c: 147:     return currentVolume;
 [e ) _currentVolume ]
-[e $UE 1114  ]
+[e $UE 1115  ]
 "148
 [; ;drivers/dfplayer.c: 148: }
-[e :UE 1114 ]
+[e :UE 1115 ]
 }
 "150
 [; ;drivers/dfplayer.c: 150: void DFPlayer_PlayTrack(uint16_t track)
@@ -1585,7 +1585,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _DFPlayer_SendCommand (3 , , -> -> 18 `i `uc _track -> -> 1 `i `a ]
 "153
 [; ;drivers/dfplayer.c: 153: }
-[e :UE 1115 ]
+[e :UE 1116 ]
 }
 "155
 [; ;drivers/dfplayer.c: 155: void DFPlayer_Stop(void)
@@ -1600,7 +1600,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _DFPlayer_SendCommand (3 , , -> -> 22 `i `uc -> -> 0 `i `us -> -> 1 `i `a ]
 "158
 [; ;drivers/dfplayer.c: 158: }
-[e :UE 1116 ]
+[e :UE 1117 ]
 }
 "166
 [; ;drivers/dfplayer.c: 166: void DFPlayer_FadeOutAndStop(void)
@@ -1616,8 +1616,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _startVolume _currentVolume ]
 "170
 [; ;drivers/dfplayer.c: 170:     while (currentVolume > 0)
-[e $U 1118  ]
-[e :U 1119 ]
+[e $U 1119  ]
+[e :U 1120 ]
 "171
 [; ;drivers/dfplayer.c: 171:     {
 {
@@ -1630,11 +1630,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "174
 [; ;drivers/dfplayer.c: 174:     }
 }
-[e :U 1118 ]
+[e :U 1119 ]
 "170
 [; ;drivers/dfplayer.c: 170:     while (currentVolume > 0)
-[e $ > -> _currentVolume `i -> 0 `i 1119  ]
-[e :U 1120 ]
+[e $ > -> _currentVolume `i -> 0 `i 1120  ]
+[e :U 1121 ]
 "176
 [; ;drivers/dfplayer.c: 176:     DFPlayer_Stop();
 [e ( _DFPlayer_Stop ..  ]
@@ -1643,5 +1643,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _DFPlayer_SetVolume (2 , _startVolume -> -> 1 `i `a ]
 "178
 [; ;drivers/dfplayer.c: 178: }
-[e :UE 1117 ]
+[e :UE 1118 ]
 }

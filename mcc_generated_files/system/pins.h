@@ -88,25 +88,44 @@
 #define POWER_SetAnalogMode()      do { ANSELAbits.ANSA3 = 1; } while(0)
 #define POWER_SetDigitalMode()     do { ANSELAbits.ANSA3 = 0; } while(0)
 #define RA3_SetInterruptHandler  POWER_SetInterruptHandler
-// get/set IO_RB3 aliases
-#define IO_RB3_TRIS                 TRISBbits.TRISB3
-#define IO_RB3_LAT                  LATBbits.LATB3
-#define IO_RB3_PORT                 PORTBbits.RB3
-#define IO_RB3_WPU                  WPUBbits.WPUB3
-#define IO_RB3_OD                   ODCONBbits.ODCB3
-#define IO_RB3_ANS                  ANSELBbits.ANSB3
-#define IO_RB3_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
-#define IO_RB3_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
-#define IO_RB3_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
-#define IO_RB3_GetValue()           PORTBbits.RB3
-#define IO_RB3_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
-#define IO_RB3_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
-#define IO_RB3_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
-#define IO_RB3_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
-#define IO_RB3_SetPushPull()        do { ODCONBbits.ODCB3 = 0; } while(0)
-#define IO_RB3_SetOpenDrain()       do { ODCONBbits.ODCB3 = 1; } while(0)
-#define IO_RB3_SetAnalogMode()      do { ANSELBbits.ANSB3 = 1; } while(0)
-#define IO_RB3_SetDigitalMode()     do { ANSELBbits.ANSB3 = 0; } while(0)
+// get/set IO_RA5 aliases
+#define LED_3_TRIS                 TRISAbits.TRISA5
+#define LED_3_LAT                  LATAbits.LATA5
+#define LED_3_PORT                 PORTAbits.RA5
+#define LED_3_WPU                  WPUAbits.WPUA5
+#define LED_3_OD                   ODCONAbits.ODCA5
+#define LED_3_ANS                  ANSELAbits.ANSA5
+#define LED_3_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define LED_3_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define LED_3_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define LED_3_GetValue()           PORTAbits.RA5
+#define LED_3_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define LED_3_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define LED_3_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define LED_3_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define LED_3_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
+#define LED_3_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
+#define LED_3_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define LED_3_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
+// get/set IO_RB1 aliases
+#define MUSIC_ON_TRIS                 TRISBbits.TRISB1
+#define MUSIC_ON_LAT                  LATBbits.LATB1
+#define MUSIC_ON_PORT                 PORTBbits.RB1
+#define MUSIC_ON_WPU                  WPUBbits.WPUB1
+#define MUSIC_ON_OD                   ODCONBbits.ODCB1
+#define MUSIC_ON_ANS                  ANSELBbits.ANSB1
+#define MUSIC_ON_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
+#define MUSIC_ON_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
+#define MUSIC_ON_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
+#define MUSIC_ON_GetValue()           PORTBbits.RB1
+#define MUSIC_ON_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
+#define MUSIC_ON_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
+#define MUSIC_ON_SetPullup()          do { WPUBbits.WPUB1 = 1; } while(0)
+#define MUSIC_ON_ResetPullup()        do { WPUBbits.WPUB1 = 0; } while(0)
+#define MUSIC_ON_SetPushPull()        do { ODCONBbits.ODCB1 = 0; } while(0)
+#define MUSIC_ON_SetOpenDrain()       do { ODCONBbits.ODCB1 = 1; } while(0)
+#define MUSIC_ON_SetAnalogMode()      do { ANSELBbits.ANSB1 = 1; } while(0)
+#define MUSIC_ON_SetDigitalMode()     do { ANSELBbits.ANSB1 = 0; } while(0)
 // get/set IO_RB4 aliases
 #define IO_RB4_TRIS                 TRISBbits.TRISB4
 #define IO_RB4_LAT                  LATBbits.LATB4
@@ -185,6 +204,25 @@
 #define VOL_B_SetAnalogMode()      do { ANSELCbits.ANSC4 = 1; } while(0)
 #define VOL_B_SetDigitalMode()     do { ANSELCbits.ANSC4 = 0; } while(0)
 #define RC4_SetInterruptHandler  VOL_B_SetInterruptHandler
+// get/set IO_RC6 aliases
+#define LID_OPEN_TRIS                 TRISCbits.TRISC6
+#define LID_OPEN_LAT                  LATCbits.LATC6
+#define LID_OPEN_PORT                 PORTCbits.RC6
+#define LID_OPEN_WPU                  WPUCbits.WPUC6
+#define LID_OPEN_OD                   ODCONCbits.ODCC6
+#define LID_OPEN_ANS                  ANSELCbits.ANSC6
+#define LID_OPEN_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
+#define LID_OPEN_SetLow()             do { LATCbits.LATC6 = 0; } while(0)
+#define LID_OPEN_Toggle()             do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
+#define LID_OPEN_GetValue()           PORTCbits.RC6
+#define LID_OPEN_SetDigitalInput()    do { TRISCbits.TRISC6 = 1; } while(0)
+#define LID_OPEN_SetDigitalOutput()   do { TRISCbits.TRISC6 = 0; } while(0)
+#define LID_OPEN_SetPullup()          do { WPUCbits.WPUC6 = 1; } while(0)
+#define LID_OPEN_ResetPullup()        do { WPUCbits.WPUC6 = 0; } while(0)
+#define LID_OPEN_SetPushPull()        do { ODCONCbits.ODCC6 = 0; } while(0)
+#define LID_OPEN_SetOpenDrain()       do { ODCONCbits.ODCC6 = 1; } while(0)
+#define LID_OPEN_SetAnalogMode()      do { ANSELCbits.ANSC6 = 1; } while(0)
+#define LID_OPEN_SetDigitalMode()     do { ANSELCbits.ANSC6 = 0; } while(0)
 // get/set IO_RD1 aliases
 #define IO_RD1_TRIS                 TRISDbits.TRISD1
 #define IO_RD1_LAT                  LATDbits.LATD1
@@ -223,6 +261,44 @@
 #define IO_RD2_SetOpenDrain()       do { ODCONDbits.ODCD2 = 1; } while(0)
 #define IO_RD2_SetAnalogMode()      do { ANSELDbits.ANSD2 = 1; } while(0)
 #define IO_RD2_SetDigitalMode()     do { ANSELDbits.ANSD2 = 0; } while(0)
+// get/set IO_RD4 aliases
+#define LED_PWM_1_TRIS                 TRISDbits.TRISD4
+#define LED_PWM_1_LAT                  LATDbits.LATD4
+#define LED_PWM_1_PORT                 PORTDbits.RD4
+#define LED_PWM_1_WPU                  WPUDbits.WPUD4
+#define LED_PWM_1_OD                   ODCONDbits.ODCD4
+#define LED_PWM_1_ANS                  ANSELDbits.ANSD4
+#define LED_PWM_1_SetHigh()            do { LATDbits.LATD4 = 1; } while(0)
+#define LED_PWM_1_SetLow()             do { LATDbits.LATD4 = 0; } while(0)
+#define LED_PWM_1_Toggle()             do { LATDbits.LATD4 = ~LATDbits.LATD4; } while(0)
+#define LED_PWM_1_GetValue()           PORTDbits.RD4
+#define LED_PWM_1_SetDigitalInput()    do { TRISDbits.TRISD4 = 1; } while(0)
+#define LED_PWM_1_SetDigitalOutput()   do { TRISDbits.TRISD4 = 0; } while(0)
+#define LED_PWM_1_SetPullup()          do { WPUDbits.WPUD4 = 1; } while(0)
+#define LED_PWM_1_ResetPullup()        do { WPUDbits.WPUD4 = 0; } while(0)
+#define LED_PWM_1_SetPushPull()        do { ODCONDbits.ODCD4 = 0; } while(0)
+#define LED_PWM_1_SetOpenDrain()       do { ODCONDbits.ODCD4 = 1; } while(0)
+#define LED_PWM_1_SetAnalogMode()      do { ANSELDbits.ANSD4 = 1; } while(0)
+#define LED_PWM_1_SetDigitalMode()     do { ANSELDbits.ANSD4 = 0; } while(0)
+// get/set IO_RD5 aliases
+#define LED_PWM_2_TRIS                 TRISDbits.TRISD5
+#define LED_PWM_2_LAT                  LATDbits.LATD5
+#define LED_PWM_2_PORT                 PORTDbits.RD5
+#define LED_PWM_2_WPU                  WPUDbits.WPUD5
+#define LED_PWM_2_OD                   ODCONDbits.ODCD5
+#define LED_PWM_2_ANS                  ANSELDbits.ANSD5
+#define LED_PWM_2_SetHigh()            do { LATDbits.LATD5 = 1; } while(0)
+#define LED_PWM_2_SetLow()             do { LATDbits.LATD5 = 0; } while(0)
+#define LED_PWM_2_Toggle()             do { LATDbits.LATD5 = ~LATDbits.LATD5; } while(0)
+#define LED_PWM_2_GetValue()           PORTDbits.RD5
+#define LED_PWM_2_SetDigitalInput()    do { TRISDbits.TRISD5 = 1; } while(0)
+#define LED_PWM_2_SetDigitalOutput()   do { TRISDbits.TRISD5 = 0; } while(0)
+#define LED_PWM_2_SetPullup()          do { WPUDbits.WPUD5 = 1; } while(0)
+#define LED_PWM_2_ResetPullup()        do { WPUDbits.WPUD5 = 0; } while(0)
+#define LED_PWM_2_SetPushPull()        do { ODCONDbits.ODCD5 = 0; } while(0)
+#define LED_PWM_2_SetOpenDrain()       do { ODCONDbits.ODCD5 = 1; } while(0)
+#define LED_PWM_2_SetAnalogMode()      do { ANSELDbits.ANSD5 = 1; } while(0)
+#define LED_PWM_2_SetDigitalMode()     do { ANSELDbits.ANSD5 = 0; } while(0)
 /**
  * @ingroup  pinsdriver
  * @brief GPIO and peripheral I/O initialization

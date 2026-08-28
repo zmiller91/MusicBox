@@ -9,4 +9,8 @@ mcc_generated_files/system/src/../../uart/../system/system.h  \
 mcc_generated_files/system/src/../../uart/uart_drv_interface.h  \
 mcc_generated_files/system/src/../../uart/uart_types.h  \
 mcc_generated_files/system/src/../../uart/eusart2.h  \
+mcc_generated_files/system/src/../../pwm/pwm3.h  \
+mcc_generated_files/system/src/../../pwm/pwm4.h  \
+mcc_generated_files/system/src/../../timer/tmr2.h  \
+mcc_generated_files/system/src/../../timer/timer_interface.h  \
 mcc_generated_files/system/src/../../system/interrupt.h 

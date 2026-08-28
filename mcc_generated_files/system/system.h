@@ -42,6 +42,9 @@
 #include "../system/pins.h"
 #include "../uart/eusart1.h"
 #include "../uart/eusart2.h"
+#include "../pwm/pwm3.h"
+#include "../pwm/pwm4.h"
+#include "../timer/tmr2.h"
 #include "../system/interrupt.h"
 
 /**

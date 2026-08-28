@@ -13309,7 +13309,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 232 "mcc_generated_files/system/src/../pins.h"
+# 270 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13327,11 +13327,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 258 "mcc_generated_files/system/src/../pins.h"
+# 296 "mcc_generated_files/system/src/../pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 269 "mcc_generated_files/system/src/../pins.h"
+# 307 "mcc_generated_files/system/src/../pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 280 "mcc_generated_files/system/src/../pins.h"
+# 318 "mcc_generated_files/system/src/../pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13341,11 +13341,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 298 "mcc_generated_files/system/src/../pins.h"
+# 336 "mcc_generated_files/system/src/../pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 309 "mcc_generated_files/system/src/../pins.h"
+# 347 "mcc_generated_files/system/src/../pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 320 "mcc_generated_files/system/src/../pins.h"
+# 358 "mcc_generated_files/system/src/../pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13355,11 +13355,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 338 "mcc_generated_files/system/src/../pins.h"
+# 376 "mcc_generated_files/system/src/../pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 349 "mcc_generated_files/system/src/../pins.h"
+# 387 "mcc_generated_files/system/src/../pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 360 "mcc_generated_files/system/src/../pins.h"
+# 398 "mcc_generated_files/system/src/../pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
 
@@ -13382,19 +13382,19 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    TRISA = 0xFD;
-    TRISB = 0xE7;
+    TRISA = 0xDD;
+    TRISB = 0xEF;
     TRISC = 0xFF;
-    TRISD = 0xFD;
+    TRISD = 0xCD;
     TRISE = 0xF;
 
 
 
 
-    ANSELA = 0xF5;
+    ANSELA = 0xD5;
     ANSELB = 0xCF;
     ANSELC = 0xE7;
-    ANSELD = 0xFB;
+    ANSELD = 0xCB;
     ANSELE = 0x7;
 
 
@@ -13437,10 +13437,11 @@ void PIN_MANAGER_Initialize(void)
 
     RX2PPS = 0x1A;
     RX1PPS = 0xD;
-    RB3PPS = 0x11;
+    RD4PPS = 0x0B;
+    RD5PPS = 0x0C;
     RD1PPS = 0x11;
     RB4PPS = 0x0E;
-# 121 "mcc_generated_files/system/src/pins.c"
+# 122 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x8;
     IOCAF = 0x0;

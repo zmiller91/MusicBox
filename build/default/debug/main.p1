@@ -5,15 +5,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 23: int atoi (const char *);
 [v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"67 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 67: void DFPlayer_Stop(void);
-[v _DFPlayer_Stop `(v ~T0 @X0 0 ef ]
+"37 ./drivers/scene.h
+[; ;./drivers/scene.h: 37: void Scene_Stop(void);
+[v _Scene_Stop `(v ~T0 @X0 0 ef ]
 "29 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 [p mainexit ]
-"53 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
+"56 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
@@ -58,13 +58,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45 ./drivers/dfplayer.h
 [; ;./drivers/dfplayer.h: 45: void DFPlayer_Init(void);
 [v _DFPlayer_Init `(v ~T0 @X0 0 ef ]
-[v F8314 `(v ~T0 @X0 0 tf ]
+[v F8394 `(v ~T0 @X0 0 tf ]
 "26 ./drivers/rotary_encoder.h
 [; ;./drivers/rotary_encoder.h: 26: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
-[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8314 ]
-"32
+[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8394 ]
+"25 ./drivers/mood_lights.h
+[; ;./drivers/mood_lights.h: 25: void MoodLights_Init(void);
+[v _MoodLights_Init `(v ~T0 @X0 0 ef ]
+"32 ./drivers/rotary_encoder.h
 [; ;./drivers/rotary_encoder.h: 32: void RotaryEncoder_Tasks(void);
 [v _RotaryEncoder_Tasks `(v ~T0 @X0 0 ef ]
+"32 ./drivers/mood_lights.h
+[; ;./drivers/mood_lights.h: 32: void MoodLights_Tasks(void);
+[v _MoodLights_Tasks `(v ~T0 @X0 0 ef ]
 "51 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 51: _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 [v _PN532_ReadPassiveTarget `(a ~T0 @X0 0 ef2`*uc`*uc ]
@@ -74,15 +80,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 59: _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
 [v _PN532_ReadNdefText `(a ~T0 @X0 0 ef2`*uc`uc ]
-"64 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 64: void DFPlayer_PlayTrack(uint16_t track);
-[v _DFPlayer_PlayTrack `(v ~T0 @X0 0 ef1`us ]
+"32 ./drivers/scene.h
+[; ;./drivers/scene.h: 32: void Scene_Start(uint16_t track);
+[v _Scene_Start `(v ~T0 @X0 0 ef1`us ]
 "27 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"74 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 74: void DFPlayer_FadeOutAndStop(void);
-[v _DFPlayer_FadeOutAndStop `(v ~T0 @X0 0 ef ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1226,325 +1229,331 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"48 main.c
-[; ;main.c: 48: static uint16_t parse_track_number(const char *text)
+"50 main.c
+[; ;main.c: 50: static uint16_t parse_track_number(const char *text)
 [v _parse_track_number `(us ~T0 @X0 1 sf1`*Cuc ]
-"49
-[; ;main.c: 49: {
+"51
+[; ;main.c: 51: {
 {
 [e :U _parse_track_number ]
-"48
-[; ;main.c: 48: static uint16_t parse_track_number(const char *text)
-[v _text `*Cuc ~T0 @X0 1 r1 ]
-"49
-[; ;main.c: 49: {
-[f ]
 "50
-[; ;main.c: 50:     const char *sep = strstr(text, "::");
+[; ;main.c: 50: static uint16_t parse_track_number(const char *text)
+[v _text `*Cuc ~T0 @X0 1 r1 ]
+"51
+[; ;main.c: 51: {
+[f ]
+"52
+[; ;main.c: 52:     const char *sep = strstr(text, "::");
 [v _sep `*Cuc ~T0 @X0 1 a ]
 [e = _sep -> ( _strstr (2 , _text :s 1C `*Cuc ]
-"51
-[; ;main.c: 51:     if (sep == ((void*)0))
-[e $ ! == _sep -> -> -> 0 `i `*v `*Cuc 1089  ]
-"52
-[; ;main.c: 52:     {
-{
 "53
-[; ;main.c: 53:         return 0;
-[e ) -> -> 0 `i `us ]
-[e $UE 1088  ]
+[; ;main.c: 53:     if (sep == ((void*)0))
+[e $ ! == _sep -> -> -> 0 `i `*v `*Cuc 1090  ]
 "54
-[; ;main.c: 54:     }
-}
-[e :U 1089 ]
+[; ;main.c: 54:     {
+{
 "55
-[; ;main.c: 55:     return (uint16_t)atoi(sep + 2);
-[e ) -> ( _atoi (1 + _sep * -> -> 2 `i `x -> -> # *U _sep `i `x `us ]
-[e $UE 1088  ]
+[; ;main.c: 55:         return 0;
+[e ) -> -> 0 `i `us ]
+[e $UE 1089  ]
 "56
-[; ;main.c: 56: }
-[e :UE 1088 ]
+[; ;main.c: 56:     }
 }
-"61
-[; ;main.c: 61: static uint8_t lastUid[7];
+[e :U 1090 ]
+"57
+[; ;main.c: 57:     return (uint16_t)atoi(sep + 2);
+[e ) -> ( _atoi (1 + _sep * -> -> 2 `i `x -> -> # *U _sep `i `x `us ]
+[e $UE 1089  ]
+"58
+[; ;main.c: 58: }
+[e :UE 1089 ]
+}
+"63
+[; ;main.c: 63: static uint8_t lastUid[7];
 [v _lastUid `uc ~T0 @X0 -> 7 `i s ]
-"62
-[; ;main.c: 62: static uint8_t lastUidLen = 0;
+"64
+[; ;main.c: 64: static uint8_t lastUidLen = 0;
 [v _lastUidLen `uc ~T0 @X0 1 s ]
 [i _lastUidLen
 -> -> 0 `i `uc
 ]
-"63
-[; ;main.c: 63: static _Bool isOn = 1;
+"65
+[; ;main.c: 65: static _Bool isOn = 1;
 [v _isOn `a ~T0 @X0 1 s ]
 [i _isOn
 -> -> 1 `i `a
 ]
-"68
-[; ;main.c: 68: static void on_power_button_pressed(void)
+"70
+[; ;main.c: 70: static void on_power_button_pressed(void)
 [v _on_power_button_pressed `(v ~T0 @X0 1 sf ]
-"69
-[; ;main.c: 69: {
+"71
+[; ;main.c: 71: {
 {
 [e :U _on_power_button_pressed ]
 [f ]
-"70
-[; ;main.c: 70:     DFPlayer_Stop();
-[e ( _DFPlayer_Stop ..  ]
-"75
-[; ;main.c: 75:     memset(lastUid, 0, sizeof(lastUid));
-[e ( _memset (3 , , -> &U _lastUid `*v -> 0 `i -> # _lastUid `ui ]
-"76
-[; ;main.c: 76:     lastUidLen = 0;
-[e = _lastUidLen -> -> 0 `i `uc ]
+"72
+[; ;main.c: 72:     Scene_Stop();
+[e ( _Scene_Stop ..  ]
 "77
-[; ;main.c: 77:     isOn = !isOn;
-[e = _isOn -> -> ! != -> _isOn `i -> 0 `i `i `a ]
+[; ;main.c: 77:     memset(lastUid, 0, sizeof(lastUid));
+[e ( _memset (3 , , -> &U _lastUid `*v -> 0 `i -> # _lastUid `ui ]
 "78
-[; ;main.c: 78: }
-[e :UE 1090 ]
+[; ;main.c: 78:     lastUidLen = 0;
+[e = _lastUidLen -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:     isOn = !isOn;
+[e = _isOn -> -> ! != -> _isOn `i -> 0 `i `i `a ]
+"80
+[; ;main.c: 80: }
+[e :UE 1091 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"80
-[; ;main.c: 80: int main(void)
+"82
+[; ;main.c: 82: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"81
-[; ;main.c: 81: {
+"83
+[; ;main.c: 83: {
 {
 [e :U _main ]
 [f ]
-"82
-[; ;main.c: 82:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "84
-[; ;main.c: 84:     (INTCONbits.GIE = 1);
+[; ;main.c: 84:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"86
+[; ;main.c: 86:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"85
-[; ;main.c: 85:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 "87
-[; ;main.c: 87:     do { TRISAbits.TRISA1 = 0; } while(0);
-[e :U 1094 ]
+[; ;main.c: 87:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"89
+[; ;main.c: 89:     do { TRISAbits.TRISA1 = 0; } while(0);
+[e :U 1095 ]
 {
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1093 ]
-"88
-[; ;main.c: 88:     do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1097 ]
+[e :U 1094 ]
+"90
+[; ;main.c: 90:     do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1098 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1096 ]
-"89
-[; ;main.c: 89:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[e :U 1097 ]
 "91
-[; ;main.c: 91:     uint8_t initResult = PN532_Init();
+[; ;main.c: 91:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"93
+[; ;main.c: 93:     uint8_t initResult = PN532_Init();
 [v _initResult `uc ~T0 @X0 1 a ]
 [e = _initResult ( _PN532_Init ..  ]
-"92
-[; ;main.c: 92:     if (initResult != 0)
-[e $ ! != -> _initResult `i -> 0 `i 1098  ]
-"93
-[; ;main.c: 93:     {
-{
-"97
-[; ;main.c: 97:         while (1)
-[e :U 1100 ]
-"98
-[; ;main.c: 98:         {
+"94
+[; ;main.c: 94:     if (initResult != 0)
+[e $ ! != -> _initResult `i -> 0 `i 1099  ]
+"95
+[; ;main.c: 95:     {
 {
 "99
-[; ;main.c: 99:             for (uint8_t i = 0; i < initResult; i++)
+[; ;main.c: 99:         while (1)
+[e :U 1101 ]
+"100
+[; ;main.c: 100:         {
+{
+"101
+[; ;main.c: 101:             for (uint8_t i = 0; i < initResult; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1105  ]
-[e :U 1102 ]
-"100
-[; ;main.c: 100:             {
+[e $U 1106  ]
+[e :U 1103 ]
+"102
+[; ;main.c: 102:             {
 {
-"101
-[; ;main.c: 101:                 do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1108 ]
+"103
+[; ;main.c: 103:                 do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1109 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1107 ]
-"102
-[; ;main.c: 102:                 _delay((unsigned long)((200)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"103
-[; ;main.c: 103:                 do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1111 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1110 ]
+[e :U 1108 ]
 "104
 [; ;main.c: 104:                 _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "105
-[; ;main.c: 105:             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1105 ]
-[e $ < -> _i `i -> _initResult `i 1102  ]
-[e :U 1103 ]
-}
-"106
-[; ;main.c: 106:             _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"107
-[; ;main.c: 107:         }
-}
-[e :U 1099 ]
-[e $U 1100  ]
-[e :U 1101 ]
-"108
-[; ;main.c: 108:     }
-}
-[e :U 1098 ]
-"109
-[; ;main.c: 109:     do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1114 ]
+[; ;main.c: 105:                 do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1112 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1113 ]
+[e :U 1111 ]
+"106
+[; ;main.c: 106:                 _delay((unsigned long)((200)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"107
+[; ;main.c: 107:             }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1106 ]
+[e $ < -> _i `i -> _initResult `i 1103  ]
+[e :U 1104 ]
+}
+"108
+[; ;main.c: 108:             _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"109
+[; ;main.c: 109:         }
+}
+[e :U 1100 ]
+[e $U 1101  ]
+[e :U 1102 ]
+"110
+[; ;main.c: 110:     }
+}
+[e :U 1099 ]
 "111
-[; ;main.c: 111:     DFPlayer_Init();
+[; ;main.c: 111:     do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1115 ]
+{
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 1114 ]
+"113
+[; ;main.c: 113:     DFPlayer_Init();
 [e ( _DFPlayer_Init ..  ]
-"112
-[; ;main.c: 112:     RotaryEncoder_Init(on_power_button_pressed);
-[e ( _RotaryEncoder_Init (1 &U _on_power_button_pressed ]
 "114
-[; ;main.c: 114:     while (1)
-[e :U 1116 ]
+[; ;main.c: 114:     RotaryEncoder_Init(on_power_button_pressed);
+[e ( _RotaryEncoder_Init (1 &U _on_power_button_pressed ]
 "115
-[; ;main.c: 115:     {
-{
-"116
-[; ;main.c: 116:         RotaryEncoder_Tasks();
-[e ( _RotaryEncoder_Tasks ..  ]
+[; ;main.c: 115:     MoodLights_Init();
+[e ( _MoodLights_Init ..  ]
+"117
+[; ;main.c: 117:     while (1)
+[e :U 1117 ]
 "118
-[; ;main.c: 118:         uint8_t uid[7];
-[v _uid `uc ~T0 @X0 -> 7 `i a ]
-"119
-[; ;main.c: 119:         uint8_t uidLen;
-[v _uidLen `uc ~T0 @X0 1 a ]
-"121
-[; ;main.c: 121:         if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
-[e $ ! && != -> _isOn `i -> 0 `i != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1118  ]
-"122
-[; ;main.c: 122:         {
+[; ;main.c: 118:     {
 {
+"119
+[; ;main.c: 119:         RotaryEncoder_Tasks();
+[e ( _RotaryEncoder_Tasks ..  ]
+"120
+[; ;main.c: 120:         MoodLights_Tasks();
+[e ( _MoodLights_Tasks ..  ]
+"122
+[; ;main.c: 122:         uint8_t uid[7];
+[v _uid `uc ~T0 @X0 -> 7 `i a ]
 "123
-[; ;main.c: 123:             do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1121 ]
+[; ;main.c: 123:         uint8_t uidLen;
+[v _uidLen `uc ~T0 @X0 1 a ]
+"125
+[; ;main.c: 125:         if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
+[e $ ! && != -> _isOn `i -> 0 `i != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1119  ]
+"126
+[; ;main.c: 126:         {
+{
+"127
+[; ;main.c: 127:             do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1122 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1120 ]
-"125
-[; ;main.c: 125:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
+[e :U 1121 ]
+"129
+[; ;main.c: 129:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
 [v _isNewTag `a ~T0 @X0 1 a ]
 [e = _isNewTag -> -> || != -> _uidLen `i -> _lastUidLen `i != ( _memcmp (3 , , -> &U _uid `*Cv -> &U _lastUid `*Cv -> _uidLen `ui -> 0 `i `i `a ]
-"126
-[; ;main.c: 126:             if (isNewTag)
-[e $ ! != -> _isNewTag `i -> 0 `i 1122  ]
-"127
-[; ;main.c: 127:             {
-{
-"128
-[; ;main.c: 128:                 char text[32];
-[v _text `uc ~T0 @X0 -> 32 `i a ]
-"129
-[; ;main.c: 129:                 if (PN532_ReadNdefText(text, sizeof(text)))
-[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1123  ]
 "130
-[; ;main.c: 130:                 {
-{
+[; ;main.c: 130:             if (isNewTag)
+[e $ ! != -> _isNewTag `i -> 0 `i 1123  ]
 "131
-[; ;main.c: 131:                     uint16_t track = parse_track_number(text);
+[; ;main.c: 131:             {
+{
+"132
+[; ;main.c: 132:                 char text[32];
+[v _text `uc ~T0 @X0 -> 32 `i a ]
+"133
+[; ;main.c: 133:                 if (PN532_ReadNdefText(text, sizeof(text)))
+[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1124  ]
+"134
+[; ;main.c: 134:                 {
+{
+"135
+[; ;main.c: 135:                     uint16_t track = parse_track_number(text);
 [v _track `us ~T0 @X0 1 a ]
 [e = _track ( _parse_track_number (1 -> &U _text `*Cuc ]
-"132
-[; ;main.c: 132:                     if (track > 0)
-[e $ ! > -> _track `ui -> -> 0 `i `ui 1124  ]
-"133
-[; ;main.c: 133:                     {
+"136
+[; ;main.c: 136:                     if (track > 0)
+[e $ ! > -> _track `ui -> -> 0 `i `ui 1125  ]
+"137
+[; ;main.c: 137:                     {
 {
-"134
-[; ;main.c: 134:                         DFPlayer_PlayTrack(track);
-[e ( _DFPlayer_PlayTrack (1 _track ]
-"135
-[; ;main.c: 135:                     }
+"138
+[; ;main.c: 138:                         Scene_Start(track);
+[e ( _Scene_Start (1 _track ]
+"139
+[; ;main.c: 139:                     }
+}
+[e :U 1125 ]
+"140
+[; ;main.c: 140:                 }
 }
 [e :U 1124 ]
-"136
-[; ;main.c: 136:                 }
+"141
+[; ;main.c: 141:                 memcpy(lastUid, uid, uidLen);
+[e ( _memcpy (3 , , -> &U _lastUid `*v -> &U _uid `*Cv -> _uidLen `ui ]
+"142
+[; ;main.c: 142:                 lastUidLen = uidLen;
+[e = _lastUidLen _uidLen ]
+"143
+[; ;main.c: 143:             }
 }
 [e :U 1123 ]
-"137
-[; ;main.c: 137:                 memcpy(lastUid, uid, uidLen);
-[e ( _memcpy (3 , , -> &U _lastUid `*v -> &U _uid `*Cv -> _uidLen `ui ]
-"138
-[; ;main.c: 138:                 lastUidLen = uidLen;
-[e = _lastUidLen _uidLen ]
-"139
-[; ;main.c: 139:             }
-}
-[e :U 1122 ]
-"140
-[; ;main.c: 140:         }
-}
-[e $U 1125  ]
-"141
-[; ;main.c: 141:         else
-[e :U 1118 ]
-"142
-[; ;main.c: 142:         {
-{
-"143
-[; ;main.c: 143:             if (lastUidLen != 0)
-[e $ ! != -> _lastUidLen `i -> 0 `i 1126  ]
 "144
-[; ;main.c: 144:             {
-{
-"148
-[; ;main.c: 148:                 DFPlayer_FadeOutAndStop();
-[e ( _DFPlayer_FadeOutAndStop ..  ]
-"149
-[; ;main.c: 149:             }
+[; ;main.c: 144:         }
 }
-[e :U 1126 ]
-"151
-[; ;main.c: 151:             lastUidLen = 0;
-[e = _lastUidLen -> -> 0 `i `uc ]
+[e $U 1126  ]
+"145
+[; ;main.c: 145:         else
+[e :U 1119 ]
+"146
+[; ;main.c: 146:         {
+{
+"147
+[; ;main.c: 147:             if (lastUidLen != 0)
+[e $ ! != -> _lastUidLen `i -> 0 `i 1127  ]
+"148
+[; ;main.c: 148:             {
+{
 "152
-[; ;main.c: 152:             do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1129 ]
+[; ;main.c: 152:                 Scene_Stop();
+[e ( _Scene_Stop ..  ]
+"153
+[; ;main.c: 153:             }
+}
+[e :U 1127 ]
+"155
+[; ;main.c: 155:             lastUidLen = 0;
+[e = _lastUidLen -> -> 0 `i `uc ]
+"156
+[; ;main.c: 156:             do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1130 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1128 ]
-"153
-[; ;main.c: 153:         }
-}
-[e :U 1125 ]
-"155
-[; ;main.c: 155:         _delay((unsigned long)((150)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"156
-[; ;main.c: 156:     }
-}
-[e :U 1115 ]
-[e $U 1116  ]
-[e :U 1117 ]
+[e :U 1129 ]
 "157
-[; ;main.c: 157: }
-[e :UE 1091 ]
+[; ;main.c: 157:         }
+}
+[e :U 1126 ]
+"159
+[; ;main.c: 159:         _delay((unsigned long)((150)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"160
+[; ;main.c: 160:     }
+}
+[e :U 1116 ]
+[e $U 1117  ]
+[e :U 1118 ]
+"161
+[; ;main.c: 161: }
+[e :UE 1092 ]
 }
 [a 1C 58 58 0 ]

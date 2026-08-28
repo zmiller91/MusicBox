@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F8318 `(v ~T0 @X0 0 tf ]
-[v F8319 `(v ~T0 @X0 0 tf ]
+[v F8397 `(v ~T0 @X0 0 tf ]
+[v F8398 `(v ~T0 @X0 0 tf ]
 "576 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 576:     struct {
 [s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -12,8 +12,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "587
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 587: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS36 ~T0 @X0 0 e@14 ]
-[v F8325 `(v ~T0 @X0 0 tf ]
-[v F8327 `(v ~T0 @X0 0 tf ]
+[v F8404 `(v ~T0 @X0 0 tf ]
+[v F8406 `(v ~T0 @X0 0 tf ]
 "20609
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20609:     struct {
 [s S996 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -37,16 +37,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19528: extern volatile WPUAbits_t WPUAbits __attribute__((address(0x1E8D)));
 [v _WPUAbits `VS961 ~T0 @X0 0 e@7821 ]
 [v F7777 `(v ~T0 @X0 0 tf ]
-"298 drivers/../mcc_generated_files/system/../system/pins.h
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 298: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+"336 drivers/../mcc_generated_files/system/../system/pins.h
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 336: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _VOL_A_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7777 ]
 [v F7785 `(v ~T0 @X0 0 tf ]
-"338
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 338: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+"376
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 376: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _VOL_B_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7785 ]
 [v F7769 `(v ~T0 @X0 0 tf ]
-"258
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 258: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+"296
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 296: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _POWER_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7769 ]
 "1574 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1574:     struct {
@@ -77,7 +77,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "463
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 463: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
 [v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
-[v F8335 `(v ~T0 @X0 0 tf ]
+[v F8414 `(v ~T0 @X0 0 tf ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1270,9 +1270,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "32
 [; ;drivers/rotary_encoder.c: 32: static RotaryEncoder_PowerButtonCallback powerButtonCallback = ((void*)0);
-[v _powerButtonCallback `*F8318 ~T0 @X0 1 s ]
+[v _powerButtonCallback `*F8397 ~T0 @X0 1 s ]
 [i _powerButtonCallback
--> -> -> 0 `i `*v `*F8319
+-> -> -> 0 `i `*v `*F8398
 ]
 "40
 [; ;drivers/rotary_encoder.c: 40: static void encoder_isr(void)
@@ -1298,7 +1298,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _encoderLastAB _ab ]
 "46
 [; ;drivers/rotary_encoder.c: 46: }
-[e :UE 1087 ]
+[e :UE 1088 ]
 }
 "48
 [; ;drivers/rotary_encoder.c: 48: static void power_isr(void)
@@ -1313,18 +1313,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _powerFallingEdgeSeen -> -> 1 `i `a ]
 "51
 [; ;drivers/rotary_encoder.c: 51: }
-[e :UE 1088 ]
+[e :UE 1089 ]
 }
 "57
 [; ;drivers/rotary_encoder.c: 57: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed)
-[v _RotaryEncoder_Init `(v ~T0 @X0 1 ef1`*F8325 ]
+[v _RotaryEncoder_Init `(v ~T0 @X0 1 ef1`*F8404 ]
 "58
 [; ;drivers/rotary_encoder.c: 58: {
 {
 [e :U _RotaryEncoder_Init ]
 "57
 [; ;drivers/rotary_encoder.c: 57: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed)
-[v _onPowerButtonPressed `*F8327 ~T0 @X0 1 r1 ]
+[v _onPowerButtonPressed `*F8406 ~T0 @X0 1 r1 ]
 "58
 [; ;drivers/rotary_encoder.c: 58: {
 [f ]
@@ -1333,25 +1333,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _powerButtonCallback _onPowerButtonPressed ]
 "63
 [; ;drivers/rotary_encoder.c: 63:     do { WPUCbits.WPUC3 = 1; } while(0);
-[e :U 1092 ]
+[e :U 1093 ]
 {
 [e = . . _WPUCbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 1091 ]
+[e :U 1092 ]
 "64
 [; ;drivers/rotary_encoder.c: 64:     do { WPUCbits.WPUC4 = 1; } while(0);
-[e :U 1095 ]
+[e :U 1096 ]
 {
 [e = . . _WPUCbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 1094 ]
+[e :U 1095 ]
 "65
 [; ;drivers/rotary_encoder.c: 65:     do { WPUAbits.WPUA3 = 1; } while(0);
-[e :U 1098 ]
+[e :U 1099 ]
 {
 [e = . . _WPUAbits 0 3 -> -> 1 `i `uc ]
 }
-[e :U 1097 ]
+[e :U 1098 ]
 "67
 [; ;drivers/rotary_encoder.c: 67:     encoderLastAB = (uint8_t)(((PORTCbits.RC3 ? 1 : 0) << 1) | (PORTCbits.RC4 ? 1 : 0));
 [e = _encoderLastAB -> | << ? != -> . . _PORTCbits 0 3 `i -> 0 `i : -> 1 `i -> 0 `i -> 1 `i ? != -> . . _PORTCbits 0 4 `i -> 0 `i : -> 1 `i -> 0 `i `uc ]
@@ -1366,7 +1366,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _POWER_SetInterruptHandler (1 &U _power_isr ]
 "72
 [; ;drivers/rotary_encoder.c: 72: }
-[e :UE 1089 ]
+[e :UE 1090 ]
 }
 "74
 [; ;drivers/rotary_encoder.c: 74: void RotaryEncoder_Tasks(void)
@@ -1395,7 +1395,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
 "83
 [; ;drivers/rotary_encoder.c: 83:     if (steps != 0)
-[e $ ! != -> _steps `i -> 0 `i 1100  ]
+[e $ ! != -> _steps `i -> 0 `i 1101  ]
 "84
 [; ;drivers/rotary_encoder.c: 84:     {
 {
@@ -1405,10 +1405,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;drivers/rotary_encoder.c: 86:     }
 }
-[e :U 1100 ]
+[e :U 1101 ]
 "89
 [; ;drivers/rotary_encoder.c: 89:     if (powerFallingEdgeSeen)
-[e $ ! != -> _powerFallingEdgeSeen `i -> 0 `i 1101  ]
+[e $ ! != -> _powerFallingEdgeSeen `i -> 0 `i 1102  ]
 "90
 [; ;drivers/rotary_encoder.c: 90:     {
 {
@@ -1423,7 +1423,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
 "95
 [; ;drivers/rotary_encoder.c: 95:         if (!powerPressLatched)
-[e $ ! ! != -> _powerPressLatched `i -> 0 `i 1102  ]
+[e $ ! ! != -> _powerPressLatched `i -> 0 `i 1103  ]
 "96
 [; ;drivers/rotary_encoder.c: 96:         {
 {
@@ -1432,7 +1432,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 30 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "98
 [; ;drivers/rotary_encoder.c: 98:             if (!PORTAbits.RA3)
-[e $ ! ! != -> . . _PORTAbits 0 3 `i -> 0 `i 1103  ]
+[e $ ! ! != -> . . _PORTAbits 0 3 `i -> 0 `i 1104  ]
 "99
 [; ;drivers/rotary_encoder.c: 99:             {
 {
@@ -1441,7 +1441,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _powerPressLatched -> -> 1 `i `a ]
 "101
 [; ;drivers/rotary_encoder.c: 101:                 if (powerButtonCallback != ((void*)0))
-[e $ ! != _powerButtonCallback -> -> -> 0 `i `*v `*F8335 1104  ]
+[e $ ! != _powerButtonCallback -> -> -> 0 `i `*v `*F8414 1105  ]
 "102
 [; ;drivers/rotary_encoder.c: 102:                 {
 {
@@ -1451,22 +1451,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "104
 [; ;drivers/rotary_encoder.c: 104:                 }
 }
-[e :U 1104 ]
+[e :U 1105 ]
 "105
 [; ;drivers/rotary_encoder.c: 105:             }
 }
-[e :U 1103 ]
+[e :U 1104 ]
 "106
 [; ;drivers/rotary_encoder.c: 106:         }
 }
-[e :U 1102 ]
+[e :U 1103 ]
 "107
 [; ;drivers/rotary_encoder.c: 107:     }
 }
-[e :U 1101 ]
+[e :U 1102 ]
 "109
 [; ;drivers/rotary_encoder.c: 109:     if (powerPressLatched && PORTAbits.RA3)
-[e $ ! && != -> _powerPressLatched `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 1105  ]
+[e $ ! && != -> _powerPressLatched `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 1106  ]
 "110
 [; ;drivers/rotary_encoder.c: 110:     {
 {
@@ -1476,8 +1476,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "112
 [; ;drivers/rotary_encoder.c: 112:     }
 }
-[e :U 1105 ]
+[e :U 1106 ]
 "113
 [; ;drivers/rotary_encoder.c: 113: }
-[e :UE 1099 ]
+[e :UE 1100 ]
 }

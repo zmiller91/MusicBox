@@ -26,7 +26,7 @@
 #define DFPLAYER_FEEDBACK_ACK    0x01   // request byte: ask the module to send DFPLAYER_CMD_ACK back
 #define DFPLAYER_ACK_TIMEOUT_US  50000  // how long DFPlayer_SendCommand() waits for that ACK (50ms)
 
-#define DFPLAYER_DEFAULT_VOLUME 8
+#define DFPLAYER_DEFAULT_VOLUME 18
 #define DFPLAYER_MAX_VOLUME     25
 
 // Builds and sends one DFPlayer Mini command frame. Always waits for the

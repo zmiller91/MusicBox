@@ -7,12 +7,20 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
+          <itemPath>mcc_generated_files/pwm/pwm4.h</itemPath>
+          <itemPath>mcc_generated_files/pwm/pwm3.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="system" displayName="system" projectFiles="true">
           <itemPath>mcc_generated_files/system/system.h</itemPath>
           <itemPath>mcc_generated_files/system/config_bits.h</itemPath>
           <itemPath>mcc_generated_files/system/interrupt.h</itemPath>
           <itemPath>mcc_generated_files/system/pins.h</itemPath>
           <itemPath>mcc_generated_files/system/clock.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
+          <itemPath>mcc_generated_files/timer/tmr2.h</itemPath>
         </logicalFolder>
         <logicalFolder name="uart" displayName="uart" projectFiles="true">
           <itemPath>mcc_generated_files/uart/eusart1.h</itemPath>
@@ -35,10 +43,20 @@
         <itemPath>drivers/dfplayer.h</itemPath>
         <itemPath>drivers/rotary_encoder.c</itemPath>
         <itemPath>drivers/rotary_encoder.h</itemPath>
+        <itemPath>drivers/mood_lights.c</itemPath>
+        <itemPath>drivers/mood_lights.h</itemPath>
+        <itemPath>drivers/scene.c</itemPath>
+        <itemPath>drivers/scene.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/pwm/src/pwm4.c</itemPath>
+            <itemPath>mcc_generated_files/pwm/src/pwm3.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="system" displayName="system" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <itemPath>mcc_generated_files/system/src/system.c</itemPath>
@@ -46,6 +64,11 @@
             <itemPath>mcc_generated_files/system/src/interrupt.c</itemPath>
             <itemPath>mcc_generated_files/system/src/pins.c</itemPath>
             <itemPath>mcc_generated_files/system/src/config_bits.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/timer/src/tmr2.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="uart" displayName="uart" projectFiles="true">

@@ -40,6 +40,9 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     EUSART1_Initialize();
     EUSART2_Initialize();
+    PWM3_Initialize();
+    PWM4_Initialize();
+    TMR2_Initialize();
     INTERRUPT_Initialize();
 }
 

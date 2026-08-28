@@ -13324,7 +13324,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 232 "./mcc_generated_files/system/../system/pins.h"
+# 270 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13342,11 +13342,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 258 "./mcc_generated_files/system/../system/pins.h"
+# 296 "./mcc_generated_files/system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 269 "./mcc_generated_files/system/../system/pins.h"
+# 307 "./mcc_generated_files/system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 280 "./mcc_generated_files/system/../system/pins.h"
+# 318 "./mcc_generated_files/system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13356,11 +13356,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 298 "./mcc_generated_files/system/../system/pins.h"
+# 336 "./mcc_generated_files/system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 309 "./mcc_generated_files/system/../system/pins.h"
+# 347 "./mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 320 "./mcc_generated_files/system/../system/pins.h"
+# 358 "./mcc_generated_files/system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13370,11 +13370,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 338 "./mcc_generated_files/system/../system/pins.h"
+# 376 "./mcc_generated_files/system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 349 "./mcc_generated_files/system/../system/pins.h"
+# 387 "./mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 360 "./mcc_generated_files/system/../system/pins.h"
+# 398 "./mcc_generated_files/system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
@@ -13845,6 +13845,272 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../pwm/pwm3.h" 1
+# 57 "./mcc_generated_files/system/../pwm/pwm3.h"
+ void PWM3_Initialize(void);
+
+
+
+
+
+
+
+ void PWM3_LoadDutyValue(uint16_t dutyValue);
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/system/../pwm/pwm4.h" 1
+# 57 "./mcc_generated_files/system/../pwm/pwm4.h"
+ void PWM4_Initialize(void);
+
+
+
+
+
+
+
+ void PWM4_LoadDutyValue(uint16_t dutyValue);
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/system/../timer/tmr2.h" 1
+# 39 "./mcc_generated_files/system/../timer/tmr2.h"
+# 1 "./mcc_generated_files/system/../timer/timer_interface.h" 1
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h" 2
+
+
+
+
+
+
+
+
+struct TMR_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Start)(void);
+    void (*Stop)(void);
+    void (*PeriodCountSet)(size_t count);
+    void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
+    void (*Tasks)(void);
+};
+# 39 "./mcc_generated_files/system/../timer/tmr2.h" 2
+# 107 "./mcc_generated_files/system/../timer/tmr2.h"
+extern const struct TMR_INTERFACE Timer2;
+
+
+
+
+
+
+typedef enum
+{
+# 124 "./mcc_generated_files/system/../timer/tmr2.h"
+   TMR2_ROP_STARTS_TMRON,
+
+
+
+
+   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR2_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR2_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR2_ROP_RESETS_ERSHIGH,
+# 170 "./mcc_generated_files/system/../timer/tmr2.h"
+   TMR2_OS_STARTS_TMRON,
+
+
+
+
+   TMR2_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR2_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+
+
+
+
+   TMR2_OS_STARTS_ERSFALLINGEDGEDETECT,
+
+
+
+
+   TMR2_OS_STARTS_TMRON_ERSHIGH = 0x16,
+
+
+
+
+   TMR2_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 227 "./mcc_generated_files/system/../timer/tmr2.h"
+   TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+
+
+
+
+   TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+
+
+
+
+
+   TMR2_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+
+} TMR2_HLT_MODE;
+
+
+
+
+
+
+typedef enum
+{
+
+
+
+    TMR2_T2CKIPPS_PIN = 0x0,
+
+
+
+    TMR2_TMR4_POSTSCALED = 0x2,
+
+
+
+    TMR2_TMR6_POSTSCALED = 0x3,
+
+
+
+    TMR2_CCP1OUT = 0x4,
+
+
+
+    TMR2_CCP2OUT = 0x5,
+
+
+
+    TMR2_PWM3OUT = 0x6,
+
+
+
+    TMR2_PWM4OUT = 0x7,
+
+
+
+    TMR2_PWM5OUT = 0x8,
+
+
+
+    TMR2_CMP1OUT = 0x9,
+
+
+
+    TMR2_ZCDOUT = 0xa,
+
+
+
+    TMR2_CLC1OUT = 0xb,
+
+
+
+    TMR2_CLC2OUT = 0xc,
+
+
+
+    TMR2_CLC3OUT = 0xd,
+
+
+
+    TMR2_CLC4OUT = 0xe
+} TMR2_HLT_EXT_RESET_SOURCE;
+# 317 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_Initialize(void);
+# 326 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_ModeSet(TMR2_HLT_MODE mode);
+# 335 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
+# 344 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_Start(void);
+# 353 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_Stop(void);
+# 362 "./mcc_generated_files/system/../timer/tmr2.h"
+uint8_t TMR2_Read(void);
+# 371 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_Write(uint8_t timerVal);
+# 380 "./mcc_generated_files/system/../timer/tmr2.h"
+void TMR2_PeriodCountSet(size_t periodVal);
+
+
+
+
+
+
+
+void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void TMR2_Tasks(void);
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13858,7 +14124,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 48 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13941,6 +14207,47 @@ void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
 
 void RotaryEncoder_Tasks(void);
 # 37 "main.c" 2
+# 1 "./drivers/mood_lights.h" 1
+# 25 "./drivers/mood_lights.h"
+void MoodLights_Init(void);
+
+
+
+
+
+
+void MoodLights_Tasks(void);
+
+
+
+
+void MoodLights_SetTwinkleEnabled(_Bool enabled);
+
+
+
+
+
+void MoodLights_SetBrightness(uint16_t brightness);
+# 53 "./drivers/mood_lights.h"
+uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
+
+
+
+void MoodLights_FadeIn(void);
+
+
+
+void MoodLights_FadeOut(void);
+# 38 "main.c" 2
+# 1 "./drivers/scene.h" 1
+# 32 "./drivers/scene.h"
+void Scene_Start(uint16_t track);
+
+
+
+
+void Scene_Stop(void);
+# 39 "main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -13998,8 +14305,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 38 "main.c" 2
-# 48 "main.c"
+# 40 "main.c" 2
+# 50 "main.c"
 static uint16_t parse_track_number(const char *text)
 {
     const char *sep = strstr(text, "::");
@@ -14022,7 +14329,7 @@ static _Bool isOn = 1;
 
 static void on_power_button_pressed(void)
 {
-    DFPlayer_Stop();
+    Scene_Stop();
 
 
 
@@ -14065,10 +14372,12 @@ int main(void)
 
     DFPlayer_Init();
     RotaryEncoder_Init(on_power_button_pressed);
+    MoodLights_Init();
 
     while (1)
     {
         RotaryEncoder_Tasks();
+        MoodLights_Tasks();
 
         uint8_t uid[7];
         uint8_t uidLen;
@@ -14086,7 +14395,7 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
-                        DFPlayer_PlayTrack(track);
+                        Scene_Start(track);
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -14100,7 +14409,7 @@ int main(void)
 
 
 
-                DFPlayer_FadeOutAndStop();
+                Scene_Stop();
             }
 
             lastUidLen = 0;
