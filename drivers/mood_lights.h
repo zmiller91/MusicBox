@@ -1,7 +1,9 @@
 /*
- * mood_lights.h - Diorama ambience: two PWM "mood" LEDs (LED_PWM_1/
- * LED_PWM_2, on PWM3/PWM4) that fade in/out with the music, and a plain
- * on/off LED (LED_3) that flickers like a firefly.
+ * mood_lights.h - Diorama ambience: two independent PWM "mood" LEDs
+ * (LED_PWM_1/LED_PWM_2, on PWM3/PWM4) - LED_PWM_1 is the idle "waiting for
+ * an animal" glow, LED_PWM_2 is the "scene active" light, orchestrated
+ * together by drivers/scene.c - plus a plain on/off LED (LED_3) that
+ * flickers like a firefly.
  *
  * LED_3 has no PWM channel, so its "twinkle" is randomized on/off timing
  * rather than a true brightness fade - a real fade would need either a
@@ -36,11 +38,13 @@ void MoodLights_Tasks(void);
 // than leaving it stuck mid-glow; starts disabled until called.
 void MoodLights_SetTwinkleEnabled(bool enabled);
 
-// Sets LED_PWM_1/LED_PWM_2 to an explicit brightness (0 -
-// MOOD_LIGHTS_BRIGHTNESS_MAX) immediately, no fade/delay. Building block
-// for MoodLights_FadeIn()/FadeOut() and for external synchronized fades
-// (see drivers/scene.c, which steps this alongside DFPlayer's volume).
-void MoodLights_SetBrightness(uint16_t brightness);
+// Sets LED_PWM_1 or LED_PWM_2 to an explicit brightness (0 -
+// MOOD_LIGHTS_BRIGHTNESS_MAX) immediately, no fade/delay. Building blocks
+// for MoodLights_FadeIn()/FadeOut() and for external synchronized/
+// independent fades (see drivers/scene.c, which steps these alongside
+// each other and DFPlayer's volume).
+void MoodLights_SetBrightness1(uint16_t brightness);
+void MoodLights_SetBrightness2(uint16_t brightness);
 
 // Maps a fade-progress fraction (numerator/denominator, e.g. "step 12 of
 // 60") to a brightness value using a cubic perceptual curve rather than a

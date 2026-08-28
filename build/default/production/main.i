@@ -14210,7 +14210,7 @@ void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
 void RotaryEncoder_Tasks(void);
 # 37 "main.c" 2
 # 1 "./drivers/mood_lights.h" 1
-# 25 "./drivers/mood_lights.h"
+# 27 "./drivers/mood_lights.h"
 void MoodLights_Init(void);
 
 
@@ -14229,8 +14229,10 @@ void MoodLights_SetTwinkleEnabled(_Bool enabled);
 
 
 
-void MoodLights_SetBrightness(uint16_t brightness);
-# 53 "./drivers/mood_lights.h"
+
+void MoodLights_SetBrightness1(uint16_t brightness);
+void MoodLights_SetBrightness2(uint16_t brightness);
+# 57 "./drivers/mood_lights.h"
 uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
 
 
@@ -14242,13 +14244,29 @@ void MoodLights_FadeIn(void);
 void MoodLights_FadeOut(void);
 # 38 "main.c" 2
 # 1 "./drivers/scene.h" 1
-# 32 "./drivers/scene.h"
+# 52 "./drivers/scene.h"
+void Scene_Idle(void);
+
+
+
+
 void Scene_Start(uint16_t track);
 
 
 
 
+
 void Scene_Stop(void);
+
+
+
+
+void Scene_Return(void);
+
+
+
+
+void Scene_StopIdle(void);
 # 39 "main.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -14334,13 +14352,34 @@ static uint8_t lastUidLen = 0;
 
 static _Bool trackEnded = 0;
 
+
+
+
+
+
+static _Bool sceneActive = 0;
+static _Bool idleGlowOn = 0;
+
 static _Bool isOn = 1;
-# 84 "main.c"
+# 92 "main.c"
 static _Bool lidClosed = 0;
-
-
+# 101 "main.c"
 static void on_lid_opened(void)
 {
+    if (!isOn)
+    {
+        return;
+    }
+
+    uint8_t uid[7];
+    uint8_t uidLen;
+    if (PN532_ReadPassiveTarget(uid, &uidLen))
+    {
+        return;
+    }
+
+    Scene_Idle();
+    idleGlowOn = 1;
 }
 
 
@@ -14348,9 +14387,15 @@ static void on_lid_opened(void)
 
 static void on_power_button_pressed(void)
 {
-    if (!trackEnded)
+    if (sceneActive)
     {
         Scene_Stop();
+        sceneActive = 0;
+    }
+    else if (idleGlowOn)
+    {
+        Scene_StopIdle();
+        idleGlowOn = 0;
     }
 
 
@@ -14439,7 +14484,11 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
+
+
                         Scene_Start(track);
+                        sceneActive = 1;
+                        idleGlowOn = 0;
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -14453,18 +14502,45 @@ int main(void)
 
 
 
+
+
                 Scene_Stop();
+                sceneActive = 0;
                 trackEnded = 1;
             }
         }
         else
         {
-            if (lastUidLen != 0 && !trackEnded)
+            if (systemActive && lastUidLen != 0)
+            {
+# 260 "main.c"
+                if (sceneActive)
+                {
+                    Scene_Return();
+                }
+                else
+                {
+                    Scene_Idle();
+                }
+                sceneActive = 0;
+                idleGlowOn = 1;
+            }
+            else if (!systemActive)
             {
 
 
 
-                Scene_Stop();
+
+                if (sceneActive)
+                {
+                    Scene_Stop();
+                    sceneActive = 0;
+                }
+                else if (idleGlowOn)
+                {
+                    Scene_StopIdle();
+                    idleGlowOn = 0;
+                }
             }
 
             lastUidLen = 0;

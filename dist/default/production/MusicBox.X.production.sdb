@@ -106,17 +106,19 @@ TMR2_CLC4OUT 14
 [v _DFPlayer_Stop DFPlayer_Stop `(v  1 e 1 0 ]
 "18 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _MoodLights_Init MoodLights_Init `(v  1 e 1 0 ]
-"30
-[v _MoodLights_SetBrightness MoodLights_SetBrightness `(v  1 e 1 0 ]
+"31
+[v _MoodLights_SetBrightness1 MoodLights_SetBrightness1 `(v  1 e 1 0 ]
 "36
+[v _MoodLights_SetBrightness2 MoodLights_SetBrightness2 `(v  1 e 1 0 ]
+"41
 [v _MoodLights_GammaBrightness MoodLights_GammaBrightness `(us  1 e 2 0 ]
-"90
+"99
 [v _MoodLights_SetTwinkleEnabled MoodLights_SetTwinkleEnabled `(v  1 e 1 0 ]
-"102
+"111
 [v _next_random next_random `(us  1 s 2 next_random ]
-"109
+"118
 [v _random_range random_range `(uc  1 s 1 random_range ]
-"115
+"124
 [v _MoodLights_Tasks MoodLights_Tasks `(v  1 e 1 0 ]
 "62 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
 [v _pn532_send_and_capture pn532_send_and_capture `(uc  1 s 1 pn532_send_and_capture ]
@@ -140,17 +142,27 @@ TMR2_CLC4OUT 14
 [v _RotaryEncoder_Init RotaryEncoder_Init `(v  1 e 1 0 ]
 "74
 [v _RotaryEncoder_Tasks RotaryEncoder_Tasks `(v  1 e 1 0 ]
-"12 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+"14 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+[v _scene_fade_led1_in scene_fade_led1_in `(v  1 s 1 scene_fade_led1_in ]
+"24
+[v _scene_fade_led1_out scene_fade_led1_out `(v  1 s 1 scene_fade_led1_out ]
+"33
+[v _Scene_Idle Scene_Idle `(v  1 e 1 0 ]
+"38
+[v _Scene_StopIdle Scene_StopIdle `(v  1 e 1 0 ]
+"43
 [v _Scene_Start Scene_Start `(v  1 e 1 0 ]
-"28
+"61
 [v _Scene_Stop Scene_Stop `(v  1 e 1 0 ]
+"93
+[v _Scene_Return Scene_Return `(v  1 e 1 0 ]
 "50 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
-"87
+"101
 [v _on_lid_opened on_lid_opened `(v  1 s 1 on_lid_opened ]
-"94
+"122
 [v _on_power_button_pressed on_power_button_pressed `(v  1 s 1 on_power_button_pressed ]
-"110
+"144
 [v _main main `(i  1 e 2 0 ]
 "45 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/pwm/src/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
@@ -282,7 +294,7 @@ TMR2_CLC4OUT 14
 "426 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [u S252 . 1 `S247 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES252  1 e 1 @11 ]
-[s S1656 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1672 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -292,9 +304,9 @@ TMR2_CLC4OUT 14
 `uc 1 RA7 1 0 :1:7 
 ]
 "463
-[u S1665 . 1 `S1656 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1665  1 e 1 @12 ]
-[s S1525 . 1 `uc 1 RB0 1 0 :1:0 
+[u S1681 . 1 `S1672 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1681  1 e 1 @12 ]
+[s S1541 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -304,9 +316,9 @@ TMR2_CLC4OUT 14
 `uc 1 RB7 1 0 :1:7 
 ]
 "525
-[u S1534 . 1 `S1525 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1534  1 e 1 @13 ]
-[s S1401 . 1 `uc 1 RC0 1 0 :1:0 
+[u S1550 . 1 `S1541 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1550  1 e 1 @13 ]
+[s S1410 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -316,11 +328,11 @@ TMR2_CLC4OUT 14
 `uc 1 RC7 1 0 :1:7 
 ]
 "587
-[u S1410 . 1 `S1401 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES1410  1 e 1 @14 ]
+[u S1419 . 1 `S1410 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1419  1 e 1 @14 ]
 "732
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
-[s S1313 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S1322 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -330,8 +342,8 @@ TMR2_CLC4OUT 14
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "749
-[u S1322 . 1 `S1313 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES1322  1 e 1 @18 ]
+[u S1331 . 1 `S1322 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES1331  1 e 1 @18 ]
 "794
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
 "856
@@ -342,7 +354,7 @@ TMR2_CLC4OUT 14
 [v _TRISE TRISE `VEuc  1 e 1 @22 ]
 "1018
 [v _LATA LATA `VEuc  1 e 1 @24 ]
-[s S1334 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1343 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -352,8 +364,8 @@ TMR2_CLC4OUT 14
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1035
-[u S1343 . 1 `S1334 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1343  1 e 1 @24 ]
+[u S1352 . 1 `S1343 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1352  1 e 1 @24 ]
 "1080
 [v _LATB LATB `VEuc  1 e 1 @25 ]
 "1142
@@ -370,7 +382,7 @@ TMR2_CLC4OUT 14
 "1317
 [u S239 . 1 `S234 1 . 1 0 ]
 [v _PIR0bits PIR0bits `VES239  1 e 1 @140 ]
-[s S1800 . 1 `uc 1 NVMIF 1 0 :1:0 
+[s S1816 . 1 `uc 1 NVMIF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ACTIF 1 0 :1:2 
 `uc 1 TMR1IF 1 0 :1:3 
@@ -380,8 +392,8 @@ TMR2_CLC4OUT 14
 `uc 1 TMR2IF 1 0 :1:7 
 ]
 "1354
-[u S1809 . 1 `S1800 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1809  1 e 1 @141 ]
+[u S1825 . 1 `S1816 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1825  1 e 1 @141 ]
 [s S780 . 1 `uc 1 CLC3IF 1 0 :1:0 
 `uc 1 CLC4IF 1 0 :1:1 
 `uc 1 TX1IF 1 0 :1:2 
@@ -426,16 +438,16 @@ TMR2_CLC4OUT 14
 [v _PR2 PR2 `VEuc  1 e 1 @781 ]
 "4904
 [v _T2CON T2CON `VEuc  1 e 1 @782 ]
-[s S1947 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1963 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "4940
-[s S1951 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1967 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1955 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1971 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -443,7 +455,7 @@ TMR2_CLC4OUT 14
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S1963 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1979 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -452,17 +464,17 @@ TMR2_CLC4OUT 14
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1972 . 1 `S1947 1 . 1 0 `S1951 1 . 1 0 `S1955 1 . 1 0 `S1963 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1972  1 e 1 @782 ]
+[u S1988 . 1 `S1963 1 . 1 0 `S1967 1 . 1 0 `S1971 1 . 1 0 `S1979 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1988  1 e 1 @782 ]
 "5050
 [v _T2HLT T2HLT `VEuc  1 e 1 @783 ]
-[s S1844 . 1 `uc 1 MODE 1 0 :5:0 
+[s S1860 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CSYNC 1 0 :1:5 
 `uc 1 CPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "5085
-[s S1849 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1865 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
@@ -470,40 +482,40 @@ TMR2_CLC4OUT 14
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 ]
-[s S1857 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S1873 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CSYNC 1 0 :1:5 
 `uc 1 T2CPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S1862 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S1878 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S1868 . 1 `S1844 1 . 1 0 `S1849 1 . 1 0 `S1857 1 . 1 0 `S1862 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES1868  1 e 1 @783 ]
+[u S1884 . 1 `S1860 1 . 1 0 `S1865 1 . 1 0 `S1873 1 . 1 0 `S1878 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES1884  1 e 1 @783 ]
 "5190
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @784 ]
 "5348
 [v _T2RST T2RST `VEuc  1 e 1 @785 ]
-[s S1913 . 1 `uc 1 RSEL 1 0 :8:0 
+[s S1929 . 1 `uc 1 RSEL 1 0 :8:0 
 ]
 "5373
-[s S1915 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S1931 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S1920 . 1 `uc 1 T2RSEL 1 0 :8:0 
+[s S1936 . 1 `uc 1 T2RSEL 1 0 :8:0 
 ]
-[s S1922 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S1938 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S1927 . 1 `S1913 1 . 1 0 `S1915 1 . 1 0 `S1920 1 . 1 0 `S1922 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES1927  1 e 1 @785 ]
+[u S1943 . 1 `S1929 1 . 1 0 `S1931 1 . 1 0 `S1936 1 . 1 0 `S1938 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES1943  1 e 1 @785 ]
 "7233
 [v _PWM3DCL PWM3DCL `VEuc  1 e 1 @1036 ]
 "7254
@@ -516,13 +528,13 @@ TMR2_CLC4OUT 14
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1040 ]
 "7378
 [v _PWM4CON PWM4CON `VEuc  1 e 1 @1041 ]
-[s S1711 . 1 `uc 1 P3TSEL 1 0 :2:0 
+[s S1727 . 1 `uc 1 P3TSEL 1 0 :2:0 
 `uc 1 P4TSEL 1 0 :2:2 
 `uc 1 P5TSEL 1 0 :2:4 
 ]
 "7550
-[u S1715 . 1 `S1711 1 . 1 0 ]
-[v _PWMTMRS0bits PWMTMRS0bits `VES1715  1 e 1 @1055 ]
+[u S1731 . 1 `S1727 1 . 1 0 ]
+[v _PWMTMRS0bits PWMTMRS0bits `VES1731  1 e 1 @1055 ]
 "10029
 [v _RC1REG RC1REG `VEuc  1 e 1 @1548 ]
 "10049
@@ -609,7 +621,7 @@ TMR2_CLC4OUT 14
 [v _ANSELA ANSELA `VEuc  1 e 1 @7820 ]
 "19511
 [v _WPUA WPUA `VEuc  1 e 1 @7821 ]
-[s S1618 . 1 `uc 1 WPUA0 1 0 :1:0 
+[s S1634 . 1 `uc 1 WPUA0 1 0 :1:0 
 `uc 1 WPUA1 1 0 :1:1 
 `uc 1 WPUA2 1 0 :1:2 
 `uc 1 WPUA3 1 0 :1:3 
@@ -619,8 +631,8 @@ TMR2_CLC4OUT 14
 `uc 1 WPUA7 1 0 :1:7 
 ]
 "19528
-[u S1627 . 1 `S1618 1 . 1 0 ]
-[v _WPUAbits WPUAbits `VES1627  1 e 1 @7821 ]
+[u S1643 . 1 `S1634 1 . 1 0 ]
+[v _WPUAbits WPUAbits `VES1643  1 e 1 @7821 ]
 "19573
 [v _ODCONA ODCONA `VEuc  1 e 1 @7822 ]
 "19635
@@ -665,7 +677,7 @@ TMR2_CLC4OUT 14
 [v _ANSELC ANSELC `VEuc  1 e 1 @7840 ]
 "20603
 [v _WPUC WPUC `VEuc  1 e 1 @7841 ]
-[s S1358 . 1 `uc 1 WPUC0 1 0 :1:0 
+[s S1367 . 1 `uc 1 WPUC0 1 0 :1:0 
 `uc 1 WPUC1 1 0 :1:1 
 `uc 1 WPUC2 1 0 :1:2 
 `uc 1 WPUC3 1 0 :1:3 
@@ -675,8 +687,8 @@ TMR2_CLC4OUT 14
 `uc 1 WPUC7 1 0 :1:7 
 ]
 "20620
-[u S1367 . 1 `S1358 1 . 1 0 ]
-[v _WPUCbits WPUCbits `VES1367  1 e 1 @7841 ]
+[u S1376 . 1 `S1367 1 . 1 0 ]
+[v _WPUCbits WPUCbits `VES1376  1 e 1 @7841 ]
 "20665
 [v _ODCONC ODCONC `VEuc  1 e 1 @7842 ]
 "20727
@@ -703,7 +715,7 @@ TMR2_CLC4OUT 14
 [v _IOCCFbits IOCCFbits `VES451  1 e 1 @7847 ]
 "21037
 [v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
-[s S2054 . 1 `uc 1 ANSELD0 1 0 :1:0 
+[s S2070 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -713,7 +725,7 @@ TMR2_CLC4OUT 14
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "21064
-[s S2063 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S2079 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -722,8 +734,8 @@ TMR2_CLC4OUT 14
 `uc 1 ANSD6 1 0 :1:6 
 `uc 1 ANSD7 1 0 :1:7 
 ]
-[u S2072 . 1 `S2054 1 . 1 0 `S2063 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES2072  1 e 1 @7850 ]
+[u S2088 . 1 `S2070 1 . 1 0 `S2079 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES2088  1 e 1 @7850 ]
 "21149
 [v _WPUD WPUD `VEuc  1 e 1 @7851 ]
 "21211
@@ -750,13 +762,13 @@ TMR2_CLC4OUT 14
 [v _IOCEF IOCEF `VEuc  1 e 1 @7867 ]
 "112 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
 [v _currentVolume currentVolume `uc  1 s 1 currentVolume ]
-"85 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _rngState rngState `us  1 s 2 rngState ]
-"86
+"95
 [v _rngSeeded rngSeeded `a  1 s 1 rngSeeded ]
-"87
+"96
 [v _twinkleEnabled twinkleEnabled `a  1 s 1 twinkleEnabled ]
-"88
+"97
 [v _fireflyTicksRemaining fireflyTicksRemaining `uc  1 s 1 fireflyTicksRemaining ]
 "20 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/rotary_encoder.c
 [v _QUAD_TABLE QUAD_TABLE `DC[16]c  1 s 16 QUAD_TABLE ]
@@ -776,9 +788,13 @@ TMR2_CLC4OUT 14
 [v _lastUidLen lastUidLen `uc  1 s 1 lastUidLen ]
 "73
 [v _trackEnded trackEnded `a  1 s 1 trackEnded ]
-"75
+"80
+[v _sceneActive sceneActive `a  1 s 1 sceneActive ]
+"81
+[v _idleGlowOn idleGlowOn `a  1 s 1 idleGlowOn ]
+"83
 [v _isOn isOn `a  1 s 1 isOn ]
-"84
+"92
 [v _lidClosed lidClosed `a  1 s 1 lidClosed ]
 "38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -808,28 +824,28 @@ TMR2_CLC4OUT 14
 [v _EUSART2_FramingErrorHandler EUSART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "84
 [v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"110 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"144 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"184
-[v main@track track `us  1 a 2 44 ]
-"181
-[v main@text text `[32]uc  1 a 32 0 ]
-"129
-[v main@i i `uc  1 a 1 41 ]
-"178
-[v main@isNewTag isNewTag `a  1 a 1 40 ]
-"171
-[v main@uid uid `[7]uc  1 a 7 32 ]
-"172
-[v main@uidLen uidLen `uc  1 a 1 48 ]
-"158
-[v main@lidNowClosed lidNowClosed `a  1 a 1 47 ]
-"169
-[v main@systemActive systemActive `a  1 a 1 39 ]
-"121
-[v main@initResult initResult `uc  1 a 1 46 ]
-"222
+"218
+[v main@track track `us  1 a 2 45 ]
+"215
+[v main@text text `[32]uc  1 a 32 2 ]
+"163
+[v main@i i `uc  1 a 1 42 ]
+"212
+[v main@isNewTag isNewTag `a  1 a 1 41 ]
+"205
+[v main@uid uid `[7]uc  1 a 7 34 ]
+"206
+[v main@uidLen uidLen `uc  1 a 1 50 ]
+"203
+[v main@systemActive systemActive `a  1 a 1 49 ]
+"192
+[v main@lidNowClosed lidNowClosed `a  1 a 1 48 ]
+"155
+[v main@initResult initResult `uc  1 a 1 47 ]
+"296
 } 0
 "50
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
@@ -914,25 +930,68 @@ TMR2_CLC4OUT 14
 [v isdigit@c c `i  1 p 2 4 ]
 "8
 } 0
-"87 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"101 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _on_lid_opened on_lid_opened `(v  1 s 1 on_lid_opened ]
 {
-"89
+"108
+[v on_lid_opened@uid uid `[7]uc  1 a 7 61 ]
+"109
+[v on_lid_opened@uidLen uidLen `uc  1 a 1 68 ]
+"117
 } 0
-"12 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+"33 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+[v _Scene_Idle Scene_Idle `(v  1 e 1 0 ]
+{
+"36
+} 0
+"401 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
+[v _PN532_ReadPassiveTarget PN532_ReadPassiveTarget `(a  1 e 1 0 ]
+{
+"423
+[v PN532_ReadPassiveTarget@i i `uc  1 a 1 59 ]
+"404
+[v PN532_ReadPassiveTarget@rsp rsp `[24]uc  1 a 24 32 ]
+"403
+[v PN532_ReadPassiveTarget@params params `[2]uc  1 a 2 56 ]
+"417
+[v PN532_ReadPassiveTarget@nfcidLen nfcidLen `uc  1 a 1 60 ]
+"405
+[v PN532_ReadPassiveTarget@rlen rlen `uc  1 a 1 58 ]
+"401
+[v PN532_ReadPassiveTarget@uid uid `*.39uc  1 p 2 23 ]
+[v PN532_ReadPassiveTarget@uidLen uidLen `*.39uc  1 p 2 25 ]
+"402
+[v PN532_ReadPassiveTarget@F8596 F8596 `[2]uc  1 s 2 F8596 ]
+"429
+} 0
+"43 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
 [v _Scene_Start Scene_Start `(v  1 e 1 0 ]
 {
-"19
-[v Scene_Start@step step `uc  1 a 1 59 ]
-"12
+"52
+[v Scene_Start@remaining remaining `uc  1 a 1 59 ]
+"50
+[v Scene_Start@step step `uc  1 a 1 60 ]
+"43
 [v Scene_Start@track track `us  1 p 2 55 ]
-"26
+"59
 } 0
 "158 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
 [v _DFPlayer_PlayTrack DFPlayer_PlayTrack `(v  1 e 1 0 ]
 {
 [v DFPlayer_PlayTrack@track track `us  1 p 2 35 ]
 "161
+} 0
+"93 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+[v _Scene_Return Scene_Return `(v  1 e 1 0 ]
+{
+"97
+} 0
+"14
+[v _scene_fade_led1_in scene_fade_led1_in `(v  1 s 1 scene_fade_led1_in ]
+{
+"16
+[v scene_fade_led1_in@step step `uc  1 a 1 57 ]
+"21
 } 0
 "37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1024,10 +1083,10 @@ TMR2_CLC4OUT 14
 [v RotaryEncoder_Tasks@steps steps `c  1 a 1 2 ]
 "113
 } 0
-"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"122 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _on_power_button_pressed on_power_button_pressed `(v  1 s 1 on_power_button_pressed ]
 {
-"108
+"142
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memset.c
 [v _memset memset `(*.5v  1 e 2 0 ]
@@ -1045,44 +1104,56 @@ TMR2_CLC4OUT 14
 [v memset@dest dest `*.5v  1 a 1 4 ]
 "90
 } 0
-"28 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+"38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
+[v _Scene_StopIdle Scene_StopIdle `(v  1 e 1 0 ]
+{
+"41
+} 0
+"24
+[v _scene_fade_led1_out scene_fade_led1_out `(v  1 s 1 scene_fade_led1_out ]
+{
+"26
+[v scene_fade_led1_out@step step `uc  1 a 1 57 ]
+"31
+} 0
+"61
 [v _Scene_Stop Scene_Stop `(v  1 e 1 0 ]
 {
-"43
+"80
 [v Scene_Stop@brightness brightness `us  1 a 2 63 ]
-"41
+"78
 [v Scene_Stop@remaining remaining `uc  1 a 1 67 ]
-"44
+"81
 [v Scene_Stop@volume volume `uc  1 a 1 65 ]
-"39
+"76
 [v Scene_Stop@step step `uc  1 a 1 68 ]
-"32
+"65
 [v Scene_Stop@startVolume startVolume `uc  1 a 1 66 ]
-"54
+"91
 } 0
-"90 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
+"99 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _MoodLights_SetTwinkleEnabled MoodLights_SetTwinkleEnabled `(v  1 e 1 0 ]
 {
 [v MoodLights_SetTwinkleEnabled@enabled enabled `a  1 a 1 wreg ]
 [v MoodLights_SetTwinkleEnabled@enabled enabled `a  1 a 1 wreg ]
-"92
+"101
 [v MoodLights_SetTwinkleEnabled@enabled enabled `a  1 a 1 4 ]
-"98
+"107
 } 0
-"36
+"41
 [v _MoodLights_GammaBrightness MoodLights_GammaBrightness `(us  1 e 2 0 ]
 {
 [v MoodLights_GammaBrightness@numerator numerator `uc  1 a 1 wreg ]
-"43
+"48
 [v MoodLights_GammaBrightness@d3 d3 `ul  1 a 4 48 ]
-"42
+"47
 [v MoodLights_GammaBrightness@n3 n3 `ul  1 a 4 44 ]
-"36
+"41
 [v MoodLights_GammaBrightness@numerator numerator `uc  1 a 1 wreg ]
 [v MoodLights_GammaBrightness@denominator denominator `uc  1 p 1 30 ]
-"42
+"47
 [v MoodLights_GammaBrightness@numerator numerator `uc  1 a 1 52 ]
-"45
+"50
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -1165,29 +1236,7 @@ TMR2_CLC4OUT 14
 [v POWER_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
 "182
 } 0
-"401 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
-[v _PN532_ReadPassiveTarget PN532_ReadPassiveTarget `(a  1 e 1 0 ]
-{
-[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 wreg ]
-"423
-[v PN532_ReadPassiveTarget@i i `uc  1 a 1 53 ]
-"404
-[v PN532_ReadPassiveTarget@rsp rsp `[24]uc  1 a 24 25 ]
-"403
-[v PN532_ReadPassiveTarget@params params `[2]uc  1 a 2 49 ]
-"417
-[v PN532_ReadPassiveTarget@nfcidLen nfcidLen `uc  1 a 1 54 ]
-"405
-[v PN532_ReadPassiveTarget@rlen rlen `uc  1 a 1 52 ]
-"401
-[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 wreg ]
-[v PN532_ReadPassiveTarget@uidLen uidLen `*.5uc  1 p 1 23 ]
-"402
-[v PN532_ReadPassiveTarget@F8596 F8596 `[2]uc  1 s 2 F8596 ]
-[v PN532_ReadPassiveTarget@uid uid `*.5uc  1 a 1 51 ]
-"429
-} 0
-"534
+"534 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/pn532.c
 [v _PN532_ReadNdefText PN532_ReadNdefText `(a  1 e 1 0 ]
 {
 [v PN532_ReadNdefText@out out `*.5uc  1 a 1 wreg ]
@@ -1429,28 +1478,28 @@ TMR2_CLC4OUT 14
 [v memcmp@n n `ui  1 p 2 4 ]
 "8
 } 0
-"115 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
+"124 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _MoodLights_Tasks MoodLights_Tasks `(v  1 e 1 0 ]
 {
-"151
+"160
 } 0
-"109
+"118
 [v _random_range random_range `(uc  1 s 1 random_range ]
 {
 [v random_range@minVal minVal `uc  1 a 1 wreg ]
-"111
+"120
 [v random_range@span span `uc  1 a 1 15 ]
-"109
+"118
 [v random_range@minVal minVal `uc  1 a 1 wreg ]
 [v random_range@maxVal maxVal `uc  1 p 1 12 ]
-"111
+"120
 [v random_range@minVal minVal `uc  1 a 1 16 ]
-"113
+"122
 } 0
-"102
+"111
 [v _next_random next_random `(us  1 s 2 next_random ]
 {
-"106
+"115
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -1475,19 +1524,25 @@ TMR2_CLC4OUT 14
 "18 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _MoodLights_Init MoodLights_Init `(v  1 e 1 0 ]
 {
-"28
+"29
 } 0
-"30
-[v _MoodLights_SetBrightness MoodLights_SetBrightness `(v  1 e 1 0 ]
+"36
+[v _MoodLights_SetBrightness2 MoodLights_SetBrightness2 `(v  1 e 1 0 ]
 {
-[v MoodLights_SetBrightness@brightness brightness `us  1 p 2 53 ]
-"34
+[v MoodLights_SetBrightness2@brightness brightness `us  1 p 2 53 ]
+"39
 } 0
 "62 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/pwm/src/pwm4.c
 [v _PWM4_LoadDutyValue PWM4_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM4_LoadDutyValue@dutyValue dutyValue `us  1 p 2 4 ]
 "69
+} 0
+"31 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
+[v _MoodLights_SetBrightness1 MoodLights_SetBrightness1 `(v  1 e 1 0 ]
+{
+[v MoodLights_SetBrightness1@brightness brightness `us  1 p 2 53 ]
+"34
 } 0
 "62 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/pwm/src/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]

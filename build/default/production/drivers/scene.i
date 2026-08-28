@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "drivers/scene.c" 2
 # 1 "drivers/scene.h" 1
-# 27 "drivers/scene.h"
+# 48 "drivers/scene.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -114,7 +114,11 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 28 "drivers/scene.h" 2
+# 49 "drivers/scene.h" 2
+
+
+
+void Scene_Idle(void);
 
 
 
@@ -124,7 +128,18 @@ void Scene_Start(uint16_t track);
 
 
 
+
 void Scene_Stop(void);
+
+
+
+
+void Scene_Return(void);
+
+
+
+
+void Scene_StopIdle(void);
 # 2 "drivers/scene.c" 2
 # 1 "drivers/dfplayer.h" 1
 # 21 "drivers/dfplayer.h"
@@ -169,7 +184,7 @@ void DFPlayer_Stop(void);
 void DFPlayer_FadeOutAndStop(void);
 # 3 "drivers/scene.c" 2
 # 1 "drivers/mood_lights.h" 1
-# 25 "drivers/mood_lights.h"
+# 27 "drivers/mood_lights.h"
 void MoodLights_Init(void);
 
 
@@ -188,8 +203,10 @@ void MoodLights_SetTwinkleEnabled(_Bool enabled);
 
 
 
-void MoodLights_SetBrightness(uint16_t brightness);
-# 53 "drivers/mood_lights.h"
+
+void MoodLights_SetBrightness1(uint16_t brightness);
+void MoodLights_SetBrightness2(uint16_t brightness);
+# 57 "drivers/mood_lights.h"
 uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
 
 
@@ -14228,12 +14245,35 @@ void INT_DefaultInterruptHandler(void);
 
 void SYSTEM_Initialize(void);
 # 5 "drivers/scene.c" 2
+# 14 "drivers/scene.c"
+static void scene_fade_led1_in(void)
+{
+    for (uint8_t step = 1; step <= 30; step++)
+    {
+        MoodLights_SetBrightness1(MoodLights_GammaBrightness(step, 30));
+        _delay((unsigned long)((50)*(32000000/4000.0)));
+    }
+}
 
 
+static void scene_fade_led1_out(void)
+{
+    for (uint8_t step = 30; step > 0; step--)
+    {
+        MoodLights_SetBrightness1(MoodLights_GammaBrightness((uint8_t)(step - 1), 30));
+        _delay((unsigned long)((50)*(32000000/4000.0)));
+    }
+}
 
+void Scene_Idle(void)
+{
+    scene_fade_led1_in();
+}
 
-
-
+void Scene_StopIdle(void)
+{
+    scene_fade_led1_out();
+}
 
 void Scene_Start(uint16_t track)
 {
@@ -14244,7 +14284,9 @@ void Scene_Start(uint16_t track)
 
     for (uint8_t step = 1; step <= 30; step++)
     {
-        MoodLights_SetBrightness(MoodLights_GammaBrightness(step, 30));
+        uint8_t remaining = (uint8_t)(30 - step);
+        MoodLights_SetBrightness1(MoodLights_GammaBrightness(remaining, 30));
+        MoodLights_SetBrightness2(MoodLights_GammaBrightness(step, 30));
         _delay((unsigned long)((50)*(32000000/4000.0)));
     }
 
@@ -14256,12 +14298,7 @@ void Scene_Stop(void)
     MoodLights_SetTwinkleEnabled(0);
 
     uint8_t startVolume = DFPlayer_GetVolume();
-
-
-
-
-
-
+# 76 "drivers/scene.c"
     for (uint8_t step = 20; step > 0; step--)
     {
         uint8_t remaining = (uint8_t)(step - 1);
@@ -14269,7 +14306,7 @@ void Scene_Stop(void)
         uint16_t brightness = MoodLights_GammaBrightness(remaining, 20);
         uint8_t volume = (uint8_t)((uint32_t)startVolume * remaining / 20);
 
-        MoodLights_SetBrightness(brightness);
+        MoodLights_SetBrightness2(brightness);
         DFPlayer_SetVolume(volume, 0);
 
         _delay((unsigned long)((50)*(32000000/4000.0)));
@@ -14277,4 +14314,10 @@ void Scene_Stop(void)
 
     DFPlayer_Stop();
     DFPlayer_SetVolume(startVolume, 1);
+}
+
+void Scene_Return(void)
+{
+    Scene_Stop();
+    scene_fade_led1_in();
 }

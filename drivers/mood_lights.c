@@ -21,15 +21,20 @@ void MoodLights_Init(void)
     // PPS - clear it defensively so the digital output driver actually works.
     LED_PWM_1_SetDigitalMode();
     LED_PWM_2_SetDigitalMode();
-    MoodLights_SetBrightness(0);
+    MoodLights_SetBrightness1(0);
+    MoodLights_SetBrightness2(0);
 
     LED_3_SetDigitalOutput();
     LED_3_SetLow();
 }
 
-void MoodLights_SetBrightness(uint16_t brightness)
+void MoodLights_SetBrightness1(uint16_t brightness)
 {
     PWM3_LoadDutyValue(brightness);
+}
+
+void MoodLights_SetBrightness2(uint16_t brightness)
+{
     PWM4_LoadDutyValue(brightness);
 }
 
@@ -48,7 +53,9 @@ void MoodLights_FadeIn(void)
 {
     for (uint8_t step = 1; step <= MOOD_LIGHTS_FADE_STEPS; step++)
     {
-        MoodLights_SetBrightness(MoodLights_GammaBrightness(step, MOOD_LIGHTS_FADE_STEPS));
+        uint16_t brightness = MoodLights_GammaBrightness(step, MOOD_LIGHTS_FADE_STEPS);
+        MoodLights_SetBrightness1(brightness);
+        MoodLights_SetBrightness2(brightness);
         __delay_ms(MOOD_LIGHTS_FADE_STEP_MS);
     }
 }
@@ -57,7 +64,9 @@ void MoodLights_FadeOut(void)
 {
     for (uint8_t step = MOOD_LIGHTS_FADE_STEPS; step > 0; step--)
     {
-        MoodLights_SetBrightness(MoodLights_GammaBrightness((uint8_t)(step - 1), MOOD_LIGHTS_FADE_STEPS));
+        uint16_t brightness = MoodLights_GammaBrightness((uint8_t)(step - 1), MOOD_LIGHTS_FADE_STEPS);
+        MoodLights_SetBrightness1(brightness);
+        MoodLights_SetBrightness2(brightness);
         __delay_ms(MOOD_LIGHTS_FADE_STEP_MS);
     }
 }

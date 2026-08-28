@@ -1,19 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"46 drivers/mood_lights.h
+[; ;drivers/mood_lights.h: 46: void MoodLights_SetBrightness1(uint16_t brightness);
+[v _MoodLights_SetBrightness1 `(v ~T0 @X0 0 ef1`us ]
+"57
+[; ;drivers/mood_lights.h: 57: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
+[v _MoodLights_GammaBrightness `(us ~T0 @X0 0 ef2`uc`uc ]
+[v F227 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
+[v __delay `JF227 ~T0 @X0 0 e ]
+[p i __delay ]
 "76 drivers/dfplayer.h
 [; ;drivers/dfplayer.h: 76: void DFPlayer_PlayTrack(uint16_t track);
 [v _DFPlayer_PlayTrack `(v ~T0 @X0 0 ef1`us ]
-"43 drivers/mood_lights.h
-[; ;drivers/mood_lights.h: 43: void MoodLights_SetBrightness(uint16_t brightness);
-[v _MoodLights_SetBrightness `(v ~T0 @X0 0 ef1`us ]
-"53
-[; ;drivers/mood_lights.h: 53: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
-[v _MoodLights_GammaBrightness `(us ~T0 @X0 0 ef2`uc`uc ]
-[v F222 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF222 ~T0 @X0 0 e ]
-[p i __delay ]
-"37 drivers/mood_lights.h
-[; ;drivers/mood_lights.h: 37: void MoodLights_SetTwinkleEnabled(_Bool enabled);
+"47 drivers/mood_lights.h
+[; ;drivers/mood_lights.h: 47: void MoodLights_SetBrightness2(uint16_t brightness);
+[v _MoodLights_SetBrightness2 `(v ~T0 @X0 0 ef1`us ]
+"39
+[; ;drivers/mood_lights.h: 39: void MoodLights_SetTwinkleEnabled(_Bool enabled);
 [v _MoodLights_SetTwinkleEnabled `(v ~T0 @X0 0 ef1`a ]
 "64 drivers/dfplayer.h
 [; ;drivers/dfplayer.h: 64: uint8_t DFPlayer_GetVolume(void);
@@ -1167,114 +1170,241 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"12 drivers/scene.c
-[; ;drivers/scene.c: 12: void Scene_Start(uint16_t track)
-[v _Scene_Start `(v ~T0 @X0 1 ef1`us ]
-"13
-[; ;drivers/scene.c: 13: {
+"14 drivers/scene.c
+[; ;drivers/scene.c: 14: static void scene_fade_led1_in(void)
+[v _scene_fade_led1_in `(v ~T0 @X0 1 sf ]
+"15
+[; ;drivers/scene.c: 15: {
 {
-[e :U _Scene_Start ]
-"12
-[; ;drivers/scene.c: 12: void Scene_Start(uint16_t track)
-[v _track `us ~T0 @X0 1 r1 ]
-"13
-[; ;drivers/scene.c: 13: {
+[e :U _scene_fade_led1_in ]
 [f ]
-"14
-[; ;drivers/scene.c: 14:     DFPlayer_PlayTrack(track);
-[e ( _DFPlayer_PlayTrack (1 _track ]
-"19
-[; ;drivers/scene.c: 19:     for (uint8_t step = 1; step <= 30; step++)
+"16
+[; ;drivers/scene.c: 16:     for (uint8_t step = 1; step <= 30; step++)
 {
 [v _step `uc ~T0 @X0 1 a ]
 [e = _step -> -> 1 `i `uc ]
 [e $ <= -> _step `i -> 30 `i 1089  ]
 [e $U 1090  ]
 [e :U 1089 ]
-"20
-[; ;drivers/scene.c: 20:     {
+"17
+[; ;drivers/scene.c: 17:     {
 {
-"21
-[; ;drivers/scene.c: 21:         MoodLights_SetBrightness(MoodLights_GammaBrightness(step, 30));
-[e ( _MoodLights_SetBrightness (1 ( _MoodLights_GammaBrightness (2 , _step -> -> 30 `i `uc ]
-"22
-[; ;drivers/scene.c: 22:         _delay((unsigned long)((50)*(32000000/4000.0)));
+"18
+[; ;drivers/scene.c: 18:         MoodLights_SetBrightness1(MoodLights_GammaBrightness(step, 30));
+[e ( _MoodLights_SetBrightness1 (1 ( _MoodLights_GammaBrightness (2 , _step -> -> 30 `i `uc ]
+"19
+[; ;drivers/scene.c: 19:         _delay((unsigned long)((50)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"23
-[; ;drivers/scene.c: 23:     }
+"20
+[; ;drivers/scene.c: 20:     }
 }
 [e ++ _step -> -> 1 `i `uc ]
 [e $ <= -> _step `i -> 30 `i 1089  ]
 [e :U 1090 ]
 }
-"25
-[; ;drivers/scene.c: 25:     MoodLights_SetTwinkleEnabled(1);
-[e ( _MoodLights_SetTwinkleEnabled (1 -> -> 1 `i `a ]
-"26
-[; ;drivers/scene.c: 26: }
+"21
+[; ;drivers/scene.c: 21: }
 [e :UE 1088 ]
 }
-"28
-[; ;drivers/scene.c: 28: void Scene_Stop(void)
-[v _Scene_Stop `(v ~T0 @X0 1 ef ]
-"29
-[; ;drivers/scene.c: 29: {
+"24
+[; ;drivers/scene.c: 24: static void scene_fade_led1_out(void)
+[v _scene_fade_led1_out `(v ~T0 @X0 1 sf ]
+"25
+[; ;drivers/scene.c: 25: {
 {
-[e :U _Scene_Stop ]
+[e :U _scene_fade_led1_out ]
 [f ]
-"30
-[; ;drivers/scene.c: 30:     MoodLights_SetTwinkleEnabled(0);
-[e ( _MoodLights_SetTwinkleEnabled (1 -> -> 0 `i `a ]
-"32
-[; ;drivers/scene.c: 32:     uint8_t startVolume = DFPlayer_GetVolume();
-[v _startVolume `uc ~T0 @X0 1 a ]
-[e = _startVolume ( _DFPlayer_GetVolume ..  ]
-"39
-[; ;drivers/scene.c: 39:     for (uint8_t step = 20; step > 0; step--)
+"26
+[; ;drivers/scene.c: 26:     for (uint8_t step = 30; step > 0; step--)
 {
 [v _step `uc ~T0 @X0 1 a ]
-[e = _step -> -> 20 `i `uc ]
+[e = _step -> -> 30 `i `uc ]
 [e $ > -> _step `i -> 0 `i 1093  ]
 [e $U 1094  ]
 [e :U 1093 ]
-"40
-[; ;drivers/scene.c: 40:     {
+"27
+[; ;drivers/scene.c: 27:     {
 {
-"41
-[; ;drivers/scene.c: 41:         uint8_t remaining = (uint8_t)(step - 1);
-[v _remaining `uc ~T0 @X0 1 a ]
-[e = _remaining -> - -> _step `i -> 1 `i `uc ]
-"43
-[; ;drivers/scene.c: 43:         uint16_t brightness = MoodLights_GammaBrightness(remaining, 20);
-[v _brightness `us ~T0 @X0 1 a ]
-[e = _brightness ( _MoodLights_GammaBrightness (2 , _remaining -> -> 20 `i `uc ]
-"44
-[; ;drivers/scene.c: 44:         uint8_t volume = (uint8_t)((uint32_t)startVolume * remaining / 20);
-[v _volume `uc ~T0 @X0 1 a ]
-[e = _volume -> / * -> _startVolume `ul -> _remaining `ul -> -> -> 20 `i `l `ul `uc ]
-"46
-[; ;drivers/scene.c: 46:         MoodLights_SetBrightness(brightness);
-[e ( _MoodLights_SetBrightness (1 _brightness ]
-"47
-[; ;drivers/scene.c: 47:         DFPlayer_SetVolume(volume, 0);
-[e ( _DFPlayer_SetVolume (2 , _volume -> -> 0 `i `a ]
-"49
-[; ;drivers/scene.c: 49:         _delay((unsigned long)((50)*(32000000/4000.0)));
+"28
+[; ;drivers/scene.c: 28:         MoodLights_SetBrightness1(MoodLights_GammaBrightness((uint8_t)(step - 1), 30));
+[e ( _MoodLights_SetBrightness1 (1 ( _MoodLights_GammaBrightness (2 , -> - -> _step `i -> 1 `i `uc -> -> 30 `i `uc ]
+"29
+[; ;drivers/scene.c: 29:         _delay((unsigned long)((50)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"50
-[; ;drivers/scene.c: 50:     }
+"30
+[; ;drivers/scene.c: 30:     }
 }
 [e -- _step -> -> 1 `i `uc ]
 [e $ > -> _step `i -> 0 `i 1093  ]
 [e :U 1094 ]
 }
-"52
-[; ;drivers/scene.c: 52:     DFPlayer_Stop();
-[e ( _DFPlayer_Stop ..  ]
-"53
-[; ;drivers/scene.c: 53:     DFPlayer_SetVolume(startVolume, 1);
-[e ( _DFPlayer_SetVolume (2 , _startVolume -> -> 1 `i `a ]
-"54
-[; ;drivers/scene.c: 54: }
+"31
+[; ;drivers/scene.c: 31: }
 [e :UE 1092 ]
+}
+"33
+[; ;drivers/scene.c: 33: void Scene_Idle(void)
+[v _Scene_Idle `(v ~T0 @X0 1 ef ]
+"34
+[; ;drivers/scene.c: 34: {
+{
+[e :U _Scene_Idle ]
+[f ]
+"35
+[; ;drivers/scene.c: 35:     scene_fade_led1_in();
+[e ( _scene_fade_led1_in ..  ]
+"36
+[; ;drivers/scene.c: 36: }
+[e :UE 1096 ]
+}
+"38
+[; ;drivers/scene.c: 38: void Scene_StopIdle(void)
+[v _Scene_StopIdle `(v ~T0 @X0 1 ef ]
+"39
+[; ;drivers/scene.c: 39: {
+{
+[e :U _Scene_StopIdle ]
+[f ]
+"40
+[; ;drivers/scene.c: 40:     scene_fade_led1_out();
+[e ( _scene_fade_led1_out ..  ]
+"41
+[; ;drivers/scene.c: 41: }
+[e :UE 1097 ]
+}
+"43
+[; ;drivers/scene.c: 43: void Scene_Start(uint16_t track)
+[v _Scene_Start `(v ~T0 @X0 1 ef1`us ]
+"44
+[; ;drivers/scene.c: 44: {
+{
+[e :U _Scene_Start ]
+"43
+[; ;drivers/scene.c: 43: void Scene_Start(uint16_t track)
+[v _track `us ~T0 @X0 1 r1 ]
+"44
+[; ;drivers/scene.c: 44: {
+[f ]
+"45
+[; ;drivers/scene.c: 45:     DFPlayer_PlayTrack(track);
+[e ( _DFPlayer_PlayTrack (1 _track ]
+"50
+[; ;drivers/scene.c: 50:     for (uint8_t step = 1; step <= 30; step++)
+{
+[v _step `uc ~T0 @X0 1 a ]
+[e = _step -> -> 1 `i `uc ]
+[e $ <= -> _step `i -> 30 `i 1099  ]
+[e $U 1100  ]
+[e :U 1099 ]
+"51
+[; ;drivers/scene.c: 51:     {
+{
+"52
+[; ;drivers/scene.c: 52:         uint8_t remaining = (uint8_t)(30 - step);
+[v _remaining `uc ~T0 @X0 1 a ]
+[e = _remaining -> - -> 30 `i -> _step `i `uc ]
+"53
+[; ;drivers/scene.c: 53:         MoodLights_SetBrightness1(MoodLights_GammaBrightness(remaining, 30));
+[e ( _MoodLights_SetBrightness1 (1 ( _MoodLights_GammaBrightness (2 , _remaining -> -> 30 `i `uc ]
+"54
+[; ;drivers/scene.c: 54:         MoodLights_SetBrightness2(MoodLights_GammaBrightness(step, 30));
+[e ( _MoodLights_SetBrightness2 (1 ( _MoodLights_GammaBrightness (2 , _step -> -> 30 `i `uc ]
+"55
+[; ;drivers/scene.c: 55:         _delay((unsigned long)((50)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"56
+[; ;drivers/scene.c: 56:     }
+}
+[e ++ _step -> -> 1 `i `uc ]
+[e $ <= -> _step `i -> 30 `i 1099  ]
+[e :U 1100 ]
+}
+"58
+[; ;drivers/scene.c: 58:     MoodLights_SetTwinkleEnabled(1);
+[e ( _MoodLights_SetTwinkleEnabled (1 -> -> 1 `i `a ]
+"59
+[; ;drivers/scene.c: 59: }
+[e :UE 1098 ]
+}
+"61
+[; ;drivers/scene.c: 61: void Scene_Stop(void)
+[v _Scene_Stop `(v ~T0 @X0 1 ef ]
+"62
+[; ;drivers/scene.c: 62: {
+{
+[e :U _Scene_Stop ]
+[f ]
+"63
+[; ;drivers/scene.c: 63:     MoodLights_SetTwinkleEnabled(0);
+[e ( _MoodLights_SetTwinkleEnabled (1 -> -> 0 `i `a ]
+"65
+[; ;drivers/scene.c: 65:     uint8_t startVolume = DFPlayer_GetVolume();
+[v _startVolume `uc ~T0 @X0 1 a ]
+[e = _startVolume ( _DFPlayer_GetVolume ..  ]
+"76
+[; ;drivers/scene.c: 76:     for (uint8_t step = 20; step > 0; step--)
+{
+[v _step `uc ~T0 @X0 1 a ]
+[e = _step -> -> 20 `i `uc ]
+[e $ > -> _step `i -> 0 `i 1103  ]
+[e $U 1104  ]
+[e :U 1103 ]
+"77
+[; ;drivers/scene.c: 77:     {
+{
+"78
+[; ;drivers/scene.c: 78:         uint8_t remaining = (uint8_t)(step - 1);
+[v _remaining `uc ~T0 @X0 1 a ]
+[e = _remaining -> - -> _step `i -> 1 `i `uc ]
+"80
+[; ;drivers/scene.c: 80:         uint16_t brightness = MoodLights_GammaBrightness(remaining, 20);
+[v _brightness `us ~T0 @X0 1 a ]
+[e = _brightness ( _MoodLights_GammaBrightness (2 , _remaining -> -> 20 `i `uc ]
+"81
+[; ;drivers/scene.c: 81:         uint8_t volume = (uint8_t)((uint32_t)startVolume * remaining / 20);
+[v _volume `uc ~T0 @X0 1 a ]
+[e = _volume -> / * -> _startVolume `ul -> _remaining `ul -> -> -> 20 `i `l `ul `uc ]
+"83
+[; ;drivers/scene.c: 83:         MoodLights_SetBrightness2(brightness);
+[e ( _MoodLights_SetBrightness2 (1 _brightness ]
+"84
+[; ;drivers/scene.c: 84:         DFPlayer_SetVolume(volume, 0);
+[e ( _DFPlayer_SetVolume (2 , _volume -> -> 0 `i `a ]
+"86
+[; ;drivers/scene.c: 86:         _delay((unsigned long)((50)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"87
+[; ;drivers/scene.c: 87:     }
+}
+[e -- _step -> -> 1 `i `uc ]
+[e $ > -> _step `i -> 0 `i 1103  ]
+[e :U 1104 ]
+}
+"89
+[; ;drivers/scene.c: 89:     DFPlayer_Stop();
+[e ( _DFPlayer_Stop ..  ]
+"90
+[; ;drivers/scene.c: 90:     DFPlayer_SetVolume(startVolume, 1);
+[e ( _DFPlayer_SetVolume (2 , _startVolume -> -> 1 `i `a ]
+"91
+[; ;drivers/scene.c: 91: }
+[e :UE 1102 ]
+}
+"93
+[; ;drivers/scene.c: 93: void Scene_Return(void)
+[v _Scene_Return `(v ~T0 @X0 1 ef ]
+"94
+[; ;drivers/scene.c: 94: {
+{
+[e :U _Scene_Return ]
+[f ]
+"95
+[; ;drivers/scene.c: 95:     Scene_Stop();
+[e ( _Scene_Stop ..  ]
+"96
+[; ;drivers/scene.c: 96:     scene_fade_led1_in();
+[e ( _scene_fade_led1_in ..  ]
+"97
+[; ;drivers/scene.c: 97: }
+[e :UE 1106 ]
 }

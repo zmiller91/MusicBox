@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "drivers/mood_lights.c" 2
 # 1 "drivers/mood_lights.h" 1
-# 16 "drivers/mood_lights.h"
+# 18 "drivers/mood_lights.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -114,9 +114,9 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 17 "drivers/mood_lights.h" 2
+# 19 "drivers/mood_lights.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 18 "drivers/mood_lights.h" 2
+# 20 "drivers/mood_lights.h" 2
 
 
 
@@ -142,8 +142,10 @@ void MoodLights_SetTwinkleEnabled(_Bool enabled);
 
 
 
-void MoodLights_SetBrightness(uint16_t brightness);
-# 53 "drivers/mood_lights.h"
+
+void MoodLights_SetBrightness1(uint16_t brightness);
+void MoodLights_SetBrightness2(uint16_t brightness);
+# 57 "drivers/mood_lights.h"
 uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator);
 
 
@@ -14189,15 +14191,20 @@ void MoodLights_Init(void)
 
     do { ANSELDbits.ANSD4 = 0; } while(0);
     do { ANSELDbits.ANSD5 = 0; } while(0);
-    MoodLights_SetBrightness(0);
+    MoodLights_SetBrightness1(0);
+    MoodLights_SetBrightness2(0);
 
     do { TRISAbits.TRISA5 = 0; } while(0);
     do { LATAbits.LATA5 = 0; } while(0);
 }
 
-void MoodLights_SetBrightness(uint16_t brightness)
+void MoodLights_SetBrightness1(uint16_t brightness)
 {
     PWM3_LoadDutyValue(brightness);
+}
+
+void MoodLights_SetBrightness2(uint16_t brightness)
+{
     PWM4_LoadDutyValue(brightness);
 }
 
@@ -14216,7 +14223,9 @@ void MoodLights_FadeIn(void)
 {
     for (uint8_t step = 1; step <= 60; step++)
     {
-        MoodLights_SetBrightness(MoodLights_GammaBrightness(step, 60));
+        uint16_t brightness = MoodLights_GammaBrightness(step, 60);
+        MoodLights_SetBrightness1(brightness);
+        MoodLights_SetBrightness2(brightness);
         _delay((unsigned long)((50)*(32000000/4000.0)));
     }
 }
@@ -14225,11 +14234,13 @@ void MoodLights_FadeOut(void)
 {
     for (uint8_t step = 60; step > 0; step--)
     {
-        MoodLights_SetBrightness(MoodLights_GammaBrightness((uint8_t)(step - 1), 60));
+        uint16_t brightness = MoodLights_GammaBrightness((uint8_t)(step - 1), 60);
+        MoodLights_SetBrightness1(brightness);
+        MoodLights_SetBrightness2(brightness);
         _delay((unsigned long)((50)*(32000000/4000.0)));
     }
 }
-# 85 "drivers/mood_lights.c"
+# 94 "drivers/mood_lights.c"
 static uint16_t rngState;
 static _Bool rngSeeded = 0;
 static _Bool twinkleEnabled = 0;
@@ -14269,7 +14280,7 @@ void MoodLights_Tasks(void)
 
     if (!rngSeeded)
     {
-# 132 "drivers/mood_lights.c"
+# 141 "drivers/mood_lights.c"
         rngState = (uint16_t)(TMR2 + 1u);
         rngSeeded = 1;
     }

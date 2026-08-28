@@ -72,6 +72,14 @@ static uint8_t lastUidLen = 0;
 // changes, is removed, or the power button forces a retrigger.
 static bool trackEnded = false;
 
+// Which mood LED (if either) is currently lit - mutually exclusive, and
+// exactly what tells a transition to "inactive" (lid closes/power off)
+// which of Scene_Stop() (LED_PWM_2) or Scene_StopIdle() (LED_PWM_1) to
+// call. Neither scene.c function inspects hardware state to figure this
+// out on its own - see scene.h.
+static bool sceneActive = false; // Scene_Start() called, LED_PWM_2 lit
+static bool idleGlowOn = false;  // Scene_Idle()/Scene_Return() completed, LED_PWM_1 lit
+
 static bool isOn = true;
 
 // Lid state, from the A3144 Hall sensor (LID_OPEN/RC6, polled each loop -
@@ -83,9 +91,29 @@ static bool isOn = true;
 // was also pressed while it was shut.
 static bool lidClosed = false;
 
-// Placeholder - not yet defined what opening the lid should actually do.
+// Lights up the idle "waiting for an animal" glow - unless an animal's
+// already on the stump (e.g. the lid was closed with one still in place),
+// in which case there's nothing to be idle about: leave lastUidLen at 0
+// (already is, from whatever made us inactive before) and let the normal
+// tag-detection below see it fresh and jump straight to Scene_Start(),
+// rather than idle-glowing for ~1.5s first and then immediately
+// crossfading into the active scene.
 static void on_lid_opened(void)
 {
+    if (!isOn)
+    {
+        return;
+    }
+
+    uint8_t uid[PN532_UID_MAX_LEN];
+    uint8_t uidLen;
+    if (PN532_ReadPassiveTarget(uid, &uidLen))
+    {
+        return;
+    }
+
+    Scene_Idle();
+    idleGlowOn = true;
 }
 
 // Placeholder - wire up whatever "power" should actually do (sleep, mute,
@@ -93,9 +121,15 @@ static void on_lid_opened(void)
 // the main loop, not from the IOC ISR, so it's safe to do real work here.
 static void on_power_button_pressed(void)
 {
-    if (!trackEnded)
+    if (sceneActive)
     {
         Scene_Stop();
+        sceneActive = false;
+    }
+    else if (idleGlowOn)
+    {
+        Scene_StopIdle();
+        idleGlowOn = false;
     }
 
     // Forget the last tag, so if it's still sitting on the reader, the
@@ -184,7 +218,11 @@ int main(void)
                     uint16_t track = parse_track_number(text);
                     if (track > 0)
                     {
+                        // An animal was placed - crossfade out of whatever
+                        // idle glow was showing and into the active scene.
                         Scene_Start(track);
+                        sceneActive = true;
+                        idleGlowOn = false;
                     }
                 }
                 memcpy(lastUid, uid, uidLen);
@@ -193,23 +231,59 @@ int main(void)
             }
             else if (!trackEnded && !DFPlayer_IsPlaying())
             {
-                // Track finished on its own - lights down, but don't touch
-                // lastUid/lastUidLen, so the still-present tag keeps
-                // looking unchanged and won't immediately replay just for
-                // sitting there. Removing/re-tapping it, or the power
-                // button, are what replay it.
+                // Track finished on its own, animal still in place - go
+                // fully dark rather than back to the idle glow (an animal
+                // IS still on the stump, so "waiting for one" doesn't
+                // apply). Don't touch lastUid/lastUidLen, so the
+                // still-present tag keeps looking unchanged and won't
+                // immediately replay just for sitting there. Removing/
+                // re-tapping it, or the power button, are what replay it.
                 Scene_Stop();
+                sceneActive = false;
                 trackEnded = true;
             }
         }
         else
         {
-            if (lastUidLen != 0 && !trackEnded)
+            if (systemActive && lastUidLen != 0)
             {
-                // Tag was just pulled away (not a power-off, which already
-                // stopped things abruptly in on_power_button_pressed()) -
-                // fade out once, not on every poll while it's gone.
-                Scene_Stop();
+                // Animal was just taken off the stump (not a lid/power
+                // shutdown, handled below) - bring the idle glow back
+                // rather than going/staying dark, so the box visibly stays
+                // ready for the next one. Which function gets that done
+                // depends on what's currently lit: if a scene was actively
+                // playing, crossfade back with Scene_Return(); if the
+                // track had already finished on its own (trackEnded),
+                // LED_PWM_2 is already 0, so go straight to Scene_Idle()
+                // instead - Scene_Return() would still ramp LED_PWM_2 down
+                // from a phantom "on" starting point and flash it.
+                if (sceneActive)
+                {
+                    Scene_Return();
+                }
+                else
+                {
+                    Scene_Idle();
+                }
+                sceneActive = false;
+                idleGlowOn = true;
+            }
+            else if (!systemActive)
+            {
+                // Lid closed or powered off - stop whichever of the two
+                // was actually lit; each only ever touches its own LED
+                // (see scene.h), so calling the wrong one would leave the
+                // other stuck on or wrongly flash it.
+                if (sceneActive)
+                {
+                    Scene_Stop();
+                    sceneActive = false;
+                }
+                else if (idleGlowOn)
+                {
+                    Scene_StopIdle();
+                    idleGlowOn = false;
+                }
             }
             // Let the same tag retrigger next time it's tapped.
             lastUidLen = 0;

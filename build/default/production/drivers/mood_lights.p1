@@ -14,9 +14,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21064
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21064: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0x1EAA)));
 [v _ANSELDbits `VS1009 ~T0 @X0 0 e@7850 ]
-"43 drivers/mood_lights.h
-[; ;drivers/mood_lights.h: 43: void MoodLights_SetBrightness(uint16_t brightness);
-[v _MoodLights_SetBrightness `(v ~T0 @X0 0 ef1`us ]
+"46 drivers/mood_lights.h
+[; ;drivers/mood_lights.h: 46: void MoodLights_SetBrightness1(uint16_t brightness);
+[v _MoodLights_SetBrightness1 `(v ~T0 @X0 0 ef1`us ]
+"47
+[; ;drivers/mood_lights.h: 47: void MoodLights_SetBrightness2(uint16_t brightness);
+[v _MoodLights_SetBrightness2 `(v ~T0 @X0 0 ef1`us ]
 "738 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 738:     struct {
 [s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -45,9 +48,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "65 drivers/../mcc_generated_files/system/../pwm/pwm4.h
 [; ;drivers/../mcc_generated_files/system/../pwm/pwm4.h: 65:  void PWM4_LoadDutyValue(uint16_t dutyValue);
 [v _PWM4_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-[v F203 `(v ~T0 @X0 1 tf1`ul ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF203 ~T0 @X0 0 e ]
+[v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
 "4801 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 4801: extern volatile unsigned char TMR2 __attribute__((address(0x30C)));
@@ -1218,328 +1221,362 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1093 ]
 "24
-[; ;drivers/mood_lights.c: 24:     MoodLights_SetBrightness(0);
-[e ( _MoodLights_SetBrightness (1 -> -> 0 `i `us ]
-"26
-[; ;drivers/mood_lights.c: 26:     do { TRISAbits.TRISA5 = 0; } while(0);
+[; ;drivers/mood_lights.c: 24:     MoodLights_SetBrightness1(0);
+[e ( _MoodLights_SetBrightness1 (1 -> -> 0 `i `us ]
+"25
+[; ;drivers/mood_lights.c: 25:     MoodLights_SetBrightness2(0);
+[e ( _MoodLights_SetBrightness2 (1 -> -> 0 `i `us ]
+"27
+[; ;drivers/mood_lights.c: 27:     do { TRISAbits.TRISA5 = 0; } while(0);
 [e :U 1097 ]
 {
 [e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1096 ]
-"27
-[; ;drivers/mood_lights.c: 27:     do { LATAbits.LATA5 = 0; } while(0);
+"28
+[; ;drivers/mood_lights.c: 28:     do { LATAbits.LATA5 = 0; } while(0);
 [e :U 1100 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1099 ]
-"28
-[; ;drivers/mood_lights.c: 28: }
+"29
+[; ;drivers/mood_lights.c: 29: }
 [e :UE 1088 ]
 }
-"30
-[; ;drivers/mood_lights.c: 30: void MoodLights_SetBrightness(uint16_t brightness)
-[v _MoodLights_SetBrightness `(v ~T0 @X0 1 ef1`us ]
 "31
-[; ;drivers/mood_lights.c: 31: {
-{
-[e :U _MoodLights_SetBrightness ]
-"30
-[; ;drivers/mood_lights.c: 30: void MoodLights_SetBrightness(uint16_t brightness)
-[v _brightness `us ~T0 @X0 1 r1 ]
-"31
-[; ;drivers/mood_lights.c: 31: {
-[f ]
+[; ;drivers/mood_lights.c: 31: void MoodLights_SetBrightness1(uint16_t brightness)
+[v _MoodLights_SetBrightness1 `(v ~T0 @X0 1 ef1`us ]
 "32
-[; ;drivers/mood_lights.c: 32:     PWM3_LoadDutyValue(brightness);
-[e ( _PWM3_LoadDutyValue (1 _brightness ]
+[; ;drivers/mood_lights.c: 32: {
+{
+[e :U _MoodLights_SetBrightness1 ]
+"31
+[; ;drivers/mood_lights.c: 31: void MoodLights_SetBrightness1(uint16_t brightness)
+[v _brightness `us ~T0 @X0 1 r1 ]
+"32
+[; ;drivers/mood_lights.c: 32: {
+[f ]
 "33
-[; ;drivers/mood_lights.c: 33:     PWM4_LoadDutyValue(brightness);
-[e ( _PWM4_LoadDutyValue (1 _brightness ]
+[; ;drivers/mood_lights.c: 33:     PWM3_LoadDutyValue(brightness);
+[e ( _PWM3_LoadDutyValue (1 _brightness ]
 "34
 [; ;drivers/mood_lights.c: 34: }
 [e :UE 1101 ]
 }
 "36
-[; ;drivers/mood_lights.c: 36: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator)
-[v _MoodLights_GammaBrightness `(us ~T0 @X0 1 ef2`uc`uc ]
+[; ;drivers/mood_lights.c: 36: void MoodLights_SetBrightness2(uint16_t brightness)
+[v _MoodLights_SetBrightness2 `(v ~T0 @X0 1 ef1`us ]
 "37
 [; ;drivers/mood_lights.c: 37: {
 {
-[e :U _MoodLights_GammaBrightness ]
+[e :U _MoodLights_SetBrightness2 ]
 "36
-[; ;drivers/mood_lights.c: 36: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator)
-[v _numerator `uc ~T0 @X0 1 r1 ]
-[v _denominator `uc ~T0 @X0 1 r2 ]
+[; ;drivers/mood_lights.c: 36: void MoodLights_SetBrightness2(uint16_t brightness)
+[v _brightness `us ~T0 @X0 1 r1 ]
 "37
 [; ;drivers/mood_lights.c: 37: {
 [f ]
-"42
-[; ;drivers/mood_lights.c: 42:     uint32_t n3 = (uint32_t)numerator * numerator * numerator;
-[v _n3 `ul ~T0 @X0 1 a ]
-[e = _n3 * * -> _numerator `ul -> _numerator `ul -> _numerator `ul ]
-"43
-[; ;drivers/mood_lights.c: 43:     uint32_t d3 = (uint32_t)denominator * denominator * denominator;
-[v _d3 `ul ~T0 @X0 1 a ]
-[e = _d3 * * -> _denominator `ul -> _denominator `ul -> _denominator `ul ]
-"44
-[; ;drivers/mood_lights.c: 44:     return (uint16_t)((uint32_t)1023 * n3 / d3);
-[e ) -> / * -> -> 1023 `i `ul _n3 _d3 `us ]
-[e $UE 1102  ]
-"45
-[; ;drivers/mood_lights.c: 45: }
+"38
+[; ;drivers/mood_lights.c: 38:     PWM4_LoadDutyValue(brightness);
+[e ( _PWM4_LoadDutyValue (1 _brightness ]
+"39
+[; ;drivers/mood_lights.c: 39: }
 [e :UE 1102 ]
 }
+"41
+[; ;drivers/mood_lights.c: 41: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator)
+[v _MoodLights_GammaBrightness `(us ~T0 @X0 1 ef2`uc`uc ]
+"42
+[; ;drivers/mood_lights.c: 42: {
+{
+[e :U _MoodLights_GammaBrightness ]
+"41
+[; ;drivers/mood_lights.c: 41: uint16_t MoodLights_GammaBrightness(uint8_t numerator, uint8_t denominator)
+[v _numerator `uc ~T0 @X0 1 r1 ]
+[v _denominator `uc ~T0 @X0 1 r2 ]
+"42
+[; ;drivers/mood_lights.c: 42: {
+[f ]
 "47
-[; ;drivers/mood_lights.c: 47: void MoodLights_FadeIn(void)
-[v _MoodLights_FadeIn `(v ~T0 @X0 1 ef ]
+[; ;drivers/mood_lights.c: 47:     uint32_t n3 = (uint32_t)numerator * numerator * numerator;
+[v _n3 `ul ~T0 @X0 1 a ]
+[e = _n3 * * -> _numerator `ul -> _numerator `ul -> _numerator `ul ]
 "48
-[; ;drivers/mood_lights.c: 48: {
+[; ;drivers/mood_lights.c: 48:     uint32_t d3 = (uint32_t)denominator * denominator * denominator;
+[v _d3 `ul ~T0 @X0 1 a ]
+[e = _d3 * * -> _denominator `ul -> _denominator `ul -> _denominator `ul ]
+"49
+[; ;drivers/mood_lights.c: 49:     return (uint16_t)((uint32_t)1023 * n3 / d3);
+[e ) -> / * -> -> 1023 `i `ul _n3 _d3 `us ]
+[e $UE 1103  ]
+"50
+[; ;drivers/mood_lights.c: 50: }
+[e :UE 1103 ]
+}
+"52
+[; ;drivers/mood_lights.c: 52: void MoodLights_FadeIn(void)
+[v _MoodLights_FadeIn `(v ~T0 @X0 1 ef ]
+"53
+[; ;drivers/mood_lights.c: 53: {
 {
 [e :U _MoodLights_FadeIn ]
 [f ]
-"49
-[; ;drivers/mood_lights.c: 49:     for (uint8_t step = 1; step <= 60; step++)
+"54
+[; ;drivers/mood_lights.c: 54:     for (uint8_t step = 1; step <= 60; step++)
 {
 [v _step `uc ~T0 @X0 1 a ]
 [e = _step -> -> 1 `i `uc ]
-[e $ <= -> _step `i -> 60 `i 1104  ]
-[e $U 1105  ]
-[e :U 1104 ]
-"50
-[; ;drivers/mood_lights.c: 50:     {
+[e $ <= -> _step `i -> 60 `i 1105  ]
+[e $U 1106  ]
+[e :U 1105 ]
+"55
+[; ;drivers/mood_lights.c: 55:     {
 {
-"51
-[; ;drivers/mood_lights.c: 51:         MoodLights_SetBrightness(MoodLights_GammaBrightness(step, 60));
-[e ( _MoodLights_SetBrightness (1 ( _MoodLights_GammaBrightness (2 , _step -> -> 60 `i `uc ]
-"52
-[; ;drivers/mood_lights.c: 52:         _delay((unsigned long)((50)*(32000000/4000.0)));
+"56
+[; ;drivers/mood_lights.c: 56:         uint16_t brightness = MoodLights_GammaBrightness(step, 60);
+[v _brightness `us ~T0 @X0 1 a ]
+[e = _brightness ( _MoodLights_GammaBrightness (2 , _step -> -> 60 `i `uc ]
+"57
+[; ;drivers/mood_lights.c: 57:         MoodLights_SetBrightness1(brightness);
+[e ( _MoodLights_SetBrightness1 (1 _brightness ]
+"58
+[; ;drivers/mood_lights.c: 58:         MoodLights_SetBrightness2(brightness);
+[e ( _MoodLights_SetBrightness2 (1 _brightness ]
+"59
+[; ;drivers/mood_lights.c: 59:         _delay((unsigned long)((50)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"53
-[; ;drivers/mood_lights.c: 53:     }
+"60
+[; ;drivers/mood_lights.c: 60:     }
 }
 [e ++ _step -> -> 1 `i `uc ]
-[e $ <= -> _step `i -> 60 `i 1104  ]
-[e :U 1105 ]
+[e $ <= -> _step `i -> 60 `i 1105  ]
+[e :U 1106 ]
 }
-"54
-[; ;drivers/mood_lights.c: 54: }
-[e :UE 1103 ]
+"61
+[; ;drivers/mood_lights.c: 61: }
+[e :UE 1104 ]
 }
-"56
-[; ;drivers/mood_lights.c: 56: void MoodLights_FadeOut(void)
+"63
+[; ;drivers/mood_lights.c: 63: void MoodLights_FadeOut(void)
 [v _MoodLights_FadeOut `(v ~T0 @X0 1 ef ]
-"57
-[; ;drivers/mood_lights.c: 57: {
+"64
+[; ;drivers/mood_lights.c: 64: {
 {
 [e :U _MoodLights_FadeOut ]
 [f ]
-"58
-[; ;drivers/mood_lights.c: 58:     for (uint8_t step = 60; step > 0; step--)
+"65
+[; ;drivers/mood_lights.c: 65:     for (uint8_t step = 60; step > 0; step--)
 {
 [v _step `uc ~T0 @X0 1 a ]
 [e = _step -> -> 60 `i `uc ]
-[e $ > -> _step `i -> 0 `i 1108  ]
-[e $U 1109  ]
-[e :U 1108 ]
-"59
-[; ;drivers/mood_lights.c: 59:     {
+[e $ > -> _step `i -> 0 `i 1109  ]
+[e $U 1110  ]
+[e :U 1109 ]
+"66
+[; ;drivers/mood_lights.c: 66:     {
 {
-"60
-[; ;drivers/mood_lights.c: 60:         MoodLights_SetBrightness(MoodLights_GammaBrightness((uint8_t)(step - 1), 60));
-[e ( _MoodLights_SetBrightness (1 ( _MoodLights_GammaBrightness (2 , -> - -> _step `i -> 1 `i `uc -> -> 60 `i `uc ]
-"61
-[; ;drivers/mood_lights.c: 61:         _delay((unsigned long)((50)*(32000000/4000.0)));
+"67
+[; ;drivers/mood_lights.c: 67:         uint16_t brightness = MoodLights_GammaBrightness((uint8_t)(step - 1), 60);
+[v _brightness `us ~T0 @X0 1 a ]
+[e = _brightness ( _MoodLights_GammaBrightness (2 , -> - -> _step `i -> 1 `i `uc -> -> 60 `i `uc ]
+"68
+[; ;drivers/mood_lights.c: 68:         MoodLights_SetBrightness1(brightness);
+[e ( _MoodLights_SetBrightness1 (1 _brightness ]
+"69
+[; ;drivers/mood_lights.c: 69:         MoodLights_SetBrightness2(brightness);
+[e ( _MoodLights_SetBrightness2 (1 _brightness ]
+"70
+[; ;drivers/mood_lights.c: 70:         _delay((unsigned long)((50)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"62
-[; ;drivers/mood_lights.c: 62:     }
+"71
+[; ;drivers/mood_lights.c: 71:     }
 }
 [e -- _step -> -> 1 `i `uc ]
-[e $ > -> _step `i -> 0 `i 1108  ]
-[e :U 1109 ]
+[e $ > -> _step `i -> 0 `i 1109  ]
+[e :U 1110 ]
 }
-"63
-[; ;drivers/mood_lights.c: 63: }
-[e :UE 1107 ]
+"72
+[; ;drivers/mood_lights.c: 72: }
+[e :UE 1108 ]
 }
-"85
-[; ;drivers/mood_lights.c: 85: static uint16_t rngState;
+"94
+[; ;drivers/mood_lights.c: 94: static uint16_t rngState;
 [v _rngState `us ~T0 @X0 1 s ]
-"86
-[; ;drivers/mood_lights.c: 86: static _Bool rngSeeded = 0;
+"95
+[; ;drivers/mood_lights.c: 95: static _Bool rngSeeded = 0;
 [v _rngSeeded `a ~T0 @X0 1 s ]
 [i _rngSeeded
 -> -> 0 `i `a
 ]
-"87
-[; ;drivers/mood_lights.c: 87: static _Bool twinkleEnabled = 0;
+"96
+[; ;drivers/mood_lights.c: 96: static _Bool twinkleEnabled = 0;
 [v _twinkleEnabled `a ~T0 @X0 1 s ]
 [i _twinkleEnabled
 -> -> 0 `i `a
 ]
-"88
-[; ;drivers/mood_lights.c: 88: static uint8_t fireflyTicksRemaining = 3;
+"97
+[; ;drivers/mood_lights.c: 97: static uint8_t fireflyTicksRemaining = 3;
 [v _fireflyTicksRemaining `uc ~T0 @X0 1 s ]
 [i _fireflyTicksRemaining
 -> -> 3 `i `uc
 ]
-"90
-[; ;drivers/mood_lights.c: 90: void MoodLights_SetTwinkleEnabled(_Bool enabled)
+"99
+[; ;drivers/mood_lights.c: 99: void MoodLights_SetTwinkleEnabled(_Bool enabled)
 [v _MoodLights_SetTwinkleEnabled `(v ~T0 @X0 1 ef1`a ]
-"91
-[; ;drivers/mood_lights.c: 91: {
+"100
+[; ;drivers/mood_lights.c: 100: {
 {
 [e :U _MoodLights_SetTwinkleEnabled ]
-"90
-[; ;drivers/mood_lights.c: 90: void MoodLights_SetTwinkleEnabled(_Bool enabled)
+"99
+[; ;drivers/mood_lights.c: 99: void MoodLights_SetTwinkleEnabled(_Bool enabled)
 [v _enabled `a ~T0 @X0 1 r1 ]
-"91
-[; ;drivers/mood_lights.c: 91: {
+"100
+[; ;drivers/mood_lights.c: 100: {
 [f ]
-"92
-[; ;drivers/mood_lights.c: 92:     twinkleEnabled = enabled;
+"101
+[; ;drivers/mood_lights.c: 101:     twinkleEnabled = enabled;
 [e = _twinkleEnabled _enabled ]
-"93
-[; ;drivers/mood_lights.c: 93:     if (!enabled)
-[e $ ! ! != -> _enabled `i -> 0 `i 1112  ]
-"94
-[; ;drivers/mood_lights.c: 94:     {
+"102
+[; ;drivers/mood_lights.c: 102:     if (!enabled)
+[e $ ! ! != -> _enabled `i -> 0 `i 1113  ]
+"103
+[; ;drivers/mood_lights.c: 103:     {
 {
-"96
-[; ;drivers/mood_lights.c: 96:         do { LATAbits.LATA5 = 0; } while(0);
-[e :U 1115 ]
+"105
+[; ;drivers/mood_lights.c: 105:         do { LATAbits.LATA5 = 0; } while(0);
+[e :U 1116 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1114 ]
-"97
-[; ;drivers/mood_lights.c: 97:     }
+[e :U 1115 ]
+"106
+[; ;drivers/mood_lights.c: 106:     }
 }
-[e :U 1112 ]
-"98
-[; ;drivers/mood_lights.c: 98: }
-[e :UE 1111 ]
+[e :U 1113 ]
+"107
+[; ;drivers/mood_lights.c: 107: }
+[e :UE 1112 ]
 }
-"102
-[; ;drivers/mood_lights.c: 102: static uint16_t next_random(void)
+"111
+[; ;drivers/mood_lights.c: 111: static uint16_t next_random(void)
 [v _next_random `(us ~T0 @X0 1 sf ]
-"103
-[; ;drivers/mood_lights.c: 103: {
+"112
+[; ;drivers/mood_lights.c: 112: {
 {
 [e :U _next_random ]
 [f ]
-"104
-[; ;drivers/mood_lights.c: 104:     rngState = (uint16_t)(rngState * 25173u + 13849u);
-[e = _rngState -> + * -> _rngState `ui -> 25173 `ui -> 13849 `ui `us ]
-"105
-[; ;drivers/mood_lights.c: 105:     return rngState;
-[e ) _rngState ]
-[e $UE 1116  ]
-"106
-[; ;drivers/mood_lights.c: 106: }
-[e :UE 1116 ]
-}
-"109
-[; ;drivers/mood_lights.c: 109: static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
-[v _random_range `(uc ~T0 @X0 1 sf2`uc`uc ]
-"110
-[; ;drivers/mood_lights.c: 110: {
-{
-[e :U _random_range ]
-"109
-[; ;drivers/mood_lights.c: 109: static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
-[v _minVal `uc ~T0 @X0 1 r1 ]
-[v _maxVal `uc ~T0 @X0 1 r2 ]
-"110
-[; ;drivers/mood_lights.c: 110: {
-[f ]
-"111
-[; ;drivers/mood_lights.c: 111:     uint8_t span = (uint8_t)(maxVal - minVal + 1);
-[v _span `uc ~T0 @X0 1 a ]
-[e = _span -> + - -> _maxVal `i -> _minVal `i -> 1 `i `uc ]
-"112
-[; ;drivers/mood_lights.c: 112:     return (uint8_t)(minVal + (next_random() % span));
-[e ) -> + -> _minVal `ui % -> ( _next_random ..  `ui -> _span `ui `uc ]
-[e $UE 1117  ]
 "113
-[; ;drivers/mood_lights.c: 113: }
+[; ;drivers/mood_lights.c: 113:     rngState = (uint16_t)(rngState * 25173u + 13849u);
+[e = _rngState -> + * -> _rngState `ui -> 25173 `ui -> 13849 `ui `us ]
+"114
+[; ;drivers/mood_lights.c: 114:     return rngState;
+[e ) _rngState ]
+[e $UE 1117  ]
+"115
+[; ;drivers/mood_lights.c: 115: }
 [e :UE 1117 ]
 }
-"115
-[; ;drivers/mood_lights.c: 115: void MoodLights_Tasks(void)
+"118
+[; ;drivers/mood_lights.c: 118: static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
+[v _random_range `(uc ~T0 @X0 1 sf2`uc`uc ]
+"119
+[; ;drivers/mood_lights.c: 119: {
+{
+[e :U _random_range ]
+"118
+[; ;drivers/mood_lights.c: 118: static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
+[v _minVal `uc ~T0 @X0 1 r1 ]
+[v _maxVal `uc ~T0 @X0 1 r2 ]
+"119
+[; ;drivers/mood_lights.c: 119: {
+[f ]
+"120
+[; ;drivers/mood_lights.c: 120:     uint8_t span = (uint8_t)(maxVal - minVal + 1);
+[v _span `uc ~T0 @X0 1 a ]
+[e = _span -> + - -> _maxVal `i -> _minVal `i -> 1 `i `uc ]
+"121
+[; ;drivers/mood_lights.c: 121:     return (uint8_t)(minVal + (next_random() % span));
+[e ) -> + -> _minVal `ui % -> ( _next_random ..  `ui -> _span `ui `uc ]
+[e $UE 1118  ]
+"122
+[; ;drivers/mood_lights.c: 122: }
+[e :UE 1118 ]
+}
+"124
+[; ;drivers/mood_lights.c: 124: void MoodLights_Tasks(void)
 [v _MoodLights_Tasks `(v ~T0 @X0 1 ef ]
-"116
-[; ;drivers/mood_lights.c: 116: {
+"125
+[; ;drivers/mood_lights.c: 125: {
 {
 [e :U _MoodLights_Tasks ]
 [f ]
-"117
-[; ;drivers/mood_lights.c: 117:     if (!twinkleEnabled)
-[e $ ! ! != -> _twinkleEnabled `i -> 0 `i 1119  ]
-"118
-[; ;drivers/mood_lights.c: 118:     {
+"126
+[; ;drivers/mood_lights.c: 126:     if (!twinkleEnabled)
+[e $ ! ! != -> _twinkleEnabled `i -> 0 `i 1120  ]
+"127
+[; ;drivers/mood_lights.c: 127:     {
 {
-"119
-[; ;drivers/mood_lights.c: 119:         return;
-[e $UE 1118  ]
-"120
-[; ;drivers/mood_lights.c: 120:     }
-}
-[e :U 1119 ]
-"122
-[; ;drivers/mood_lights.c: 122:     if (!rngSeeded)
-[e $ ! ! != -> _rngSeeded `i -> 0 `i 1120  ]
-"123
-[; ;drivers/mood_lights.c: 123:     {
-{
-"132
-[; ;drivers/mood_lights.c: 132:         rngState = (uint16_t)(TMR2 + 1u);
-[e = _rngState -> + -> _TMR2 `ui -> 1 `ui `us ]
-"133
-[; ;drivers/mood_lights.c: 133:         rngSeeded = 1;
-[e = _rngSeeded -> -> 1 `i `a ]
-"134
-[; ;drivers/mood_lights.c: 134:     }
+"128
+[; ;drivers/mood_lights.c: 128:         return;
+[e $UE 1119  ]
+"129
+[; ;drivers/mood_lights.c: 129:     }
 }
 [e :U 1120 ]
-"136
-[; ;drivers/mood_lights.c: 136:     if (fireflyTicksRemaining > 0)
-[e $ ! > -> _fireflyTicksRemaining `i -> 0 `i 1121  ]
-"137
-[; ;drivers/mood_lights.c: 137:     {
+"131
+[; ;drivers/mood_lights.c: 131:     if (!rngSeeded)
+[e $ ! ! != -> _rngSeeded `i -> 0 `i 1121  ]
+"132
+[; ;drivers/mood_lights.c: 132:     {
 {
-"138
-[; ;drivers/mood_lights.c: 138:         fireflyTicksRemaining--;
-[e -- _fireflyTicksRemaining -> -> 1 `i `uc ]
-"139
-[; ;drivers/mood_lights.c: 139:         return;
-[e $UE 1118  ]
-"140
-[; ;drivers/mood_lights.c: 140:     }
+"141
+[; ;drivers/mood_lights.c: 141:         rngState = (uint16_t)(TMR2 + 1u);
+[e = _rngState -> + -> _TMR2 `ui -> 1 `ui `us ]
+"142
+[; ;drivers/mood_lights.c: 142:         rngSeeded = 1;
+[e = _rngSeeded -> -> 1 `i `a ]
+"143
+[; ;drivers/mood_lights.c: 143:     }
 }
 [e :U 1121 ]
 "145
-[; ;drivers/mood_lights.c: 145:     do { LATAbits.LATA5 = 1; } while(0);
-[e :U 1124 ]
+[; ;drivers/mood_lights.c: 145:     if (fireflyTicksRemaining > 0)
+[e $ ! > -> _fireflyTicksRemaining `i -> 0 `i 1122  ]
+"146
+[; ;drivers/mood_lights.c: 146:     {
+{
+"147
+[; ;drivers/mood_lights.c: 147:         fireflyTicksRemaining--;
+[e -- _fireflyTicksRemaining -> -> 1 `i `uc ]
+"148
+[; ;drivers/mood_lights.c: 148:         return;
+[e $UE 1119  ]
+"149
+[; ;drivers/mood_lights.c: 149:     }
+}
+[e :U 1122 ]
+"154
+[; ;drivers/mood_lights.c: 154:     do { LATAbits.LATA5 = 1; } while(0);
+[e :U 1125 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1123 ]
-"146
-[; ;drivers/mood_lights.c: 146:     _delay((unsigned long)((200)*(32000000/4000.0)));
+[e :U 1124 ]
+"155
+[; ;drivers/mood_lights.c: 155:     _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"147
-[; ;drivers/mood_lights.c: 147:     do { LATAbits.LATA5 = 0; } while(0);
-[e :U 1127 ]
+"156
+[; ;drivers/mood_lights.c: 156:     do { LATAbits.LATA5 = 0; } while(0);
+[e :U 1128 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1126 ]
-"150
-[; ;drivers/mood_lights.c: 150:     fireflyTicksRemaining = random_range(3, 15);
+[e :U 1127 ]
+"159
+[; ;drivers/mood_lights.c: 159:     fireflyTicksRemaining = random_range(3, 15);
 [e = _fireflyTicksRemaining ( _random_range (2 , -> -> 3 `i `uc -> -> 15 `i `uc ]
-"151
-[; ;drivers/mood_lights.c: 151: }
-[e :UE 1118 ]
+"160
+[; ;drivers/mood_lights.c: 160: }
+[e :UE 1119 ]
 }
