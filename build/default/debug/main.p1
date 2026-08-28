@@ -21,8 +21,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 [p mainexit ]
-"56 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
+"57 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 57: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
@@ -78,10 +78,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48 ./drivers/dfplayer.h
 [; ;./drivers/dfplayer.h: 48: void DFPlayer_Init(void);
 [v _DFPlayer_Init `(v ~T0 @X0 0 ef ]
-[v F8395 `(v ~T0 @X0 0 tf ]
+[v F8448 `(v ~T0 @X0 0 tf ]
 "26 ./drivers/rotary_encoder.h
 [; ;./drivers/rotary_encoder.h: 26: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
-[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8395 ]
+[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8448 ]
 "27 ./drivers/mood_lights.h
 [; ;./drivers/mood_lights.h: 27: void MoodLights_Init(void);
 [v _MoodLights_Init `(v ~T0 @X0 0 ef ]

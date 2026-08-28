@@ -40,6 +40,7 @@
 #include "config_bits.h"
 #include "../system/clock.h"
 #include "../system/pins.h"
+#include "../adcc/adcc.h"
 #include "../uart/eusart1.h"
 #include "../uart/eusart2.h"
 #include "../pwm/pwm3.h"

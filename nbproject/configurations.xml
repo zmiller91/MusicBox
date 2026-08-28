@@ -7,6 +7,9 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="adcc" displayName="adcc" projectFiles="true">
+          <itemPath>mcc_generated_files/adcc/adcc.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
           <itemPath>mcc_generated_files/pwm/pwm4.h</itemPath>
           <itemPath>mcc_generated_files/pwm/pwm3.h</itemPath>
@@ -47,10 +50,17 @@
         <itemPath>drivers/mood_lights.h</itemPath>
         <itemPath>drivers/scene.c</itemPath>
         <itemPath>drivers/scene.h</itemPath>
+        <itemPath>drivers/photoresistor.c</itemPath>
+        <itemPath>drivers/photoresistor.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="adcc" displayName="adcc" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/adcc/src/adcc.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <itemPath>mcc_generated_files/pwm/src/pwm4.c</itemPath>

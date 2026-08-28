@@ -4,6 +4,7 @@ mcc_generated_files/system/system.h  \
 mcc_generated_files/system/config_bits.h  \
 mcc_generated_files/system/../system/clock.h  \
 mcc_generated_files/system/../system/pins.h  \
+mcc_generated_files/system/../adcc/adcc.h  \
 mcc_generated_files/system/../uart/eusart1.h  \
 mcc_generated_files/system/../uart/../system/system.h  \
 mcc_generated_files/system/../uart/uart_drv_interface.h  \

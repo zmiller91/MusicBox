@@ -156,6 +156,10 @@ void MoodLights_FadeIn(void);
 
 void MoodLights_FadeOut(void);
 # 2 "drivers/mood_lights.c" 2
+# 1 "drivers/photoresistor.h" 1
+# 28 "drivers/photoresistor.h"
+uint8_t Photoresistor_ReadDarkness(void);
+# 3 "drivers/mood_lights.c" 2
 # 1 "drivers/../mcc_generated_files/system/system.h" 1
 # 37 "drivers/../mcc_generated_files/system/system.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
@@ -13373,7 +13377,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
-# 308 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 327 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13391,11 +13395,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 334 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 353 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 345 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 364 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 356 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 375 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13405,11 +13409,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 374 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 393 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 385 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 404 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 396 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 415 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13419,13 +13423,168 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 414 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 433 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 425 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 444 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 436 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 455 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "drivers/../mcc_generated_files/system/system.h" 2
+
+# 1 "drivers/../mcc_generated_files/system/../adcc/adcc.h" 1
+# 44 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+typedef __uint24 uint24_t;
+# 214 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+
+
+typedef enum
+{
+    channel_ADCG1 = 0x23,
+    channel_VSS = 0x3a,
+    channel_Temp = 0x3b,
+    channel_FVR_buf1 = 0x3e,
+    channel_FVR_buf2 = 0x3f,
+    PHOTORESISTOR = 0x12,
+    channel_ANA0 = 0x0
+} adcc_channel_t;
+# 242 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+void ADCC_Initialize(void);
+# 252 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 262 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+_Bool ADCC_IsConversionDone(void);
+# 271 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 281 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 290 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+ __attribute__((inline)) void ADCC_StopConversion(void);
+# 299 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+__attribute__((inline)) void ADCC_SetStopOnInterrupt(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_DischargeSampleCapacitor(void);
+
+
+
+
+
+
+
+void ADCC_LoadAcquisitionRegister(uint16_t acquisitionValue);
+
+
+
+
+
+
+
+void ADCC_SetPrechargeTime(uint16_t prechargeTime);
+
+
+
+
+
+
+
+void ADCC_SetRepeatCount(uint8_t repeatCount);
+# 340 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_ClearAccumulator(void);
+
+
+
+
+
+
+
+uint24_t ADCC_GetAccumulatorValue(void);
+# 366 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+
+
+
+
+
+
+
+uint16_t ADCC_GetFilterValue(void);
+# 383 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+
+
+
+
+
+
+
+void ADCC_DefineSetPoint(uint16_t setPoint);
+
+
+
+
+
+
+
+void ADCC_SetUpperThreshold(uint16_t upperThreshold);
+
+
+
+
+
+
+
+void ADCC_SetLowerThreshold(uint16_t lowerThreshold);
+# 416 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_EnableDoubleSampling(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_EnableContinuousConversion(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_DisableContinuousConversion(void);
+# 450 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 460 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 469 "drivers/../mcc_generated_files/system/../adcc/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 43 "drivers/../mcc_generated_files/system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../uart/eusart1.h" 1
 # 42 "drivers/../mcc_generated_files/system/../uart/eusart1.h"
@@ -13758,7 +13917,7 @@ void EUSART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
-# 43 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 44 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../uart/eusart2.h" 1
 # 43 "drivers/../mcc_generated_files/system/../uart/eusart2.h"
@@ -13892,7 +14051,7 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
-# 44 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../pwm/pwm3.h" 1
 # 57 "drivers/../mcc_generated_files/system/../pwm/pwm3.h"
@@ -13905,7 +14064,7 @@ void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 
  void PWM3_LoadDutyValue(uint16_t dutyValue);
-# 45 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../pwm/pwm4.h" 1
 # 57 "drivers/../mcc_generated_files/system/../pwm/pwm4.h"
@@ -13918,7 +14077,7 @@ void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 
  void PWM4_LoadDutyValue(uint16_t dutyValue);
-# 46 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../timer/tmr2.h" 1
 # 39 "drivers/../mcc_generated_files/system/../timer/tmr2.h"
@@ -14158,7 +14317,7 @@ void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 void TMR2_Tasks(void);
-# 47 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 48 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "drivers/../mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "drivers/../mcc_generated_files/system/../system/interrupt.h"
@@ -14173,7 +14332,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "drivers/../mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 48 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
+# 49 "drivers/../mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14183,8 +14342,8 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 3 "drivers/mood_lights.c" 2
-# 18 "drivers/mood_lights.c"
+# 4 "drivers/mood_lights.c" 2
+# 19 "drivers/mood_lights.c"
 void MoodLights_Init(void)
 {
 
@@ -14240,11 +14399,11 @@ void MoodLights_FadeOut(void)
         _delay((unsigned long)((50)*(32000000/4000.0)));
     }
 }
-# 94 "drivers/mood_lights.c"
+# 101 "drivers/mood_lights.c"
 static uint16_t rngState;
 static _Bool rngSeeded = 0;
 static _Bool twinkleEnabled = 0;
-static uint8_t fireflyTicksRemaining = 3;
+static uint8_t fireflyTicksRemaining = 8;
 
 void MoodLights_SetTwinkleEnabled(_Bool enabled)
 {
@@ -14271,6 +14430,14 @@ static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
     return (uint8_t)(minVal + (next_random() % span));
 }
 
+
+
+static uint8_t interpolate_by_darkness(uint8_t brightVal, uint8_t darkVal, uint8_t darkness)
+{
+    int16_t span = (int16_t)darkVal - (int16_t)brightVal;
+    return (uint8_t)(brightVal + (int16_t)((int32_t)span * darkness / 255));
+}
+
 void MoodLights_Tasks(void)
 {
     if (!twinkleEnabled)
@@ -14280,7 +14447,7 @@ void MoodLights_Tasks(void)
 
     if (!rngSeeded)
     {
-# 141 "drivers/mood_lights.c"
+# 156 "drivers/mood_lights.c"
         rngState = (uint16_t)(TMR2 + 1u);
         rngSeeded = 1;
     }
@@ -14299,5 +14466,9 @@ void MoodLights_Tasks(void)
     do { LATAbits.LATA5 = 0; } while(0);
 
 
-    fireflyTicksRemaining = random_range(3, 15);
+
+    uint8_t darkness = Photoresistor_ReadDarkness();
+    uint8_t offMin = interpolate_by_darkness(8, 1, darkness);
+    uint8_t offMax = interpolate_by_darkness(20, 3, darkness);
+    fireflyTicksRemaining = random_range(offMin, offMax);
 }

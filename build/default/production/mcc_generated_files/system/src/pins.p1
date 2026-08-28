@@ -162,25 +162,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21631: extern volatile unsigned char IOCEF __attribute__((address(0x1EBB)));
 [v _IOCEF `Vuc ~T0 @X0 0 e@7867 ]
 [v F7746 `(v ~T0 @X0 0 tf ]
-"334 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 334: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+"353 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 353: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _POWER_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7746 ]
-"356
-[; ;mcc_generated_files/system/src/../pins.h: 356: void POWER_DefaultInterruptHandler(void);
+"375
+[; ;mcc_generated_files/system/src/../pins.h: 375: void POWER_DefaultInterruptHandler(void);
 [v _POWER_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 [v F7754 `(v ~T0 @X0 0 tf ]
-"374
-[; ;mcc_generated_files/system/src/../pins.h: 374: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+"393
+[; ;mcc_generated_files/system/src/../pins.h: 393: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _VOL_A_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7754 ]
-"396
-[; ;mcc_generated_files/system/src/../pins.h: 396: void VOL_A_DefaultInterruptHandler(void);
+"415
+[; ;mcc_generated_files/system/src/../pins.h: 415: void VOL_A_DefaultInterruptHandler(void);
 [v _VOL_A_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 [v F7762 `(v ~T0 @X0 0 tf ]
-"414
-[; ;mcc_generated_files/system/src/../pins.h: 414: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+"433
+[; ;mcc_generated_files/system/src/../pins.h: 433: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _VOL_B_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7762 ]
-"436
-[; ;mcc_generated_files/system/src/../pins.h: 436: void VOL_B_DefaultInterruptHandler(void);
+"455
+[; ;mcc_generated_files/system/src/../pins.h: 455: void VOL_B_DefaultInterruptHandler(void);
 [v _VOL_B_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "1574 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1574:     struct {
@@ -204,8 +204,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19900
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19900: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x1E93)));
 [v _IOCAFbits `VS973 ~T0 @X0 0 e@7827 ]
-"324 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 324: void POWER_ISR(void);
+"343 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 343: void POWER_ISR(void);
 [v _POWER_ISR `(v ~T0 @X0 0 ef ]
 "20981 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20981:     struct {
@@ -218,11 +218,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20992
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20992: extern volatile IOCCFbits_t IOCCFbits __attribute__((address(0x1EA7)));
 [v _IOCCFbits `VS1007 ~T0 @X0 0 e@7847 ]
-"364 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 364: void VOL_A_ISR(void);
+"383 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 383: void VOL_A_ISR(void);
 [v _VOL_A_ISR `(v ~T0 @X0 0 ef ]
-"404
-[; ;mcc_generated_files/system/src/../pins.h: 404: void VOL_B_ISR(void);
+"423
+[; ;mcc_generated_files/system/src/../pins.h: 423: void VOL_B_ISR(void);
 [v _VOL_B_ISR `(v ~T0 @X0 0 ef ]
 [v F7780 `(v ~T0 @X0 0 tf ]
 [v F7782 `(v ~T0 @X0 0 tf ]

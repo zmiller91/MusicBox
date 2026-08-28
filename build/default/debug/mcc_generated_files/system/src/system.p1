@@ -2,9 +2,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 48: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
-"308 mcc_generated_files/system/src/../../system/pins.h
-[; ;mcc_generated_files/system/src/../../system/pins.h: 308: void PIN_MANAGER_Initialize (void);
+"327 mcc_generated_files/system/src/../../system/pins.h
+[; ;mcc_generated_files/system/src/../../system/pins.h: 327: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
+"242 mcc_generated_files/system/src/../../adcc/adcc.h
+[; ;mcc_generated_files/system/src/../../adcc/adcc.h: 242: void ADCC_Initialize(void);
+[v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
 "120 mcc_generated_files/system/src/../../uart/eusart1.h
 [; ;mcc_generated_files/system/src/../../uart/eusart1.h: 120: void EUSART1_Initialize(void);
 [v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
@@ -1181,24 +1184,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/system.c: 40:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
 "41
-[; ;mcc_generated_files/system/src/system.c: 41:     EUSART1_Initialize();
-[e ( _EUSART1_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 41:     ADCC_Initialize();
+[e ( _ADCC_Initialize ..  ]
 "42
-[; ;mcc_generated_files/system/src/system.c: 42:     EUSART2_Initialize();
-[e ( _EUSART2_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 42:     EUSART1_Initialize();
+[e ( _EUSART1_Initialize ..  ]
 "43
-[; ;mcc_generated_files/system/src/system.c: 43:     PWM3_Initialize();
-[e ( _PWM3_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 43:     EUSART2_Initialize();
+[e ( _EUSART2_Initialize ..  ]
 "44
-[; ;mcc_generated_files/system/src/system.c: 44:     PWM4_Initialize();
-[e ( _PWM4_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 44:     PWM3_Initialize();
+[e ( _PWM3_Initialize ..  ]
 "45
-[; ;mcc_generated_files/system/src/system.c: 45:     TMR2_Initialize();
-[e ( _TMR2_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 45:     PWM4_Initialize();
+[e ( _PWM4_Initialize ..  ]
 "46
-[; ;mcc_generated_files/system/src/system.c: 46:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 46:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "47
-[; ;mcc_generated_files/system/src/system.c: 47: }
+[; ;mcc_generated_files/system/src/system.c: 47:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
+"48
+[; ;mcc_generated_files/system/src/system.c: 48: }
 [e :UE 1088 ]
 }

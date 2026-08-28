@@ -164,6 +164,25 @@
 #define IO_RB5_SetOpenDrain()       do { ODCONBbits.ODCB5 = 1; } while(0)
 #define IO_RB5_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
 #define IO_RB5_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
+// get/set IO_RC2 aliases
+#define PHOTORESISTOR_TRIS                 TRISCbits.TRISC2
+#define PHOTORESISTOR_LAT                  LATCbits.LATC2
+#define PHOTORESISTOR_PORT                 PORTCbits.RC2
+#define PHOTORESISTOR_WPU                  WPUCbits.WPUC2
+#define PHOTORESISTOR_OD                   ODCONCbits.ODCC2
+#define PHOTORESISTOR_ANS                  ANSELCbits.ANSC2
+#define PHOTORESISTOR_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define PHOTORESISTOR_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define PHOTORESISTOR_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define PHOTORESISTOR_GetValue()           PORTCbits.RC2
+#define PHOTORESISTOR_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define PHOTORESISTOR_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define PHOTORESISTOR_SetPullup()          do { WPUCbits.WPUC2 = 1; } while(0)
+#define PHOTORESISTOR_ResetPullup()        do { WPUCbits.WPUC2 = 0; } while(0)
+#define PHOTORESISTOR_SetPushPull()        do { ODCONCbits.ODCC2 = 0; } while(0)
+#define PHOTORESISTOR_SetOpenDrain()       do { ODCONCbits.ODCC2 = 1; } while(0)
+#define PHOTORESISTOR_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
+#define PHOTORESISTOR_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
 // get/set IO_RC3 aliases
 #define VOL_A_TRIS                 TRISCbits.TRISC3
 #define VOL_A_LAT                  LATCbits.LATC3

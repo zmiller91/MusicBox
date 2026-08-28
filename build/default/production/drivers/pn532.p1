@@ -1656,8 +1656,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _count ( _pn532_send_and_capture (4 , , , , -> &U _packet `*Cuc _packetLen &U _buffer -> -> # _buffer `ui `uc -> -> 1000 `i `us ]
 "211
 [; ;drivers/pn532.c: 211:     static const uint8_t expectedAck[6] =
-[v F8574 `Cuc ~T0 @X0 -> 6 `i s expectedAck ]
-[i F8574
+[v F8627 `Cuc ~T0 @X0 -> 6 `i s expectedAck ]
+[i F8627
 :U ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -1683,7 +1683,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1133 ]
 "222
 [; ;drivers/pn532.c: 222:     if (memcmp(buffer, expectedAck, 6) != 0)
-[e $ ! != ( _memcmp (3 , , -> &U _buffer `*Cv -> &U F8574 `*Cv -> -> 6 `i `ui -> 0 `i 1134  ]
+[e $ ! != ( _memcmp (3 , , -> &U _buffer `*Cv -> &U F8627 `*Cv -> -> 6 `i `ui -> 0 `i 1134  ]
 "223
 [; ;drivers/pn532.c: 223:     {
 {
@@ -1971,8 +1971,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;drivers/pn532.c: 370:     uint8_t rlen;
 [v _rlen `uc ~T0 @X0 1 a ]
-[v F8589 `uc ~T0 @X0 -> 3 `i s ]
-[i F8589
+[v F8642 `uc ~T0 @X0 -> 3 `i s ]
+[i F8642
 :U ..
 "375
 [; ;drivers/pn532.c: 375:     uint8_t samcfg[3] = {0x01, 0x14, 0x00};
@@ -1982,7 +1982,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _samcfg `uc ~T0 @X0 -> 3 `i a ]
-[e = _samcfg F8589 ]
+[e = _samcfg F8642 ]
 "376
 [; ;drivers/pn532.c: 376:     if (!pn532_transact(0x14, samcfg, sizeof(samcfg), 1, rsp, sizeof(rsp), &rlen))
 [e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 20 `i `uc -> &U _samcfg `*Cuc -> -> # _samcfg `ui `uc -> -> 1 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1158  ]
@@ -1997,8 +1997,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drivers/pn532.c: 379:     }
 }
 [e :U 1158 ]
-[v F8591 `uc ~T0 @X0 -> 4 `i s ]
-[i F8591
+[v F8644 `uc ~T0 @X0 -> 4 `i s ]
+[i F8644
 :U ..
 "384
 [; ;drivers/pn532.c: 384:     uint8_t rfcfg[4] = {0x05, 0xFF, 0x01, 0x02};
@@ -2009,7 +2009,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _rfcfg `uc ~T0 @X0 -> 4 `i a ]
-[e = _rfcfg F8591 ]
+[e = _rfcfg F8644 ]
 "385
 [; ;drivers/pn532.c: 385:     if (!pn532_transact(0x32, rfcfg, sizeof(rfcfg), 0, rsp, sizeof(rsp), &rlen))
 [e $ ! ! != -> ( _pn532_transact (4 , , , , , , -> -> 50 `i `uc -> &U _rfcfg `*Cuc -> -> # _rfcfg `ui `uc -> -> 0 `i `a &U _rsp -> -> # _rsp `ui `uc &U _rlen `i -> 0 `i 1159  ]
@@ -2060,8 +2060,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "402
 [; ;drivers/pn532.c: 402: {
 [f ]
-[v F8596 `uc ~T0 @X0 -> 2 `i s ]
-[i F8596
+[v F8649 `uc ~T0 @X0 -> 2 `i s ]
+[i F8649
 :U ..
 "403
 [; ;drivers/pn532.c: 403:     uint8_t params[2] = {0x01, 0x00};
@@ -2070,7 +2070,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _params `uc ~T0 @X0 -> 2 `i a ]
-[e = _params F8596 ]
+[e = _params F8649 ]
 "404
 [; ;drivers/pn532.c: 404:     uint8_t rsp[24];
 [v _rsp `uc ~T0 @X0 -> 24 `i a ]
@@ -2169,8 +2169,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "434
 [; ;drivers/pn532.c: 434: {
 [f ]
-[v F8605 `uc ~T0 @X0 -> 3 `i s ]
-[i F8605
+[v F8658 `uc ~T0 @X0 -> 3 `i s ]
+[i F8658
 :U ..
 "435
 [; ;drivers/pn532.c: 435:     uint8_t params[3] = {0x01, 0x30, page};
@@ -2180,7 +2180,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _params `uc ~T0 @X0 -> 3 `i a ]
-[e = _params F8605 ]
+[e = _params F8658 ]
 [e ; = *U + &U _params * -> -> -> 0 `i `ui `ux -> -> # *U &U _params `ui `ux -> -> 1 `i `uc ; = *U + &U _params * -> -> -> 1 `i `ui `ux -> -> # *U &U _params `ui `ux -> -> 48 `i `uc = *U + &U _params * -> -> -> 2 `i `ui `ux -> -> # *U &U _params `ui `ux _page ]
 "436
 [; ;drivers/pn532.c: 436:     uint8_t rsp[20];
@@ -2496,7 +2496,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "536
 [; ;drivers/pn532.c: 536:     static uint8_t buf[64];
-[v F8630 `uc ~T0 @X0 -> 64 `i s buf ]
+[v F8683 `uc ~T0 @X0 -> 64 `i s buf ]
 "537
 [; ;drivers/pn532.c: 537:     uint8_t have = 0;
 [v _have `uc ~T0 @X0 1 a ]
@@ -2518,7 +2518,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "544
 [; ;drivers/pn532.c: 544:         if (!ntag_read4pages(page, &buf[have]))
-[e $ ! ! != -> ( _ntag_read4pages (2 , _page &U *U + &U F8630 * -> _have `ux -> -> # *U &U F8630 `ui `ux `i -> 0 `i 1190  ]
+[e $ ! ! != -> ( _ntag_read4pages (2 , _page &U *U + &U F8683 * -> _have `ux -> -> # *U &U F8683 `ui `ux `i -> 0 `i 1190  ]
 "545
 [; ;drivers/pn532.c: 545:         {
 {
@@ -2546,7 +2546,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "558
 [; ;drivers/pn532.c: 558:             uint8_t type = buf[pos];
 [v _type `uc ~T0 @X0 1 a ]
-[e = _type *U + &U F8630 * -> _pos `ux -> -> # *U &U F8630 `ui `ux ]
+[e = _type *U + &U F8683 * -> _pos `ux -> -> # *U &U F8683 `ui `ux ]
 "560
 [; ;drivers/pn532.c: 560:             if (type == 0x00)
 [e $ ! == -> _type `i -> 0 `i 1194  ]
@@ -2593,7 +2593,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "574
 [; ;drivers/pn532.c: 574:             uint8_t len = buf[pos + 1];
 [v _len `uc ~T0 @X0 1 a ]
-[e = _len *U + &U F8630 * -> -> + -> _pos `i -> 1 `i `ui `ux -> -> # *U &U F8630 `ui `ux ]
+[e = _len *U + &U F8683 * -> -> + -> _pos `i -> 1 `i `ui `ux -> -> # *U &U F8683 `ui `ux ]
 "575
 [; ;drivers/pn532.c: 575:             if (len == 0xFF)
 [e $ ! == -> _len `i -> 255 `i 1198  ]
@@ -2633,7 +2633,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "587
 [; ;drivers/pn532.c: 587:                 return parse_ndef_text_record(&buf[valueStart], len, out, outSize);
-[e ) ( _parse_ndef_text_record (4 , , , -> &U *U + &U F8630 * -> _valueStart `ux -> -> # *U &U F8630 `ui `ux `*Cuc _len _out _outSize ]
+[e ) ( _parse_ndef_text_record (4 , , , -> &U *U + &U F8683 * -> _valueStart `ux -> -> # *U &U F8683 `ui `ux `*Cuc _len _out _outSize ]
 [e $UE 1186  ]
 "588
 [; ;drivers/pn532.c: 588:             }
@@ -2659,7 +2659,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1187 ]
 "542
 [; ;drivers/pn532.c: 542:     while (page <= 40 && (uint16_t)(have + 16) <= sizeof(buf))
-[e $ && <= -> _page `i -> 40 `i <= -> -> + -> _have `i -> 16 `i `us `ui -> # F8630 `ui 1188  ]
+[e $ && <= -> _page `i -> 40 `i <= -> -> + -> _have `i -> 16 `i `us `ui -> # F8683 `ui 1188  ]
 [e :U 1189 ]
 "595
 [; ;drivers/pn532.c: 595:     return 0;

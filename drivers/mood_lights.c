@@ -1,4 +1,5 @@
 #include "mood_lights.h"
+#include "photoresistor.h"
 #include "../mcc_generated_files/system/system.h"
 #include <stdbool.h>
 
@@ -88,13 +89,19 @@ void MoodLights_FadeOut(void)
 // range. Tune to taste.
 #define FIREFLY_FLASH_MS 200
 
-#define FIREFLY_OFF_MIN_TICKS 3  // ~450ms
-#define FIREFLY_OFF_MAX_TICKS 15 // ~2.25s
+// Dark-gap range scales with the photoresistor: slow flickering in broad
+// daylight, ramping up to quick flickering in darkness. Picked fresh (see
+// MoodLights_Tasks() below) each time a gap is chosen, so it drifts with
+// the room over the course of the day rather than being fixed at boot.
+#define FIREFLY_OFF_MIN_TICKS_BRIGHT 8  // ~1.2s - broad daylight
+#define FIREFLY_OFF_MAX_TICKS_BRIGHT 20 // ~3s
+#define FIREFLY_OFF_MIN_TICKS_DARK   2  // ~300ms - darkness
+#define FIREFLY_OFF_MAX_TICKS_DARK   6  // ~900ms
 
 static uint16_t rngState;
 static bool rngSeeded = false;
 static bool twinkleEnabled = false;
-static uint8_t fireflyTicksRemaining = FIREFLY_OFF_MIN_TICKS;
+static uint8_t fireflyTicksRemaining = FIREFLY_OFF_MIN_TICKS_BRIGHT;
 
 void MoodLights_SetTwinkleEnabled(bool enabled)
 {
@@ -119,6 +126,14 @@ static uint8_t random_range(uint8_t minVal, uint8_t maxVal)
 {
     uint8_t span = (uint8_t)(maxVal - minVal + 1);
     return (uint8_t)(minVal + (next_random() % span));
+}
+
+// Linearly interpolates between brightVal (darkness=0) and darkVal
+// (darkness=255).
+static uint8_t interpolate_by_darkness(uint8_t brightVal, uint8_t darkVal, uint8_t darkness)
+{
+    int16_t span = (int16_t)darkVal - (int16_t)brightVal;
+    return (uint8_t)(brightVal + (int16_t)((int32_t)span * darkness / 255));
 }
 
 void MoodLights_Tasks(void)
@@ -155,6 +170,10 @@ void MoodLights_Tasks(void)
     __delay_ms(FIREFLY_FLASH_MS);
     LED_3_SetLow();
 
-    // ...then a random dark gap before the next one.
-    fireflyTicksRemaining = random_range(FIREFLY_OFF_MIN_TICKS, FIREFLY_OFF_MAX_TICKS);
+    // ...then a random dark gap before the next one, sized against the
+    // current room brightness - darker room, shorter/more frequent gaps.
+    uint8_t darkness = Photoresistor_ReadDarkness();
+    uint8_t offMin = interpolate_by_darkness(FIREFLY_OFF_MIN_TICKS_BRIGHT, FIREFLY_OFF_MIN_TICKS_DARK, darkness);
+    uint8_t offMax = interpolate_by_darkness(FIREFLY_OFF_MAX_TICKS_BRIGHT, FIREFLY_OFF_MAX_TICKS_DARK, darkness);
+    fireflyTicksRemaining = random_range(offMin, offMax);
 }

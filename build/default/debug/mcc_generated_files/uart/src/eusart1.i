@@ -13485,7 +13485,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 308 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 327 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13503,11 +13503,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 334 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 353 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 345 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 364 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 356 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 375 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13517,11 +13517,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 374 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 393 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 385 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 404 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 396 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 415 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13531,16 +13531,171 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 414 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 433 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 425 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 444 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 436 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 455 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "mcc_generated_files/uart/src/../../system/system.h" 2
 
-# 1 "mcc_generated_files/uart/src/../../system/../uart/eusart1.h" 1
+# 1 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h" 1
+# 44 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+typedef __uint24 uint24_t;
+# 214 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+
+
+typedef enum
+{
+    channel_ADCG1 = 0x23,
+    channel_VSS = 0x3a,
+    channel_Temp = 0x3b,
+    channel_FVR_buf1 = 0x3e,
+    channel_FVR_buf2 = 0x3f,
+    PHOTORESISTOR = 0x12,
+    channel_ANA0 = 0x0
+} adcc_channel_t;
+# 242 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+void ADCC_Initialize(void);
+# 252 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 262 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+_Bool ADCC_IsConversionDone(void);
+# 271 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 281 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 290 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+ __attribute__((inline)) void ADCC_StopConversion(void);
+# 299 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+__attribute__((inline)) void ADCC_SetStopOnInterrupt(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_DischargeSampleCapacitor(void);
+
+
+
+
+
+
+
+void ADCC_LoadAcquisitionRegister(uint16_t acquisitionValue);
+
+
+
+
+
+
+
+void ADCC_SetPrechargeTime(uint16_t prechargeTime);
+
+
+
+
+
+
+
+void ADCC_SetRepeatCount(uint8_t repeatCount);
+# 340 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_ClearAccumulator(void);
+
+
+
+
+
+
+
+uint24_t ADCC_GetAccumulatorValue(void);
+# 366 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+
+
+
+
+
+
+
+uint16_t ADCC_GetFilterValue(void);
+# 383 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+
+
+
+
+
+
+
+void ADCC_DefineSetPoint(uint16_t setPoint);
+
+
+
+
+
+
+
+void ADCC_SetUpperThreshold(uint16_t upperThreshold);
+
+
+
+
+
+
+
+void ADCC_SetLowerThreshold(uint16_t lowerThreshold);
+# 416 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_EnableDoubleSampling(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_EnableContinuousConversion(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void ADCC_DisableContinuousConversion(void);
+# 450 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 460 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 469 "mcc_generated_files/uart/src/../../system/../adcc/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
 # 43 "mcc_generated_files/uart/src/../../system/system.h" 2
+
+# 1 "mcc_generated_files/uart/src/../../system/../uart/eusart1.h" 1
+# 44 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../uart/eusart2.h" 1
 # 43 "mcc_generated_files/uart/src/../../system/../uart/eusart2.h"
@@ -13725,7 +13880,7 @@ void EUSART2_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
-# 44 "mcc_generated_files/uart/src/../../system/system.h" 2
+# 45 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../pwm/pwm3.h" 1
 # 57 "mcc_generated_files/uart/src/../../system/../pwm/pwm3.h"
@@ -13738,7 +13893,7 @@ void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 
  void PWM3_LoadDutyValue(uint16_t dutyValue);
-# 45 "mcc_generated_files/uart/src/../../system/system.h" 2
+# 46 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../pwm/pwm4.h" 1
 # 57 "mcc_generated_files/uart/src/../../system/../pwm/pwm4.h"
@@ -13751,7 +13906,7 @@ void EUSART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 
  void PWM4_LoadDutyValue(uint16_t dutyValue);
-# 46 "mcc_generated_files/uart/src/../../system/system.h" 2
+# 47 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../timer/tmr2.h" 1
 # 39 "mcc_generated_files/uart/src/../../system/../timer/tmr2.h"
@@ -13991,7 +14146,7 @@ void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 void TMR2_Tasks(void);
-# 47 "mcc_generated_files/uart/src/../../system/system.h" 2
+# 48 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/interrupt.h" 1
 # 85 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
@@ -14006,7 +14161,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 48 "mcc_generated_files/uart/src/../../system/system.h" 2
+# 49 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 
 

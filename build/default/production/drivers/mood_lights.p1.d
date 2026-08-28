@@ -1,10 +1,12 @@
 build/default/production/drivers/mood_lights.p1:  \
 drivers/mood_lights.c  \
 drivers/mood_lights.h  \
+drivers/photoresistor.h  \
 drivers/../mcc_generated_files/system/system.h  \
 drivers/../mcc_generated_files/system/config_bits.h  \
 drivers/../mcc_generated_files/system/../system/clock.h  \
 drivers/../mcc_generated_files/system/../system/pins.h  \
+drivers/../mcc_generated_files/system/../adcc/adcc.h  \
 drivers/../mcc_generated_files/system/../uart/eusart1.h  \
 drivers/../mcc_generated_files/system/../uart/../system/system.h  \
 drivers/../mcc_generated_files/system/../uart/uart_drv_interface.h  \
