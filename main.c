@@ -59,23 +59,51 @@ static uint16_t parse_track_number(const char *text)
 
 // Last tag seen, so the main loop only plays a track when a *new* tag
 // shows up rather than replaying on every poll while one sits on the
-// reader. lastUidLen == 0 means "no tag" / "forget the last one".
+// reader. lastUidLen == 0 means "no tag currently on the reader". Zeroing
+// it is also how tag-removal and the power button deliberately force a
+// still-present tag to look "new" again and retrigger.
 static uint8_t lastUid[PN532_UID_MAX_LEN];
 static uint8_t lastUidLen = 0;
+
+// True once we've already called Scene_Stop() for whatever's in
+// lastUid/lastUidLen because its track ended on its own - without this,
+// nothing else changes once DFPlayer_IsPlaying() goes false, so we'd call
+// Scene_Stop() again on every single poll forever. Reset whenever the tag
+// changes, is removed, or the power button forces a retrigger.
+static bool trackEnded = false;
+
 static bool isOn = true;
+
+// Lid state, from the A3144 Hall sensor (LID_OPEN/RC6, polled each loop -
+// see main() for why this doesn't need interrupt-on-change). The sensor
+// pulls the pin low when it detects a magnet (lid closed); with no magnet
+// nearby (lid open) it reads high. Independent of isOn - closing the lid
+// forces everything off same as the power button, but doesn't itself
+// change isOn, so reopening it resumes on its own unless the power button
+// was also pressed while it was shut.
+static bool lidClosed = false;
+
+// Placeholder - not yet defined what opening the lid should actually do.
+static void on_lid_opened(void)
+{
+}
 
 // Placeholder - wire up whatever "power" should actually do (sleep, mute,
 // a MOSFET on the speaker rail, etc.). Runs from RotaryEncoder_Tasks() in
 // the main loop, not from the IOC ISR, so it's safe to do real work here.
 static void on_power_button_pressed(void)
 {
-    Scene_Stop();
+    if (!trackEnded)
+    {
+        Scene_Stop();
+    }
 
     // Forget the last tag, so if it's still sitting on the reader, the
     // main loop treats it as newly-arrived and plays it again instead of
     // requiring it to be physically removed and re-tapped.
     memset(lastUid, 0, sizeof(lastUid));
     lastUidLen = 0;
+    trackEnded = false;
     isOn = !isOn;
 }
 
@@ -110,6 +138,10 @@ int main(void)
     }
     LED_SetLow();
 
+    // A3144 is open-collector - needs a pull-up. Defensive in case the
+    // sensor board doesn't already carry its own.
+    LID_OPEN_SetPullup();
+
     DFPlayer_Init();
     RotaryEncoder_Init(on_power_button_pressed);
     MoodLights_Init();
@@ -119,10 +151,27 @@ int main(void)
         RotaryEncoder_Tasks();
         MoodLights_Tasks();
 
+        // Polled rather than interrupt-driven: neither the lid nor the
+        // DFPlayer BUSY line changes fast enough to need better than
+        // ~150ms resolution, and an ISR here would just set a flag for
+        // this same loop to check anyway.
+        bool lidNowClosed = (LID_OPEN_GetValue() == 0);
+        if (lidNowClosed != lidClosed)
+        {
+            lidClosed = lidNowClosed;
+            if (!lidClosed)
+            {
+                on_lid_opened();
+            }
+            // Closing doesn't need its own handler - it's picked up by the
+            // systemActive gate below the same way tag removal already is.
+        }
+        bool systemActive = isOn && !lidClosed;
+
         uint8_t uid[PN532_UID_MAX_LEN];
         uint8_t uidLen;
 
-        if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
+        if (systemActive && PN532_ReadPassiveTarget(uid, &uidLen))
         {
             LED_SetHigh();
 
@@ -140,11 +189,22 @@ int main(void)
                 }
                 memcpy(lastUid, uid, uidLen);
                 lastUidLen = uidLen;
+                trackEnded = false;
+            }
+            else if (!trackEnded && !DFPlayer_IsPlaying())
+            {
+                // Track finished on its own - lights down, but don't touch
+                // lastUid/lastUidLen, so the still-present tag keeps
+                // looking unchanged and won't immediately replay just for
+                // sitting there. Removing/re-tapping it, or the power
+                // button, are what replay it.
+                Scene_Stop();
+                trackEnded = true;
             }
         }
         else
         {
-            if (lastUidLen != 0)
+            if (lastUidLen != 0 && !trackEnded)
             {
                 // Tag was just pulled away (not a power-off, which already
                 // stopped things abruptly in on_power_button_pressed()) -
@@ -153,6 +213,7 @@ int main(void)
             }
             // Let the same tag retrigger next time it's tapped.
             lastUidLen = 0;
+            trackEnded = false;
             LED_SetLow();
         }
 

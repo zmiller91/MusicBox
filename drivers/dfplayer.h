@@ -1,6 +1,9 @@
 /*
  * dfplayer.h - Minimal driver for the DFPlayer Mini MP3 module over UART.
  *
+ * Also reads the module's BUSY output, wired to the MUSIC_ON pin (RB1) -
+ * see DFPlayer_IsPlaying().
+ *
  * Uses EUSART1 (see drivers/dfplayer.c), TX and RX both. Every command
  * requests the module's ACK (feedback byte set), and the write is always
  * confirmed complete on the wire before DFPlayer_SendCommand() returns -
@@ -59,6 +62,15 @@ void DFPlayer_AdjustVolume(int8_t delta);
 // Returns the volume this driver last set (i.e. its own tracked state, not
 // read back from the module - the DFPlayer Mini doesn't report it here).
 uint8_t DFPlayer_GetVolume(void);
+
+// Reads the module's BUSY pin (MUSIC_ON/RB1) directly - true while a track
+// is actively playing, false when idle/stopped. This is a real-time
+// hardware read, not driver-tracked state, so it catches a track finishing
+// on its own (not just DFPlayer_Stop()/FadeOutAndStop() being called).
+// Assumes standard DFPlayer Mini BUSY behavior (pin reads LOW while
+// playing) - flip the comparison in dfplayer.c if your module/wiring
+// inverts this.
+bool DFPlayer_IsPlaying(void);
 
 // Convenience wrapper: play track number 'track' from the /MP3 folder.
 void DFPlayer_PlayTrack(uint16_t track);

@@ -99,8 +99,10 @@ TMR2_CLC4OUT 14
 "145
 [v _DFPlayer_GetVolume DFPlayer_GetVolume `(uc  1 e 1 0 ]
 "150
+[v _DFPlayer_IsPlaying DFPlayer_IsPlaying `(a  1 e 1 0 ]
+"158
 [v _DFPlayer_PlayTrack DFPlayer_PlayTrack `(v  1 e 1 0 ]
-"155
+"163
 [v _DFPlayer_Stop DFPlayer_Stop `(v  1 e 1 0 ]
 "18 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/mood_lights.c
 [v _MoodLights_Init MoodLights_Init `(v  1 e 1 0 ]
@@ -144,9 +146,11 @@ TMR2_CLC4OUT 14
 [v _Scene_Stop Scene_Stop `(v  1 e 1 0 ]
 "50 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
-"70
+"87
+[v _on_lid_opened on_lid_opened `(v  1 s 1 on_lid_opened ]
+"94
 [v _on_power_button_pressed on_power_button_pressed `(v  1 s 1 on_power_button_pressed ]
-"82
+"110
 [v _main main `(i  1 e 2 0 ]
 "45 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/pwm/src/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
@@ -278,7 +282,7 @@ TMR2_CLC4OUT 14
 "426 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [u S252 . 1 `S247 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES252  1 e 1 @11 ]
-[s S1575 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1656 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -288,9 +292,21 @@ TMR2_CLC4OUT 14
 `uc 1 RA7 1 0 :1:7 
 ]
 "463
-[u S1584 . 1 `S1575 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1584  1 e 1 @12 ]
-[s S1493 . 1 `uc 1 RC0 1 0 :1:0 
+[u S1665 . 1 `S1656 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1665  1 e 1 @12 ]
+[s S1525 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"525
+[u S1534 . 1 `S1525 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1534  1 e 1 @13 ]
+[s S1401 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -300,8 +316,8 @@ TMR2_CLC4OUT 14
 `uc 1 RC7 1 0 :1:7 
 ]
 "587
-[u S1502 . 1 `S1493 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES1502  1 e 1 @14 ]
+[u S1410 . 1 `S1401 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1410  1 e 1 @14 ]
 "732
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 [s S1313 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -354,7 +370,7 @@ TMR2_CLC4OUT 14
 "1317
 [u S239 . 1 `S234 1 . 1 0 ]
 [v _PIR0bits PIR0bits `VES239  1 e 1 @140 ]
-[s S1735 . 1 `uc 1 NVMIF 1 0 :1:0 
+[s S1800 . 1 `uc 1 NVMIF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ACTIF 1 0 :1:2 
 `uc 1 TMR1IF 1 0 :1:3 
@@ -364,8 +380,8 @@ TMR2_CLC4OUT 14
 `uc 1 TMR2IF 1 0 :1:7 
 ]
 "1354
-[u S1744 . 1 `S1735 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1744  1 e 1 @141 ]
+[u S1809 . 1 `S1800 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1809  1 e 1 @141 ]
 [s S780 . 1 `uc 1 CLC3IF 1 0 :1:0 
 `uc 1 CLC4IF 1 0 :1:1 
 `uc 1 TX1IF 1 0 :1:2 
@@ -410,16 +426,16 @@ TMR2_CLC4OUT 14
 [v _PR2 PR2 `VEuc  1 e 1 @781 ]
 "4904
 [v _T2CON T2CON `VEuc  1 e 1 @782 ]
-[s S1882 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1947 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "4940
-[s S1886 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1951 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1890 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1955 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -427,7 +443,7 @@ TMR2_CLC4OUT 14
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S1898 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1963 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -436,17 +452,17 @@ TMR2_CLC4OUT 14
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1907 . 1 `S1882 1 . 1 0 `S1886 1 . 1 0 `S1890 1 . 1 0 `S1898 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1907  1 e 1 @782 ]
+[u S1972 . 1 `S1947 1 . 1 0 `S1951 1 . 1 0 `S1955 1 . 1 0 `S1963 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1972  1 e 1 @782 ]
 "5050
 [v _T2HLT T2HLT `VEuc  1 e 1 @783 ]
-[s S1779 . 1 `uc 1 MODE 1 0 :5:0 
+[s S1844 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CSYNC 1 0 :1:5 
 `uc 1 CPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "5085
-[s S1784 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1849 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
@@ -454,40 +470,40 @@ TMR2_CLC4OUT 14
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 ]
-[s S1792 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S1857 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CSYNC 1 0 :1:5 
 `uc 1 T2CPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S1797 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S1862 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S1803 . 1 `S1779 1 . 1 0 `S1784 1 . 1 0 `S1792 1 . 1 0 `S1797 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES1803  1 e 1 @783 ]
+[u S1868 . 1 `S1844 1 . 1 0 `S1849 1 . 1 0 `S1857 1 . 1 0 `S1862 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES1868  1 e 1 @783 ]
 "5190
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @784 ]
 "5348
 [v _T2RST T2RST `VEuc  1 e 1 @785 ]
-[s S1848 . 1 `uc 1 RSEL 1 0 :8:0 
+[s S1913 . 1 `uc 1 RSEL 1 0 :8:0 
 ]
 "5373
-[s S1850 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S1915 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S1855 . 1 `uc 1 T2RSEL 1 0 :8:0 
+[s S1920 . 1 `uc 1 T2RSEL 1 0 :8:0 
 ]
-[s S1857 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S1922 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S1862 . 1 `S1848 1 . 1 0 `S1850 1 . 1 0 `S1855 1 . 1 0 `S1857 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES1862  1 e 1 @785 ]
+[u S1927 . 1 `S1913 1 . 1 0 `S1915 1 . 1 0 `S1920 1 . 1 0 `S1922 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES1927  1 e 1 @785 ]
 "7233
 [v _PWM3DCL PWM3DCL `VEuc  1 e 1 @1036 ]
 "7254
@@ -500,13 +516,13 @@ TMR2_CLC4OUT 14
 [v _PWM4DCH PWM4DCH `VEuc  1 e 1 @1040 ]
 "7378
 [v _PWM4CON PWM4CON `VEuc  1 e 1 @1041 ]
-[s S1646 . 1 `uc 1 P3TSEL 1 0 :2:0 
+[s S1711 . 1 `uc 1 P3TSEL 1 0 :2:0 
 `uc 1 P4TSEL 1 0 :2:2 
 `uc 1 P5TSEL 1 0 :2:4 
 ]
 "7550
-[u S1650 . 1 `S1646 1 . 1 0 ]
-[v _PWMTMRS0bits PWMTMRS0bits `VES1650  1 e 1 @1055 ]
+[u S1715 . 1 `S1711 1 . 1 0 ]
+[v _PWMTMRS0bits PWMTMRS0bits `VES1715  1 e 1 @1055 ]
 "10029
 [v _RC1REG RC1REG `VEuc  1 e 1 @1548 ]
 "10049
@@ -593,7 +609,7 @@ TMR2_CLC4OUT 14
 [v _ANSELA ANSELA `VEuc  1 e 1 @7820 ]
 "19511
 [v _WPUA WPUA `VEuc  1 e 1 @7821 ]
-[s S1537 . 1 `uc 1 WPUA0 1 0 :1:0 
+[s S1618 . 1 `uc 1 WPUA0 1 0 :1:0 
 `uc 1 WPUA1 1 0 :1:1 
 `uc 1 WPUA2 1 0 :1:2 
 `uc 1 WPUA3 1 0 :1:3 
@@ -603,8 +619,8 @@ TMR2_CLC4OUT 14
 `uc 1 WPUA7 1 0 :1:7 
 ]
 "19528
-[u S1546 . 1 `S1537 1 . 1 0 ]
-[v _WPUAbits WPUAbits `VES1546  1 e 1 @7821 ]
+[u S1627 . 1 `S1618 1 . 1 0 ]
+[v _WPUAbits WPUAbits `VES1627  1 e 1 @7821 ]
 "19573
 [v _ODCONA ODCONA `VEuc  1 e 1 @7822 ]
 "19635
@@ -649,7 +665,7 @@ TMR2_CLC4OUT 14
 [v _ANSELC ANSELC `VEuc  1 e 1 @7840 ]
 "20603
 [v _WPUC WPUC `VEuc  1 e 1 @7841 ]
-[s S1516 . 1 `uc 1 WPUC0 1 0 :1:0 
+[s S1358 . 1 `uc 1 WPUC0 1 0 :1:0 
 `uc 1 WPUC1 1 0 :1:1 
 `uc 1 WPUC2 1 0 :1:2 
 `uc 1 WPUC3 1 0 :1:3 
@@ -659,8 +675,8 @@ TMR2_CLC4OUT 14
 `uc 1 WPUC7 1 0 :1:7 
 ]
 "20620
-[u S1525 . 1 `S1516 1 . 1 0 ]
-[v _WPUCbits WPUCbits `VES1525  1 e 1 @7841 ]
+[u S1367 . 1 `S1358 1 . 1 0 ]
+[v _WPUCbits WPUCbits `VES1367  1 e 1 @7841 ]
 "20665
 [v _ODCONC ODCONC `VEuc  1 e 1 @7842 ]
 "20727
@@ -687,7 +703,7 @@ TMR2_CLC4OUT 14
 [v _IOCCFbits IOCCFbits `VES451  1 e 1 @7847 ]
 "21037
 [v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
-[s S1989 . 1 `uc 1 ANSELD0 1 0 :1:0 
+[s S2054 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -697,7 +713,7 @@ TMR2_CLC4OUT 14
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "21064
-[s S1998 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S2063 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -706,8 +722,8 @@ TMR2_CLC4OUT 14
 `uc 1 ANSD6 1 0 :1:6 
 `uc 1 ANSD7 1 0 :1:7 
 ]
-[u S2007 . 1 `S1989 1 . 1 0 `S1998 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES2007  1 e 1 @7850 ]
+[u S2072 . 1 `S2054 1 . 1 0 `S2063 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES2072  1 e 1 @7850 ]
 "21149
 [v _WPUD WPUD `VEuc  1 e 1 @7851 ]
 "21211
@@ -754,12 +770,16 @@ TMR2_CLC4OUT 14
 [v _powerPressLatched powerPressLatched `a  1 s 1 powerPressLatched ]
 "32
 [v _powerButtonCallback powerButtonCallback `*.37(v  1 s 2 powerButtonCallback ]
-"63 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"65 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _lastUid lastUid `[7]uc  1 s 7 lastUid ]
-"64
+"66
 [v _lastUidLen lastUidLen `uc  1 s 1 lastUidLen ]
-"65
+"73
+[v _trackEnded trackEnded `a  1 s 1 trackEnded ]
+"75
 [v _isOn isOn `a  1 s 1 isOn ]
+"84
+[v _lidClosed lidClosed `a  1 s 1 lidClosed ]
 "38 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/interrupt.c
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
 "37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/pins.c
@@ -788,24 +808,28 @@ TMR2_CLC4OUT 14
 [v _EUSART2_FramingErrorHandler EUSART2_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "84
 [v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"82 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"110 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"135
+"184
 [v main@track track `us  1 a 2 44 ]
-"132
-[v main@text text `[32]uc  1 a 32 2 ]
-"101
-[v main@i i `uc  1 a 1 42 ]
+"181
+[v main@text text `[32]uc  1 a 32 0 ]
 "129
-[v main@isNewTag isNewTag `a  1 a 1 41 ]
-"122
-[v main@uid uid `[7]uc  1 a 7 34 ]
-"123
-[v main@uidLen uidLen `uc  1 a 1 47 ]
-"93
+[v main@i i `uc  1 a 1 41 ]
+"178
+[v main@isNewTag isNewTag `a  1 a 1 40 ]
+"171
+[v main@uid uid `[7]uc  1 a 7 32 ]
+"172
+[v main@uidLen uidLen `uc  1 a 1 48 ]
+"158
+[v main@lidNowClosed lidNowClosed `a  1 a 1 47 ]
+"169
+[v main@systemActive systemActive `a  1 a 1 39 ]
+"121
 [v main@initResult initResult `uc  1 a 1 46 ]
-"161
+"222
 } 0
 "50
 [v _parse_track_number parse_track_number `(us  1 s 2 parse_track_number ]
@@ -890,6 +914,11 @@ TMR2_CLC4OUT 14
 [v isdigit@c c `i  1 p 2 4 ]
 "8
 } 0
+"87 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+[v _on_lid_opened on_lid_opened `(v  1 s 1 on_lid_opened ]
+{
+"89
+} 0
 "12 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/scene.c
 [v _Scene_Start Scene_Start `(v  1 e 1 0 ]
 {
@@ -899,11 +928,11 @@ TMR2_CLC4OUT 14
 [v Scene_Start@track track `us  1 p 2 55 ]
 "26
 } 0
-"150 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+"158 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
 [v _DFPlayer_PlayTrack DFPlayer_PlayTrack `(v  1 e 1 0 ]
 {
 [v DFPlayer_PlayTrack@track track `us  1 p 2 35 ]
-"153
+"161
 } 0
 "37 C:\Users\zmiller\MPLABXProjects\MusicBox.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -995,10 +1024,10 @@ TMR2_CLC4OUT 14
 [v RotaryEncoder_Tasks@steps steps `c  1 a 1 2 ]
 "113
 } 0
-"70 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
+"94 C:\Users\zmiller\MPLABXProjects\MusicBox.X\main.c
 [v _on_power_button_pressed on_power_button_pressed `(v  1 s 1 on_power_button_pressed ]
 {
-"80
+"108
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memset.c
 [v _memset memset `(*.5v  1 e 2 0 ]
@@ -1077,10 +1106,10 @@ TMR2_CLC4OUT 14
 [v ___lldiv@dividend dividend `ul  1 p 4 20 ]
 "30
 } 0
-"155 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+"163 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
 [v _DFPlayer_Stop DFPlayer_Stop `(v  1 e 1 0 ]
 {
-"158
+"166
 } 0
 "145
 [v _DFPlayer_GetVolume DFPlayer_GetVolume `(uc  1 e 1 0 ]
@@ -1466,7 +1495,12 @@ TMR2_CLC4OUT 14
 [v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 4 ]
 "69
 } 0
-"114 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+"150 C:\Users\zmiller\MPLABXProjects\MusicBox.X\drivers/dfplayer.c
+[v _DFPlayer_IsPlaying DFPlayer_IsPlaying `(a  1 e 1 0 ]
+{
+"156
+} 0
+"114
 [v _DFPlayer_Init DFPlayer_Init `(v  1 e 1 0 ]
 {
 "117

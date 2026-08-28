@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F8397 `(v ~T0 @X0 0 tf ]
 [v F8398 `(v ~T0 @X0 0 tf ]
+[v F8399 `(v ~T0 @X0 0 tf ]
 "576 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 576:     struct {
 [s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -12,8 +12,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "587
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 587: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS36 ~T0 @X0 0 e@14 ]
-[v F8404 `(v ~T0 @X0 0 tf ]
-[v F8406 `(v ~T0 @X0 0 tf ]
+[v F8405 `(v ~T0 @X0 0 tf ]
+[v F8407 `(v ~T0 @X0 0 tf ]
 "20609
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20609:     struct {
 [s S996 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -36,18 +36,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19528
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19528: extern volatile WPUAbits_t WPUAbits __attribute__((address(0x1E8D)));
 [v _WPUAbits `VS961 ~T0 @X0 0 e@7821 ]
-[v F7777 `(v ~T0 @X0 0 tf ]
-"336 drivers/../mcc_generated_files/system/../system/pins.h
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 336: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _VOL_A_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7777 ]
-[v F7785 `(v ~T0 @X0 0 tf ]
-"376
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 376: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _VOL_B_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7785 ]
-[v F7769 `(v ~T0 @X0 0 tf ]
-"296
-[; ;drivers/../mcc_generated_files/system/../system/pins.h: 296: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _POWER_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7769 ]
+[v F7778 `(v ~T0 @X0 0 tf ]
+"374 drivers/../mcc_generated_files/system/../system/pins.h
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 374: void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _VOL_A_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7778 ]
+[v F7786 `(v ~T0 @X0 0 tf ]
+"414
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 414: void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _VOL_B_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7786 ]
+[v F7770 `(v ~T0 @X0 0 tf ]
+"334
+[; ;drivers/../mcc_generated_files/system/../system/pins.h: 334: void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _POWER_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F7770 ]
 "1574 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1574:     struct {
 [s S73 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -59,12 +59,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1581
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1581: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x096)));
 [v _PIE0bits `VS72 ~T0 @X0 0 e@150 ]
-"57 drivers/dfplayer.h
-[; ;drivers/dfplayer.h: 57: void DFPlayer_AdjustVolume(int8_t delta);
+"60 drivers/dfplayer.h
+[; ;drivers/dfplayer.h: 60: void DFPlayer_AdjustVolume(int8_t delta);
 [v _DFPlayer_AdjustVolume `(v ~T0 @X0 0 ef1`c ]
-[v F214 `(v ~T0 @X0 1 tf1`ul ]
+[v F215 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF214 ~T0 @X0 0 e ]
+[v __delay `JF215 ~T0 @X0 0 e ]
 [p i __delay ]
 "452 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 452:     struct {
@@ -77,7 +77,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "463
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 463: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
 [v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
-[v F8414 `(v ~T0 @X0 0 tf ]
+[v F8415 `(v ~T0 @X0 0 tf ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1270,9 +1270,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "32
 [; ;drivers/rotary_encoder.c: 32: static RotaryEncoder_PowerButtonCallback powerButtonCallback = ((void*)0);
-[v _powerButtonCallback `*F8397 ~T0 @X0 1 s ]
+[v _powerButtonCallback `*F8398 ~T0 @X0 1 s ]
 [i _powerButtonCallback
--> -> -> 0 `i `*v `*F8398
+-> -> -> 0 `i `*v `*F8399
 ]
 "40
 [; ;drivers/rotary_encoder.c: 40: static void encoder_isr(void)
@@ -1317,14 +1317,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "57
 [; ;drivers/rotary_encoder.c: 57: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed)
-[v _RotaryEncoder_Init `(v ~T0 @X0 1 ef1`*F8404 ]
+[v _RotaryEncoder_Init `(v ~T0 @X0 1 ef1`*F8405 ]
 "58
 [; ;drivers/rotary_encoder.c: 58: {
 {
 [e :U _RotaryEncoder_Init ]
 "57
 [; ;drivers/rotary_encoder.c: 57: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed)
-[v _onPowerButtonPressed `*F8406 ~T0 @X0 1 r1 ]
+[v _onPowerButtonPressed `*F8407 ~T0 @X0 1 r1 ]
 "58
 [; ;drivers/rotary_encoder.c: 58: {
 [f ]
@@ -1441,7 +1441,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _powerPressLatched -> -> 1 `i `a ]
 "101
 [; ;drivers/rotary_encoder.c: 101:                 if (powerButtonCallback != ((void*)0))
-[e $ ! != _powerButtonCallback -> -> -> 0 `i `*v `*F8414 1105  ]
+[e $ ! != _powerButtonCallback -> -> -> 0 `i `*v `*F8415 1105  ]
 "102
 [; ;drivers/rotary_encoder.c: 102:                 {
 {

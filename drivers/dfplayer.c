@@ -147,6 +147,14 @@ uint8_t DFPlayer_GetVolume(void)
     return currentVolume;
 }
 
+bool DFPlayer_IsPlaying(void)
+{
+    // Standard DFPlayer Mini BUSY behavior: pin reads LOW while a track is
+    // playing, HIGH when idle/stopped. Flip this if your module/wiring
+    // inverts it.
+    return !MUSIC_ON_GetValue();
+}
+
 void DFPlayer_PlayTrack(uint16_t track)
 {
     DFPlayer_SendCommand(DFPLAYER_CMD_PLAY_MP3_TRACK, track, true);

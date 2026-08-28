@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 48: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
-"270 mcc_generated_files/system/src/../../system/pins.h
-[; ;mcc_generated_files/system/src/../../system/pins.h: 270: void PIN_MANAGER_Initialize (void);
+"308 mcc_generated_files/system/src/../../system/pins.h
+[; ;mcc_generated_files/system/src/../../system/pins.h: 308: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "120 mcc_generated_files/system/src/../../uart/eusart1.h
 [; ;mcc_generated_files/system/src/../../uart/eusart1.h: 120: void EUSART1_Initialize(void);

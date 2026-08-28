@@ -22,16 +22,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "273
 [; ;drivers/../mcc_generated_files/system/../uart/eusart1.h: 273: uint8_t EUSART1_Read(void);
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
-[v F207 `(v ~T0 @X0 1 tf1`ul ]
+[v F208 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF207 ~T0 @X0 0 e ]
+[v __delay `JF208 ~T0 @X0 0 e ]
 [p i __delay ]
 "255 drivers/../mcc_generated_files/system/../uart/eusart1.h
 [; ;drivers/../mcc_generated_files/system/../uart/eusart1.h: 255: _Bool EUSART1_IsTxDone(void);
 [v _EUSART1_IsTxDone `(a ~T0 @X0 0 ef ]
-"51 drivers/dfplayer.h
-[; ;drivers/dfplayer.h: 51: void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck);
+"54 drivers/dfplayer.h
+[; ;drivers/dfplayer.h: 54: void DFPlayer_SetVolume(uint8_t volume, _Bool waitForAck);
 [v _DFPlayer_SetVolume `(v ~T0 @X0 0 ef2`uc`a ]
+"514 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 514:     struct {
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"513
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 513: typedef union {
+[u S34 `S35 1 ]
+[n S34 . . ]
+"525
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 525: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS34 ~T0 @X0 0 e@13 ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1568,80 +1579,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1115 ]
 }
 "150
-[; ;drivers/dfplayer.c: 150: void DFPlayer_PlayTrack(uint16_t track)
-[v _DFPlayer_PlayTrack `(v ~T0 @X0 1 ef1`us ]
+[; ;drivers/dfplayer.c: 150: _Bool DFPlayer_IsPlaying(void)
+[v _DFPlayer_IsPlaying `(a ~T0 @X0 1 ef ]
 "151
 [; ;drivers/dfplayer.c: 151: {
 {
-[e :U _DFPlayer_PlayTrack ]
-"150
-[; ;drivers/dfplayer.c: 150: void DFPlayer_PlayTrack(uint16_t track)
-[v _track `us ~T0 @X0 1 r1 ]
-"151
-[; ;drivers/dfplayer.c: 151: {
+[e :U _DFPlayer_IsPlaying ]
 [f ]
-"152
-[; ;drivers/dfplayer.c: 152:     DFPlayer_SendCommand(0x12, track, 1);
-[e ( _DFPlayer_SendCommand (3 , , -> -> 18 `i `uc _track -> -> 1 `i `a ]
-"153
-[; ;drivers/dfplayer.c: 153: }
+"155
+[; ;drivers/dfplayer.c: 155:     return !PORTBbits.RB1;
+[e ) -> -> ! != -> . . _PORTBbits 0 1 `i -> 0 `i `i `a ]
+[e $UE 1116  ]
+"156
+[; ;drivers/dfplayer.c: 156: }
 [e :UE 1116 ]
 }
-"155
-[; ;drivers/dfplayer.c: 155: void DFPlayer_Stop(void)
+"158
+[; ;drivers/dfplayer.c: 158: void DFPlayer_PlayTrack(uint16_t track)
+[v _DFPlayer_PlayTrack `(v ~T0 @X0 1 ef1`us ]
+"159
+[; ;drivers/dfplayer.c: 159: {
+{
+[e :U _DFPlayer_PlayTrack ]
+"158
+[; ;drivers/dfplayer.c: 158: void DFPlayer_PlayTrack(uint16_t track)
+[v _track `us ~T0 @X0 1 r1 ]
+"159
+[; ;drivers/dfplayer.c: 159: {
+[f ]
+"160
+[; ;drivers/dfplayer.c: 160:     DFPlayer_SendCommand(0x12, track, 1);
+[e ( _DFPlayer_SendCommand (3 , , -> -> 18 `i `uc _track -> -> 1 `i `a ]
+"161
+[; ;drivers/dfplayer.c: 161: }
+[e :UE 1117 ]
+}
+"163
+[; ;drivers/dfplayer.c: 163: void DFPlayer_Stop(void)
 [v _DFPlayer_Stop `(v ~T0 @X0 1 ef ]
-"156
-[; ;drivers/dfplayer.c: 156: {
+"164
+[; ;drivers/dfplayer.c: 164: {
 {
 [e :U _DFPlayer_Stop ]
 [f ]
-"157
-[; ;drivers/dfplayer.c: 157:     DFPlayer_SendCommand(0x16, 0, 1);
+"165
+[; ;drivers/dfplayer.c: 165:     DFPlayer_SendCommand(0x16, 0, 1);
 [e ( _DFPlayer_SendCommand (3 , , -> -> 22 `i `uc -> -> 0 `i `us -> -> 1 `i `a ]
-"158
-[; ;drivers/dfplayer.c: 158: }
-[e :UE 1117 ]
-}
 "166
-[; ;drivers/dfplayer.c: 166: void DFPlayer_FadeOutAndStop(void)
+[; ;drivers/dfplayer.c: 166: }
+[e :UE 1118 ]
+}
+"174
+[; ;drivers/dfplayer.c: 174: void DFPlayer_FadeOutAndStop(void)
 [v _DFPlayer_FadeOutAndStop `(v ~T0 @X0 1 ef ]
-"167
-[; ;drivers/dfplayer.c: 167: {
+"175
+[; ;drivers/dfplayer.c: 175: {
 {
 [e :U _DFPlayer_FadeOutAndStop ]
 [f ]
-"168
-[; ;drivers/dfplayer.c: 168:     uint8_t startVolume = currentVolume;
+"176
+[; ;drivers/dfplayer.c: 176:     uint8_t startVolume = currentVolume;
 [v _startVolume `uc ~T0 @X0 1 a ]
 [e = _startVolume _currentVolume ]
-"170
-[; ;drivers/dfplayer.c: 170:     while (currentVolume > 0)
-[e $U 1119  ]
-[e :U 1120 ]
-"171
-[; ;drivers/dfplayer.c: 171:     {
-{
-"172
-[; ;drivers/dfplayer.c: 172:         DFPlayer_SetVolume((uint8_t)(currentVolume - 1), 0);
-[e ( _DFPlayer_SetVolume (2 , -> - -> _currentVolume `i -> 1 `i `uc -> -> 0 `i `a ]
-"173
-[; ;drivers/dfplayer.c: 173:         _delay((unsigned long)((80)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"174
-[; ;drivers/dfplayer.c: 174:     }
-}
-[e :U 1119 ]
-"170
-[; ;drivers/dfplayer.c: 170:     while (currentVolume > 0)
-[e $ > -> _currentVolume `i -> 0 `i 1120  ]
-[e :U 1121 ]
-"176
-[; ;drivers/dfplayer.c: 176:     DFPlayer_Stop();
-[e ( _DFPlayer_Stop ..  ]
-"177
-[; ;drivers/dfplayer.c: 177:     DFPlayer_SetVolume(startVolume, 1);
-[e ( _DFPlayer_SetVolume (2 , _startVolume -> -> 1 `i `a ]
 "178
-[; ;drivers/dfplayer.c: 178: }
-[e :UE 1118 ]
+[; ;drivers/dfplayer.c: 178:     while (currentVolume > 0)
+[e $U 1120  ]
+[e :U 1121 ]
+"179
+[; ;drivers/dfplayer.c: 179:     {
+{
+"180
+[; ;drivers/dfplayer.c: 180:         DFPlayer_SetVolume((uint8_t)(currentVolume - 1), 0);
+[e ( _DFPlayer_SetVolume (2 , -> - -> _currentVolume `i -> 1 `i `uc -> -> 0 `i `a ]
+"181
+[; ;drivers/dfplayer.c: 181:         _delay((unsigned long)((80)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"182
+[; ;drivers/dfplayer.c: 182:     }
+}
+[e :U 1120 ]
+"178
+[; ;drivers/dfplayer.c: 178:     while (currentVolume > 0)
+[e $ > -> _currentVolume `i -> 0 `i 1121  ]
+[e :U 1122 ]
+"184
+[; ;drivers/dfplayer.c: 184:     DFPlayer_Stop();
+[e ( _DFPlayer_Stop ..  ]
+"185
+[; ;drivers/dfplayer.c: 185:     DFPlayer_SetVolume(startVolume, 1);
+[e ( _DFPlayer_SetVolume (2 , _startVolume -> -> 1 `i `a ]
+"186
+[; ;drivers/dfplayer.c: 186: }
+[e :UE 1119 ]
 }

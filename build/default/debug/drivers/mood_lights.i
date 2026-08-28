@@ -13371,7 +13371,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
-# 270 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 308 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13389,11 +13389,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 296 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 334 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 307 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 345 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 318 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 356 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13403,11 +13403,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 336 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 374 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 347 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 385 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 358 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 396 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13417,11 +13417,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 376 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 414 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 387 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 425 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 398 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 436 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "drivers/../mcc_generated_files/system/system.h" 2
 

@@ -25,7 +25,7 @@ void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
 void RotaryEncoder_Tasks(void);
 # 2 "drivers/rotary_encoder.c" 2
 # 1 "drivers/dfplayer.h" 1
-# 17 "drivers/dfplayer.h"
+# 20 "drivers/dfplayer.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -131,10 +131,10 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 18 "drivers/dfplayer.h" 2
+# 21 "drivers/dfplayer.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 19 "drivers/dfplayer.h" 2
-# 41 "drivers/dfplayer.h"
+# 22 "drivers/dfplayer.h" 2
+# 44 "drivers/dfplayer.h"
 _Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck);
 
 
@@ -156,6 +156,8 @@ void DFPlayer_AdjustVolume(int8_t delta);
 
 
 uint8_t DFPlayer_GetVolume(void);
+# 73 "drivers/dfplayer.h"
+_Bool DFPlayer_IsPlaying(void);
 
 
 void DFPlayer_PlayTrack(uint16_t track);
@@ -13387,7 +13389,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "drivers/../mcc_generated_files/system/../system/pins.h" 1
-# 270 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 308 "drivers/../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13405,11 +13407,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 296 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 334 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 307 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 345 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 318 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 356 "drivers/../mcc_generated_files/system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13419,11 +13421,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 336 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 374 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 347 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 385 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 358 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 396 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13433,11 +13435,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 376 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 414 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 387 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 425 "drivers/../mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 398 "drivers/../mcc_generated_files/system/../system/pins.h"
+# 436 "drivers/../mcc_generated_files/system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "drivers/../mcc_generated_files/system/system.h" 2
 

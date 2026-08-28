@@ -13485,7 +13485,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 270 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 308 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13503,11 +13503,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 296 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 334 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 307 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 345 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 318 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 356 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13517,11 +13517,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 336 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 374 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 347 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 385 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 358 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 396 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13531,11 +13531,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 376 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 414 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 387 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 425 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 398 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 436 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "mcc_generated_files/uart/src/../../system/system.h" 2
 

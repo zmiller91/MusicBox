@@ -55,13 +55,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 45: uint8_t PN532_Init(void);
 [v _PN532_Init `(uc ~T0 @X0 0 ef ]
-"45 ./drivers/dfplayer.h
-[; ;./drivers/dfplayer.h: 45: void DFPlayer_Init(void);
+"20609 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20609:     struct {
+[s S996 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S996 . WPUC0 WPUC1 WPUC2 WPUC3 WPUC4 WPUC5 WPUC6 WPUC7 ]
+"20608
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20608: typedef union {
+[u S995 `S996 1 ]
+[n S995 . . ]
+"20620
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20620: extern volatile WPUCbits_t WPUCbits __attribute__((address(0x1EA1)));
+[v _WPUCbits `VS995 ~T0 @X0 0 e@7841 ]
+"48 ./drivers/dfplayer.h
+[; ;./drivers/dfplayer.h: 48: void DFPlayer_Init(void);
 [v _DFPlayer_Init `(v ~T0 @X0 0 ef ]
-[v F8394 `(v ~T0 @X0 0 tf ]
+[v F8395 `(v ~T0 @X0 0 tf ]
 "26 ./drivers/rotary_encoder.h
 [; ;./drivers/rotary_encoder.h: 26: void RotaryEncoder_Init(RotaryEncoder_PowerButtonCallback onPowerButtonPressed);
-[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8394 ]
+[v _RotaryEncoder_Init `(v ~T0 @X0 0 ef1`*F8395 ]
 "25 ./drivers/mood_lights.h
 [; ;./drivers/mood_lights.h: 25: void MoodLights_Init(void);
 [v _MoodLights_Init `(v ~T0 @X0 0 ef ]
@@ -71,6 +82,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./drivers/mood_lights.h
 [; ;./drivers/mood_lights.h: 32: void MoodLights_Tasks(void);
 [v _MoodLights_Tasks `(v ~T0 @X0 0 ef ]
+"576 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 576:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"575
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 575: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"587
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 587: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
+[v _PORTCbits `VS36 ~T0 @X0 0 e@14 ]
 "51 ./drivers/pn532.h
 [; ;./drivers/pn532.h: 51: _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 [v _PN532_ReadPassiveTarget `(a ~T0 @X0 0 ef2`*uc`*uc ]
@@ -86,6 +108,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"73 ./drivers/dfplayer.h
+[; ;./drivers/dfplayer.h: 73: _Bool DFPlayer_IsPlaying(void);
+[v _DFPlayer_IsPlaying `(a ~T0 @X0 0 ef ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1268,292 +1293,394 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 58: }
 [e :UE 1089 ]
 }
-"63
-[; ;main.c: 63: static uint8_t lastUid[7];
+"65
+[; ;main.c: 65: static uint8_t lastUid[7];
 [v _lastUid `uc ~T0 @X0 -> 7 `i s ]
-"64
-[; ;main.c: 64: static uint8_t lastUidLen = 0;
+"66
+[; ;main.c: 66: static uint8_t lastUidLen = 0;
 [v _lastUidLen `uc ~T0 @X0 1 s ]
 [i _lastUidLen
 -> -> 0 `i `uc
 ]
-"65
-[; ;main.c: 65: static _Bool isOn = 1;
+"73
+[; ;main.c: 73: static _Bool trackEnded = 0;
+[v _trackEnded `a ~T0 @X0 1 s ]
+[i _trackEnded
+-> -> 0 `i `a
+]
+"75
+[; ;main.c: 75: static _Bool isOn = 1;
 [v _isOn `a ~T0 @X0 1 s ]
 [i _isOn
 -> -> 1 `i `a
 ]
-"70
-[; ;main.c: 70: static void on_power_button_pressed(void)
+"84
+[; ;main.c: 84: static _Bool lidClosed = 0;
+[v _lidClosed `a ~T0 @X0 1 s ]
+[i _lidClosed
+-> -> 0 `i `a
+]
+"87
+[; ;main.c: 87: static void on_lid_opened(void)
+[v _on_lid_opened `(v ~T0 @X0 1 sf ]
+"88
+[; ;main.c: 88: {
+{
+[e :U _on_lid_opened ]
+[f ]
+"89
+[; ;main.c: 89: }
+[e :UE 1091 ]
+}
+"94
+[; ;main.c: 94: static void on_power_button_pressed(void)
 [v _on_power_button_pressed `(v ~T0 @X0 1 sf ]
-"71
-[; ;main.c: 71: {
+"95
+[; ;main.c: 95: {
 {
 [e :U _on_power_button_pressed ]
 [f ]
-"72
-[; ;main.c: 72:     Scene_Stop();
+"96
+[; ;main.c: 96:     if (!trackEnded)
+[e $ ! ! != -> _trackEnded `i -> 0 `i 1093  ]
+"97
+[; ;main.c: 97:     {
+{
+"98
+[; ;main.c: 98:         Scene_Stop();
 [e ( _Scene_Stop ..  ]
-"77
-[; ;main.c: 77:     memset(lastUid, 0, sizeof(lastUid));
+"99
+[; ;main.c: 99:     }
+}
+[e :U 1093 ]
+"104
+[; ;main.c: 104:     memset(lastUid, 0, sizeof(lastUid));
 [e ( _memset (3 , , -> &U _lastUid `*v -> 0 `i -> # _lastUid `ui ]
-"78
-[; ;main.c: 78:     lastUidLen = 0;
+"105
+[; ;main.c: 105:     lastUidLen = 0;
 [e = _lastUidLen -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:     isOn = !isOn;
+"106
+[; ;main.c: 106:     trackEnded = 0;
+[e = _trackEnded -> -> 0 `i `a ]
+"107
+[; ;main.c: 107:     isOn = !isOn;
 [e = _isOn -> -> ! != -> _isOn `i -> 0 `i `i `a ]
-"80
-[; ;main.c: 80: }
-[e :UE 1091 ]
+"108
+[; ;main.c: 108: }
+[e :UE 1092 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"82
-[; ;main.c: 82: int main(void)
+"110
+[; ;main.c: 110: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"83
-[; ;main.c: 83: {
+"111
+[; ;main.c: 111: {
 {
 [e :U _main ]
 [f ]
-"84
-[; ;main.c: 84:     SYSTEM_Initialize();
+"112
+[; ;main.c: 112:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"86
-[; ;main.c: 86:     (INTCONbits.GIE = 1);
+"114
+[; ;main.c: 114:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"87
-[; ;main.c: 87:     (INTCONbits.PEIE = 1);
+"115
+[; ;main.c: 115:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"89
-[; ;main.c: 89:     do { TRISAbits.TRISA1 = 0; } while(0);
-[e :U 1095 ]
+"117
+[; ;main.c: 117:     do { TRISAbits.TRISA1 = 0; } while(0);
+[e :U 1097 ]
 {
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1094 ]
-"90
-[; ;main.c: 90:     do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1098 ]
+[e :U 1096 ]
+"118
+[; ;main.c: 118:     do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1100 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1097 ]
-"91
-[; ;main.c: 91:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e :U 1099 ]
+"119
+[; ;main.c: 119:     _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"93
-[; ;main.c: 93:     uint8_t initResult = PN532_Init();
+"121
+[; ;main.c: 121:     uint8_t initResult = PN532_Init();
 [v _initResult `uc ~T0 @X0 1 a ]
 [e = _initResult ( _PN532_Init ..  ]
-"94
-[; ;main.c: 94:     if (initResult != 0)
-[e $ ! != -> _initResult `i -> 0 `i 1099  ]
-"95
-[; ;main.c: 95:     {
+"122
+[; ;main.c: 122:     if (initResult != 0)
+[e $ ! != -> _initResult `i -> 0 `i 1101  ]
+"123
+[; ;main.c: 123:     {
 {
-"99
-[; ;main.c: 99:         while (1)
-[e :U 1101 ]
-"100
-[; ;main.c: 100:         {
+"127
+[; ;main.c: 127:         while (1)
+[e :U 1103 ]
+"128
+[; ;main.c: 128:         {
 {
-"101
-[; ;main.c: 101:             for (uint8_t i = 0; i < initResult; i++)
+"129
+[; ;main.c: 129:             for (uint8_t i = 0; i < initResult; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1106  ]
-[e :U 1103 ]
-"102
-[; ;main.c: 102:             {
+[e $U 1108  ]
+[e :U 1105 ]
+"130
+[; ;main.c: 130:             {
 {
-"103
-[; ;main.c: 103:                 do { LATAbits.LATA1 = 1; } while(0);
-[e :U 1109 ]
+"131
+[; ;main.c: 131:                 do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1111 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1108 ]
-"104
-[; ;main.c: 104:                 _delay((unsigned long)((200)*(32000000/4000.0)));
+[e :U 1110 ]
+"132
+[; ;main.c: 132:                 _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"105
-[; ;main.c: 105:                 do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1112 ]
+"133
+[; ;main.c: 133:                 do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1114 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1111 ]
-"106
-[; ;main.c: 106:                 _delay((unsigned long)((200)*(32000000/4000.0)));
+[e :U 1113 ]
+"134
+[; ;main.c: 134:                 _delay((unsigned long)((200)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"107
-[; ;main.c: 107:             }
+"135
+[; ;main.c: 135:             }
 }
 [e ++ _i -> -> 1 `i `uc ]
+[e :U 1108 ]
+[e $ < -> _i `i -> _initResult `i 1105  ]
 [e :U 1106 ]
-[e $ < -> _i `i -> _initResult `i 1103  ]
-[e :U 1104 ]
 }
-"108
-[; ;main.c: 108:             _delay((unsigned long)((1000)*(32000000/4000.0)));
+"136
+[; ;main.c: 136:             _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"109
-[; ;main.c: 109:         }
+"137
+[; ;main.c: 137:         }
 }
-[e :U 1100 ]
-[e $U 1101  ]
 [e :U 1102 ]
-"110
-[; ;main.c: 110:     }
+[e $U 1103  ]
+[e :U 1104 ]
+"138
+[; ;main.c: 138:     }
 }
-[e :U 1099 ]
-"111
-[; ;main.c: 111:     do { LATAbits.LATA1 = 0; } while(0);
-[e :U 1115 ]
+[e :U 1101 ]
+"139
+[; ;main.c: 139:     do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1117 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1114 ]
-"113
-[; ;main.c: 113:     DFPlayer_Init();
+[e :U 1116 ]
+"143
+[; ;main.c: 143:     do { WPUCbits.WPUC6 = 1; } while(0);
+[e :U 1120 ]
+{
+[e = . . _WPUCbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 1119 ]
+"145
+[; ;main.c: 145:     DFPlayer_Init();
 [e ( _DFPlayer_Init ..  ]
-"114
-[; ;main.c: 114:     RotaryEncoder_Init(on_power_button_pressed);
+"146
+[; ;main.c: 146:     RotaryEncoder_Init(on_power_button_pressed);
 [e ( _RotaryEncoder_Init (1 &U _on_power_button_pressed ]
-"115
-[; ;main.c: 115:     MoodLights_Init();
+"147
+[; ;main.c: 147:     MoodLights_Init();
 [e ( _MoodLights_Init ..  ]
-"117
-[; ;main.c: 117:     while (1)
-[e :U 1117 ]
-"118
-[; ;main.c: 118:     {
-{
-"119
-[; ;main.c: 119:         RotaryEncoder_Tasks();
-[e ( _RotaryEncoder_Tasks ..  ]
-"120
-[; ;main.c: 120:         MoodLights_Tasks();
-[e ( _MoodLights_Tasks ..  ]
-"122
-[; ;main.c: 122:         uint8_t uid[7];
-[v _uid `uc ~T0 @X0 -> 7 `i a ]
-"123
-[; ;main.c: 123:         uint8_t uidLen;
-[v _uidLen `uc ~T0 @X0 1 a ]
-"125
-[; ;main.c: 125:         if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
-[e $ ! && != -> _isOn `i -> 0 `i != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1119  ]
-"126
-[; ;main.c: 126:         {
-{
-"127
-[; ;main.c: 127:             do { LATAbits.LATA1 = 1; } while(0);
+"149
+[; ;main.c: 149:     while (1)
 [e :U 1122 ]
+"150
+[; ;main.c: 150:     {
+{
+"151
+[; ;main.c: 151:         RotaryEncoder_Tasks();
+[e ( _RotaryEncoder_Tasks ..  ]
+"152
+[; ;main.c: 152:         MoodLights_Tasks();
+[e ( _MoodLights_Tasks ..  ]
+"158
+[; ;main.c: 158:         _Bool lidNowClosed = (PORTCbits.RC6 == 0);
+[v _lidNowClosed `a ~T0 @X0 1 a ]
+[e = _lidNowClosed -> -> == -> . . _PORTCbits 0 6 `i -> 0 `i `i `a ]
+"159
+[; ;main.c: 159:         if (lidNowClosed != lidClosed)
+[e $ ! != -> _lidNowClosed `i -> _lidClosed `i 1124  ]
+"160
+[; ;main.c: 160:         {
+{
+"161
+[; ;main.c: 161:             lidClosed = lidNowClosed;
+[e = _lidClosed _lidNowClosed ]
+"162
+[; ;main.c: 162:             if (!lidClosed)
+[e $ ! ! != -> _lidClosed `i -> 0 `i 1125  ]
+"163
+[; ;main.c: 163:             {
+{
+"164
+[; ;main.c: 164:                 on_lid_opened();
+[e ( _on_lid_opened ..  ]
+"165
+[; ;main.c: 165:             }
+}
+[e :U 1125 ]
+"168
+[; ;main.c: 168:         }
+}
+[e :U 1124 ]
+"169
+[; ;main.c: 169:         _Bool systemActive = isOn && !lidClosed;
+[v _systemActive `a ~T0 @X0 1 a ]
+[e = _systemActive -> -> && != -> _isOn `i -> 0 `i ! != -> _lidClosed `i -> 0 `i `i `a ]
+"171
+[; ;main.c: 171:         uint8_t uid[7];
+[v _uid `uc ~T0 @X0 -> 7 `i a ]
+"172
+[; ;main.c: 172:         uint8_t uidLen;
+[v _uidLen `uc ~T0 @X0 1 a ]
+"174
+[; ;main.c: 174:         if (systemActive && PN532_ReadPassiveTarget(uid, &uidLen))
+[e $ ! && != -> _systemActive `i -> 0 `i != -> ( _PN532_ReadPassiveTarget (2 , &U _uid &U _uidLen `i -> 0 `i 1126  ]
+"175
+[; ;main.c: 175:         {
+{
+"176
+[; ;main.c: 176:             do { LATAbits.LATA1 = 1; } while(0);
+[e :U 1129 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
-[e :U 1121 ]
-"129
-[; ;main.c: 129:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
+[e :U 1128 ]
+"178
+[; ;main.c: 178:             _Bool isNewTag = (uidLen != lastUidLen) || (memcmp(uid, lastUid, uidLen) != 0);
 [v _isNewTag `a ~T0 @X0 1 a ]
 [e = _isNewTag -> -> || != -> _uidLen `i -> _lastUidLen `i != ( _memcmp (3 , , -> &U _uid `*Cv -> &U _lastUid `*Cv -> _uidLen `ui -> 0 `i `i `a ]
-"130
-[; ;main.c: 130:             if (isNewTag)
-[e $ ! != -> _isNewTag `i -> 0 `i 1123  ]
-"131
-[; ;main.c: 131:             {
+"179
+[; ;main.c: 179:             if (isNewTag)
+[e $ ! != -> _isNewTag `i -> 0 `i 1130  ]
+"180
+[; ;main.c: 180:             {
 {
-"132
-[; ;main.c: 132:                 char text[32];
+"181
+[; ;main.c: 181:                 char text[32];
 [v _text `uc ~T0 @X0 -> 32 `i a ]
-"133
-[; ;main.c: 133:                 if (PN532_ReadNdefText(text, sizeof(text)))
-[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1124  ]
-"134
-[; ;main.c: 134:                 {
+"182
+[; ;main.c: 182:                 if (PN532_ReadNdefText(text, sizeof(text)))
+[e $ ! != -> ( _PN532_ReadNdefText (2 , &U _text -> -> # _text `ui `uc `i -> 0 `i 1131  ]
+"183
+[; ;main.c: 183:                 {
 {
-"135
-[; ;main.c: 135:                     uint16_t track = parse_track_number(text);
+"184
+[; ;main.c: 184:                     uint16_t track = parse_track_number(text);
 [v _track `us ~T0 @X0 1 a ]
 [e = _track ( _parse_track_number (1 -> &U _text `*Cuc ]
-"136
-[; ;main.c: 136:                     if (track > 0)
-[e $ ! > -> _track `ui -> -> 0 `i `ui 1125  ]
-"137
-[; ;main.c: 137:                     {
+"185
+[; ;main.c: 185:                     if (track > 0)
+[e $ ! > -> _track `ui -> -> 0 `i `ui 1132  ]
+"186
+[; ;main.c: 186:                     {
 {
-"138
-[; ;main.c: 138:                         Scene_Start(track);
+"187
+[; ;main.c: 187:                         Scene_Start(track);
 [e ( _Scene_Start (1 _track ]
-"139
-[; ;main.c: 139:                     }
+"188
+[; ;main.c: 188:                     }
 }
-[e :U 1125 ]
-"140
-[; ;main.c: 140:                 }
+[e :U 1132 ]
+"189
+[; ;main.c: 189:                 }
 }
-[e :U 1124 ]
-"141
-[; ;main.c: 141:                 memcpy(lastUid, uid, uidLen);
+[e :U 1131 ]
+"190
+[; ;main.c: 190:                 memcpy(lastUid, uid, uidLen);
 [e ( _memcpy (3 , , -> &U _lastUid `*v -> &U _uid `*Cv -> _uidLen `ui ]
-"142
-[; ;main.c: 142:                 lastUidLen = uidLen;
+"191
+[; ;main.c: 191:                 lastUidLen = uidLen;
 [e = _lastUidLen _uidLen ]
-"143
-[; ;main.c: 143:             }
+"192
+[; ;main.c: 192:                 trackEnded = 0;
+[e = _trackEnded -> -> 0 `i `a ]
+"193
+[; ;main.c: 193:             }
 }
-[e :U 1123 ]
-"144
-[; ;main.c: 144:         }
-}
-[e $U 1126  ]
-"145
-[; ;main.c: 145:         else
-[e :U 1119 ]
-"146
-[; ;main.c: 146:         {
-{
-"147
-[; ;main.c: 147:             if (lastUidLen != 0)
-[e $ ! != -> _lastUidLen `i -> 0 `i 1127  ]
-"148
-[; ;main.c: 148:             {
-{
-"152
-[; ;main.c: 152:                 Scene_Stop();
-[e ( _Scene_Stop ..  ]
-"153
-[; ;main.c: 153:             }
-}
-[e :U 1127 ]
-"155
-[; ;main.c: 155:             lastUidLen = 0;
-[e = _lastUidLen -> -> 0 `i `uc ]
-"156
-[; ;main.c: 156:             do { LATAbits.LATA1 = 0; } while(0);
+[e $U 1133  ]
+"194
+[; ;main.c: 194:             else if (!trackEnded && !DFPlayer_IsPlaying())
 [e :U 1130 ]
+[e $ ! && ! != -> _trackEnded `i -> 0 `i ! != -> ( _DFPlayer_IsPlaying ..  `i -> 0 `i 1134  ]
+"195
+[; ;main.c: 195:             {
+{
+"201
+[; ;main.c: 201:                 Scene_Stop();
+[e ( _Scene_Stop ..  ]
+"202
+[; ;main.c: 202:                 trackEnded = 1;
+[e = _trackEnded -> -> 1 `i `a ]
+"203
+[; ;main.c: 203:             }
+}
+[e :U 1134 ]
+[e :U 1133 ]
+"204
+[; ;main.c: 204:         }
+}
+[e $U 1135  ]
+"205
+[; ;main.c: 205:         else
+[e :U 1126 ]
+"206
+[; ;main.c: 206:         {
+{
+"207
+[; ;main.c: 207:             if (lastUidLen != 0 && !trackEnded)
+[e $ ! && != -> _lastUidLen `i -> 0 `i ! != -> _trackEnded `i -> 0 `i 1136  ]
+"208
+[; ;main.c: 208:             {
+{
+"212
+[; ;main.c: 212:                 Scene_Stop();
+[e ( _Scene_Stop ..  ]
+"213
+[; ;main.c: 213:             }
+}
+[e :U 1136 ]
+"215
+[; ;main.c: 215:             lastUidLen = 0;
+[e = _lastUidLen -> -> 0 `i `uc ]
+"216
+[; ;main.c: 216:             trackEnded = 0;
+[e = _trackEnded -> -> 0 `i `a ]
+"217
+[; ;main.c: 217:             do { LATAbits.LATA1 = 0; } while(0);
+[e :U 1139 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1129 ]
-"157
-[; ;main.c: 157:         }
+[e :U 1138 ]
+"218
+[; ;main.c: 218:         }
 }
-[e :U 1126 ]
-"159
-[; ;main.c: 159:         _delay((unsigned long)((150)*(32000000/4000.0)));
+[e :U 1135 ]
+"220
+[; ;main.c: 220:         _delay((unsigned long)((150)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"160
-[; ;main.c: 160:     }
+"221
+[; ;main.c: 221:     }
 }
-[e :U 1116 ]
-[e $U 1117  ]
-[e :U 1118 ]
-"161
-[; ;main.c: 161: }
-[e :UE 1092 ]
+[e :U 1121 ]
+[e $U 1122  ]
+[e :U 1123 ]
+"222
+[; ;main.c: 222: }
+[e :UE 1094 ]
 }
 [a 1C 58 58 0 ]

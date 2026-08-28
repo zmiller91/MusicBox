@@ -1,26 +1,26 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o
+ C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o
  -Odist/default/debug\MusicBox.X.debug.hex
  -logfile=dist/default/debug\MusicBox.X.debug.hxl
  -addressing=2
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 20BFh		(C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o)
-  2BEAh - 3049h		(C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o)
-  1000Eh - 10011h		(C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o)
-  10014h - 10017h		(C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o)
+  0h - 20BFh		(C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o)
+  2B2Ah - 3049h		(C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o)
+  1000Eh - 10011h		(C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o)
+  10014h - 10017h		(C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o)
  Unused ranges:
-  20C0h - 2BE9h
+  20C0h - 2B29h
   304Ah - 1000Dh
   10012h - 10013h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\zmiller\AppData\Local\Temp\xcAshnk.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\zmiller\AppData\Local\Temp\xcAsesc.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -549,7 +549,19 @@
 000020A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000020B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
-00002BE0 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+00002B20 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+00002B30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B40 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B50 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B80 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002B90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002BA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002BB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002BC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002BD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002BE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002BF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002C00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002C10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

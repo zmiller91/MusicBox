@@ -13324,7 +13324,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 270 "./mcc_generated_files/system/../system/pins.h"
+# 308 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13342,11 +13342,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void POWER_ISR(void);
-# 296 "./mcc_generated_files/system/../system/pins.h"
+# 334 "./mcc_generated_files/system/../system/pins.h"
 void POWER_SetInterruptHandler(void (* InterruptHandler)(void));
-# 307 "./mcc_generated_files/system/../system/pins.h"
+# 345 "./mcc_generated_files/system/../system/pins.h"
 extern void (*POWER_InterruptHandler)(void);
-# 318 "./mcc_generated_files/system/../system/pins.h"
+# 356 "./mcc_generated_files/system/../system/pins.h"
 void POWER_DefaultInterruptHandler(void);
 
 
@@ -13356,11 +13356,11 @@ void POWER_DefaultInterruptHandler(void);
 
 
 void VOL_A_ISR(void);
-# 336 "./mcc_generated_files/system/../system/pins.h"
+# 374 "./mcc_generated_files/system/../system/pins.h"
 void VOL_A_SetInterruptHandler(void (* InterruptHandler)(void));
-# 347 "./mcc_generated_files/system/../system/pins.h"
+# 385 "./mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_A_InterruptHandler)(void);
-# 358 "./mcc_generated_files/system/../system/pins.h"
+# 396 "./mcc_generated_files/system/../system/pins.h"
 void VOL_A_DefaultInterruptHandler(void);
 
 
@@ -13370,11 +13370,11 @@ void VOL_A_DefaultInterruptHandler(void);
 
 
 void VOL_B_ISR(void);
-# 376 "./mcc_generated_files/system/../system/pins.h"
+# 414 "./mcc_generated_files/system/../system/pins.h"
 void VOL_B_SetInterruptHandler(void (* InterruptHandler)(void));
-# 387 "./mcc_generated_files/system/../system/pins.h"
+# 425 "./mcc_generated_files/system/../system/pins.h"
 extern void (*VOL_B_InterruptHandler)(void);
-# 398 "./mcc_generated_files/system/../system/pins.h"
+# 436 "./mcc_generated_files/system/../system/pins.h"
 void VOL_B_DefaultInterruptHandler(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
@@ -14154,7 +14154,7 @@ _Bool PN532_ReadPassiveTarget(uint8_t *uid, uint8_t *uidLen);
 _Bool PN532_ReadNdefText(char *out, uint8_t outSize);
 # 35 "main.c" 2
 # 1 "./drivers/dfplayer.h" 1
-# 41 "./drivers/dfplayer.h"
+# 44 "./drivers/dfplayer.h"
 _Bool DFPlayer_SendCommand(uint8_t command, uint16_t parameter, _Bool waitForAck);
 
 
@@ -14176,6 +14176,8 @@ void DFPlayer_AdjustVolume(int8_t delta);
 
 
 uint8_t DFPlayer_GetVolume(void);
+# 73 "./drivers/dfplayer.h"
+_Bool DFPlayer_IsPlaying(void);
 
 
 void DFPlayer_PlayTrack(uint16_t track);
@@ -14320,22 +14322,43 @@ static uint16_t parse_track_number(const char *text)
 
 
 
+
+
 static uint8_t lastUid[7];
 static uint8_t lastUidLen = 0;
+
+
+
+
+
+
+static _Bool trackEnded = 0;
+
 static _Bool isOn = 1;
+# 84 "main.c"
+static _Bool lidClosed = 0;
+
+
+static void on_lid_opened(void)
+{
+}
 
 
 
 
 static void on_power_button_pressed(void)
 {
-    Scene_Stop();
+    if (!trackEnded)
+    {
+        Scene_Stop();
+    }
 
 
 
 
     memset(lastUid, 0, sizeof(lastUid));
     lastUidLen = 0;
+    trackEnded = 0;
     isOn = !isOn;
 }
 
@@ -14370,6 +14393,10 @@ int main(void)
     }
     do { LATAbits.LATA1 = 0; } while(0);
 
+
+
+    do { WPUCbits.WPUC6 = 1; } while(0);
+
     DFPlayer_Init();
     RotaryEncoder_Init(on_power_button_pressed);
     MoodLights_Init();
@@ -14379,10 +14406,27 @@ int main(void)
         RotaryEncoder_Tasks();
         MoodLights_Tasks();
 
+
+
+
+
+        _Bool lidNowClosed = (PORTCbits.RC6 == 0);
+        if (lidNowClosed != lidClosed)
+        {
+            lidClosed = lidNowClosed;
+            if (!lidClosed)
+            {
+                on_lid_opened();
+            }
+
+
+        }
+        _Bool systemActive = isOn && !lidClosed;
+
         uint8_t uid[7];
         uint8_t uidLen;
 
-        if (isOn && PN532_ReadPassiveTarget(uid, &uidLen))
+        if (systemActive && PN532_ReadPassiveTarget(uid, &uidLen))
         {
             do { LATAbits.LATA1 = 1; } while(0);
 
@@ -14400,11 +14444,22 @@ int main(void)
                 }
                 memcpy(lastUid, uid, uidLen);
                 lastUidLen = uidLen;
+                trackEnded = 0;
+            }
+            else if (!trackEnded && !DFPlayer_IsPlaying())
+            {
+
+
+
+
+
+                Scene_Stop();
+                trackEnded = 1;
             }
         }
         else
         {
-            if (lastUidLen != 0)
+            if (lastUidLen != 0 && !trackEnded)
             {
 
 
@@ -14413,6 +14468,7 @@ int main(void)
             }
 
             lastUidLen = 0;
+            trackEnded = 0;
             do { LATAbits.LATA1 = 0; } while(0);
         }
 
